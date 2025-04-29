@@ -9,18 +9,20 @@ in
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
-  stylix.targets.spicetify.enable = false;
-
   programs.spicetify = {
     enable = false;
-    theme = lib.mkForce spicePkgs.themes.catppuccin;
-
-    colorScheme = "mocha";
-
+    theme = lib.mkForce spicePkgs.themes.text;
+    colorScheme = "TokyoNight";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       adblock
       fullAppDisplay
     ];
+    enabledCustomApps = with spicePkgs.apps; [
+      ncsVisualizer
+      lyricsPlus
+      newReleases
+    ];
+    windowManagerPatch = true;
   };
 }

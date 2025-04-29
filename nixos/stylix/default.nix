@@ -45,24 +45,24 @@
     #   base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     # };
 
-    # base16Scheme = {
-    #   base00 = "17181C";
-    #   base01 = "1E1F24";
-    #   base02 = "26272B";
-    #   base03 = "333438";
-    #   base04 = "8F9093";
-    #   base05 = "B0B1B4";
-    #   base06 = "CBCCCE";
-    #   base07 = "E4E5E7";
-    #   base08 = "FA3867";
-    #   base09 = "F3872F";
-    #   base0A = "FEBD16";
-    #   base0B = "3FD43B";
-    #   base0C = "47E7CE";
-    #   base0D = "53ADE1";
-    #   base0E = "AD60FF";
-    #   base0F = "FC3F2C";
-    # };
+    base16Scheme = {
+      base00 = "0a0e1c";
+      base01 = "121a2e";
+      base02 = "1d2844";
+      base03 = "2d3c59";
+      base04 = "5e6b87";
+      base05 = "a0a7c4";
+      base06 = "c4c9db";
+      base07 = "e5e8f0";
+      base08 = "ff3ca1";
+      base09 = "ff45b5";
+      base0A = "a974ff";
+      base0B = "3ee6dd";
+      base0C = "00c3ff";
+      base0D = "45a4ff";
+      base0E = "d73aff";
+      base0F = "a21fde";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/HyDE-Project/hyde-themes/Catppuccin-Mocha/Configs/.config/hyde/themes/Catppuccin%20Mocha/wallpapers/aesthetic_deer.png";
@@ -74,15 +74,22 @@
     #   sha256 = "sha256-BRgwIUqrQaut9hb94gIgtNtp9SQYFbf4lQhtQXYmahw=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/SwayKh/Wallpapers/main/Images/cat_lofi_cafe.png";
-      sha256 = "sha256-yUW052i9IrjKnv7/7rpckJJUKbvlT/WzaZl1Fw9fuqI=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/SwayKh/Wallpapers/main/Images/cat_lofi_cafe.png";
+    #   sha256 = "sha256-yUW052i9IrjKnv7/7rpckJJUKbvlT/WzaZl1Fw9fuqI=";
+    # };
 
     # image = pkgs.fetchurl {
     #   url = "https://www.kali.org/wallpapers/images/2023/kali-red-sticker.jpg";
     #   sha256 = "sha256-FnTCbNGeo0JFqa58rHwxyFszGQLzFPEWu8vQ8CSZ5yU=";
     # };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/Immelancholy/NixDots/refs/heads/main/nixos/home/backgrounds/Evil_Miku.png";
+    #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
+    # };
+
+    image = ../../assets/wallhaven-g7zqx7_1920x1200.png;
 
     polarity = "dark";
 
@@ -123,6 +130,7 @@
 
     targets = {
       chromium.enable = false;
+      fish.enable = false;
     };
   };
 }
