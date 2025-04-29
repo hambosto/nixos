@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./boot
+    ./docs
+    ./environment
+    ./fonts
+    ./hardware
+    ./i18n
+    ./networking
+    ./nix
+    ./nixpkgs
+    ./packages
+    ./programs
+    ./security
+    ./services
+    ./shell
+    ./stylix
+    ./system
+    ./systemd
+    ./time
+    ./users
+    ./virtualization
+  ];
+}

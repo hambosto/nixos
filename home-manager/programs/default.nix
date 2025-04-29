@@ -1,0 +1,41 @@
+{
+  imports = [
+    ./bat.nix
+    ./btop.nix
+    ./bun.nix
+    ./cava.nix
+    ./cavalier.nix
+    ./chromium.nix
+    ./eza.nix
+    ./fastfetch.nix
+    ./firefox.nix
+    ./fish.nix
+    ./fzf.nix
+    ./gemini-commit.nix
+    ./ghostty.nix
+    ./git.nix
+    ./go-encryption.nix
+    ./go.nix
+    ./gpg.nix
+    ./helix.nix
+    ./htop.nix
+    ./imv.nix
+    ./kitty.nix
+    ./lazygit.nix
+    ./mpv.nix
+    ./nh.nix
+    ./obs-studio.nix
+    ./oh-my-posh.nix
+    ./rust.nix
+    ./starship.nix
+    ./textfox.nix
+    ./vesktop.nix
+    ./spicetify.nix
+    ./vscode.nix
+    ./wallpaper-manager.nix
+    ./yazi.nix
+    ./zathura.nix
+    ./zed-editor.nix
+    ./zoxide.nix
+  ];
+}

@@ -1,0 +1,3 @@
+{
+  hardware.wirelessRegulatoryDatabase = true;
+}
