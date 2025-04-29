@@ -48,7 +48,7 @@ let
     }
 
     function ui() {
-      fzf_result=$(printf "%s\n" "${menuItemsString}" | awk -F ';' '{print $1" "$2}' | fzf)
+      fzf_result=$(printf "%s\n" "${menuItemsString}" | awk -F ';' '{print $1" "$2}' | ${pkgs.fzf}/bin/fzf)
       [[ -z $fzf_result ]] && exit 0
 
       fzf_result=''${fzf_result/ /;}
