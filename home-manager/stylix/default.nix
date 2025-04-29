@@ -5,11 +5,18 @@
 }:
 {
   stylix = {
+    # iconTheme = {
+    #   enable = true;
+    #   package = pkgs.adwaita-icon-theme;
+    #   dark = "Adwaita";
+    #   light = "Adwaita";
+    # };
+
     iconTheme = {
       enable = true;
-      package = pkgs.adwaita-icon-theme;
-      dark = "Adwaita";
-      light = "Adwaita";
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus";
+      light = "Papirus";
     };
 
     targets = {

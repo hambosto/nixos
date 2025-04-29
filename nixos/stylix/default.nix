@@ -45,25 +45,6 @@
     #   base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     # };
 
-    base16Scheme = {
-      base00 = "0a0e1c";
-      base01 = "121a2e";
-      base02 = "1d2844";
-      base03 = "2d3c59";
-      base04 = "5e6b87";
-      base05 = "a0a7c4";
-      base06 = "c4c9db";
-      base07 = "e5e8f0";
-      base08 = "ff3ca1";
-      base09 = "ff45b5";
-      base0A = "a974ff";
-      base0B = "3ee6dd";
-      base0C = "00c3ff";
-      base0D = "45a4ff";
-      base0E = "d73aff";
-      base0F = "a21fde";
-    };
-
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/HyDE-Project/hyde-themes/Catppuccin-Mocha/Configs/.config/hyde/themes/Catppuccin%20Mocha/wallpapers/aesthetic_deer.png";
     #   sha256 = "sha256-PAYE7IjDpUMNsZ94noVkggW3MHNHxA629omYTDtRae0=";
@@ -89,7 +70,10 @@
     #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
     # };
 
-    image = ../../assets/wallhaven-g7zqx7_1920x1200.png;
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    };
 
     polarity = "dark";
 

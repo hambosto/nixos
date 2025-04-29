@@ -97,11 +97,14 @@
 
         blur = {
           enabled = true;
-          size = 6;
-          passes = 2;
-          new_optimizations = "on";
-          ignore_opacity = true;
+          size = 5;
           xray = true;
+          new_optimizations = "on";
+          brightness = 0.8;
+          contrast = 0.9;
+          noise = 0.01;
+          passes = 4;
+          ignore_opacity = false;
         };
       };
 
