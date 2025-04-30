@@ -41,7 +41,6 @@
       lt = "eza -a --tree --level=1 --icons=always";
       tree = "eza --icons=always --tree --no-quotes";
       ssh = "kitty +kitten ssh";
-      config = "hx ~/.config/nixos";
     };
     interactiveShellInit = ''
       set fish_greeting # Disable greeting

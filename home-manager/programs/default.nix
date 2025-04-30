@@ -24,6 +24,7 @@
     ./lazygit.nix
     ./mpv.nix
     ./nh.nix
+    ./nvchad.nix
     ./obs-studio.nix
     ./oh-my-posh.nix
     ./rust.nix

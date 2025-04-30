@@ -5,7 +5,7 @@
 }:
 {
   programs.helix = {
-    enable = true;
+    enable = false;
     defaultEditor = true;
 
     languages = {
