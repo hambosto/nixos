@@ -503,11 +503,11 @@
     "nvchad-starter": {
       "flake": false,
       "locked": {
-        "lastModified": 1746004524,
-        "narHash": "sha256-2Ub+fpcryBpYstjGLTETN6HlZvAxnw0V0wkFxtf6XMw=",
+        "lastModified": 1746006789,
+        "narHash": "sha256-vq2INQs9F2JsOTefLsEL2JbEh6RQrxtvzT0a9zQQgeI=",
         "owner": "hambosto",
         "repo": "nvchad",
-        "rev": "f14d7ea178c35d34c5b35cafe2472526558efcc6",
+        "rev": "d9c93baf856a5961756347dd7a96d07d29eb6ba7",
         "type": "github"
       },
       "original": {
