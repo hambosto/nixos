@@ -3,6 +3,6 @@
   ...
 }:
 {
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ stylua ];
+  programs.nix-ld.enable = false;
+  programs.nix-ld.libraries = with pkgs; [ ];
 }
