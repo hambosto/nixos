@@ -153,7 +153,7 @@
 
         "custom/terminal" = {
           format = "";
-          on-click = lib.getExe pkgs.kitty;
+          on-click = lib.getExe pkgs.ghostty;
           tooltip = false;
         };
 

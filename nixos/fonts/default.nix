@@ -3,7 +3,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.ubuntu
-      nerd-fonts.jetbrains-mono
+      nerd-fonts.comic-shanns-mono
     ];
 
     enableDefaultPackages = false;
@@ -13,7 +13,12 @@
       cache32Bit = true;
       hinting = {
         enable = true;
-        autohint = true;
+        autohint = false;
+        style = "full";
+      };
+      subpixel = {
+        lcdfilter = "default";
+        rgba = "rgb";
       };
     };
   };

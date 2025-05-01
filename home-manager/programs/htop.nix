@@ -4,7 +4,7 @@
 }:
 {
   programs.htop = {
-    enable = true;
+    enable = false;
     settings =
       {
         color_scheme = 6;

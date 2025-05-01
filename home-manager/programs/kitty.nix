@@ -4,7 +4,7 @@
 }:
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
 
     settings = {
       background_blur = 10;
@@ -20,7 +20,7 @@
       cursor_trail_start_threshold = 0;
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
-      font_family = lib.mkForce "JetBrainsMono Nerd Font";
+      font_family = lib.mkForce "ComicShannsMono Nerd Font";
       font_size = 12;
       hide_window_decorations = "yes";
       initial_window_height = 500;
