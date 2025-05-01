@@ -70,9 +70,14 @@
     #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
     # };
 
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/marina-bay-sands.png";
+    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    # };
+
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
-      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+      url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/changi-airport.png";
+      sha256 = "sha256-4V+97kboALo9d+/CmBnuKsTYOpa/2AvBBnxwxNVxe6U=";
     };
 
     polarity = "dark";
