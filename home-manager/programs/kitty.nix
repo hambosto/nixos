@@ -4,7 +4,7 @@
 }:
 {
   programs.kitty = {
-    enable = false;
+    enable = true;
 
     settings = {
       background_blur = 10;

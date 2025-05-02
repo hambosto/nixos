@@ -33,6 +33,8 @@
       qt.enable = true;
       gtk.enable = true;
       kitty.enable = true;
+      neovim.enable = false;
+      vencord.enable = false;
       firefox = {
         enable = true;
         profileNames = [ username ];

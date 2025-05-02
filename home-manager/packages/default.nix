@@ -3,5 +3,5 @@
   ...
 }:
 {
-  home.packages = with pkgs; [ neovim ];
+  home.packages = with pkgs; [ ginkgo ];
 }

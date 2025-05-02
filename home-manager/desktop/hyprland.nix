@@ -180,9 +180,9 @@
       };
 
       bind = [
-        "$mainMod, RETURN, exec, ${lib.getExe pkgs.ghostty}"
-        "$mainMod, E, exec, ${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.yazi}"
-        "$mainMod, M, exec, ${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.btop}"
+        "$mainMod, RETURN, exec, ${lib.getExe pkgs.kitty}"
+        "$mainMod, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
+        "$mainMod, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
         "$mainMod, L, exec, ${lib.getExe pkgs.hyprlock}"
         "$mainMod, B, exec, ${lib.getExe pkgs.firefox}"
         "$mainMod, SPACE, exec, rofi-launcher"

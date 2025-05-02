@@ -12,7 +12,7 @@
       modi = "drun";
       font = "Ubuntu Nerd Font 12";
       show-icons = true;
-      terminal = "${lib.getExe pkgs.ghostty}";
+      terminal = "${lib.getExe pkgs.kitty}";
       drun-display-format = "{icon} {name}";
       location = 0;
       disable-history = true;

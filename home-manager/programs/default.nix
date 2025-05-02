@@ -23,6 +23,7 @@
     ./kitty.nix
     ./lazygit.nix
     ./mpv.nix
+    ./neovim.nix
     ./nh.nix
     ./obs-studio.nix
     ./oh-my-posh.nix

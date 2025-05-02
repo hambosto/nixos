@@ -105,18 +105,18 @@ in
       menus.dashboard.shortcuts.left.shortcut1.command = "${lib.getExe pkgs.firefox}";
       menus.dashboard.shortcuts.left.shortcut1.icon = "󰖟";
       menus.dashboard.shortcuts.left.shortcut1.tooltip = "Browser";
-      menus.dashboard.shortcuts.left.shortcut2.command = "${lib.getExe pkgs.ghostty}";
+      menus.dashboard.shortcuts.left.shortcut2.command = "${lib.getExe pkgs.kitty}";
       menus.dashboard.shortcuts.left.shortcut2.icon = "";
       menus.dashboard.shortcuts.left.shortcut2.tooltip = "Terminal";
       menus.dashboard.shortcuts.left.shortcut3.command =
-        "${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.yazi}";
+        "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
       menus.dashboard.shortcuts.left.shortcut3.icon = "";
       menus.dashboard.shortcuts.left.shortcut3.tooltip = "File Explorer";
       menus.dashboard.shortcuts.left.shortcut4.command = "rofi-launcher";
       menus.dashboard.shortcuts.left.shortcut4.icon = "";
       menus.dashboard.shortcuts.left.shortcut4.tooltip = "Search Apps";
       menus.dashboard.shortcuts.right.shortcut1.command =
-        "${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.btop}";
+        "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
       menus.dashboard.shortcuts.right.shortcut1.icon = "";
       menus.dashboard.shortcuts.right.shortcut1.tooltip = "Resource Monitor";
       menus.dashboard.shortcuts.right.shortcut3.command = "${lib.getExe pkgs.vscode}";
