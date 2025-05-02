@@ -7,6 +7,25 @@
   stylix = {
     enable = true;
 
+    base16Scheme = {
+      base00 = "24283b";
+      base01 = "1f2335";
+      base02 = "292e42";
+      base03 = "565f89";
+      base04 = "a9b1d6";
+      base05 = "c0caf5";
+      base06 = "c0caf5";
+      base07 = "c0caf5";
+      base08 = "f7768e";
+      base09 = "ff9e64";
+      base0A = "e0af68";
+      base0B = "9ece6a";
+      base0C = "1abc9c";
+      base0D = "41a6b5";
+      base0E = "bb9af7";
+      base0F = "ff007c";
+    };
+
     # base16Scheme = {
     #   base00 = "0a0b1a"; # Default Background - Deep Space Black
     #   base01 = "141526"; # Lighter Background - Midnight Core
@@ -24,30 +43,6 @@
     #   base0D = "7c4dff"; # Functions - Deep Purple
     #   base0E = "f54fff"; # Keywords - Sugar Purple
     #   base0F = "ff6e9c"; # Deprecated - Strawberry Pink
-    # };
-
-    # base16Scheme = {
-    #   base00 = "0c0e0f"; # Default Background
-    #   base01 = "1c1e1f"; # Lighter Background (Used for status bars, line number and folding marks)
-    #   base02 = "313244"; # Selection Background
-    #   base03 = "45475a"; # Comments, Invisibles, Line Highlighting
-    #   base04 = "585b70"; # Dark Foreground (Used for status bars)
-    #   base05 = "cdd6f4"; # Default Foreground, Caret, Delimiters, Operators
-    #   base06 = "f5e0dc"; # Light Foreground (Not often used)
-    #   base07 = "b4befe"; # Light Background (Not often used)
-    #   base08 = "f38ba8"; # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-    #   base09 = "fab387"; # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-    #   base0A = "f9e2af"; # Classes, Markup Bold, Search Text Background
-    #   base0B = "a6e3a1"; # Strings, Inherited Class, Markup Code, Diff Inserted
-    #   base0C = "94e2d5"; # Support, Regular Expressions, Escape Characters, Markup Quotes
-    #   base0D = "c4a7e7"; # Functions, Methods, Attribute IDs, Headings, Accent color
-    #   base0E = "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
-    #   base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/HyDE-Project/hyde-themes/Catppuccin-Mocha/Configs/.config/hyde/themes/Catppuccin%20Mocha/wallpapers/aesthetic_deer.png";
-    #   sha256 = "sha256-PAYE7IjDpUMNsZ94noVkggW3MHNHxA629omYTDtRae0=";
     # };
 
     # image = pkgs.fetchurl {
@@ -70,15 +65,15 @@
     #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/marina-bay-sands.png";
-    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
-    # };
-
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/changi-airport.png";
-      sha256 = "sha256-4V+97kboALo9d+/CmBnuKsTYOpa/2AvBBnxwxNVxe6U=";
+      url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/marina-bay-sands.png";
+      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
     };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/changi-airport.png";
+    #   sha256 = "sha256-4V+97kboALo9d+/CmBnuKsTYOpa/2AvBBnxwxNVxe6U=";
+    # };\
 
     polarity = "dark";
 

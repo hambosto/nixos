@@ -22,6 +22,7 @@
           "custom/terminal"
           "custom/editor"
           "custom/explorer"
+          "custom/monitor"
           "hyprland/window"
         ];
         modules-right = [
@@ -140,8 +141,8 @@
         };
 
         "custom/rofi" = {
-          format = "";
-          on-click = "sleep 0.1 && rofi-launcher";
+          format = "";
+          on-click = "rofi-launcher";
           tooltip = false;
         };
 
@@ -152,7 +153,7 @@
         };
 
         "custom/terminal" = {
-          format = "";
+          format = "";
           on-click = lib.getExe pkgs.kitty;
           tooltip = false;
         };
@@ -166,6 +167,12 @@
         "custom/explorer" = {
           format = "";
           on-click = lib.getExe pkgs.xfce.thunar;
+          tooltip = false;
+        };
+
+        "custom/monitor" = {
+          format = "";
+          on-click = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
           tooltip = false;
         };
 
@@ -214,7 +221,7 @@
       * {
           border: none;
           font-family: Ubuntu Nerd Font;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: bold;
           min-height: 0;
           margin: 0;
@@ -239,12 +246,13 @@
       #custom-terminal,
       #custom-editor,
       #custom-explorer,
+      #custom-monitor,
       #custom-swaync,
       #power-profiles-daemon,
       #window {
           background-color: #${config.lib.stylix.colors.base00};
           border: 2px solid #${config.lib.stylix.colors.base0D};
-          border-radius: 5px;
+          border-radius: 10px;
           padding: 4px 12px;
           margin: 0 4px;
           color: #${config.lib.stylix.colors.base05};
@@ -265,7 +273,7 @@
           color: #${config.lib.stylix.colors.base0D};
           padding: 4px 8px;
           margin: 0 3px;
-          border-radius: 5px;
+          border-radius: 30px;
           transition: background 0.3s ease, box-shadow 0.3s ease;
       }
 
@@ -303,7 +311,7 @@
       #tray menu,
       tooltip {
           background-color: #${config.lib.stylix.colors.base00};
-          border-radius: 5px;
+          border-radius: 13px;
           border: 2px solid #${config.lib.stylix.colors.base0D};
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
       }
@@ -379,6 +387,10 @@
 
       #power-profiles-daemon {
           color: #${config.lib.stylix.colors.base09}; /* Yellow */
+      }
+
+      #custom-monitor {
+          color: #${config.lib.stylix.colors.base0C}; /* Cyan */
       }
 
       /* Add blinking effect to urgent icons */
