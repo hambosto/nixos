@@ -9,7 +9,7 @@
     settings = {
       background-opacity = lib.mkForce 0.4;
       background-blur = true;
-      font-family = lib.mkForce "ComicShannsMono Nerd Font";
+      font-family = lib.mkForce "FiraCode Nerd Font";
       font-size = lib.mkForce 13;
       window-width = 950;
       window-height = 500;

@@ -8,7 +8,7 @@
     profiles.default = {
       userSettings = {
         "editor.fontSize" = 14;
-        "editor.fontFamily" = "ComicShannsMono Nerd Font";
+        "editor.fontFamily" = "FiraCode Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontWeight" = "700";
         "editor.formatOnSave" = true;
@@ -41,7 +41,7 @@
         "breadcrumbs.enabled" = false;
 
         "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "ComicShannsMono Nerd Font";
+        "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
         "terminal.integrated.minimumContrastRatio" = 1;
 
         "telemetry.telemetryLevel" = "off";

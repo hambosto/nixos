@@ -3,23 +3,16 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.ubuntu
-      nerd-fonts.comic-shanns-mono
+      nerd-fonts.fira-code
     ];
 
     enableDefaultPackages = false;
 
     fontconfig = {
       antialias = true;
-      cache32Bit = true;
-      hinting = {
-        enable = true;
-        autohint = false;
-        style = "full";
-      };
-      subpixel = {
-        lcdfilter = "default";
-        rgba = "rgb";
-      };
+      hinting.enable = true;
+      subpixel.lcdfilter = "default";
+      subpixel.rgba = "rgb";
     };
   };
 }
