@@ -73,7 +73,7 @@
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/changi-airport.png";
     #   sha256 = "sha256-4V+97kboALo9d+/CmBnuKsTYOpa/2AvBBnxwxNVxe6U=";
-    # };\
+    # };
 
     polarity = "dark";
 
