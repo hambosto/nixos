@@ -48,6 +48,8 @@
         };
         backlight = {
           label = "󰃟";
+          subsystem = "backlight";
+          device = "amdgpu_bl1";
         };
       };
       widgets = [
