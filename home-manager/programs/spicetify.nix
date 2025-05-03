@@ -1,5 +1,4 @@
 {
-  lib,
   inputs,
   ...
 }:
@@ -11,17 +10,14 @@ in
 
   programs.spicetify = {
     enable = false;
-    theme = lib.mkForce spicePkgs.themes.text;
-    colorScheme = "TokyoNight";
+    theme = spicePkgs.themes.bloom;
+    colorScheme = "dark";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       adblock
-      fullAppDisplay
     ];
     enabledCustomApps = with spicePkgs.apps; [
-      ncsVisualizer
       lyricsPlus
-      newReleases
     ];
     windowManagerPatch = true;
   };

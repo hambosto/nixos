@@ -86,7 +86,8 @@
         };
 
         tray = {
-          spacing = 12;
+          icon-size = 21;
+          spacing = 10;
         };
 
         backlight = {
@@ -143,37 +144,37 @@
         "custom/rofi" = {
           format = "";
           on-click = "rofi-launcher";
-          tooltip = false;
+          tooltip-format = "Open the application launcher";
         };
 
         "custom/browser" = {
           format = "";
           on-click = lib.getExe pkgs.firefox;
-          tooltip = false;
+          tooltip-format = "Open the web browser";
         };
 
         "custom/terminal" = {
           format = "";
           on-click = lib.getExe pkgs.kitty;
-          tooltip = false;
+          tooltip-format = "Open the terminal";
         };
 
         "custom/editor" = {
           format = "";
           on-click = lib.getExe pkgs.vscode;
-          tooltip = false;
+          tooltip-format = "Open the code editor";
         };
 
         "custom/explorer" = {
           format = "";
           on-click = lib.getExe pkgs.xfce.thunar;
-          tooltip = false;
+          tooltip-format = "Open the file explorer";
         };
 
         "custom/monitor" = {
           format = "";
           on-click = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
-          tooltip = false;
+          tooltip-format = "Open the system monitor";
         };
 
         "custom/swaync" = {
