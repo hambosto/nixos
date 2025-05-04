@@ -4,8 +4,6 @@
     settings = {
       general = {
         grace = 5;
-        no_fadein = true;
-        no_fade_out = true;
       };
       background = {
         monitor = "";

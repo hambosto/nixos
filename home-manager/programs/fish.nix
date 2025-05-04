@@ -43,7 +43,7 @@
       ssh = "kitty +kitten ssh";
     };
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+      set fish_greeting
       ${lib.getExe pkgs.fastfetch}
     '';
   };

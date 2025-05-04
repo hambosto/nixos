@@ -8,7 +8,7 @@
     settings = {
 
       general = {
-        lock_cmd = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+        lock_cmd = "${pkgs.hyprlock}/bin/hyprlock";
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };

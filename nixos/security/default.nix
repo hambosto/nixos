@@ -18,4 +18,5 @@
   security.sudo.extraConfig = ''
     Defaults pwfeedback
   '';
+  security.pam.services.hyprlock = { };
 }
