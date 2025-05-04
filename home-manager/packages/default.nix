@@ -3,5 +3,5 @@
   ...
 }:
 {
-  home.packages = with pkgs; [ ginkgo ];
+  home.packages = with pkgs; [ ];
 }
