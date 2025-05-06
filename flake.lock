@@ -350,11 +350,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745030053,
-        "narHash": "sha256-T/kBFA22Fp2eHJGxHJ3silRqmUwgr+3JU9W0R/CJ9Ug=",
+        "lastModified": 1746517070,
+        "narHash": "sha256-ZjG5+Nkjg/S5KwsoagDFfh0TwWkeYFufIZXAzyk1uNU=",
         "owner": "hambosto",
         "repo": "go-encryption",
-        "rev": "4279ed433f95c89213750f8e9b4d8802acf3d572",
+        "rev": "5e73ef5c2022c125bdfd0434c458ad53b6168a5a",
         "type": "github"
       },
       "original": {

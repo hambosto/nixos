@@ -29,6 +29,7 @@
     ./oh-my-posh.nix
     ./rust.nix
     ./starship.nix
+    ./uv.nix
     ./vesktop.nix
     ./spicetify.nix
     ./vscode.nix
