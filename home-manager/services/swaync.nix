@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   services.swaync = {
     enable = config.programs.waybar.enable;
@@ -51,9 +56,42 @@
           subsystem = "backlight";
           device = "amdgpu_bl1";
         };
+        buttons-grid = {
+          actions = [
+            {
+              label = "";
+              command = lib.getExe pkgs.hyprlock;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.wlogout;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.firefox;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.kitty;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.vscode;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.xfce.thunar;
+            }
+            {
+              label = "";
+              command = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
+            }
+          ];
+        };
       };
       widgets = [
         "title"
+        "buttons-grid"
         "mpris"
         "volume"
         "backlight"
@@ -222,6 +260,25 @@
       .widget-title>button:hover {
         background: #${config.lib.stylix.colors.base08};
         color: #${config.lib.stylix.colors.base00};
+      }
+      .widget-buttons-grid {
+        background: #${config.lib.stylix.colors.base01};
+        padding: 5px 10px;
+        margin: 10px 10px 5px 10px;
+        border-radius: 10px;
+      }
+      .widget-buttons-grid > flowbox > flowboxchild > button {
+        font-size: large;
+        color: #${config.lib.stylix.colors.base05};
+        background: #${config.lib.stylix.colors.base00};
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+      }
+      .widget-buttons-grid > flowbox > flowboxchild > button:hover {
+        background: #${config.lib.stylix.colors.base0B};
+        color: #${config.lib.stylix.colors.base00};
+        transition: all .15s ease-in-out;
       }
       .widget-dnd {
         background: #${config.lib.stylix.colors.base00};

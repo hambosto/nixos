@@ -35,6 +35,7 @@
       kitty.enable = true;
       neovim.enable = false;
       vencord.enable = false;
+      swaync.enable = false;
       firefox = {
         enable = true;
         profileNames = [ username ];

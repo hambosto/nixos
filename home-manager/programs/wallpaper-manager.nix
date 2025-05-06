@@ -1,4 +1,7 @@
-{ inputs, ... }:
+{
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.wallpaper-manager.homeManagerModules.default ];
 

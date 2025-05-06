@@ -15,9 +15,7 @@
 
     settings = {
 
-      "$mainMod" = "SUPER";
-
-      monitor = [ ",preferred,auto,1" ];
+      monitor = [ ", preferred, auto, 1" ];
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -180,76 +178,92 @@
       };
 
       bind = [
-        "$mainMod, RETURN, exec, ${lib.getExe pkgs.kitty}"
-        "$mainMod, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
-        "$mainMod, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
-        "$mainMod, L, exec, ${lib.getExe pkgs.hyprlock}"
-        "$mainMod, B, exec, ${lib.getExe pkgs.firefox}"
-        "$mainMod, SPACE, exec, rofi-launcher"
+        # Applications
+        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty}"
+        "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
+        "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
+        "SUPER, B, exec, ${lib.getExe pkgs.firefox}"
+        "SUPER, SPACE, exec, rofi-launcher"
+        "SUPER, PRINT, exec, screenshot everything"
+        "SUPER SHIFT, PRINT, exec, screenshot selection"
 
-        # "$mainMod SHIFT, W, exec, wallpaper-manager"
+        "SUPER, Q, killactive"
+        "SUPER SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"
+        "SUPER, F, fullscreen, 0"
+        "SUPER, M, fullscreen, 1"
+        "SUPER, T, togglefloating"
+        "SUPER SHIFT, T, workspaceopt, allfloat"
+        "SUPER, J, togglesplit"
+        "SUPER, left, movefocus, l"
+        "SUPER, right, movefocus, r"
+        "SUPER, up, movefocus, u"
+        "SUPER, down, movefocus, d"
+        "SUPER SHIFT, right, resizeactive, 100 0"
+        "SUPER SHIFT, left, resizeactive, -100 0"
+        "SUPER SHIFT, down, resizeactive, 0 100"
+        "SUPER SHIFT, up, resizeactive, 0 -100"
+        "SUPER, G, togglegroup"
+        "SUPER, K, swapsplit"
+        "SUPER ALT, left, swapwindow, l"
+        "SUPER ALT, right, swapwindow, r"
+        "SUPER ALT, up, swapwindow, u"
+        "SUPER ALT, down, swapwindow, d"
 
-        "$mainMod, Q, killactive"
-        "$mainMod, T, togglefloating"
-        "$mainMod, F, fullscreen"
+        # Workspaces
+        "SUPER, 1, workspace, 1"
+        "SUPER, 2, workspace, 2"
+        "SUPER, 3, workspace, 3"
+        "SUPER, 4, workspace, 4"
+        "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
+        "SUPER, 8, workspace, 8"
+        "SUPER, 9, workspace, 9"
+        "SUPER, 0, workspace, 10"
 
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "SUPER SHIFT, 1, movetoworkspace, 1"
+        "SUPER SHIFT, 2, movetoworkspace, 2"
+        "SUPER SHIFT, 3, movetoworkspace, 3"
+        "SUPER SHIFT, 4, movetoworkspace, 4"
+        "SUPER SHIFT, 5, movetoworkspace, 5"
+        "SUPER SHIFT, 6, movetoworkspace, 6"
+        "SUPER SHIFT, 7, movetoworkspace, 7"
+        "SUPER SHIFT, 8, movetoworkspace, 8"
+        "SUPER SHIFT, 9, movetoworkspace, 9"
+        "SUPER SHIFT, 0, movetoworkspace, 10"
 
-        ",PRINT, exec, screenshot selection"
-        "$mainMod, PRINT, exec, screenshot active"
-        "SHIFT, PRINT, exec, screenshot everything"
+        "SUPER ALT, left, swapwindow, l"
+        "SUPER ALT, right, swapwindow, r"
+        "SUPER ALT, up, swapwindow, u"
+        "SUPER ALT, down, swapwindow, d"
 
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
+        "SUPER, Tab, workspace, m+1"
+        "SUPER SHIFT, Tab, workspace, m-1"
 
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "SUPER, mouse_down, workspace, e+1"
+        "SUPER, mouse_up, workspace, e-1"
+        "SUPER CTRL, down, workspace, empty"
 
-        "$mainMod ALT, left, swapwindow, l"
-        "$mainMod ALT, right, swapwindow, r"
-        "$mainMod ALT, up, swapwindow, u"
-        "$mainMod ALT, down, swapwindow, d"
+        "SUPER, mouse_down, workspace, e+1"
+        "SUPER, mouse_up, workspace, e-1"
+        "SUPER CTRL, down, workspace, empty"
 
-        "$mainMod, Tab, workspace, m+1"
-        "$mainMod SHIFT, Tab, workspace, m-1"
-
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod CTRL, down, workspace, empty"
-
+        # Fn keys
+        ", XF86AudioRaiseVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
+        ", XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
+        ", XF86AudioMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
 
       bindm = [
-        "$mainMod,mouse:272, movewindow"
-        "$mainMod,mouse:273, resizewindow"
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
       ];
 
-      bindl = [ ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" ];
-
-      bindle = [
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
-        ",XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
+      binde = [
+        "ALT, Tab, cyclenext"
+        "ALT, Tab, bringactivetotop"
       ];
     };
   };
