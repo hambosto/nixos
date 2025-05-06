@@ -15,8 +15,5 @@
       value = "0";
     }
   ];
-  security.sudo.extraConfig = ''
-    Defaults pwfeedback
-  '';
   security.pam.services.hyprlock = { };
 }
