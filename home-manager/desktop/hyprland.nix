@@ -89,20 +89,22 @@
 
         shadow = {
           enabled = true;
-          range = 30;
+          range = 10;
           render_power = 3;
+          offset = "12 12";
+          scale = 0.97;
         };
 
         blur = {
           enabled = true;
-          size = 5;
+          size = 16;
           xray = true;
           new_optimizations = "on";
           brightness = 0.8;
           contrast = 0.9;
           noise = 0.01;
           passes = 4;
-          ignore_opacity = false;
+          ignore_opacity = true;
         };
       };
 
