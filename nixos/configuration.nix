@@ -1,6 +1,7 @@
 {
   imports = [
     ./boot
+    ./disko
     ./docs
     ./environment
     ./fonts
