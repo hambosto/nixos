@@ -372,7 +372,7 @@ in
       }
 
       #clock {
-          color: #${config.lib.stylix.colors.base09}; /* Yellow */
+          color: #${config.lib.stylix.colors.base0F}; /* Brown */
       }
 
       #network {
