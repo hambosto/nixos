@@ -4,6 +4,28 @@
   pkgs,
   ...
 }:
+let
+  blue-light = pkgs.writeShellScriptBin "blue-light" ''
+    NIGHT_TEMP="4500"
+
+    if [[ "$1" == "status" ]]; then
+      if pgrep -x "hyprsunset" > /dev/null; then
+        echo '{"text": "󰛨", "tooltip": "Blue Light Filter: Active (4500K)", "class": "on"}'
+      else
+        echo '{"text": "󰌵", "tooltip": "Blue Light Filter: Inactive", "class": "off"}'
+      fi
+      exit 0
+    fi
+
+    if pgrep -x "hyprsunset" > /dev/null; then
+      pkill hyprsunset
+      pkill -RTMIN+1 waybar
+    else
+      ${lib.getExe pkgs.hyprsunset} -t "$NIGHT_TEMP" &
+      pkill -RTMIN+1 waybar
+    fi
+  '';
+in
 {
   programs.waybar = {
     enable = true;
@@ -27,6 +49,7 @@
         ];
         modules-right = [
           "tray"
+          "custom/bluelight"
           "power-profiles-daemon"
           "network"
           "pulseaudio"
@@ -153,6 +176,15 @@
           tooltip-format = "Open the web browser";
         };
 
+        "custom/bluelight" = {
+          format = "{}";
+          return-type = "json";
+          interval = 1;
+          exec = "${lib.getExe blue-light} status";
+          on-click = "${lib.getExe blue-light}";
+          signal = 1;
+        };
+
         "custom/terminal" = {
           format = "";
           on-click = lib.getExe pkgs.kitty;
@@ -243,6 +275,7 @@
       #tray,
       #custom-wlogout,
       #custom-rofi,
+      #custom-bluelight,
       #custom-browser,
       #custom-terminal,
       #custom-editor,
@@ -363,6 +396,10 @@
       }
 
       #custom-rofi {
+          color: #${config.lib.stylix.colors.base0A}; /* Amber */
+      }
+
+      #custom-bluelight {
           color: #${config.lib.stylix.colors.base0A}; /* Amber */
       }
 
