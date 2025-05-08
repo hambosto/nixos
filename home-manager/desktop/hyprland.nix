@@ -195,7 +195,7 @@
         "SUPER, SPACE, exec, rofi-launcher"
         "SUPER, PRINT, exec, screenshot everything"
         "SUPER SHIFT, PRINT, exec, screenshot selection"
-        "SUPER SHIFT, R, exec, screen-record"
+        "SUPER SHIFT, R, exec, screen-recorder"
         "SUPER SHIFT, B, exec, blue-light"
 
         "SUPER, Q, killactive"

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  screen-record = pkgs.writeShellScriptBin "screen-record" ''
+  screen-recorder = pkgs.writeShellScriptBin "screen-recorder" ''
     FRAMERATE="60"
     OUTPUT_LOCATION="$HOME/Videos"
     AUDIO_DEVICE=$(${lib.getExe' pkgs.pulseaudio "pactl"} get-default-sink)
@@ -31,5 +31,5 @@ let
   '';
 in
 {
-  home.packages = lib.mkIf config.programs.waybar.enable [ screen-record ];
+  home.packages = lib.mkIf config.programs.waybar.enable [ screen-recorder ];
 }
