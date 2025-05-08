@@ -195,6 +195,7 @@
         "SUPER, SPACE, exec, rofi-launcher"
         "SUPER, PRINT, exec, screenshot everything"
         "SUPER SHIFT, PRINT, exec, screenshot selection"
+        "SUPER SHIFT, R, exec, screen-record"
 
         "SUPER, Q, killactive"
         "SUPER SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"
