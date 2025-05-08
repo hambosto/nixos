@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -30,5 +31,5 @@ let
   '';
 in
 {
-  home.packages = [ screen-record ];
+  home.packages = lib.mkIf config.programs.waybar.enable [ screen-record ];
 }

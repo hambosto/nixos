@@ -1,4 +1,6 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
@@ -12,5 +14,5 @@ let
   '';
 in
 {
-  home.packages = [ rofi-launcher ];
+  home.packages = lib.mkIf config.programs.rofi.enable [ rofi-launcher ];
 }

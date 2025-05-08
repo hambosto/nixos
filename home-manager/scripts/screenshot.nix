@@ -13,7 +13,7 @@ let
 
     take_screenshot() {
       local mode=$1
-      local filename="$SAVE_DIR/''${mode}_''${TIMESTAMP}.png"
+      local filename="$SAVE_DIR/screenshot_$TIMESTAMP.png"
       
       case "$mode" in
         selection) target_mode="area" ;;
