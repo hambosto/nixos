@@ -18,6 +18,7 @@
     ./go.nix
     ./gpg.nix
     ./helix.nix
+    ./home-manager.nix
     ./htop.nix
     ./imv.nix
     ./kitty.nix

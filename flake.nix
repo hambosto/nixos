@@ -43,6 +43,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -69,17 +73,7 @@
           ./nixos/configuration.nix
           inputs.disko.nixosModules.disko
           inputs.stylix.nixosModules.stylix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {
-              inherit username;
-              inherit inputs;
-              inherit hostname;
-              inherit system;
-              inherit fullname;
-            };
-            home-manager.users.${username} = import ./home-manager;
-          }
+          inputs.chaotic.nixosModules.default
         ];
       };
     };

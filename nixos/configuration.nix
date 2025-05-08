@@ -6,6 +6,7 @@
     ./environment
     ./fonts
     ./hardware
+    ./home-manager
     ./i18n
     ./networking
     ./nix
