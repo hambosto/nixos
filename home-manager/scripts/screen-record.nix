@@ -12,7 +12,7 @@ let
 
     if [ -f "$RECORD_PID_FILE" ]; then
       kill "$(cat "$RECORD_PID_FILE")" && rm "$RECORD_PID_FILE"
-      ${lib.getExe pkgs.libnotify} "Screen Recording Stopped" "Recording saved."
+      ${lib.getExe pkgs.libnotify} "Screen Recording Stopped" "The screen recording has ended. Your video has been saved to the Videos folder."
       exit 0
     fi
 
