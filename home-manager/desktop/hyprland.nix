@@ -196,7 +196,7 @@
         "SUPER, PRINT, exec, screenshot everything"
         "SUPER SHIFT, PRINT, exec, screenshot selection"
         "SUPER SHIFT, R, exec, screen-record"
-        "SUPER SHIFT, B, exec, blue-light-filter"
+        "SUPER SHIFT, B, exec, blue-light"
 
         "SUPER, Q, killactive"
         "SUPER SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"

@@ -5,13 +5,12 @@
 }:
 let
   screen-record = pkgs.writeShellScriptBin "screen-record" ''
-    RECORD_PID_FILE="/tmp/screen_recording.pid"
     FRAMERATE="60"
     OUTPUT_LOCATION="$HOME/Videos"
     AUDIO_DEVICE=$(${lib.getExe' pkgs.pulseaudio "pactl"} get-default-sink)
 
-    if [ -f "$RECORD_PID_FILE" ]; then
-      kill "$(cat "$RECORD_PID_FILE")" && rm "$RECORD_PID_FILE"
+    if pgrep -x "wf-recorder" > /dev/null; then
+      pkill wf-recorder
       ${lib.getExe pkgs.libnotify} "Screen Recording Stopped" "The screen recording has ended. Your video has been saved to the Videos folder."
       exit 0
     fi
@@ -28,8 +27,6 @@ let
       --device /dev/dri/renderD128 \
       --file "$OUTFILE" \
       --framerate "$FRAMERATE" &
-
-    echo $! > "$RECORD_PID_FILE"
   '';
 in
 {
