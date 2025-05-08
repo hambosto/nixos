@@ -8,22 +8,22 @@
     enable = true;
 
     base16Scheme = {
-      base00 = "24283b";
-      base01 = "1f2335";
-      base02 = "292e42";
-      base03 = "565f89";
-      base04 = "a9b1d6";
-      base05 = "c0caf5";
-      base06 = "c0caf5";
-      base07 = "c0caf5";
-      base08 = "f7768e";
-      base09 = "ff9e64";
-      base0A = "e0af68";
-      base0B = "9ece6a";
-      base0C = "1abc9c";
-      base0D = "41a6b5";
-      base0E = "bb9af7";
-      base0F = "ff007c";
+      base00 = "17181C";
+      base01 = "1E1F24";
+      base02 = "26272B";
+      base03 = "333438";
+      base04 = "8F9093";
+      base05 = "B0B1B4";
+      base06 = "CBCCCE";
+      base07 = "E4E5E7";
+      base08 = "FA3867";
+      base09 = "F3872F";
+      base0A = "FEBD16";
+      base0B = "3FD43B";
+      base0C = "47E7CE";
+      base0D = "53ADE1";
+      base0E = "AD60FF";
+      base0F = "FC3F2C";
     };
 
     # base16Scheme = {
@@ -55,20 +55,20 @@
     #   sha256 = "sha256-yUW052i9IrjKnv7/7rpckJJUKbvlT/WzaZl1Fw9fuqI=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://www.kali.org/wallpapers/images/2023/kali-red-sticker.jpg";
-    #   sha256 = "sha256-FnTCbNGeo0JFqa58rHwxyFszGQLzFPEWu8vQ8CSZ5yU=";
-    # };
+    image = pkgs.fetchurl {
+      url = "https://www.kali.org/wallpapers/images/2023/kali-red-sticker.jpg";
+      sha256 = "sha256-FnTCbNGeo0JFqa58rHwxyFszGQLzFPEWu8vQ8CSZ5yU=";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/Immelancholy/NixDots/refs/heads/main/nixos/home/backgrounds/Evil_Miku.png";
     #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/marina-bay-sands.png";
-      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/marina-bay-sands.png";
+    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    # };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/hambosto/nixos/refs/heads/main/assets/changi-airport.png";
