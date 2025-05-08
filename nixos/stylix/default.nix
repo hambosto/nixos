@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     # base16Scheme = {
     #   base00 = "0a0b1a"; # Default Background - Deep Space Black
@@ -48,7 +48,7 @@
     #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
     # };
 
-    image = ../../assets/Kurzgesagt-Galaxy_2.png;
+    image = ../../assets/changi-airport.png;
 
     polarity = "dark";
 
