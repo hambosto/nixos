@@ -1,5 +1,12 @@
 {
+  inputs,
+  ...
+}:
+{
   imports = [
+    inputs.disko.nixosModules.disko
+    inputs.stylix.nixosModules.stylix
+    inputs.chaotic.nixosModules.default
     ./boot
     ./disko
     ./docs

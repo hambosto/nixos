@@ -1,9 +1,9 @@
 {
+  fullname,
   hostname,
   inputs,
-  username,
   system,
-  fullname,
+  username,
   ...
 }:
 {

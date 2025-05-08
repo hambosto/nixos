@@ -50,10 +50,7 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      ...
-    }@inputs:
+    { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       hostname = "vivobook-m1403qa";
@@ -69,12 +66,7 @@
           inherit hostname;
           inherit fullname;
         };
-        modules = [
-          ./nixos/configuration.nix
-          inputs.disko.nixosModules.disko
-          inputs.stylix.nixosModules.stylix
-          inputs.chaotic.nixosModules.default
-        ];
+        modules = [ ./nixos/configuration.nix ];
       };
     };
 }
