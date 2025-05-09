@@ -90,41 +90,21 @@
         shadow = {
           enabled = true;
           range = 10;
-          render_power = 2;
-
-          # range = 30;
-          # render_power = 3;
-
-          # range = 10;
-          # render_power = 3;
-          # offset = "12 12";
-          # scale = 0.97;
+          render_power = 3;
+          offset = "12 12";
+          scale = 0.97;
         };
 
         blur = {
           enabled = true;
-          vibrancy = 1;
-          new_optimizations = "on";
-          ignore_opacity = true;
-          popups = true;
-          size = 3;
-          passes = 3;
+          size = 16;
           xray = true;
-
-          # size = 6;
-          # passes = 2;
-          # new_optimizations = "on";
-          # ignore_opacity = true;
-          # xray = true;
-
-          # size = 16;
-          # xray = true;
-          # new_optimizations = "on";
-          # brightness = 0.8;
-          # contrast = 0.9;
-          # noise = 0.01;
-          # passes = 4;
-          # ignore_opacity = true;
+          new_optimizations = "on";
+          brightness = 0.8;
+          contrast = 0.9;
+          noise = 0.01;
+          passes = 4;
+          ignore_opacity = true;
         };
       };
 
