@@ -226,7 +226,7 @@
       }
       .control-center {
         background: #${config.lib.stylix.colors.base00};
-        border: 2px solid #${config.lib.stylix.colors.base0C};
+        border: 2px solid #${config.lib.stylix.colors.base0D};
         border-radius: 10px;
       }
       .control-center-list {
