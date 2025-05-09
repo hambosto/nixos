@@ -18,11 +18,6 @@
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
           "custom/rofi"
-          "custom/browser"
-          "custom/terminal"
-          "custom/editor"
-          "custom/explorer"
-          "custom/monitor"
           "hyprland/window"
         ];
         modules-right = [
@@ -72,7 +67,9 @@
           max-length = 20;
           separate-outputs = false;
           rewrite = {
-            "" = "Desktop";
+            "" = " Desktop";
+            "(.*) - Visual Studio Code" = "󰨞 Visual Studio Code";
+            "(.*) — Mozilla Firefox" = "󰈹 Mozilla Firefox";
           };
         };
 
@@ -147,36 +144,6 @@
           tooltip-format = "Open the application launcher";
         };
 
-        "custom/browser" = {
-          format = "";
-          on-click = lib.getExe pkgs.firefox;
-          tooltip-format = "Open the web browser";
-        };
-
-        "custom/terminal" = {
-          format = "";
-          on-click = lib.getExe pkgs.kitty;
-          tooltip-format = "Open the terminal";
-        };
-
-        "custom/editor" = {
-          format = "";
-          on-click = lib.getExe pkgs.vscode;
-          tooltip-format = "Open the code editor";
-        };
-
-        "custom/explorer" = {
-          format = "";
-          on-click = lib.getExe pkgs.xfce.thunar;
-          tooltip-format = "Open the file explorer";
-        };
-
-        "custom/monitor" = {
-          format = "";
-          on-click = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
-          tooltip-format = "Open the system monitor";
-        };
-
         "custom/swaync" = {
           tooltip = false;
           format = "{icon} {}";
@@ -243,11 +210,6 @@
       #tray,
       #custom-wlogout,
       #custom-rofi,
-      #custom-browser,
-      #custom-terminal,
-      #custom-editor,
-      #custom-explorer,
-      #custom-monitor,
       #custom-swaync,
       #power-profiles-daemon,
       #window {
@@ -329,7 +291,6 @@
           border-color: #${config.lib.stylix.colors.base0B};
       }
 
-      /* Icon-specific color styling */
       #battery {
           color: #${config.lib.stylix.colors.base0B}; /* Green */
       }
@@ -366,22 +327,6 @@
           color: #${config.lib.stylix.colors.base0A}; /* Amber */
       }
 
-      #custom-browser {
-          color: #${config.lib.stylix.colors.base0B}; /* Green */
-      }
-
-      #custom-terminal {
-          color: #${config.lib.stylix.colors.base0D}; /* Blue */
-      }
-
-      #custom-editor {
-          color: #${config.lib.stylix.colors.base0F}; /* Brown */
-      }
-
-      #custom-explorer {
-          color: #${config.lib.stylix.colors.base08}; /* Red */
-      }
-
       #custom-swaync {
           color: #${config.lib.stylix.colors.base0E}; /* Magenta */
       }
@@ -390,11 +335,6 @@
           color: #${config.lib.stylix.colors.base09}; /* Yellow */
       }
 
-      #custom-monitor {
-          color: #${config.lib.stylix.colors.base0C}; /* Cyan */
-      }
-
-      /* Add blinking effect to urgent icons */
       @keyframes blink {
           from { opacity: 0.8; }
           to { opacity: 1.0; }
