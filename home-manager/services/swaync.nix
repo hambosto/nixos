@@ -54,7 +54,7 @@
         backlight = {
           label = "󰃟";
           subsystem = "backlight";
-          device = "amdgpu_bl1";
+          device = "amdgpu_bl0";
         };
         buttons-grid = {
           actions = [
