@@ -33,11 +33,10 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{name}";
+          format = "{icon}";
           format-icons = {
-            default = " ";
-            active = " ";
-            urgent = " ";
+            active = "󰮯";
+            default = "󰊠";
           };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -224,7 +223,7 @@
           background-color: #${config.lib.stylix.colors.base00};
           border: 2px solid #${config.lib.stylix.colors.base0D};
           border-radius: 10px;
-          padding: 4px 12px;
+          padding: 4px 10px; /* padding: 4px 12px; */
           margin: 0 4px;
           color: #${config.lib.stylix.colors.base05};
       }
@@ -242,9 +241,9 @@
       #workspaces button {
           background-color: transparent;
           color: #${config.lib.stylix.colors.base0D};
-          padding: 4px 8px;
+          padding: 4px 6px;
           margin: 0 3px;
-          border-radius: 30px;
+          border-radius: 10px;
           transition: background 0.3s ease, box-shadow 0.3s ease;
       }
 
