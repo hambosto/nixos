@@ -1,8 +1,13 @@
 {
+  pkgs,
+  ...
+}:
+{
   programs.neovim = {
-    enable = false;
+    enable = true;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+    extraPackages = with pkgs; [ unzip ];
   };
 }
