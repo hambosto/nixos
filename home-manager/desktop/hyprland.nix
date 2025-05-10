@@ -181,7 +181,7 @@
 
       bind = [
         # Applications
-        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty}"
+        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
         "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
         "SUPER, B, exec, ${lib.getExe pkgs.firefox}"

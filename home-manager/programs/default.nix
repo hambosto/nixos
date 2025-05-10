@@ -38,7 +38,6 @@
     ./yazi.nix
     ./zathura.nix
     ./zed-editor.nix
-    ./zen-browser.nix
     ./zoxide.nix
   ];
 }

@@ -76,7 +76,7 @@
             "(.*).pdf" = " PDF Viewer";
             "yazi" = " Yazi";
             "Yazi:(.*)" = " Yazi";
-            "~(.*)" = " Terminal";
+            "Terminal" = " Terminal";
           };
         };
 
