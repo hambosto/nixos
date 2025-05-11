@@ -59,19 +59,11 @@
         buttons-grid = {
           actions = [
             {
-              label = "";
-              command = lib.getExe pkgs.hyprlock;
-            }
-            {
-              label = "";
-              command = lib.getExe pkgs.wlogout;
-            }
-            {
               label = "";
               command = lib.getExe pkgs.firefox;
             }
             {
-              label = "";
+              label = "";
               command = lib.getExe pkgs.kitty;
             }
             {
@@ -85,6 +77,14 @@
             {
               label = "";
               command = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.hyprlock;
+            }
+            {
+              label = "";
+              command = lib.getExe pkgs.wlogout;
             }
           ];
         };
