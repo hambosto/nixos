@@ -67,16 +67,15 @@
           separate-outputs = false;
           rewrite = {
             "" = " Desktop";
-            "(.*) - Visual Studio Code" = "󰨞 Visual Studio Code";
-            "(.*) — Mozilla Firefox" = "󰈹 Mozilla Firefox";
-            "(.*) - Thunar" = " Thunar";
-            "(.*) - mpv" = " mpv";
-            "imv - (.*)" = " imv";
-            "hx (.*)" = " Helix";
-            "(.*).pdf" = " PDF Viewer";
-            "yazi" = " Yazi";
-            "Yazi:(.*)" = " Yazi";
-            "Terminal" = " Terminal";
+            ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
+            ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
+            ".*Thunar.*" = " File Manager";
+            ".*mpv.*" = " Video Player";
+            ".*imv.*" = " Image Viewer";
+            ".*\.pdf" = " PDF Viewer";
+            ".*yazi.*" = " Yazi";
+            ".*Terminal.*" = " Terminal";
+            ".*btop.*" = " Resource Monitor";
           };
         };
 
