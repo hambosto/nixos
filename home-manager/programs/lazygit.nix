@@ -1,6 +1,6 @@
 {
   programs.lazygit = {
-    enable = false;
+    enable = true;
     settings = {
       showListFooter = false;
       showRandomTip = false;
