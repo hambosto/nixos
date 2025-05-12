@@ -33,22 +33,7 @@
     #   sha256 = "sha256-BRgwIUqrQaut9hb94gIgtNtp9SQYFbf4lQhtQXYmahw=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/SwayKh/Wallpapers/main/Images/cat_lofi_cafe.png";
-    #   sha256 = "sha256-yUW052i9IrjKnv7/7rpckJJUKbvlT/WzaZl1Fw9fuqI=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://www.kali.org/wallpapers/images/2023/kali-red-sticker.jpg";
-    #   sha256 = "sha256-FnTCbNGeo0JFqa58rHwxyFszGQLzFPEWu8vQ8CSZ5yU=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/Immelancholy/NixDots/refs/heads/main/nixos/home/backgrounds/Evil_Miku.png";
-    #   sha256 = "sha256-qP4/K8/85fHpEYdK5XtyAabmhBpy2n0XlnA17wSw0SE=";
-    # };
-
-    image = ../../assets/changi-airport.png;
+    image = ../../assets/retrowave.jpg;
 
     polarity = "dark";
 
