@@ -118,7 +118,7 @@
 
         pulseaudio = {
           format = "{icon} {volume}%";
-          format-muted = "󰝟 {format_source}";
+          format-muted = "󰝟 {volume}%";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
@@ -173,7 +173,6 @@
 
         battery = {
           states = {
-            warning = 30;
             critical = 20;
           };
           format = "{icon} {capacity}%";
@@ -263,7 +262,6 @@
           animation: blink 1s infinite alternate;
       }
 
-      #battery.warning:not(.charging),
       #battery.critical:not(.charging),
       #pulseaudio.muted,
       #network.disconnected {
