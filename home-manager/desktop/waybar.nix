@@ -173,7 +173,8 @@
 
         battery = {
           states = {
-            warning = 30;
+            # good = 95;
+            # warning = 30;
             critical = 20;
           };
           format = "{icon} {capacity}%";
@@ -263,10 +264,7 @@
           animation: blink 1s infinite alternate;
       }
 
-      #battery.warning:not(.charging),
-      #battery.critical:not(.charging),
-      #pulseaudio.muted,
-      #network.disconnected {
+      #battery.critical:not(.charging) {
           background-color: #${config.lib.stylix.colors.base08};
           color: #${config.lib.stylix.colors.base00};
           border-color: #${config.lib.stylix.colors.base08};
