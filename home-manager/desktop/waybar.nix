@@ -118,7 +118,7 @@
 
         pulseaudio = {
           format = "{icon} {volume}%";
-          format-muted = "󰝟 {format_source}";
+          format-muted = "󰝟 {volume}%";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
