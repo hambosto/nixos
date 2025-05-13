@@ -73,6 +73,7 @@
             ".*mpv.*" = " Video Player";
             ".*imv.*" = " Image Viewer";
             ".*\.pdf" = " PDF Viewer";
+            ".*Nvim.*" = " Neovim";
             ".*yazi.*" = " Yazi";
             ".*Terminal.*" = " Terminal";
             ".*btop.*" = " Resource Monitor";
@@ -173,8 +174,6 @@
 
         battery = {
           states = {
-            # good = 95;
-            # warning = 30;
             critical = 20;
           };
           format = "{icon} {capacity}%";
@@ -223,7 +222,7 @@
           background-color: #${config.lib.stylix.colors.base00};
           border: 2px solid #${config.lib.stylix.colors.base0D};
           border-radius: 10px;
-          padding: 4px 10px; /* padding: 4px 12px; */
+          padding: 4px 10px;
           margin: 0 4px;
           color: #${config.lib.stylix.colors.base05};
       }
@@ -296,47 +295,47 @@
       }
 
       #battery {
-          color: #${config.lib.stylix.colors.base0B}; /* Green */
+        color: #${config.lib.stylix.colors.base0D}; /* Blue */
       }
 
       #workspaces {
-          color: #${config.lib.stylix.colors.base0C}; /* Cyan */
+        color: #${config.lib.stylix.colors.base08}; /* Red */
       }
 
       #clock {
-          color: #${config.lib.stylix.colors.base0F}; /* Brown */
+        color: #${config.lib.stylix.colors.base0A}; /* Amber */
       }
 
       #network {
-          color: #${config.lib.stylix.colors.base0D}; /* Blue */
+        color: #${config.lib.stylix.colors.base0E}; /* Magenta */
       }
 
       #pulseaudio {
-          color: #${config.lib.stylix.colors.base08}; /* Red */
+        color: #${config.lib.stylix.colors.base0B}; /* Green */
       }
 
       #backlight {
-          color: #${config.lib.stylix.colors.base0E}; /* Magenta */
+        color: #${config.lib.stylix.colors.base0F}; /* Brown */
       }
 
       #tray {
-          color: #${config.lib.stylix.colors.base0F}; /* Brown */
+        color: #${config.lib.stylix.colors.base0C}; /* Cyan */
       }
 
       #custom-wlogout {
-          color: #${config.lib.stylix.colors.base05}; /* Default */
+        color: #${config.lib.stylix.colors.base09}; /* Yellow */
       }
 
       #custom-rofi {
-          color: #${config.lib.stylix.colors.base0A}; /* Amber */
+        color: #${config.lib.stylix.colors.base05}; /* Default */
       }
 
       #custom-swaync {
-          color: #${config.lib.stylix.colors.base0E}; /* Magenta */
+        color: #${config.lib.stylix.colors.base0B}; /* Green */
       }
 
       #power-profiles-daemon {
-          color: #${config.lib.stylix.colors.base09}; /* Yellow */
+        color: #${config.lib.stylix.colors.base0F}; /* Brown */
       }
 
       @keyframes blink {
