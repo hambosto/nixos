@@ -33,7 +33,37 @@
     #   sha256 = "sha256-BRgwIUqrQaut9hb94gIgtNtp9SQYFbf4lQhtQXYmahw=";
     # };
 
-    image = ../../assets/retrowave.jpg;
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/tokyo.png";
+    #   sha256 = "sha256-sI9qTHXXU/kZEvWLXCfFplQat3IiBfY1cdjo7j1Nh64=";
+    # };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/tokyo-skyscraper_dark.png";
+    #   sha256 = "sha256-SdEHTWHSdd66JGoVPYTFZyCVuiPDRCt8Eadq6OjL4s0=";
+    # };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/space-2.png";
+    #   sha256 = "sha256-OYr+ina6iXpXH9g4AyddZEdWImIXceq/P111VQ+VFV8=";
+    # };
+
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/aurora.png";
+      sha256 = "sha256-IJjGUJC/B5U2jkypU29UKHMIVvg/VjCVzCR+evvjPXU=";
+    };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
+    #   sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
+    # };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/paint-loop_art.png";
+    #   sha256 = "sha256-OY+voBy5cyeJxB/Udje3JZfYAn2+x6X0xC7SpfE+lB0=";
+    # };
+
+    # image = ../../assets/retrowave.jpg;
 
     polarity = "dark";
 
