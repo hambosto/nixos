@@ -58,7 +58,7 @@
         };
 
         clock = {
-          format = " {:L%H:%M}";
+          format = "󰥔 {:L%H:%M %Z}";
           tooltip = false;
         };
 
@@ -69,6 +69,7 @@
             "" = " Desktop";
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
             ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
+            ".*Chromium.*" = " Chromium";
             ".*Thunar.*" = " File Manager";
             ".*mpv.*" = " Video Player";
             ".*imv.*" = " Image Viewer";
@@ -97,21 +98,9 @@
         backlight = {
           format = "{icon} {percent}%";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰃜"
+            "󰃛"
+            "󰃚"
           ];
           scroll-step = 1;
           tooltip = false;
@@ -195,7 +184,7 @@
       * {
           border: none;
           font-family: Ubuntu Nerd Font;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: bold;
           min-height: 0;
           margin: 0;
@@ -327,7 +316,7 @@
       }
 
       #custom-rofi {
-        color: #${config.lib.stylix.colors.base05}; /* Default */
+        color: #${config.lib.stylix.colors.base0A}; /* Amber */
       }
 
       #custom-swaync {

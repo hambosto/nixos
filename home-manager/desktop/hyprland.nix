@@ -184,7 +184,7 @@
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
         "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
-        "SUPER, B, exec, ${lib.getExe pkgs.firefox}"
+        "SUPER, B, exec, ${lib.getExe pkgs.chromium}"
         "SUPER, SPACE, exec, rofi-launcher"
         "SUPER, PRINT, exec, screenshot everything"
         "SUPER SHIFT, PRINT, exec, screenshot selection"

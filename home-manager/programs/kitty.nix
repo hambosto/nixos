@@ -21,7 +21,7 @@
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
       font_family = lib.mkForce "FiraCode Nerd Font";
-      font_size = 12;
+      font_size = 11;
       hide_window_decorations = "yes";
       initial_window_height = 500;
       initial_window_width = 950;

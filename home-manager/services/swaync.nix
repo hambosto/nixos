@@ -60,7 +60,7 @@
           actions = [
             {
               label = "";
-              command = lib.getExe pkgs.firefox;
+              command = lib.getExe pkgs.chromium;
             }
             {
               label = "";
@@ -242,7 +242,7 @@
         background: alpha(black, 0)
       }
       .widget-title {
-        color: #${config.lib.stylix.colors.base0B};
+        color: #${config.lib.stylix.colors.base0D};
         background: #${config.lib.stylix.colors.base00};
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
@@ -286,11 +286,11 @@
         margin: 10px 10px 5px 10px;
         border-radius: 10px;
         font-size: large;
-        color: #${config.lib.stylix.colors.base0B};
+        color: #${config.lib.stylix.colors.base0D};
       }
       .widget-dnd>switch {
         border-radius: 10px;
-        background: #${config.lib.stylix.colors.base0B};
+        background: #${config.lib.stylix.colors.base0D};
       }
       .widget-dnd>switch:checked {
         background: #${config.lib.stylix.colors.base08};

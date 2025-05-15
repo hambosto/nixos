@@ -63,12 +63,12 @@
     #   sha256 = "sha256-OY+voBy5cyeJxB/Udje3JZfYAn2+x6X0xC7SpfE+lB0=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
-      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    # };
 
-    # image = ../../assets/retrowave.jpg;
+    image = ../../assets/changi-airport.png;
 
     polarity = "dark";
 
@@ -107,9 +107,5 @@
       terminal = 0.7;
     };
 
-    targets = {
-      chromium.enable = false;
-      fish.enable = false;
-    };
   };
 }

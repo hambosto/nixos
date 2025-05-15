@@ -1,6 +1,5 @@
 {
   pkgs,
-  username,
   ...
 }:
 {
@@ -36,11 +35,6 @@
       neovim.enable = false;
       vencord.enable = false;
       swaync.enable = false;
-      firefox = {
-        enable = true;
-        profileNames = [ username ];
-        firefoxGnomeTheme.enable = true;
-      };
       cava.rainbow.enable = true;
     };
   };
