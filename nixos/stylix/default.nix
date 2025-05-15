@@ -48,10 +48,10 @@
     #   sha256 = "sha256-OYr+ina6iXpXH9g4AyddZEdWImIXceq/P111VQ+VFV8=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/aurora.png";
-      sha256 = "sha256-IJjGUJC/B5U2jkypU29UKHMIVvg/VjCVzCR+evvjPXU=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/aurora.png";
+    #   sha256 = "sha256-IJjGUJC/B5U2jkypU29UKHMIVvg/VjCVzCR+evvjPXU=";
+    # };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
@@ -62,6 +62,11 @@
     #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/paint-loop_art.png";
     #   sha256 = "sha256-OY+voBy5cyeJxB/Udje3JZfYAn2+x6X0xC7SpfE+lB0=";
     # };
+
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    };
 
     # image = ../../assets/retrowave.jpg;
 
