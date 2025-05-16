@@ -14,8 +14,8 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    go-encryption = {
-      url = "github:hambosto/go-encryption";
+    hexwarden = {
+      url = "github:hambosto/hexwarden";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprpanel = {
