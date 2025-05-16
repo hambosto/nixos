@@ -370,11 +370,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747379636,
-        "narHash": "sha256-rimDbt689ROQXUjX9+0ZqKGFqKP2LWVcLIJ6chZ/SvA=",
+        "lastModified": 1747380972,
+        "narHash": "sha256-aykULcQqa/HKQYbiDXwEEHJaHxb2NkIs8h9GujnvluY=",
         "owner": "hambosto",
         "repo": "hexwarden",
-        "rev": "3052b537aaaa586cee5ad1d3b98a36d563751642",
+        "rev": "df59279916e3e46767cc20b49923b7253b415ff2",
         "type": "github"
       },
       "original": {

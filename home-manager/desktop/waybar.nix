@@ -70,9 +70,10 @@
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
             ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
             ".*Chromium.*" = " Chromium";
-            ".*Thunar.*" = " File Manager";
-            ".*mpv.*" = " Video Player";
-            ".*imv.*" = " Image Viewer";
+            ".*Thunar.*" = " Thunar";
+            ".*mpv.*" = " MPV";
+            ".*imv.*" = " IMV";
+            ".*Spotify.*" = " Spotify";
             ".*\.pdf" = " PDF Viewer";
             ".*Nvim.*" = " Neovim";
             ".*yazi.*" = " Yazi";
@@ -91,8 +92,9 @@
         };
 
         tray = {
-          icon-size = 21;
+          icon-size = 18;
           spacing = 10;
+          show-passive-items = true;
         };
 
         backlight = {
@@ -266,7 +268,7 @@
       #tray menu,
       tooltip {
           background-color: #${config.lib.stylix.colors.base00};
-          border-radius: 13px;
+          border-radius: 10px;
           border: 2px solid #${config.lib.stylix.colors.base0D};
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
       }
