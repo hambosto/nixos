@@ -8,6 +8,10 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
-    extraPackages = with pkgs; [ unzip ];
+    extraPackages = with pkgs; [
+      unzip
+      wl-clipboard
+      ripgrep
+    ];
   };
 }
