@@ -120,11 +120,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = [
-              ""
-              ""
-              ""
-            ];
+            default = " ";
           };
           on-click = lib.getExe pkgs.pavucontrol;
           tooltip = false;
