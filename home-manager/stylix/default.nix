@@ -11,18 +11,11 @@
     #   light = "Adwaita";
     # };
 
-    # iconTheme = {
-    #   enable = true;
-    #   package = pkgs.papirus-icon-theme;
-    #   dark = "Papirus";
-    #   light = "Papirus";
-    # };
-
     iconTheme = {
       enable = true;
-      package = pkgs.whitesur-icon-theme;
-      dark = "WhiteSur";
-      light = "WhiteSur";
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus";
+      light = "Papirus";
     };
 
     targets = {

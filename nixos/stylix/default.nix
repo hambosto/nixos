@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
 
     # base16Scheme = {
     #   base00 = "0a0b1a"; # Default Background - Deep Space Black
@@ -68,7 +68,7 @@
     #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
     # };
 
-    image = ../../assets/changi-airport.png;
+    image = ../../assets/abstract-purple.png;
 
     polarity = "dark";
 
