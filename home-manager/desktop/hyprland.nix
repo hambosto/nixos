@@ -12,7 +12,6 @@
       enableXdgAutostart = true;
       variables = [ "--all" ];
     };
-    package = pkgs.hyprland;
 
     settings = {
 
@@ -43,8 +42,8 @@
       ];
 
       general = {
-        gaps_in = 1;
-        gaps_out = 1;
+        gaps_in = 10;
+        gaps_out = 14;
         border_size = 3;
         resize_on_border = true;
         layout = "dwindle";

@@ -290,7 +290,7 @@
       }
 
       #clock {
-        color: #${config.lib.stylix.colors.base0A}; /* Amber */
+        color: #${config.lib.stylix.colors.base0B}; /* Green */
       }
 
       #network {
@@ -318,7 +318,7 @@
       }
 
       #custom-swaync {
-        color: #${config.lib.stylix.colors.base0B}; /* Green */
+        color: #${config.lib.stylix.colors.base08}; /* Red */
       }
 
       #power-profiles-daemon {
