@@ -25,7 +25,6 @@
           "power-profiles-daemon"
           "network"
           "pulseaudio"
-          "backlight"
           "battery"
           "clock"
           "custom/swaync"
@@ -95,17 +94,6 @@
           icon-size = 18;
           spacing = 10;
           show-passive-items = true;
-        };
-
-        backlight = {
-          format = "{icon} {percent}%";
-          format-icons = [
-            "󰃜"
-            "󰃛"
-            "󰃚"
-          ];
-          scroll-step = 1;
-          tooltip = false;
         };
 
         pulseaudio = {
@@ -197,7 +185,6 @@
       #workspaces,
       #clock,
       #battery,
-      #backlight,
       #network,
       #pulseaudio,
       #tray,
@@ -290,7 +277,7 @@
       }
 
       #clock {
-        color: #${config.lib.stylix.colors.base0A}; /* Amber */
+        color: #${config.lib.stylix.colors.base0F}; /* Brown */
       }
 
       #network {
@@ -299,10 +286,6 @@
 
       #pulseaudio {
         color: #${config.lib.stylix.colors.base0B}; /* Green */
-      }
-
-      #backlight {
-        color: #${config.lib.stylix.colors.base0F}; /* Brown */
       }
 
       #tray {
