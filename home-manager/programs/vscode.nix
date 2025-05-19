@@ -21,8 +21,8 @@
         "editor.autoClosingBrackets" = "always";
         "editor.semanticHighlighting.enabled" = true;
 
-        "workbench.colorTheme" = "Tokyo Night";
-        "workbench.iconTheme" = "symbols";
+        "workbench.colorTheme" = "Vira Ocean";
+        "workbench.iconTheme" = "vira-icons-palenight";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -86,8 +86,7 @@
         golang.go
         jnoortheen.nix-ide
         supermaven.supermaven
-        miguelsolorio.symbols
-        enkia.tokyo-night
+        vira.vsc-vira-theme
         # oven.bun-vscode
         # ziglang.vscode-zig
         # rust-lang.rust-analyzer

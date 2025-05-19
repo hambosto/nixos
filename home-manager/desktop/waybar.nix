@@ -290,7 +290,7 @@
       }
 
       #clock {
-        color: #${config.lib.stylix.colors.base0B}; /* Green */
+        color: #${config.lib.stylix.colors.base0C}; /* Cyan */
       }
 
       #network {

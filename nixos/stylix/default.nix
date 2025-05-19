@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/synth-midnight-dark.yaml";
 
     # base16Scheme = {
     #   base00 = "0a0b1a"; # Default Background - Deep Space Black
@@ -63,12 +63,12 @@
     #   sha256 = "sha256-OY+voBy5cyeJxB/Udje3JZfYAn2+x6X0xC7SpfE+lB0=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
-    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
-    # };
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    };
 
-    image = ../../assets/abstract-purple.png;
+    # image = ../../assets/changi-airport.png;
 
     polarity = "dark";
 
