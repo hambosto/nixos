@@ -14,34 +14,34 @@
         keybind = "s";
       }
       {
-        "label" = "reboot";
-        "action" = "systemctl reboot";
-        "text" = "Reboot";
-        "keybind" = "r";
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+        keybind = "r";
       }
       {
-        "label" = "logout";
-        "action" = "hyprctl dispatch exit";
-        "text" = "Exit";
-        "keybind" = "e";
+        label = "logout";
+        action = "hyprctl dispatch exit";
+        text = "Exit";
+        keybind = "e";
       }
       {
-        "label" = "suspend";
-        "action" = "systemctl suspend";
-        "text" = "Suspend";
-        "keybind" = "u";
+        label = "suspend";
+        action = "systemctl suspend";
+        text = "Suspend";
+        keybind = "u";
       }
       {
-        "label" = "lock";
-        "action" = "hyprlock";
-        "text" = "Lock";
-        "keybind" = "l";
+        label = "lock";
+        action = "hyprlock";
+        text = "Lock";
+        keybind = "l";
       }
       {
-        "label" = "hibernate";
-        "action" = "systemctl hibernate";
-        "text" = "Hibernate";
-        "keybind" = "h";
+        label = "hibernate";
+        action = "systemctl hibernate";
+        text = "Hibernate";
+        keybind = "h";
       }
     ];
     style = ''
@@ -93,38 +93,26 @@
       }
 
       #logout {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/logout.png"));
       }
 
       #suspend {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/suspend.png"));
       }
 
       #shutdown {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png"));
       }
 
       #reboot {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/reboot.png"));
       }
 
       #lock {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/lock.png"));
       }
 
       #hibernate {
-      	margin: 10px;
-      	border-radius: 20px;
       	background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png"));
       }
     '';

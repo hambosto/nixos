@@ -42,8 +42,8 @@
       ];
 
       general = {
-        gaps_in = 10;
-        gaps_out = 14;
+        gaps_in = 6;
+        gaps_out = 8;
         border_size = 3;
         resize_on_border = true;
         layout = "dwindle";
@@ -72,26 +72,36 @@
       decoration = {
         active_opacity = 1;
         inactive_opacity = 1;
+        fullscreen_opacity = 1;
         rounding = 15;
 
         shadow = {
           enabled = true;
-          range = 10;
+          range = 30;
           render_power = 3;
-          offset = "12 12";
-          scale = 0.97;
+          # range = 10;
+          # render_power = 3;
+          # offset = "12 12";
+          # scale = 0.97;
         };
 
         blur = {
           enabled = true;
-          size = 16;
-          xray = true;
-          new_optimizations = "on";
-          brightness = 0.8;
-          contrast = 0.9;
-          noise = 0.01;
-          passes = 4;
+          size = 6;
+          passes = 3;
+          popups = false;
           ignore_opacity = true;
+          new_optimizations = true;
+          xray = true;
+
+          # size = 16;
+          # xray = true;
+          # new_optimizations = "on";
+          # brightness = 0.8;
+          # contrast = 0.9;
+          # noise = 0.01;
+          # passes = 4;
+          # ignore_opacity = true;
         };
       };
 
