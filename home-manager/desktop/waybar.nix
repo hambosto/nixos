@@ -86,7 +86,7 @@
           format = "{ifname}";
           format-ethernet = " {ifname}";
           format-wifi = "  {signalStrength}%";
-          format-disconnected = "Disconnected ⚠";
+          format-disconnected = "󰅛 Disconnected";
           tooltip = false;
           on-click = lib.getExe pkgs.iwgtk;
         };
@@ -100,9 +100,21 @@
         backlight = {
           format = "{icon} {percent}%";
           format-icons = [
-            "󰃜"
-            "󰃛"
-            "󰃚"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
           scroll-step = 1;
           tooltip = false;
@@ -133,7 +145,7 @@
         };
 
         "custom/rofi" = {
-          format = "";
+          format = "";
           on-click = "rofi-launcher";
           tooltip-format = "Open the application launcher";
         };
@@ -250,10 +262,11 @@
           animation: blink 1s infinite alternate;
       }
 
+      #network.disconnected,
       #battery.critical:not(.charging) {
-          background-color: #${config.lib.stylix.colors.base08};
+          background-color: #${config.lib.stylix.colors.base0D};
           color: #${config.lib.stylix.colors.base00};
-          border-color: #${config.lib.stylix.colors.base08};
+          border-color: #${config.lib.stylix.colors.base0D};
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
