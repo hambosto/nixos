@@ -11,14 +11,14 @@ let
       cfg = config.programs.gemini-commit;
       gemini-commit-module = pkgs.buildGoModule {
         pname = "geminicommit";
-        version = "0.2.6";
+        version = "0.3.2";
         src = pkgs.fetchFromGitHub {
           owner = "tfkhdyt";
           repo = "geminicommit";
-          rev = "e9cf48e8e0338b17eb38787c4f8dae0ddcc833fe";
-          hash = "sha256-Jrs9X4qcD77W9uP/RvoxWWaMzRBNsH6M7bLsSAbsLlY=";
+          rev = "b58460fc7c7d3a14caf25826350a69757afa0857";
+          hash = "sha256-GOVLuLu7o66BvyGvja3dMfdgS/N83yFhPWsptzgzhws=";
         };
-        vendorHash = "sha256-+eKJLXgKuUHelUjD8MpMa+cRP+clmYK+1olcb/jmabk=";
+        vendorHash = "sha256-IfqlPg+HPcOfjlwwuLi2/R21UD83xQzWyUmzM7JSDEs=";
 
         env.CGO_ENABLED = 0;
 
