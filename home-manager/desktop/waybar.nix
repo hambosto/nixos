@@ -145,7 +145,7 @@
         };
 
         "custom/rofi" = {
-          format = "";
+          format = "󰘳";
           on-click = "rofi-launcher";
           tooltip-format = "Open the application launcher";
         };

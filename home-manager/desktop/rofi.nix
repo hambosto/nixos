@@ -17,7 +17,7 @@
       location = 0;
       disable-history = true;
       hide-scrollbar = true;
-      display-drun = "   Apps ";
+      display-drun = " 󰘳 Apps ";
       sidebar-mode = true;
       border-radius = 10;
     };
