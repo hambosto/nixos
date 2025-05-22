@@ -77,31 +77,18 @@
 
         shadow = {
           enabled = true;
-          range = 30;
-          render_power = 3;
-          # range = 10;
-          # render_power = 3;
-          # offset = "12 12";
-          # scale = 0.97;
+          range = 15;
+          render_power = 2;
+          ignore_window = true;
         };
 
         blur = {
           enabled = true;
-          size = 6;
-          passes = 3;
-          popups = false;
-          ignore_opacity = true;
-          new_optimizations = true;
+          size = 7;
+          vibrancy_darkness = 3.0;
+          passes = 4;
+          vibrancy = 0.1796;
           xray = true;
-
-          # size = 16;
-          # xray = true;
-          # new_optimizations = "on";
-          # brightness = 0.8;
-          # contrast = 0.9;
-          # noise = 0.01;
-          # passes = 4;
-          # ignore_opacity = true;
         };
       };
 
