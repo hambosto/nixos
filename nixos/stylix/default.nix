@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/synth-midnight-dark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
 
     # base16Scheme = {
     #   base00 = "0a0b1a"; # Default Background - Deep Space Black
@@ -42,7 +42,7 @@
       base0A = "ffe75e";
       base0B = "71c189";
       base0C = "4bded1";
-      base0D = "3a89f9";
+      base0D = "2ac3de";
       base0E = "9d79d6";
       base0F = "d36086";
     };
