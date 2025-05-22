@@ -28,6 +28,25 @@
     #   base0F = "ff6e9c"; # Deprecated - Strawberry Pink
     # };
 
+    base16Scheme = {
+      base00 = "1b2330";
+      base01 = "3f4e63";
+      base02 = "596678";
+      base03 = "7d8995";
+      base04 = "9faab6";
+      base05 = "c1c9d1";
+      base06 = "e3e9ee";
+      base07 = "f5f8fb";
+      base08 = "e04e4b";
+      base09 = "f48f39";
+      base0A = "ffe75e";
+      base0B = "71c189";
+      base0C = "4bded1";
+      base0D = "3a89f9";
+      base0E = "9d79d6";
+      base0F = "d36086";
+    };
+
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/light-ring.jpg";
     #   sha256 = "sha256-BRgwIUqrQaut9hb94gIgtNtp9SQYFbf4lQhtQXYmahw=";
@@ -38,35 +57,15 @@
     #   sha256 = "sha256-sI9qTHXXU/kZEvWLXCfFplQat3IiBfY1cdjo7j1Nh64=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/tokyo-skyscraper_dark.png";
-    #   sha256 = "sha256-SdEHTWHSdd66JGoVPYTFZyCVuiPDRCt8Eadq6OjL4s0=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/space-2.png";
-    #   sha256 = "sha256-OYr+ina6iXpXH9g4AyddZEdWImIXceq/P111VQ+VFV8=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/aurora.png";
-    #   sha256 = "sha256-IJjGUJC/B5U2jkypU29UKHMIVvg/VjCVzCR+evvjPXU=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
-    #   sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/paint-loop_art.png";
-    #   sha256 = "sha256-OY+voBy5cyeJxB/Udje3JZfYAn2+x6X0xC7SpfE+lB0=";
-    # };
-
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
-      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
+      sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
     };
+
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    # };
 
     # image = ../../assets/changi-airport.png;
 
