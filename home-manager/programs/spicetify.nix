@@ -9,9 +9,9 @@ in
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
   programs.spicetify = {
-    enable = false;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    enable = true;
+    theme = spicePkgs.themes.bloom;
+    colorScheme = "dark-fluent";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       adblock
@@ -19,6 +19,5 @@ in
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus
     ];
-    windowManagerPatch = true;
   };
 }
