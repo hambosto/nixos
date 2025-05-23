@@ -9,7 +9,7 @@ in
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
   programs.spicetify = {
-    enable = true;
+    enable = false;
     theme = spicePkgs.themes.bloom;
     colorScheme = "dark-fluent";
     enabledExtensions = with spicePkgs.extensions; [
