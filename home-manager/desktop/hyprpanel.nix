@@ -102,7 +102,7 @@ in
       menus.dashboard.powermenu.avatar.image = "${profile_picture}";
       menus.dashboard.powermenu.avatar.name = "${fullname}";
       menus.dashboard.powermenu.confirmation = false;
-      menus.dashboard.shortcuts.left.shortcut1.command = "${lib.getExe pkgs.chromium}";
+      menus.dashboard.shortcuts.left.shortcut1.command = "${lib.getExe pkgs.firefox}";
       menus.dashboard.shortcuts.left.shortcut1.icon = "󰖟";
       menus.dashboard.shortcuts.left.shortcut1.tooltip = "Browser";
       menus.dashboard.shortcuts.left.shortcut2.command = "${lib.getExe pkgs.kitty}";

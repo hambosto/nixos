@@ -1,6 +1,6 @@
 {
   programs.chromium = {
-    enable = true;
+    enable = false;
     # package = pkgs.ungoogled-chromium;
     # commandLineArgs = [
     #   "--ignore-gpu-blocklist"
