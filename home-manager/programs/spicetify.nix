@@ -10,11 +10,12 @@ in
 
   programs.spicetify = {
     enable = false;
-    theme = spicePkgs.themes.bloom;
-    colorScheme = "dark-fluent";
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       adblock
+      fullAppDisplay
     ];
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus

@@ -6,8 +6,8 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "chromium-browser.desktop" ];
-    text = [ "codium.desktop" ];
+    browser = [ "firefox.desktop" ];
+    text = [ "code.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
