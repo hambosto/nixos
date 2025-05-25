@@ -21,8 +21,8 @@
         "editor.autoClosingBrackets" = "always";
         "editor.semanticHighlighting.enabled" = true;
 
-        "workbench.colorTheme" = "Vira Ocean";
-        "workbench.iconTheme" = "vira-icons-palenight";
+        "workbench.colorTheme" = "poimandres";
+        "workbench.iconTheme" = "quill-icons-minimal";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -86,7 +86,8 @@
         golang.go
         jnoortheen.nix-ide
         supermaven.supermaven
-        vira.vsc-vira-theme
+        pmndrs.pmndrs
+        cdonohue.quill-icons
         # oven.bun-vscode
         # ziglang.vscode-zig
         # rust-lang.rust-analyzer
