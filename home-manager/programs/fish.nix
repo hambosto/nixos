@@ -44,7 +44,9 @@
     };
     interactiveShellInit = ''
       set fish_greeting
-      ${lib.getExe pkgs.fastfetch}
+      if [ -z "$NVIM" ]; and [ "$TERM_PROGRAM" != "vscode" ]
+          ${lib.getExe pkgs.fastfetch}
+      end
     '';
   };
 }
