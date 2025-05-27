@@ -8,9 +8,9 @@
     profiles.default = {
       userSettings = {
         "editor.fontSize" = 14;
-        "editor.fontFamily" = "FiraCode Nerd Font";
+        "editor.fontFamily" = "Cascadia Code NF";
         "editor.fontLigatures" = true;
-        "editor.fontWeight" = "500";
+        "editor.fontWeight" = "600";
         "editor.formatOnSave" = true;
         "editor.minimap.enabled" = false;
         "editor.cursorBlinking" = "expand";
@@ -21,8 +21,8 @@
         "editor.autoClosingBrackets" = "always";
         "editor.semanticHighlighting.enabled" = true;
 
-        "workbench.colorTheme" = "poimandres";
-        "workbench.iconTheme" = "quill-icons-minimal";
+        "workbench.colorTheme" = "Tokyo Night";
+        "workbench.iconTheme" = "moxer-icons";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -41,7 +41,7 @@
         "breadcrumbs.enabled" = false;
 
         "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
+        "terminal.integrated.fontFamily" = "Cascadia Code NF";
         "terminal.integrated.minimumContrastRatio" = 1;
 
         "telemetry.telemetryLevel" = "off";
@@ -86,8 +86,8 @@
         golang.go
         jnoortheen.nix-ide
         supermaven.supermaven
-        pmndrs.pmndrs
-        cdonohue.quill-icons
+        equinusocio.moxer-icons
+        enkia.tokyo-night
         # oven.bun-vscode
         # ziglang.vscode-zig
         # rust-lang.rust-analyzer

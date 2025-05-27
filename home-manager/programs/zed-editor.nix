@@ -9,9 +9,9 @@
     userSettings = {
       theme = lib.mkForce "Tokyo Night";
       ui_font_size = lib.mkForce 18;
-      ui_font_family = lib.mkForce "FiraCode Nerd Font";
+      ui_font_family = lib.mkForce "Cascadia Code NF";
       buffer_font_size = lib.mkForce 14;
-      buffer_font_family = lib.mkForce "FiraCode Nerd Font";
+      buffer_font_family = lib.mkForce "Cascadia Code NF";
 
       inlay_hints.enabled = true;
 

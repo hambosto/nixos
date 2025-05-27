@@ -20,7 +20,7 @@
       cursor_trail_start_threshold = 0;
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
-      font_family = lib.mkForce "FiraCode Nerd Font";
+      font_family = lib.mkForce "Cascadia Code NF";
       font_size = 11;
       hide_window_decorations = "yes";
       initial_window_height = 500;
