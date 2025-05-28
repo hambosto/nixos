@@ -5,7 +5,6 @@
 {
   programs.kitty = {
     enable = true;
-
     settings = {
       background_blur = 10;
       background_opacity = lib.mkForce 0.4;
@@ -20,7 +19,7 @@
       cursor_trail_start_threshold = 0;
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
-      font_family = lib.mkForce "Cascadia Code NF";
+      font_family = lib.mkForce "JetBrainsMono Nerd Font";
       font_size = 11;
       hide_window_decorations = "yes";
       initial_window_height = 500;

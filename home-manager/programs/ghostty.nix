@@ -9,7 +9,7 @@
     settings = {
       background-opacity = lib.mkForce 0.4;
       background-blur = true;
-      font-family = lib.mkForce "Cascadia Code NF";
+      font-family = lib.mkForce "JetBrainsMono Nerd Font";
       font-size = lib.mkForce 11;
       window-width = 950;
       window-height = 500;

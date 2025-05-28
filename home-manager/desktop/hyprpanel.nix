@@ -14,9 +14,8 @@ in
 
   programs.hyprpanel = {
     enable = false;
-    hyprland.enable = true;
+    systemd.enable = true;
     overwrite.enable = true;
-    overlay.enable = true;
 
     settings = {
       layout = {

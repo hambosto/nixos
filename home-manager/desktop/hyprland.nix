@@ -77,17 +77,24 @@
 
         shadow = {
           enabled = true;
-          range = 15;
-          render_power = 2;
+          range = 4;
+          render_power = 3;
           ignore_window = true;
         };
 
         blur = {
           enabled = true;
-          size = 7;
-          vibrancy_darkness = 3.0;
-          passes = 4;
-          vibrancy = 0.1796;
+
+          # size = 7;
+          # vibrancy_darkness = 3.0;
+          # passes = 4;
+          # vibrancy = 0.1796;
+          # xray = true;
+
+          size = 8;
+          passes = 3;
+          new_optimizations = true;
+          ignore_opacity = true;
           xray = true;
         };
       };

@@ -8,7 +8,7 @@
     profiles.default = {
       userSettings = {
         "editor.fontSize" = 14;
-        "editor.fontFamily" = "Cascadia Code NF";
+        "editor.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontWeight" = "600";
         "editor.formatOnSave" = true;
@@ -41,7 +41,7 @@
         "breadcrumbs.enabled" = false;
 
         "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "Cascadia Code NF";
+        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
         "terminal.integrated.minimumContrastRatio" = 1;
 
         "telemetry.telemetryLevel" = "off";

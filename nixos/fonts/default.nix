@@ -6,7 +6,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.ubuntu
-      cascadia-code
+      nerd-fonts.jetbrains-mono
     ];
 
     enableDefaultPackages = false;
