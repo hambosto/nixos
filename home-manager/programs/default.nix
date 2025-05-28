@@ -34,7 +34,6 @@
     ./vesktop.nix
     ./spicetify.nix
     ./vscode.nix
-    ./wallpaper-manager.nix
     ./yazi.nix
     ./zathura.nix
     ./zed-editor.nix
