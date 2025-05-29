@@ -1,13 +1,13 @@
-# {
-#   config,
-#   inputs,
-#   lib,
-#   pkgs,
-#   ...
-# }:
-# let
-#   flakeInputs = lib.filterAttrs (_: v: lib.isType "flake" v) inputs;
-# in
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  flakeInputs = lib.filterAttrs (_: v: lib.isType "flake" v) inputs;
+in
 {
   nix = {
     daemonCPUSchedPolicy = "idle";
@@ -19,13 +19,13 @@
       options = "--delete-older-than 7d";
     };
 
-    # package = pkgs.lix;
+    package = pkgs.lix;
 
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
-    # registry = lib.mapAttrs (_: v: { flake = v; }) flakeInputs;
+    registry = lib.mapAttrs (_: v: { flake = v; }) flakeInputs;
 
     # set the path for channels compat
-    # nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
     optimise.automatic = true;
 
@@ -41,11 +41,11 @@
         "flakes"
       ];
 
-      # flake-registry = "/etc/nix/registry.json";
+      flake-registry = "/etc/nix/registry.json";
 
       # for direnv GC roots
-      # keep-derivations = true;
-      # keep-outputs = true;
+      keep-derivations = true;
+      keep-outputs = true;
 
       max-jobs = "auto";
       substituters = [ ];

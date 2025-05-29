@@ -66,10 +66,11 @@
           max-length = 20;
           separate-outputs = false;
           rewrite = {
-            "" = " Desktop";
+            "" = " Desktop";
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
             ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
             ".*Chromium.*" = " Chromium";
+            ".*Brave.*" = "󰖟 Brave";
             ".*Thunar.*" = " Thunar";
             ".*mpv.*" = " MPV";
             ".*imv.*" = " IMV";

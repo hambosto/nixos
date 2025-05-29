@@ -60,7 +60,7 @@
           actions = [
             {
               label = "";
-              command = lib.getExe pkgs.firefox;
+              command = lib.getExe pkgs.chromium;
             }
             {
               label = "";
