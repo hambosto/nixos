@@ -1,11 +1,10 @@
 {
   imports = [
     ./core.nix
+    ./dns-resolver.nix
     ./greetd.nix
     ./pipewire.nix
     ./pulseaudio.nix
-    ./resolved.nix
-    ./xserver.nix
     ./zram.nix
   ];
 }
