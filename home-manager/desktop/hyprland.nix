@@ -176,6 +176,7 @@
           "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
           "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
           "SUPER, B, exec, ${lib.getExe pkgs.brave}"
+          "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
           "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi-wayland} -show drun"
           "SUPER, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save screen"
           "SUPER SHIFT, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save area"

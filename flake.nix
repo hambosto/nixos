@@ -10,10 +10,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hexwarden = {
-      url = "github:hambosto/hexwarden";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";

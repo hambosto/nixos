@@ -10,13 +10,11 @@
     ./fastfetch.nix
     ./fish.nix
     ./fzf.nix
-    ./gemini-commit.nix
     ./ghostty.nix
     ./git.nix
     ./go.nix
     ./gpg.nix
     ./helix.nix
-    ./hexwarden.nix
     ./home-manager.nix
     ./htop.nix
     ./imv.nix
