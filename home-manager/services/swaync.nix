@@ -60,7 +60,7 @@
           actions = [
             {
               label = "";
-              command = lib.getExe pkgs.chromium;
+              command = lib.getExe pkgs.brave;
             }
             {
               label = "";

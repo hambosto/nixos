@@ -1,6 +1,11 @@
 {
+  pkgs,
+  ...
+}:
+{
   programs.brave = {
     enable = true;
+    package = pkgs.brave;
     commandLineArgs = [
       "--ozone-platform=wayland"
       "--ozone-platform-hint=auto"
