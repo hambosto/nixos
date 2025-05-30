@@ -28,24 +28,24 @@
     #   base0F = "ff6e9c"; # Deprecated - Strawberry Pink
     # };
 
-    # base16Scheme = {
-    #   base00 = "1b2330";
-    #   base01 = "3f4e63";
-    #   base02 = "596678";
-    #   base03 = "7d8995";
-    #   base04 = "9faab6";
-    #   base05 = "c1c9d1";
-    #   base06 = "e3e9ee";
-    #   base07 = "f5f8fb";
-    #   base08 = "e04e4b";
-    #   base09 = "f48f39";
-    #   base0A = "ffe75e";
-    #   base0B = "71c189";
-    #   base0C = "4bded1";
-    #   base0D = "2ac3de";
-    #   base0E = "9d79d6";
-    #   base0F = "d36086";
-    # };
+    base16Scheme = {
+      base00 = "1b2330";
+      base01 = "3f4e63";
+      base02 = "596678";
+      base03 = "7d8995";
+      base04 = "9faab6";
+      base05 = "c1c9d1";
+      base06 = "e3e9ee";
+      base07 = "f5f8fb";
+      base08 = "e04e4b";
+      base09 = "f48f39";
+      base0A = "ffe75e";
+      base0B = "71c189";
+      base0C = "4bded1";
+      base0D = "2ac3de";
+      base0E = "9d79d6";
+      base0F = "d36086";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/light-ring.jpg";
@@ -57,10 +57,10 @@
     #   sha256 = "sha256-sI9qTHXXU/kZEvWLXCfFplQat3IiBfY1cdjo7j1Nh64=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
-    #   sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
-    # };
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/lofi-urban_blue.png";
+      sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
@@ -72,7 +72,7 @@
     #   sha256 = "sha256-dX3Xtf/Ma9UCzLfmRxnxLMHNL+IBjT2U06ruPmj5rHw=";
     # };
 
-    image = ../../assets/game-room.png;
+    # image = ../../assets/game-room.png;
 
     polarity = "dark";
 
