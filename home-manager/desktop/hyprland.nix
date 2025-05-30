@@ -176,9 +176,9 @@
           "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
           "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
           "SUPER, B, exec, ${lib.getExe pkgs.brave}"
-          "SUPER, SPACE, exec, rofi-launcher"
-          "SUPER, PRINT, exec, screenshot everything"
-          "SUPER SHIFT, PRINT, exec, screenshot selection"
+          "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi-wayland} -show drun"
+          "SUPER, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save screen"
+          "SUPER SHIFT, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save area"
 
           "SUPER, Q, killactive"
           "SUPER SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"

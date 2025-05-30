@@ -135,7 +135,7 @@
 
         "custom/rofi" = {
           format = "";
-          on-click = "rofi-launcher";
+          on-click = "${lib.getExe pkgs.rofi-wayland} -show drun";
           tooltip-format = "Open the application launcher";
         };
 

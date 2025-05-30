@@ -111,7 +111,7 @@ in
         "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
       menus.dashboard.shortcuts.left.shortcut3.icon = "";
       menus.dashboard.shortcuts.left.shortcut3.tooltip = "File Explorer";
-      menus.dashboard.shortcuts.left.shortcut4.command = "rofi-launcher";
+      menus.dashboard.shortcuts.left.shortcut4.command = "${lib.getExe pkgs.rofi-wayland} -show drun";
       menus.dashboard.shortcuts.left.shortcut4.icon = "";
       menus.dashboard.shortcuts.left.shortcut4.tooltip = "Search Apps";
       menus.dashboard.shortcuts.right.shortcut1.command =

@@ -28,9 +28,6 @@
       neovim.enable = false;
       vencord.enable = false;
       swaync.enable = false;
-      firefox.enable = false;
-      firefox.profileNames = [ "ilham" ];
-      firefox.firefoxGnomeTheme.enable = true;
       cava.rainbow.enable = true;
     };
   };
