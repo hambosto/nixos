@@ -1,6 +1,6 @@
 {
   nixpkgs = {
-    overlays = [ ];
+    overlays = [ (import ../../pkgs) ];
     config = {
       allowUnfree = true;
       allowBroken = true;
