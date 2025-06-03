@@ -1,5 +1,5 @@
 {
-  description = "NixOS system configuration";
+  description = "NixOS systems and tools by hambosto";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix = {
@@ -22,8 +22,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
+    rust-nix = {
+      url = "github:hambosto/rust-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {

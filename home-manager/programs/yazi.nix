@@ -6,8 +6,8 @@ let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
-    rev = "55bf6996ada3df4cbad331ce3be0c1090769fc7c";
-    hash = "sha256-v/C+ZBrF1ghDt1SXpZcDELmHMVAqfr44iWxzUWynyRk=";
+    rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
+    hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
   };
 in
 {
@@ -32,7 +32,7 @@ in
       log = {
         enabled = false;
       };
-      manager = {
+      mgr = {
         show_hidden = true;
         sort_by = "natural";
         sort_dir_first = true;
@@ -41,7 +41,7 @@ in
     };
 
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = "T";
           run = "plugin toggle-pane max-preview";

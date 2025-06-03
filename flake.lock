@@ -310,11 +310,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748925027,
-        "narHash": "sha256-BJ0qRIdvt5aeqm3zg/5if7b5rruG05zrSX3UpLqjDRk=",
+        "lastModified": 1748955489,
+        "narHash": "sha256-OmZXyW2g5qIuo5Te74McwR0TwauCO2sF3/SjGDVuxyg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cb809ec1ff15cf3237c6592af9bbc7e4d983e98c",
+        "rev": "bb846c031be68a96466b683be32704ef6e07b159",
         "type": "github"
       },
       "original": {
@@ -436,14 +436,36 @@
         "hyprpanel": "hyprpanel",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay",
+        "rust-nix": "rust-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
+      }
+    },
+    "rust-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1748956844,
+        "narHash": "sha256-hIFlrKV/7kpeUfYFjz0M0fGzJztWXZcf/Dcv9Z2N3R0=",
+        "owner": "hambosto",
+        "repo": "rust-nix",
+        "rev": "c2a2500aeb23143fffb1518ddaefa0cea4154cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hambosto",
+        "repo": "rust-nix",
+        "type": "github"
       }
     },
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
+          "rust-nix",
           "nixpkgs"
         ]
       },
@@ -506,11 +528,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1748887638,
-        "narHash": "sha256-AExfT8rMb6Ya37Gm3dimm+e4eeLGzya55JS6VWb3nfQ=",
+        "lastModified": 1748956949,
+        "narHash": "sha256-yLvf5ES+NB+TKDBytRPv7b8ubMuPK9nSoHlJUz+5/qo=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "3ca2c4478a1e984d2007c57467c6986bcdcb2629",
+        "rev": "ced2af06228bdc3de98a68cc7baec4ca0dc6f0ed",
         "type": "github"
       },
       "original": {

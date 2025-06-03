@@ -1,7 +1,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "Ilham Putra Husada";
-    userEmail = "hambosto@gmail.com";
+    userName = "hambosto";
+    userEmail = "106536348+hambosto@users.noreply.github.com";
   };
 }

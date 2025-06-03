@@ -25,7 +25,7 @@
     ./nh.nix
     ./obs-studio.nix
     ./oh-my-posh.nix
-    ./rust-lang.nix
+    ./rust-nix.nix
     ./starship.nix
     ./uv.nix
     ./vesktop.nix
