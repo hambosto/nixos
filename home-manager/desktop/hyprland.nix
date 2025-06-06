@@ -170,6 +170,10 @@
         preserve_split = true;
       };
 
+      ecosystem = {
+        no_update_news = true;
+      };
+
       bind =
         [
           "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
