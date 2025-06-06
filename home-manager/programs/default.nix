@@ -33,7 +33,6 @@
     ./vscode.nix
     ./yazi.nix
     ./zathura.nix
-    ./zed-editor.nix
     ./zoxide.nix
   ];
 }

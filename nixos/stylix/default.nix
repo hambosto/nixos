@@ -67,12 +67,12 @@
     #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/szymonwilczek/dotfiles/refs/heads/main/Arch/hollow-knight.jpg";
-      sha256 = "sha256-dX3Xtf/Ma9UCzLfmRxnxLMHNL+IBjT2U06ruPmj5rHw=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/szymonwilczek/dotfiles/refs/heads/main/Arch/hollow-knight.jpg";
+    #   sha256 = "sha256-dX3Xtf/Ma9UCzLfmRxnxLMHNL+IBjT2U06ruPmj5rHw=";
+    # };
 
-    # image = ../../assets/fantasy-swords.png;
+    image = ../../assets/game-room.png;
 
     polarity = "dark";
 

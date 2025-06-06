@@ -20,9 +20,10 @@
         "editor.acceptSuggestionOnEnter" = "on";
         "editor.autoClosingBrackets" = "always";
         "editor.semanticHighlighting.enabled" = true;
+        "editor.stickyScroll.enabled" = false;
 
         "workbench.colorTheme" = "Tokyo Night";
-        "workbench.iconTheme" = "moxer-icons";
+        "workbench.iconTheme" = "symbols";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -42,6 +43,7 @@
 
         "terminal.integrated.fontSize" = 14;
         "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+        "terminal.integrated.fontWeight" = "600";
         "terminal.integrated.minimumContrastRatio" = 1;
 
         "telemetry.telemetryLevel" = "off";
@@ -86,7 +88,7 @@
         golang.go
         jnoortheen.nix-ide
         supermaven.supermaven
-        equinusocio.moxer-icons
+        miguelsolorio.symbols
         enkia.tokyo-night
         # oven.bun-vscode
         # ziglang.vscode-zig
