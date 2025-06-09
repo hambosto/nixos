@@ -72,7 +72,7 @@
     #   sha256 = "sha256-dX3Xtf/Ma9UCzLfmRxnxLMHNL+IBjT2U06ruPmj5rHw=";
     # };
 
-    image = ../../assets/game-room.png;
+    image = ../../assets/abstract-4k.png;
 
     polarity = "dark";
 
