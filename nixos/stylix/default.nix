@@ -62,17 +62,17 @@
     #   sha256 = "sha256-YGBkEkjhiHT05ZCdzw29T8HkNqfv5IIs036F9QGS4SM=";
     # };
 
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
-    #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
-    # };
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/mylinuxforwork/wallpaper/refs/heads/main/marina-bay-sands.png";
+      sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/szymonwilczek/dotfiles/refs/heads/main/Arch/hollow-knight.jpg";
     #   sha256 = "sha256-dX3Xtf/Ma9UCzLfmRxnxLMHNL+IBjT2U06ruPmj5rHw=";
     # };
 
-    image = ../../assets/abstract-4k.png;
+    # image = ../../assets/abstract-4k.png;
 
     polarity = "dark";
 
