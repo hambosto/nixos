@@ -87,7 +87,7 @@
       extensions = with pkgs.vscode-marketplace; [
         golang.go
         jnoortheen.nix-ide
-        supermaven.supermaven
+        # supermaven.supermaven
         miguelsolorio.symbols
         enkia.tokyo-night
         # oven.bun-vscode
