@@ -24,7 +24,6 @@
     ./shell
     ./stylix
     ./system
-    ./systemd
     ./time
     ./users
     ./virtualization
