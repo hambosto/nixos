@@ -188,7 +188,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: "Ubuntu Nerd Font", "Symbols Nerd Font", sans-serif;
+          font-family: Ubuntu Nerd Font;
           font-size: 13px;
           font-weight: 600;
           min-height: 0;
