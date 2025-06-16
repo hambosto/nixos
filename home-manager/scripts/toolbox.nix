@@ -28,7 +28,7 @@ let
       command = "toolbox optimise";
     }
     {
-      icon = "";
+      icon = "";
       name = "Collect Garbage";
       command = "toolbox gc";
     }
@@ -36,6 +36,11 @@ let
       icon = "󰍜";
       name = "Clean Boot Menu";
       command = "toolbox cb";
+    }
+    {
+      icon = "";
+      name = "List Generation";
+      command = "toolbox lg";
     }
   ];
   menuItemsString = builtins.concatStringsSep "\n" (
@@ -73,6 +78,7 @@ let
 
     function garbage_collect() {
       cd ${configDirectory} && sudo nix-collect-garbage -d
+      cd ${configDirectory} && nix-collect-garbage -d
     }
 
     function clean_boot() {
@@ -81,6 +87,10 @@ let
 
     function store_optimise() {
       nix store optimise
+    }
+
+    function list_generation() {
+      sudo nix-env -p /nix/var/nix/profiles/system --list-generations
     }
 
     function loop_mode() {
@@ -115,6 +125,9 @@ let
         ;;
       "optimise")
         store_optimise
+        ;;
+      "lg")
+        list_generation
         ;;
       "loop")
         loop_mode

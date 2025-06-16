@@ -4,113 +4,91 @@
     settings = {
 
       logo = {
-        source = "NixOS";
+        source = ../../assets/nixos_custom_cat.png;
+        type = "kitty-direct";
+        height = 15;
+        width = 30;
       };
 
       display = {
-        separator = "  ";
+        separator = " ";
       };
 
       modules = [
         {
-          type = "command";
-          key = "  󰊠";
-          keyColor = "blue";
-          text = "hyprctl splash";
+          type = "title";
+          key = "user";
+          format = "// {1}";
         }
         {
-          type = "custom";
-          format = "┌──────────────────────────────────────────────────┐";
-        }
-        {
-          type = "chassis";
-          key = "  󰇺";
-          format = "{1} {2} {3}";
+          type = "title";
+          key = "host";
+          format = "// {2}";
         }
         {
           type = "os";
-          key = "  ";
-          format = "{3}";
-          keyColor = "red";
+          key = "os";
+          format = "// {3}";
         }
         {
           type = "kernel";
-          key = "  ";
-          format = "{1} {2}";
-          keyColor = "red";
+          key = "kernel";
+          format = "// {1} {2}";
         }
         {
           type = "packages";
-          key = "  󰏗";
-          keyColor = "green";
+          key = "packages";
+          format = "// {9} (nix-system) - {10} (nix-user)";
         }
         {
           type = "display";
-          key = "  󰍹";
-          format = "{1}x{2} @ {3}Hz [{7}]";
-          keyColor = "green";
+          key = "display";
+          format = "// {1}x{2} @{3}Hz [{7}]";
         }
         {
           type = "terminal";
-          key = "  ";
-          keyColor = "yellow";
+          key = "terminal";
+          format = "// {5} {6}";
         }
         {
           type = "wm";
-          key = "  ";
-          keyColor = "yellow";
-        }
-        {
-          type = "custom";
-          format = "└──────────────────────────────────────────────────┘";
-        }
-        "break"
-        {
-          type = "title";
-          key = "  ";
-          format = "{6}{7}{8}";
-        }
-        {
-          type = "custom";
-          format = "┌──────────────────────────────────────────────────┐";
+          key = "wm";
+          format = "// {2} {5} ({3})";
         }
         {
           type = "cpu";
-          format = "{1} @ {7}";
-          key = "  ";
-          keyColor = "blue";
+          key = "cpu";
+          format = "// {1} ({4}) {7}";
         }
         {
           type = "gpu";
-          format = "{1} {2}";
-          key = "  󰊴";
-          keyColor = "blue";
+          key = "gpu";
+          format = "// {1} {2} ({3})";
         }
         {
           type = "memory";
-          key = "  ";
-          keyColor = "magenta";
+          key = "memory";
+          format = "// {1} / {2} ({3})";
         }
         {
           type = "disk";
-          key = "  ";
-          keyColor = "red";
+          key = "disk";
+          format = "// {1} / {2} ({3})";
+        }
+        {
+          type = "localip";
+          key = "network";
+          format = "// {1} ({4})";
         }
         {
           type = "uptime";
-          key = "  󱫐";
-          keyColor = "red";
-        }
-        {
-          type = "custom";
-          format = "└──────────────────────────────────────────────────┘";
+          key = "uptime";
+          format = "// {1} days, {2} hours, {3} minutes";
         }
         {
           type = "colors";
-          paddingLeft = 2;
           symbol = "circle";
         }
-        "break"
       ];
     };
   };

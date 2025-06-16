@@ -42,8 +42,8 @@
       ];
 
       general = {
-        gaps_in = 6;
-        gaps_out = 8;
+        gaps_in = 4;
+        gaps_out = 6;
         border_size = 3;
         resize_on_border = true;
         layout = "dwindle";
@@ -84,17 +84,11 @@
 
         blur = {
           enabled = true;
-
-          # size = 7;
-          # vibrancy_darkness = 3.0;
-          # passes = 4;
-          # vibrancy = 0.1796;
-          # xray = true;
-
-          size = 8;
+          size = 6;
           passes = 3;
-          new_optimizations = true;
+          popups = false;
           ignore_opacity = true;
+          new_optimizations = true;
           xray = true;
         };
       };

@@ -72,7 +72,7 @@
             }
             {
               label = "";
-              command = lib.getExe pkgs.xfce.thunar;
+              command = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
             }
             {
               label = "";

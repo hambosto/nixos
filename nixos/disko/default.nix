@@ -17,33 +17,53 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = ["umask=0077"];
+                mountOptions = [ "umask=0077" ];
               };
             };
             root = {
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = ["-f"];
+                extraArgs = [ "-f" ];
                 subvolumes = {
                   "/root" = {
                     mountpoint = "/";
-                    mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+                    mountOptions = [
+                      "subvol=root"
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                   "/home" = {
-                    mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                    mountOptions = [
+                      "subvol=home"
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/home";
                   };
                   "/nix" = {
-                    mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                    mountOptions = [
+                      "subvol=nix"
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/nix";
                   };
                   "/var" = {
-                    mountOptions = ["subvol=var" "compress=zstd" "noatime"];
+                    mountOptions = [
+                      "subvol=var"
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/var";
                   };
                   "/tmp" = {
-                    mountOptions = ["subvol=tmp" "compress=zstd" "noatime"];
+                    mountOptions = [
+                      "subvol=tmp"
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/tmp";
                   };
                 };

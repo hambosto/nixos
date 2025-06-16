@@ -28,6 +28,7 @@
       neovim.enable = false;
       vencord.enable = false;
       swaync.enable = false;
+      neovide.enable = false;
       cava.rainbow.enable = true;
     };
   };
