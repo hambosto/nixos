@@ -11,79 +11,91 @@
       };
 
       display = {
-        separator = " ";
+        separator = "  ";
       };
 
       modules = [
         {
-          type = "title";
-          key = "user";
-          format = "// {1}";
-        }
-        {
-          type = "title";
-          key = "host";
-          format = "// {2}";
+          type = "custom";
+          format = "────────────────────────────────────────────────";
         }
         {
           type = "os";
-          key = "os";
-          format = "// {3}";
+          key = " ";
+          keyColor = "blue";
         }
         {
           type = "kernel";
-          key = "kernel";
-          format = "// {1} {2}";
+          key = " ";
+          keyColor = "yellow";
         }
         {
           type = "packages";
-          key = "packages";
-          format = "// {9} (nix-system) - {10} (nix-user)";
+          key = " ";
+          keyColor = "red";
         }
-        {
-          type = "display";
-          key = "display";
-          format = "// {1}x{2} @{3}Hz [{7}]";
-        }
+
         {
           type = "terminal";
-          key = "terminal";
-          format = "// {5} {6}";
+          key = " ";
+          keyColor = "yellow";
         }
         {
           type = "wm";
-          key = "wm";
-          format = "// {2} {5} ({3})";
+          key = " ";
+          keyColor = "blue";
+        }
+        {
+          type = "custom";
+          format = "────────────────────────────────────────────────";
+        }
+        {
+          type = "title";
+          key = " ";
+          keyColor = "magenta";
+        }
+        {
+          type = "custom";
+          format = "────────────────────────────────────────────────";
+        }
+        {
+          type = "host";
+          key = " 󰌢";
+          keyColor = "green";
+        }
+        {
+          type = "display";
+          key = " 󰍹";
+          keyColor = "red";
         }
         {
           type = "cpu";
-          key = "cpu";
-          format = "// {1} ({4}) {7}";
+          key = " ";
+          keyColor = "magenta";
         }
         {
           type = "gpu";
-          key = "gpu";
-          format = "// {1} {2} ({3})";
+          key = " ";
+          keyColor = "blue";
         }
         {
           type = "memory";
-          key = "memory";
-          format = "// {1} / {2} ({3})";
+          key = " ";
+          keyColor = "green";
         }
         {
           type = "disk";
-          key = "disk";
-          format = "// {1} / {2} ({3})";
-        }
-        {
-          type = "localip";
-          key = "network";
-          format = "// {1} ({4})";
+          key = " ";
+          keyColor = "cyan";
         }
         {
           type = "uptime";
-          key = "uptime";
-          format = "// {1} days, {2} hours, {3} minutes";
+          key = " ";
+          keyColor = "cyan";
+        }
+        {
+          type = "custom";
+          format = "────────────────────────────────────────────────";
         }
         {
           type = "colors";
