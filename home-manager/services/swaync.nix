@@ -6,7 +6,7 @@
 }:
 {
   services.swaync = {
-    enable = config.programs.waybar.enable;
+    enable = true;
     settings = {
       positionX = "right";
       positionY = "top";

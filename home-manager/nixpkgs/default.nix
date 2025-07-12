@@ -7,7 +7,6 @@
     overlays = [
       (import ../../pkgs)
       inputs.nix-vscode-extensions.overlays.default
-      inputs.hyprpanel.overlay
     ];
     config = {
       allowBroken = true;

@@ -5,7 +5,7 @@
 }:
 {
   programs.wlogout = {
-    enable = config.programs.waybar.enable;
+    enable = true;
     layout = [
       {
         label = "shutdown";

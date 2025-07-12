@@ -22,6 +22,7 @@
       spicetify.enable = false;
       vscode.enable = false;
       waybar.enable = false;
+      fish.enable = true;
       qt.enable = true;
       gtk.enable = true;
       kitty.enable = true;
