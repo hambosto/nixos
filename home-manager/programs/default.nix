@@ -28,8 +28,7 @@
     ./rust-nix.nix
     ./starship.nix
     ./uv.nix
-    ./vesktop.nix
-    ./spicetify.nix
+    ./vesktop.nix 
     ./vscode.nix
     ./yazi.nix
     ./zathura.nix
