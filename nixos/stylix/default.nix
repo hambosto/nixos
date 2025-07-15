@@ -67,7 +67,7 @@
     #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
     # };
 
-    image = ../../assets/unix.jpg;
+    image = ../../assets/changi-airport.png;
 
     polarity = "dark";
 

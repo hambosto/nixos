@@ -190,7 +190,7 @@
           border-radius: 0;
           font-family: Ubuntu Nerd Font;
           font-size: 13px;
-          font-weight: 600;
+          font-weight: bold;
           min-height: 0;
           margin: 0;
           padding: 0;
@@ -269,7 +269,6 @@
 
       #workspaces button.active {
           color: #${config.lib.stylix.colors.base0D};
-          font-weight: bold;
       }
 
       #workspaces button.urgent {
@@ -281,15 +280,12 @@
       /* Window title */
       #window {
           color: #${config.lib.stylix.colors.base0E};
-          font-weight: 500;
           margin-left: 0px;
       }
 
       /* Clock */
       #clock {
           color: #${config.lib.stylix.colors.base0C};
-          font-weight: bold;
-          font-size: 14px;
           padding: 6px 16px;
       }
 
