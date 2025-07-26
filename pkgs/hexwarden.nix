@@ -9,11 +9,11 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "hambosto";
     repo = "hexwarden";
-    rev = "91ad4025b49520455feb20f4d2d9f2fc751e7355";
-    hash = "sha256-Wf4Y+fu5tgcX4o9SMDQTlVnjLZQqiSJ9Ubi7CFvQcYw=";
+    rev = "a24b18e760479bb0945afc7571b8f618ad434237";
+    hash = "sha256-74b08ujD5tkH0F9ZpqmvFhsHzdS/Be/6kASTyUq3SzU=";
   };
 
-  vendorHash = "sha256-w1rxj2G0ZaWfmtDNlGyCfYg8ZKjVmPbWfKVGALPEMyE=";
+  vendorHash = "sha256-wPafIby3qQU2eprn8VdHH/lAQpm+Ld/f20z4hzyoRPg=";
   env.CGO_ENABLED = 0;
   flags = [ "-trimpath" ];
   ldflags = [
