@@ -9,7 +9,7 @@
     settings = {
       background-opacity = lib.mkForce 0.4;
       background-blur = true;
-      font-family = lib.mkForce "JetBrainsMono Nerd Font";
+      font-family = lib.mkForce "Maple Mono NF";
       font-size = lib.mkForce 11;
       window-width = 950;
       window-height = 500;

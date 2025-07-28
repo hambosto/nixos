@@ -8,9 +8,9 @@
     profiles.default = {
       userSettings = {
         "editor.fontSize" = 14;
-        "editor.fontFamily" = "JetBrainsMono Nerd Font";
+        "editor.fontFamily" = "Maple Mono NF";
         "editor.fontLigatures" = true;
-        "editor.fontWeight" = "600";
+        "editor.fontWeight" = "500";
         "editor.formatOnSave" = true;
         "editor.minimap.enabled" = false;
         "editor.cursorBlinking" = "expand";
@@ -42,7 +42,7 @@
         "breadcrumbs.enabled" = false;
 
         "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+        "terminal.integrated.fontFamily" = "Maple Mono NF";
         "terminal.integrated.fontWeight" = "600";
         "terminal.integrated.minimumContrastRatio" = 1;
 

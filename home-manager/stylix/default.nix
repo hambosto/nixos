@@ -31,7 +31,6 @@
       vencord.enable = false;
       swaync.enable = false;
       neovide.enable = false;
-      hyprpaper.enable = lib.mkForce false;
       cava.rainbow.enable = true;
     };
   };
