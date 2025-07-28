@@ -39,7 +39,7 @@
 
       Service = {
         Type = "oneshot";
-        ExecStart = "${lib.getExe pkgs.swww} img ${config.stylix.image} --transition-type right";
+        ExecStart = "${lib.getExe pkgs.swww} img ${config.stylix.image} --transition-step 100 --transition-fps 60 --transition-type grow";
         Restart = "on-failure";
         RestartSec = 3;
       };
