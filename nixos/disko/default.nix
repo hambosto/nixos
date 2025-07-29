@@ -24,8 +24,7 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted";
-                # Interactive password entry during installation and boot
+                name = "nixos";
                 settings = {
                   allowDiscards = true;
                 };
@@ -34,12 +33,12 @@
                   extraArgs = [ "-f" ];
                   subvolumes = {
                     "/root" = {
-                      mountpoint = "/";
                       mountOptions = [
                         "subvol=root"
                         "compress=zstd"
                         "noatime"
                       ];
+                      mountpoint = "/";
                     };
                     "/home" = {
                       mountOptions = [
