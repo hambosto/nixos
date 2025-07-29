@@ -4,7 +4,7 @@
 }:
 {
   virtualisation.libvirtd = {
-    enable = true;
+    enable = false;
     qemu = {
       runAsRoot = true;
       swtpm.enable = true;
