@@ -20,51 +20,58 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            root = {
+            luks = {
               size = "100%";
               content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ];
-                subvolumes = {
-                  "/root" = {
-                    mountpoint = "/";
-                    mountOptions = [
-                      "subvol=root"
-                      "compress=zstd"
-                      "noatime"
-                    ];
-                  };
-                  "/home" = {
-                    mountOptions = [
-                      "subvol=home"
-                      "compress=zstd"
-                      "noatime"
-                    ];
-                    mountpoint = "/home";
-                  };
-                  "/nix" = {
-                    mountOptions = [
-                      "subvol=nix"
-                      "compress=zstd"
-                      "noatime"
-                    ];
-                    mountpoint = "/nix";
-                  };
-                  "/var" = {
-                    mountOptions = [
-                      "subvol=var"
-                      "compress=zstd"
-                      "noatime"
-                    ];
-                    mountpoint = "/var";
-                  };
-                  "/tmp" = {
-                    mountOptions = [
-                      "subvol=tmp"
-                      "compress=zstd"
-                      "noatime"
-                    ];
-                    mountpoint = "/tmp";
+                type = "luks";
+                name = "nixos";
+                settings = {
+                  allowDiscards = true;
+                };
+                content = {
+                  type = "btrfs";
+                  extraArgs = [ "-f" ];
+                  subvolumes = {
+                    "/root" = {
+                      mountOptions = [
+                        "subvol=root"
+                        "compress=zstd"
+                        "noatime"
+                      ];
+                      mountpoint = "/";
+                    };
+                    "/home" = {
+                      mountOptions = [
+                        "subvol=home"
+                        "compress=zstd"
+                        "noatime"
+                      ];
+                      mountpoint = "/home";
+                    };
+                    "/nix" = {
+                      mountOptions = [
+                        "subvol=nix"
+                        "compress=zstd"
+                        "noatime"
+                      ];
+                      mountpoint = "/nix";
+                    };
+                    "/var" = {
+                      mountOptions = [
+                        "subvol=var"
+                        "compress=zstd"
+                        "noatime"
+                      ];
+                      mountpoint = "/var";
+                    };
+                    "/tmp" = {
+                      mountOptions = [
+                        "subvol=tmp"
+                        "compress=zstd"
+                        "noatime"
+                      ];
+                      mountpoint = "/tmp";
+                    };
                   };
                 };
               };

@@ -3,5 +3,8 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [ stdenv.cc ];
+  environment.systemPackages = with pkgs; [
+    stdenv.cc
+    sbctl
+  ];
 }
