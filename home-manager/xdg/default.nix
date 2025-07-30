@@ -6,12 +6,12 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "brave-browser.desktop" ];
+    browser = [ "chromium-browser.desktop" ];
     text = [ "code.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
-    directory = [ "thunar.desktop" ];
+    directory = [ "yazi.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
     terminal = [ "kitty.desktop" ];
