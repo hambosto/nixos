@@ -6,7 +6,7 @@
   nixpkgs = {
     overlays = [
       (import ../../pkgs)
-      inputs.nix-vscode-extensions.overlays.default
+      inputs.nix4vscode.overlays.default
     ];
     config = {
       allowBroken = true;

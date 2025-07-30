@@ -6,6 +6,8 @@
   programs.vscode = {
     enable = true;
     profiles.default = {
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
       userSettings = {
         "editor.fontSize" = 14;
         "editor.fontFamily" = "Maple Mono NF";
@@ -84,17 +86,18 @@
         # "zig.zls.path" = "${pkgs.zls}/bin/zls";
 
       };
-      extensions = with pkgs.vscode-marketplace; [
-        golang.go
-        jnoortheen.nix-ide
-        # supermaven.supermaven
-        miguelsolorio.symbols
-        enkia.tokyo-night
-        # oven.bun-vscode
-        # ziglang.vscode-zig
-        # rust-lang.rust-analyzer
-        # tamasfe.even-better-toml
-        # fill-labs.dependi
+      extensions = pkgs.nix4vscode.forVscode [
+        "golang.go"
+        "jnoortheen.nix-ide"
+        "miguelsolorio.symbols"
+        "enkia.tokyo-night"
+
+        # "supermaven.supermaven"
+        # "oven.bun-vscode"
+        # "ziglang.vscode-zig"
+        # "rust-lang.rust-analyzer"
+        # "tamasfe.even-better-toml"
+        # "fill-labs.dependi"
       ];
     };
   };
