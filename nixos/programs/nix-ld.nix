@@ -4,7 +4,7 @@
 }:
 {
   programs.nix-ld = {
-    enable = true;
+    enable = false;
     libraries = with pkgs; [ lua-language-server ];
   };
 }

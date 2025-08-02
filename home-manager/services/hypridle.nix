@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -8,26 +9,26 @@
     settings = {
 
       general = {
-        lock_cmd = "${pkgs.hyprlock}/bin/hyprlock";
-        before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "hyprctl dispatch dpms on";
+        lock_cmd = "pidoff ${pkgs.swaylock-effects}/bin/swaylock || ${pkgs.swaylock-effects}/bin/swaylock";
+        before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
+        after_sleep_cmd = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
       };
 
       listener = [
         {
           timeout = 600;
-          on-timeout = "loginctl lock-session";
+          on-timeout = "${pkgs.systemd}/bin/loginctl lock-session";
         }
 
         {
           timeout = 660;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
+          on-timeout = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
+          on-resume = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
         }
 
         {
           timeout = 1800;
-          on-timeout = "systemctl suspend";
+          on-timeout = "${pkgs.systemd}/bin/systemctl suspend";
         }
       ];
     };

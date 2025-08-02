@@ -7,10 +7,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd = {
-      enableXdgAutostart = true;
-      variables = [ "--all" ];
-    };
+    systemd.enable = true;
 
     settings = {
 
@@ -20,22 +17,16 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-
         "QT_QPA_PLATFORM,wayland;xcb"
         "QT_QPA_PLATFORMTHEME,qt6ct"
         "QT_QPA_PLATFORMTHEME,qt5ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-
         "GDK_SCALE,1"
-
         "GDK_BACKEND,wayland,x11,*"
         "CLUTTER_BACKEND,wayland"
-
         "MOZ_ENABLE_WAYLAND,1"
-
         "APPIMAGELAUNCHER_DISABLE,1"
-
         "OZONE_PLATFORM,wayland"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
@@ -85,9 +76,11 @@
 
         blur = {
           enabled = true;
-          size = 3;
+          size = 10;
           passes = 4;
-          vibrancy = 2;
+          ignore_opacity = true;
+          new_optimizations = true;
+          xray = false;
         };
       };
 
@@ -117,14 +110,6 @@
         "float,title:^(Picture-in-Picture)$"
         "pin,title:^(Picture-in-Picture)$"
         "move 69.5% 4%,title:^(Picture-in-Picture)$"
-
-        # "float, class:(org.nickvision.cavalier)"
-        # "pin, class:(org.nickvision.cavalier)"
-        # "size 400 726,class:(org.nickvision.cavalier)"
-        # "move 100%-w-16 66,class:(org.nickvision.cavalier)"
-
-        # "float,class:Wallpaper Manager"
-        # "float,class:About Wallpaper Manager"
 
         "float,class:(.*org.pulseaudio.pavucontrol.*)"
         "size 700 600,class:(.*org.pulseaudio.pavucontrol.*)"
@@ -166,7 +151,7 @@
       bind = [
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
-        "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
+        "SUPER, L, exec, ${lib.getExe pkgs.swaylock-effects}"
         "SUPER, B, exec, ${lib.getExe pkgs.chromium}"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi-wayland} -show drun"

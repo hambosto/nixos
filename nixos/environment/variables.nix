@@ -1,7 +1,7 @@
 {
   environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "firefox";
-    TERMINAL = "kitty";
+    # EDITOR = "hx";
+    # BROWSER = "firefox";
+    # TERMINAL = "kitty";
   };
 }

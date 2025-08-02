@@ -9,37 +9,37 @@
     layout = [
       {
         label = "shutdown";
-        action = "systemctl poweroff";
+        action = "${pkgs.systemd}/bin/systemctl poweroff";
         text = "Shutdown";
         keybind = "s";
       }
       {
         label = "reboot";
-        action = "systemctl reboot";
+        action = "${pkgs.systemd}/bin/systemctl reboot";
         text = "Reboot";
         keybind = "r";
       }
       {
         label = "logout";
-        action = "hyprctl dispatch exit";
+        action = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch exit";
         text = "Exit";
         keybind = "e";
       }
       {
         label = "suspend";
-        action = "systemctl suspend";
+        action = "${pkgs.systemd}/bin/systemctl suspend";
         text = "Suspend";
         keybind = "u";
       }
       {
         label = "lock";
-        action = "hyprlock";
+        action = "${pkgs.swaylock-effects}/bin/swaylock";
         text = "Lock";
         keybind = "l";
       }
       {
         label = "hibernate";
-        action = "systemctl hibernate";
+        action = "${pkgs.systemd}/bin/systemctl hibernate";
         text = "Hibernate";
         keybind = "h";
       }

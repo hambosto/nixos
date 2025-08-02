@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -29,6 +30,15 @@ in
     '';
 
     settings = {
+      opener = {
+        edit = [
+          {
+            run = "${lib.getExe' pkgs.helix "hx"} \"$@\"";
+            block = true;
+            for = "unix";
+          }
+        ];
+      };
       log = {
         enabled = false;
       };
