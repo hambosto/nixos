@@ -1,7 +1,7 @@
 {
   imports = [
-    ./hypridle.nix
     ./polkit-gnome.nix
+    ./swayidle.nix
     ./swaync.nix
   ];
 }

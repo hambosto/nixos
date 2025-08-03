@@ -1,7 +1,3 @@
 {
-  environment.variables = {
-    # EDITOR = "hx";
-    # BROWSER = "firefox";
-    # TERMINAL = "kitty";
-  };
+  environment.variables = { };
 }
