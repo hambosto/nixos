@@ -1,6 +1,7 @@
 {
   programs.go = {
     enable = true;
-    goPath = "go";
+    goPath = ".local/share/go";
+    telemetry.mode = "off";
   };
 }
