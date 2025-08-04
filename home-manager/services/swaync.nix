@@ -80,7 +80,7 @@
             }
             {
               label = "";
-              command = lib.getExe pkgs.hyprlock;
+              command = lib.getExe pkgs.swaylock-effects;
             }
             {
               label = "";

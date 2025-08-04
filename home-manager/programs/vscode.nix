@@ -24,8 +24,8 @@
         "editor.semanticHighlighting.enabled" = true;
         "editor.stickyScroll.enabled" = false;
 
-        "workbench.colorTheme" = "Tokyo Night";
-        "workbench.iconTheme" = "symbols";
+        "workbench.colorTheme" = "Monospace IDX Dark";
+        "workbench.iconTheme" = "monospace-idx-file-icon-theme";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -89,9 +89,10 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "miguelsolorio.symbols"
-        "enkia.tokyo-night"
+        "spacebox.monospace-idx-theme"
 
+        # "miguelsolorio.symbols"
+        # "enkia.tokyo-night"
         # "supermaven.supermaven"
         # "oven.bun-vscode"
         # "ziglang.vscode-zig"
