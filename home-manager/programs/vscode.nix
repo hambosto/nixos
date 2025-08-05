@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -58,13 +59,13 @@
         "go.inlayHints.parameterNames" = true;
         "go.inlayHints.rangeVariableTypes" = true;
         "go.alternateTools" = {
-          "gofumpt" = "${pkgs.gofumpt}/bin/gofumpt";
-          "golangci-lint" = "${pkgs.golangci-lint}/bin/golangci-lint";
-          "gomodifytags" = "${pkgs.gomodifytags}/bin/gomodifytags";
-          "gopls" = "${pkgs.gopls}/bin/gopls";
-          "impl" = "${pkgs.impl}/bin/impl";
-          "staticcheck" = "${pkgs.go-tools}/bin/staticcheck";
-          "delve" = "${pkgs.delve}/bin/dlv";
+          "gofumpt" = "${lib.getExe pkgs.gofumpt}";
+          "golangci-lint" = "${lib.getExe pkgs.golangci-lint}";
+          "gomodifytags" = "${lib.getExe pkgs.gomodifytags}";
+          "gopls" = "${lib.getExe pkgs.gopls}";
+          "impl" = "${lib.getExe pkgs.impl}";
+          "staticcheck" = "${lib.getExe' pkgs.go-tools "staticcheck"}";
+          "delve" = "${lib.getExe pkgs.delve}";
         };
         "go.lintTool" = "golangci-lint";
         "gopls" = {
@@ -77,7 +78,7 @@
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
-              "command" = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
+              "command" = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
             };
           };
         };

@@ -6,6 +6,7 @@
     ./cava.nix
     ./cavalier.nix
     ./chromium.nix
+    ./clock-rs.nix
     ./eza.nix
     ./fastfetch.nix
     ./fish.nix
@@ -28,7 +29,7 @@
     ./rust-nix.nix
     ./starship.nix
     ./uv.nix
-    ./vesktop.nix 
+    ./vesktop.nix
     ./vscode.nix
     ./yazi.nix
     ./zathura.nix
