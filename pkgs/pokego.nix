@@ -5,11 +5,11 @@
 }:
 buildGoModule {
   pname = "pokego";
-  version = "devel";
+  version = "git";
   src = fetchFromGitHub {
     owner = "rubiin";
     repo = "pokego";
-    rev = "v0.3.0";
+    rev = "6b6f67f8b9bfcc86c5d0c1b2b7346ae4816926f7";
     hash = "sha256-cFpEi8wBdCzAl9dputoCwy8LeGyK3UF2vyylft7/1wY=";
   };
 

@@ -50,7 +50,7 @@
     };
 
     settings = {
-      # theme = lib.mkForce "tokyonight";
+      theme = lib.mkForce "tokyonight";
       editor = {
         color-modes = true;
         completion-replace = true;

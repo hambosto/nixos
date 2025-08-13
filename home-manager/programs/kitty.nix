@@ -5,9 +5,9 @@
 {
   programs.kitty = {
     enable = true;
-    settings = {
+    settings = lib.mkForce {
       background_blur = 10;
-      background_opacity = lib.mkForce 0.4;
+      background_opacity = 0.4;
       bold_font = "auto";
       bold_italic_font = "auto";
       confirm_os_window_close = 0;
@@ -19,7 +19,7 @@
       cursor_trail_start_threshold = 0;
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
-      font_family = lib.mkForce "Maple Mono NF";
+      font_family = "Maple Mono NF";
       font_size = 11;
       hide_window_decorations = "yes";
       initial_window_height = 500;
