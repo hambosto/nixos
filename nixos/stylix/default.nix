@@ -67,7 +67,7 @@
     #   sha256 = "sha256-qVsCSAlUB+8GLDmlfSEOZ5/FNoFIPP04BhBCOkQyKkg=";
     # };
 
-    image = ../../assets/nixos_wp_cat_glow.png;
+    image = ../../assets/universe.png;
 
     polarity = "dark";
 
