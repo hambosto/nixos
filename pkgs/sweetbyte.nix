@@ -11,8 +11,8 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "hambosto";
     repo = "sweetbyte";
-    rev = "a2e2761f7aece94da832a66c15f15ad1dc8a6f02";
-    hash = "sha256-y+rwVpLrcMmfpIaM1lzdUKyNxTZYpyIV6c0NqGn0lnc=";
+    rev = "f31ef55f6debc9e27fc3039acb1fc1f3c4ca346f";
+    hash = "sha256-+kHk73iujN9FudnvLZdx5bbydOsyQbtXkkBpvrli3oY=";
   };
 
   vendorHash = "sha256-mVtkLu0ZfQCJ5JGswx1R7gu2WxgwTqB6igOg+BrUBM4=";
