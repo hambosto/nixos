@@ -1,5 +1,7 @@
 {
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  security.pam.services.swaylock = { };
+  imports = [
+    ./pam.nix
+    ./polkit.nix
+    ./rtkit.nix
+  ];
 }
