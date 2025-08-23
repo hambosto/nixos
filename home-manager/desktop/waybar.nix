@@ -89,7 +89,7 @@
           format-wifi = "  {signalStrength}%";
           format-disconnected = "󰅛 Disconnected";
           tooltip = false;
-          on-click = lib.getExe pkgs.iwgtk;
+          on-click = "${lib.getExe pkgs.iwmenu} --launcher rofi";
         };
 
         tray = {
