@@ -24,6 +24,16 @@
         }
         # {
         #   auto-format = true;
+        #   formatter.command = lib.getExe pkgs.black;
+        #   formatter.args = [
+        #     "-"
+        #     "--quiet"
+        #   ];
+        #   language-servers = [ "pyright" ];
+        #   name = "python";
+        # }
+        # {
+        #   auto-format = true;
         #   formatter = {
         #     command = lib.getExe pkgs.zig;
         #     args = [
@@ -44,6 +54,7 @@
       language-server = {
         gopls.command = lib.getExe pkgs.gopls;
         nixd.command = lib.getExe pkgs.nixd;
+        # pyright.command = "${lib.getExe' pkgs.pyright "pyright-langserver"}";
         # zls.command = lib.getExe pkgs.zls;
         # rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
       };
