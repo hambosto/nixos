@@ -40,7 +40,7 @@
 
   boot = {
     bootspec.enable = true;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = lib.mkForce false; # Disable this if using lanzaboote instead.

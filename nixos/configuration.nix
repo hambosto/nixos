@@ -7,7 +7,6 @@
     inputs.disko.nixosModules.disko
     inputs.stylix.nixosModules.stylix
     inputs.lanzaboote.nixosModules.lanzaboote
-    inputs.chaotic.nixosModules.default
     ./boot
     ./disko
     ./docs

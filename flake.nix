@@ -10,10 +10,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,21 +28,24 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-    hostname = "vivobook-m1403qa";
-    username = "ilham";
-    fullname = "Ilham Putra Husada";
-  in {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit system;
-        inherit inputs;
-        inherit username;
-        inherit hostname;
-        inherit fullname;
+  outputs =
+    { nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      hostname = "vivobook-m1403qa";
+      username = "ilham";
+      fullname = "Ilham Putra Husada";
+    in
+    {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system;
+          inherit inputs;
+          inherit username;
+          inherit hostname;
+          inherit fullname;
+        };
+        modules = [ ./nixos/configuration.nix ];
       };
-      modules = [./nixos/configuration.nix];
     };
-  };
 }
