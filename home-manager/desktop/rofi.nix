@@ -23,6 +23,7 @@
       display-window = "";
       drun-display-format = "{name}";
       window-format = "{w} · {c} · {t}";
+      disable-history = true;
     };
     theme =
       let
