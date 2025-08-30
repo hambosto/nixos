@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -32,9 +33,9 @@
       ];
 
       general = {
-        gaps_in = 4;
-        gaps_out = 6;
-        border_size = 3;
+        gaps_in = 6;
+        gaps_out = 8;
+        border_size = 1;
         resize_on_border = true;
         layout = "dwindle";
       };
@@ -66,7 +67,7 @@
         active_opacity = 1;
         inactive_opacity = 1;
         fullscreen_opacity = 1;
-        rounding = 15;
+        rounding = 5;
 
         shadow = {
           enabled = true;
@@ -155,6 +156,8 @@
         "SUPER, B, exec, ${lib.getExe pkgs.chromium}"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi-wayland} -show drun"
+        "SUPER SHIFT, E, exec, ${lib.getExe config.programs.rofi.package} -show emoji"
+        "SUPER SHIFT, C, exec, ${lib.getExe config.programs.rofi.package} -show calc"
         "SUPER, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save screen"
         "SUPER SHIFT, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save area"
 

@@ -101,10 +101,5 @@
         terminal = 14;
       };
     };
-
-    opacity = {
-      terminal = 0.7;
-    };
-
   };
 }

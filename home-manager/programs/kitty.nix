@@ -5,9 +5,13 @@
 {
   programs.kitty = {
     enable = true;
+    font = lib.mkForce {
+      name = "Maple Mono NF";
+      size = 11;
+    };
     settings = lib.mkForce {
       background_blur = 10;
-      background_opacity = 0.4;
+      background_opacity = 1;
       bold_font = "auto";
       bold_italic_font = "auto";
       confirm_os_window_close = 0;
@@ -19,8 +23,6 @@
       cursor_trail_start_threshold = 0;
       dynamic_background_opacity = "yes";
       enable_audio_bell = "no";
-      font_family = "Maple Mono NF";
-      font_size = 11;
       hide_window_decorations = "yes";
       initial_window_height = 500;
       initial_window_width = 950;
@@ -31,7 +33,7 @@
       selection_foreground = "none";
       shell_integration = true;
       wheel_scroll_min_lines = 1;
-      window_padding_width = 10;
+      # window_padding_width = 1;
     };
   };
 }

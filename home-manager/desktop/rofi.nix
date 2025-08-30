@@ -7,171 +7,227 @@
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi-wayland.override {
+      plugins = [
+        pkgs.rofi-emoji-wayland
+        pkgs.rofi-calc
+      ];
+    };
     extraConfig = {
-      modi = "drun";
-      font = "Ubuntu Nerd Font 12";
+      font = "Ubuntu Nerd Font 14";
+      modi = "drun,run,filebrowser,window";
       show-icons = true;
-      disable-history = true;
-      display-drun = " Apps";
+      display-drun = "";
+      display-run = "";
+      display-filebrowser = "";
+      display-window = "";
+      drun-display-format = "{name}";
+      window-format = "{w} · {c} · {t}";
     };
     theme =
       let
         inherit (config.lib.formats.rasi) mkLiteral;
       in
       lib.mkForce {
-        "*" = {
-          wallpaper = mkLiteral ''url("${config.stylix.image}", width)'';
-        };
+
         "window" = {
           transparency = "real";
           location = mkLiteral "center";
           anchor = mkLiteral "center";
           fullscreen = mkLiteral "false";
-          width = mkLiteral "500px";
+          width = mkLiteral "600px";
           x-offset = mkLiteral "0px";
           y-offset = mkLiteral "0px";
-
           enabled = mkLiteral "true";
-          border = mkLiteral "2px solid";
-          border-radius = mkLiteral "20px";
-          border-color = mkLiteral "#${config.lib.stylix.colors.base0E}";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "0px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "5px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           cursor = "default";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base00}E6";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base00}";
         };
+
         "mainbox" = {
           enabled = mkLiteral "true";
-          spacing = mkLiteral "0px";
+          spacing = mkLiteral "10px";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "30px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "0px 0px 0px 0px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           background-color = mkLiteral "transparent";
-          orientation = mkLiteral "vertical";
           children = map mkLiteral [
             "inputbar"
-            "listbox"
-          ];
-        };
-        "listbox" = {
-          spacing = mkLiteral "20px";
-          padding = mkLiteral "20px";
-          background-color = mkLiteral "transparent";
-          orientation = mkLiteral "vertical";
-          children = map mkLiteral [
             "message"
             "listview"
           ];
         };
+
         "inputbar" = {
           enabled = mkLiteral "true";
           spacing = mkLiteral "10px";
-          padding = mkLiteral "50px 30px";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "0px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "0px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           background-color = mkLiteral "transparent";
-          background-image = mkLiteral "@wallpaper";
           text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
-          orientation = mkLiteral "horizontal";
           children = map mkLiteral [
             "textbox-prompt-colon"
             "entry"
-            "dummy"
             "mode-switcher"
           ];
         };
+
+        "prompt" = {
+          enabled = mkLiteral "true";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+        };
+
         "textbox-prompt-colon" = {
           enabled = mkLiteral "true";
+          padding = mkLiteral "5px 0px";
           expand = mkLiteral "false";
           str = "";
-          padding = mkLiteral "12px 15px";
-          border-radius = mkLiteral "100%";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base02}CC";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
         };
+
         "entry" = {
           enabled = mkLiteral "true";
-          expand = mkLiteral "false";
-          width = mkLiteral "250px";
-          padding = mkLiteral "12px 16px";
-          border-radius = mkLiteral "100%";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base02}CC";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+          padding = mkLiteral "5px 0px";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
           cursor = mkLiteral "text";
-          placeholder = "Search";
-          placeholder-color = mkLiteral "#${config.lib.stylix.colors.base03}";
+          placeholder = "Search...";
+          placeholder-color = mkLiteral "inherit";
         };
-        "dummy" = {
-          expand = mkLiteral "true";
-          background-color = mkLiteral "transparent";
-        };
-        "mode-switcher" = {
+
+        "num-filtered-rows" = {
           enabled = mkLiteral "true";
-          spacing = mkLiteral "10px";
-          background-color = mkLiteral "transparent";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+          expand = mkLiteral "false";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
         };
-        "button" = {
-          width = mkLiteral "90px";
-          padding = mkLiteral "12px";
-          border-radius = mkLiteral "100%";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base02}AA";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
-          cursor = mkLiteral "pointer";
+
+        "textbox-num-sep" = {
+          enabled = mkLiteral "true";
+          expand = mkLiteral "false";
+          str = "/";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
         };
-        "button selected" = {
-          background-color = mkLiteral "#${config.lib.stylix.colors.base0E}";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+
+        "num-rows" = {
+          enabled = mkLiteral "true";
+          expand = mkLiteral "false";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
         };
+
+        "case-indicator" = {
+          enabled = mkLiteral "true";
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+        };
+
         "listview" = {
           enabled = mkLiteral "true";
           columns = mkLiteral "1";
-          lines = mkLiteral "6";
-          cycle = mkLiteral "false";
+          lines = mkLiteral "8";
+          cycle = mkLiteral "true";
           dynamic = mkLiteral "true";
-          scrollbar = mkLiteral "false";
+          scrollbar = mkLiteral "true";
           layout = mkLiteral "vertical";
           reverse = mkLiteral "false";
           fixed-height = mkLiteral "true";
           fixed-columns = mkLiteral "true";
-          spacing = mkLiteral "10px";
+          spacing = mkLiteral "5px";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "0px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "0px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           background-color = mkLiteral "transparent";
           text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
           cursor = "default";
         };
+
+        "scrollbar" = {
+          handle-width = mkLiteral "5px";
+          handle-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          border-radius = mkLiteral "10px";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base01}";
+        };
+
         "element" = {
           enabled = mkLiteral "true";
           spacing = mkLiteral "10px";
-          padding = mkLiteral "12px";
-          border-radius = mkLiteral "15px";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base01}80";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "5px 10px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "10px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "transparent";
           text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
           cursor = mkLiteral "pointer";
         };
+
         "element normal.normal" = {
-          background-color = mkLiteral "#${config.lib.stylix.colors.base01}60";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base00}";
           text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
         };
+
         "element normal.urgent" = {
           background-color = mkLiteral "#${config.lib.stylix.colors.base08}";
           text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
         };
+
         "element normal.active" = {
-          background-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base0B}";
           text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
         };
+
         "element selected.normal" = {
-          background-color = mkLiteral "#${config.lib.stylix.colors.base0E}";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
-        };
-        "element selected.urgent" = {
-          background-color = mkLiteral "#${config.lib.stylix.colors.base08}";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base07}";
-        };
-        "element selected.active" = {
           background-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
         };
+
+        "element selected.urgent" = {
+          background-color = mkLiteral "#${config.lib.stylix.colors.base0B}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+        };
+
+        "element selected.active" = {
+          background-color = mkLiteral "#${config.lib.stylix.colors.base08}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+        };
+
+        "element alternate.normal" = {
+          background-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+        };
+
+        "element alternate.urgent" = {
+          background-color = mkLiteral "#${config.lib.stylix.colors.base08}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+        };
+
+        "element alternate.active" = {
+          background-color = mkLiteral "#${config.lib.stylix.colors.base0B}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+        };
+
         "element-icon" = {
           background-color = mkLiteral "transparent";
           text-color = mkLiteral "inherit";
-          size = mkLiteral "48px";
+          size = mkLiteral "24px";
           cursor = mkLiteral "inherit";
         };
+
         "element-text" = {
           background-color = mkLiteral "transparent";
           text-color = mkLiteral "inherit";
@@ -180,23 +236,69 @@
           vertical-align = mkLiteral "0.5";
           horizontal-align = mkLiteral "0.0";
         };
-        "message" = {
+
+        "mode-switcher" = {
+          enabled = mkLiteral "true";
+          spacing = mkLiteral "10px";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "0px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "0px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           background-color = mkLiteral "transparent";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
         };
+
+        "button" = {
+          padding = mkLiteral "5px 10px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "10px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base01}";
+          text-color = mkLiteral "inherit";
+          cursor = mkLiteral "pointer";
+        };
+
+        "button selected" = {
+          background-color = "#${config.lib.stylix.colors.base0D}";
+          text-color = "#${config.lib.stylix.colors.base00}";
+        };
+
+        "message" = {
+          enabled = mkLiteral "true";
+          margin = mkLiteral "0px";
+          padding = mkLiteral "0px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "0px 0px 0px 0px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "transparent";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+        };
+
         "textbox" = {
-          padding = mkLiteral "15px";
-          border-radius = mkLiteral "15px";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base02}CC";
+          padding = mkLiteral "8px 10px";
+          border = mkLiteral "0px solid";
+          border-radius = mkLiteral "10px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base01}";
           text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
           vertical-align = mkLiteral "0.5";
           horizontal-align = mkLiteral "0.0";
+          highlight = mkLiteral "none";
+          placeholder-color = mkLiteral "#${config.lib.stylix.colors.base05}";
+          blink = mkLiteral "true";
+          markup = mkLiteral "true";
         };
+
         "error-message" = {
-          padding = mkLiteral "15px";
-          border-radius = mkLiteral "15px";
-          background-color = mkLiteral "#${config.lib.stylix.colors.base08}CC";
-          text-color = mkLiteral "#${config.lib.stylix.colors.base07}";
+          padding = mkLiteral "10px";
+          border = mkLiteral "2px solid";
+          border-radius = mkLiteral "10px";
+          border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
+          background-color = mkLiteral "#${config.lib.stylix.colors.base00}";
+          text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
         };
+
       };
   };
 }
