@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/nixos_wp_cat_glow.png;
+    image = ../../assets/changi-airport.png;
 
     polarity = "dark";
 

@@ -7,12 +7,7 @@
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland.override {
-      plugins = [
-        pkgs.rofi-emoji-wayland
-        pkgs.rofi-calc
-      ];
-    };
+    package = pkgs.rofi-wayland;
     extraConfig = {
       font = "Ubuntu Nerd Font 14";
       modi = "drun,run,filebrowser,window";

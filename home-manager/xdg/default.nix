@@ -6,7 +6,7 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "chromium-browser.desktop" ];
+    browser = [ "brave-browser.desktop" ];
     text = [ "code.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
