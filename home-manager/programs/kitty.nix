@@ -33,7 +33,6 @@
       selection_foreground = "none";
       shell_integration = true;
       wheel_scroll_min_lines = 1;
-      # window_padding_width = 1;
     };
   };
 }

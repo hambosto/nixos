@@ -35,7 +35,7 @@
       general = {
         gaps_in = 6;
         gaps_out = 8;
-        border_size = 1;
+        border_size = 2;
         resize_on_border = true;
         layout = "dwindle";
       };
@@ -107,6 +107,10 @@
         initial_workspace_tracking = 1;
       };
 
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
       windowrulev2 = [
         "float,title:^(Picture-in-Picture)$"
         "pin,title:^(Picture-in-Picture)$"
@@ -116,16 +120,6 @@
         "size 700 600,class:(.*org.pulseaudio.pavucontrol.*)"
         "center,class:(.*org.pulseaudio.pavucontrol.*)"
         "pin,class:(.*org.pulseaudio.pavucontrol.*)"
-
-        "float,class:(org.twosheds.iwgtk)"
-        "size 700 600,class:(org.twosheds.iwgtk)"
-        "center,class:(org.twosheds.iwgtk)"
-        "pin,class:(org.twosheds.iwgtk)"
-
-        "float,title:^(Wireless network credentials)$"
-        "size 700 600,title:^(Wireless network credentials)$"
-        "center,title:^(Wireless network credentials)$"
-        "pin,title:^(Wireless network credentials)$"
 
       ];
 
