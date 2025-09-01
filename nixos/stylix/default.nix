@@ -19,15 +19,15 @@
 
     fonts = {
       monospace = {
-        package = pkgs.adwaita-fonts;
-        name = "Adwaita Mono";
+        package = pkgs.maple-mono.NF;
+        name = "Maple Mono NF";
       };
 
       serif = config.stylix.fonts.sansSerif;
 
       sansSerif = {
-        package = pkgs.adwaita-fonts;
-        name = "Adwaita Sans";
+        package = pkgs.harmonyos-sans;
+        name = "HarmonyOS Sans";
       };
 
       emoji = {

@@ -83,8 +83,15 @@
         network = {
           format = "{ifname}";
           format-ethernet = " {ifname}";
-          format-wifi = "  {signalStrength}%";
+          format-wifi = "{icon} {signalStrength}%";
           format-disconnected = "󰅛 Disconnected";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
           tooltip = false;
           on-click = "${lib.getExe pkgs.iwmenu} --launcher rofi";
         };
