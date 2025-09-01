@@ -7,10 +7,7 @@
 {
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = true;
-      target = "hyprland-session.target";
-    };
+    systemd.enable = true;
     settings = [
       {
         layer = "top";
@@ -186,17 +183,10 @@
 
     style = ''
       * {
-          border: none;
-          border-radius: 0;
           font-family: Ubuntu Nerd Font;
           font-size: 13px;
           font-weight: bold;
           min-height: 0;
-          margin: 0;
-          padding: 0;
-          box-shadow: none;
-          text-shadow: none;
-          -gtk-icon-shadow: none;
       }
 
       window#waybar {
