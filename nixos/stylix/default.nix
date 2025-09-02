@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/changi-airport.png;
+    image = ../../assets/universe.png;
 
     polarity = "dark";
 

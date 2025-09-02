@@ -66,7 +66,7 @@
         active_opacity = 1;
         inactive_opacity = 1;
         fullscreen_opacity = 1;
-        rounding = 5;
+        rounding = 15;
 
         shadow = {
           enabled = true;
