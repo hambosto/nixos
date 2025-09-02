@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/minimalism.png;
+    image = ../../assets/5748285.jpg;
 
     polarity = "dark";
 
