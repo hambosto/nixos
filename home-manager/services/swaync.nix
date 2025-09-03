@@ -14,9 +14,9 @@
       layer-shell = true;
       layer-shell-cover-screen = true;
       cssPriority = "application";
-      control-center-margin-top = 0;
+      control-center-margin-top = 10;
       control-center-margin-bottom = 0;
-      control-center-margin-right = 0;
+      control-center-margin-right = 10;
       control-center-margin-left = 0;
       notification-2fa-action = true;
       notification-inline-replies = false;
@@ -87,7 +87,7 @@
       }
 
       .notification {
-        border-radius: 12px;
+        border-radius: 5px;
         margin: 6px 12px;
         box-shadow: 0 0 0 1px #${config.lib.stylix.colors.base00},
         0 1px 3px 1px #${config.lib.stylix.colors.base01},
@@ -99,7 +99,7 @@
       .notification-content {
         background: transparent;
         padding: 6px;
-        border-radius: 12px;
+        border-radius: 5px;
       }
 
       .close-button {
@@ -131,6 +131,7 @@
         box-shadow: none;
         background: #${config.lib.stylix.colors.base00};
         border: 1px solid #${config.lib.stylix.colors.base0D};
+
       }
 
       .notification-default-action:hover,
@@ -140,7 +141,7 @@
       }
 
       .notification-default-action {
-        border-radius: 12px;
+        border-radius: 5px;
       }
 
       /* When alternative actions are visible */
@@ -204,7 +205,7 @@
 
       .control-center {
         background-color: #${config.lib.stylix.colors.base00};
-        border-radius: 15px;
+        border-radius: 5px;
         border: 2px solid #${config.lib.stylix.colors.base0D};
       }
 

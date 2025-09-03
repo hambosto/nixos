@@ -38,7 +38,7 @@
           margin = mkLiteral "0px";
           padding = mkLiteral "0px";
           border = mkLiteral "0px solid";
-          border-radius = mkLiteral "15px";
+          border-radius = mkLiteral "5px";
           border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           cursor = "default";
           background-color = mkLiteral "#${config.lib.stylix.colors.base00}";
@@ -50,7 +50,7 @@
           margin = mkLiteral "0px";
           padding = mkLiteral "30px";
           border = mkLiteral "2px solid";
-          border-radius = mkLiteral "15px";
+          border-radius = mkLiteral "5px";
           border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
           background-color = mkLiteral "transparent";
           children = map mkLiteral [
