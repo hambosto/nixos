@@ -7,7 +7,7 @@
 
   programs.rust-nix = {
     enable = false;
-    channel = "nightly";
+    channel = "stable";
     toolchain = [
       "cargo"
       "clippy"
@@ -18,8 +18,6 @@
       "rustfmt"
       "rust-analyzer"
     ];
-    targets = [
-      "x86_64-unknown-linux-gnu"
-    ];
+    targets = [ "x86_64-unknown-linux-gnu" ];
   };
 }
