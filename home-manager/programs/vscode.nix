@@ -83,8 +83,8 @@
           };
         };
 
-        # "zig.path" = "${pkgs.zig}/bin/zig";
-        # "zig.zls.path" = "${pkgs.zls}/bin/zls";
+        # "zig.path" = "${lib.getExe pkgs.zig}";
+        # "zig.zls.path" = "${lib.getExe pkgs.zls}";
 
       };
       extensions = pkgs.nix4vscode.forVscode [
