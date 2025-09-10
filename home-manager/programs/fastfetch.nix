@@ -4,7 +4,7 @@
     settings = {
 
       logo = {
-        source = ../../assets/nixos_custom_cat.png;
+        source = ../../img/nixos_custom_cat.png;
         type = "kitty-direct";
         height = 15;
         width = 30;
