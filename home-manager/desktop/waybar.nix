@@ -215,7 +215,7 @@
       }
 
       window#waybar {
-         background: rgba(17, 17, 27, 0);
+         background: transparent;
          color: #${config.lib.stylix.colors.base0D};
       }
 
@@ -223,9 +223,6 @@
          background: #${config.lib.stylix.colors.base00};
          border-radius: 5px;
          border: 1px solid #${config.lib.stylix.colors.base0D};
-      }
-
-      tooltip label {
          color: #${config.lib.stylix.colors.base0D};
       }
 
@@ -235,19 +232,17 @@
          border: 2px solid #${config.lib.stylix.colors.base0D};
          border-radius: 12px;
          background: #${config.lib.stylix.colors.base00};
-         color: transparent;
       }
 
       #workspaces button {
          margin: 3px 4px;
          padding: 2px 10px;
-         background-color: transparent;
          color: alpha(#${config.lib.stylix.colors.base05}, 0.6);
       }
 
       #workspaces button.active,
       #workspaces button:hover {
-         color: #${config.lib.stylix.colors.base0D}
+         color: #${config.lib.stylix.colors.base0D};
       }
 
       #modules-left,
@@ -267,38 +262,15 @@
          color: #${config.lib.stylix.colors.base05};
       }
 
-      #tray>.passive {
+      #tray > .passive {
          -gtk-icon-effect: dim;
       }
 
-      #tray>.needs-attention {
+      #tray > .needs-attention {
          -gtk-icon-effect: highlight;
       }
 
-      @keyframes urgent {
-         0% {
-            background-color: #${config.lib.stylix.colors.base08};
-         }
-         50% {
-            background-color: alpha(#${config.lib.stylix.colors.base08}, 0.7);
-         }
-         100% {
-            background-color: #${config.lib.stylix.colors.base08};
-         }
-      }
-
-      @keyframes critical {
-         0% {
-            opacity: 1;
-         }
-         50% {
-            opacity: 0.7;
-         }
-         100% {
-            opacity: 1;
-         }
-      }
-
+      /* Default module styling */
       #tray,
       #pulseaudio,
       #network,
@@ -310,9 +282,9 @@
       #custom-swaync,
       #custom-wlogout {
          padding: 3px 6px;
-         background: unset;
       }
 
+      /* Hover effects */
       #pulseaudio:hover,
       #network:hover,
       #battery:hover,
@@ -326,6 +298,7 @@
          background: #${config.lib.stylix.colors.base02};
       }
 
+      /* Special modules with background */
       #custom-rofi,
       #power-profiles-daemon,
       #clock,
@@ -335,7 +308,32 @@
          padding: 0 10px;
          border-radius: 10px;
          background: #${config.lib.stylix.colors.base00};
-         color: #${config.lib.stylix.colors.base0D};
+      }
+
+      /* Individual module colors */
+      #window {
+         margin: 0 20px;
+         border-radius: 10px;
+         color: #${config.lib.stylix.colors.base0E};
+      }
+
+      #clock { color: #${config.lib.stylix.colors.base0C}; }
+      #network { color: #${config.lib.stylix.colors.base0B}; }
+      #pulseaudio { color: #${config.lib.stylix.colors.base0A}; }
+      #backlight { color: #${config.lib.stylix.colors.base09}; }
+      #battery { color: #${config.lib.stylix.colors.base0B}; }
+      #power-profiles-daemon { color: #${config.lib.stylix.colors.base0F}; }
+      #custom-rofi { color: #${config.lib.stylix.colors.base0A}; }
+      #custom-swaync { color: #${config.lib.stylix.colors.base0C}; }
+      #custom-wlogout { color: #${config.lib.stylix.colors.base08}; }
+
+      /* Critical states */
+      #network.disconnected,
+      #battery.critical:not(.charging) {
+         animation: critical 1s ease-in-out infinite alternate;
+         background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
+         border-radius: 15px;
+         color: #${config.lib.stylix.colors.base08};
       }
 
       menu,
@@ -352,60 +350,10 @@
          color: #${config.lib.stylix.colors.base0D};
       }
 
-      #window {
-         margin: 0 20px;
-         border-radius: 10px;
-         color: #${config.lib.stylix.colors.base0E};
-      }
-
-      #clock {
-         color: #${config.lib.stylix.colors.base0C};
-      }
-
-      #network {
-         color: #${config.lib.stylix.colors.base0B};
-      }
-
-      #network.disconnected {
-         animation: critical 1s ease-in-out infinite alternate;
-         background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
-         border-radius: 15px;
-         color: #${config.lib.stylix.colors.base08};
-      }
-
-      #pulseaudio {
-         color: #${config.lib.stylix.colors.base0A};
-      }
-
-      #backlight {
-         color: #${config.lib.stylix.colors.base09};
-      }
-
-      #battery {
-         color: #${config.lib.stylix.colors.base0B};
-      }
-
-      #battery.critical:not(.charging) {
-         animation: critical 1s ease-in-out infinite alternate;
-         background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
-         border-radius: 15px;
-         color: #${config.lib.stylix.colors.base08};
-      }
-
-      #power-profiles-daemon {
-         color: #${config.lib.stylix.colors.base0F};
-      }
-
-      #custom-rofi {
-         color: #${config.lib.stylix.colors.base0A};
-      }
-
-      #custom-swaync {
-         color: #${config.lib.stylix.colors.base0C};
-      }
-
-      #custom-wlogout {
-         color: #${config.lib.stylix.colors.base08};
+      @keyframes critical {
+         0% { opacity: 1; }
+         50% { opacity: 0.7; }
+         100% { opacity: 1; }
       }
     '';
   };
