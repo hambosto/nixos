@@ -26,7 +26,7 @@
     #   base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
     # };
 
-    image = ../../img/universe.png;
+    image = ../../img/exotic-avatar.png;
 
     polarity = "dark";
 

@@ -72,7 +72,7 @@
     style = ''
       * {
         color: #${config.lib.stylix.colors.base05};
-        font-family: 'JetBrainsMono Nerd Font Propo';
+        font-family: Ubuntu Nerd Font;
       }
 
       .notification-row {
