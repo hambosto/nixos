@@ -33,13 +33,9 @@
       }
     ];
     shellAliases = {
-      cd = "z";
-      cat = "bat --paging=never";
-      ls = "eza --icons=always --no-quotes";
-      ll = "eza -al --icons=always";
-      lt = "eza -a --tree --level=1 --icons=always";
-      tree = "eza --icons=always --tree --no-quotes";
-      ssh = "kitty +kitten ssh";
+      cat = "${lib.getExe pkgs.bat}  --paging=never";
+      tree = "${lib.getExe pkgs.eza} --icons=always --tree --no-quotes";
+      ssh = "${lib.getExe pkgs.kitty}  +kitten ssh";
     };
     interactiveShellInit = ''
       set fish_greeting
