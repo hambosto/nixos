@@ -7,7 +7,7 @@
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     extraConfig = {
       font = "Ubuntu Nerd Font 14";
       modi = "drun,run,filebrowser,window";

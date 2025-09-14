@@ -123,14 +123,7 @@
       ];
 
       gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
-        workspace_swipe_distance = 500;
-        workspace_swipe_invert = true;
-        workspace_swipe_min_speed_to_force = 30;
-        workspace_swipe_cancel_ratio = 0.5;
-        workspace_swipe_create_new = true;
-        workspace_swipe_forever = true;
+        gesture = "3, horizontal, workspace";
       };
 
       dwindle = {
@@ -148,7 +141,7 @@
         "SUPER, L, exec, ${lib.getExe pkgs.swaylock-effects}"
         "SUPER, B, exec, ${lib.getExe pkgs.brave}"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
-        "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi-wayland} -show drun"
+        "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
         "SUPER, PRINT, exec, screenshot screen"
         "SUPER SHIFT, PRINT, exec, screenshot area"
 
