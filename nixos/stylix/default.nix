@@ -1,32 +1,56 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }:
+let
+  # Configuration constants
+  wallpaper = ../../assets/cosmic.png;
+
+  # Generate color palette from wallpaper
+  colorPalette =
+    pkgs.runCommand "generate-palette"
+      {
+        buildInputs = [ pkgs.matugen ];
+        meta.description = "Generated color palette from wallpaper";
+      }
+      ''
+        ${lib.getExe pkgs.matugen} \
+          --dry-run \
+          --json strip \
+          image ${wallpaper} > "$out"
+      '';
+
+  # Extract dark theme colors
+  themeColors = (lib.importJSON colorPalette).colors.dark;
+in
 {
   stylix = {
     enable = true;
 
-    # base16Scheme = {
-    #   base00 = "09090B"; # Default Background
-    #   base01 = "1c1e1f"; # Lighter Background (Used for status bars, line number and folding marks)
-    #   base02 = "313244"; # Selection Background
-    #   base03 = "45475a"; # Comments, Invisibles, Line Highlighting
-    #   base04 = "585b70"; # Dark Foreground (Used for status bars)
-    #   base05 = "cdd6f4"; # Default Foreground, Caret, Delimiters, Operators
-    #   base06 = "f5e0dc"; # Light Foreground (Not often used)
-    #   base07 = "b4befe"; # Light Background (Not often used)
-    #   base08 = "f38ba8"; # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-    #   base09 = "fab387"; # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-    #   base0A = "f9e2af"; # Classes, Markup Bold, Search Text Background
-    #   base0B = "a6e3a1"; # Strings, Inherited Class, Markup Code, Diff Inserted
-    #   base0C = "94e2d5"; # Support, Regular Expressions, Escape Characters, Markup Quotes
-    #   base0D = "d0d0d0"; # Functions, Methods, Attribute IDs, Headings, Accent color
-    #   base0E = "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
-    #   base0F = "f2cdcd"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
-    # };
+    # Base16 color scheme mapping
+    # Maps Material You colors to Base16 color roles for consistent theming
+    base16Scheme = {
+      base00 = themeColors.background; # Default background
+      base01 = themeColors.surface_container; # Lighter background
+      base02 = themeColors.surface_container_highest; # Selection background
+      base03 = themeColors.outline; # Comments, line highlighting
+      base04 = themeColors.on_surface_variant; # Dark foreground
+      base05 = themeColors.on_surface; # Default foreground
+      base06 = themeColors.secondary_fixed; # Light foreground
+      base07 = themeColors.on_primary_container; # Light background
+      base08 = themeColors.error; # Variables, deletions
+      base09 = themeColors.tertiary; # Constants, attributes
+      base0A = themeColors.secondary; # Classes, search highlights
+      base0B = themeColors.primary; # Strings, insertions
+      base0C = themeColors.primary_fixed; # Support, regex
+      base0D = themeColors.surface_tint; # Functions, headings
+      base0E = themeColors.tertiary_fixed; # Keywords, storage
+      base0F = themeColors.on_error_container; # Deprecated elements
+    };
 
-    image = ../../img/exotic-avatar.png;
+    image = wallpaper;
 
     polarity = "dark";
 
