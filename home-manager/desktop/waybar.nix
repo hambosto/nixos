@@ -17,11 +17,6 @@
         modules-right = [ "group/modules-right" ];
 
         "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            active = "󰮯";
-            default = "󰊠";
-          };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
           persistent-workspaces = {
@@ -208,74 +203,88 @@
 
     style = ''
       * {
-         all: unset;
-         color: #${config.lib.stylix.colors.base05};
-         font-family: Ubuntu Nerd Font;
-         font-weight: 700;
-         font-size: 13px;
-         transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        all: unset;
+        color: #${config.lib.stylix.colors.base05};
+        font-family: Ubuntu Nerd Font;
+        font-weight: 700;
+        font-size: 13px;
+        transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
 
       window#waybar {
-         background: transparent;
-         color: #${config.lib.stylix.colors.base05};
+        background: transparent;
+        color: #${config.lib.stylix.colors.base05};
       }
 
       tooltip {
-         background: #${config.lib.stylix.colors.base00};
-         border-radius: 5px;
-         border: 1px solid #${config.lib.stylix.colors.base0D};
-         color: #${config.lib.stylix.colors.base05};
+        background: #${config.lib.stylix.colors.base00};
+        border-radius: 5px;
+        border: 1px solid #${config.lib.stylix.colors.base0D};
+        color: #${config.lib.stylix.colors.base05};
       }
 
       #workspaces {
-         margin: 0 1.5px;
-         padding: 0 20px;
-         border: 2px solid #${config.lib.stylix.colors.base0D};
-         border-radius: 12px;
-         background: #${config.lib.stylix.colors.base00};
+        margin: 2px 4px;
+        padding: 1px 20px;
+        border: 2px solid #${config.lib.stylix.colors.base0D};
+        border-radius: 5px;
+        background: #${config.lib.stylix.colors.base00};
       }
 
       #workspaces button {
-         margin: 3px 4px;
-         padding: 2px 10px;
-         color: #${config.lib.stylix.colors.base0D};
-         border-radius: 8px;
+        min-width: 20px;
+        box-shadow: none;
+        margin: 2px 3px;
+        padding: 2px 3px;
+        text-shadow: none;
+        border: none;
+        border-radius: 5px;
+        color: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.1);
+        transition: all 0.2s ease;
       }
 
       #workspaces button:hover {
-         background: #${config.lib.stylix.colors.base02};
-         color: #${config.lib.stylix.colors.base05};
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
+        color: alpha(#${config.lib.stylix.colors.base0D}, 0.8);
+        border: none;
       }
 
       #workspaces button.active {
-         background: #${config.lib.stylix.colors.base0D};
-         color: #${config.lib.stylix.colors.base00};
+        min-width: 28px;
+        background: #${config.lib.stylix.colors.base0D};
+        color: #${config.lib.stylix.colors.base00};
+        transition: all 0.2s ease;
+      }
+
+      #workspaces button.urgent {
+        background: #${config.lib.stylix.colors.base08};
+        color: #${config.lib.stylix.colors.base00};
       }
 
       #modules-left,
       #modules-right {
-         margin: 0 10px;
-         padding: 0 10px;
-         border: 2px solid #${config.lib.stylix.colors.base0D};
-         border-radius: 10px;
-         background: #${config.lib.stylix.colors.base00};
+        margin: 2px 4px;
+        padding: 1px 20px;
+        border: 2px solid #${config.lib.stylix.colors.base0D};
+        border-radius: 5px;
+        background: #${config.lib.stylix.colors.base00};
       }
 
       #modules-right {
-         padding-left: 2px;
+        padding-left: 2px;
       }
 
       #tray {
-         color: #${config.lib.stylix.colors.base05};
+        color: #${config.lib.stylix.colors.base05};
       }
 
       #tray>.passive {
-         -gtk-icon-effect: dim;
+        -gtk-icon-effect: dim;
       }
 
       #tray>.needs-attention {
-         -gtk-icon-effect: highlight;
+        -gtk-icon-effect: highlight;
       }
 
       #tray,
@@ -288,8 +297,8 @@
       #clock,
       #custom-swaync,
       #custom-wlogout {
-         padding: 3px 6px;
-         color: #${config.lib.stylix.colors.base05};
+        padding: 3px 6px;
+        color: #${config.lib.stylix.colors.base05};
       }
 
       #pulseaudio:hover,
@@ -301,8 +310,8 @@
       #clock:hover,
       #custom-swaync:hover,
       #custom-wlogout:hover {
-         border-radius: 15px;
-         background: #${config.lib.stylix.colors.base02};
+        border-radius: 15px;
+        background: #${config.lib.stylix.colors.base02};
       }
 
       #custom-rofi,
@@ -310,58 +319,58 @@
       #clock,
       #custom-swaync,
       #custom-wlogout {
-         margin: 2px 3px;
-         padding: 0 10px;
-         border-radius: 10px;
-         background: #${config.lib.stylix.colors.base00};
+        margin: 2px 3px;
+        padding: 0 10px;
+        border-radius: 10px;
+        background: #${config.lib.stylix.colors.base00};
       }
 
       #window {
-         margin: 0 20px;
-         border-radius: 10px;
-         color: #${config.lib.stylix.colors.base05};
+        margin: 0 20px;
+        border-radius: 10px;
+        color: #${config.lib.stylix.colors.base05};
       }
 
       #battery.charging {
-         background-color: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
-         border-radius: 15px;
-         color: #${config.lib.stylix.colors.base0D};
+        background-color: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
+        border-radius: 15px;
+        color: #${config.lib.stylix.colors.base0D};
       }
 
       #network.disconnected,
       #battery.critical:not(.charging) {
-         animation: critical 1s ease-in-out infinite alternate;
-         background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
-         border-radius: 15px;
-         color: #${config.lib.stylix.colors.base08};
+        animation: critical 1s ease-in-out infinite alternate;
+        background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
+        border-radius: 15px;
+        color: #${config.lib.stylix.colors.base08};
       }
 
       @keyframes critical {
-         0% {
-            opacity: 1;
-         }
+        0% {
+          opacity: 1;
+        }
 
-         50% {
-            opacity: 0.7;
-         }
+        50% {
+          opacity: 0.7;
+        }
 
-         100% {
-            opacity: 1;
-         }
+        100% {
+          opacity: 1;
+        }
       }
 
       menu,
       menuitem {
-         background: #${config.lib.stylix.colors.base00};
-         border: 1px solid #${config.lib.stylix.colors.base0D};
-         border-radius: 8px;
-         color: #${config.lib.stylix.colors.base05};
-         padding: 4px 10px;
+        background: #${config.lib.stylix.colors.base00};
+        border: 1px solid #${config.lib.stylix.colors.base0D};
+        border-radius: 8px;
+        color: #${config.lib.stylix.colors.base05};
+        padding: 4px 10px;
       }
 
       menuitem:hover {
-         background: #${config.lib.stylix.colors.base02};
-         color: #${config.lib.stylix.colors.base05};
+        background: #${config.lib.stylix.colors.base02};
+        color: #${config.lib.stylix.colors.base05};
       }
     '';
   };
