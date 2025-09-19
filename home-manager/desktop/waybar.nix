@@ -204,10 +204,10 @@
     style = ''
       * {
         all: unset;
-        color: #${config.lib.stylix.colors.base05};
         font-family: Ubuntu Nerd Font;
         font-weight: 700;
         font-size: 13px;
+        color: #${config.lib.stylix.colors.base05};
         transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
 
@@ -218,8 +218,8 @@
 
       tooltip {
         background: #${config.lib.stylix.colors.base00};
-        border-radius: 5px;
         border: 1px solid #${config.lib.stylix.colors.base0D};
+        border-radius: 5px;
         color: #${config.lib.stylix.colors.base05};
       }
 
@@ -233,21 +233,18 @@
 
       #workspaces button {
         min-width: 20px;
-        box-shadow: none;
         margin: 2px 3px;
         padding: 2px 3px;
-        text-shadow: none;
         border: none;
         border-radius: 5px;
-        color: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
         background: alpha(#${config.lib.stylix.colors.base0D}, 0.1);
-        transition: all 0.2s ease;
+        color: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
+        transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
 
       #workspaces button:hover {
         background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
         color: alpha(#${config.lib.stylix.colors.base0D}, 0.8);
-        border: none;
       }
 
       #workspaces button.active {
@@ -265,26 +262,23 @@
       #modules-left,
       #modules-right {
         margin: 2px 4px;
-        padding: 1px 20px;
+        padding: 1px 10px;
         border: 2px solid #${config.lib.stylix.colors.base0D};
         border-radius: 5px;
         background: #${config.lib.stylix.colors.base00};
-      }
-
-      #modules-right {
-        padding-left: 2px;
       }
 
       #tray {
         color: #${config.lib.stylix.colors.base05};
       }
 
-      #tray>.passive {
-        -gtk-icon-effect: dim;
-      }
+      #tray>.passive { -gtk-icon-effect: dim; }
+      #tray>.needs-attention { -gtk-icon-effect: highlight; }
 
-      #tray>.needs-attention {
-        -gtk-icon-effect: highlight;
+      #modules-control {
+        margin: 0 10px;
+        border-radius: 15px;
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
       }
 
       #tray,
@@ -332,31 +326,23 @@
       }
 
       #battery.charging {
-        background-color: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
         border-radius: 15px;
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
         color: #${config.lib.stylix.colors.base0D};
       }
 
       #network.disconnected,
       #battery.critical:not(.charging) {
-        animation: critical 1s ease-in-out infinite alternate;
-        background-color: alpha(#${config.lib.stylix.colors.base08}, 0.2);
         border-radius: 15px;
+        background: alpha(#${config.lib.stylix.colors.base08}, 0.2);
         color: #${config.lib.stylix.colors.base08};
+        animation: critical 1s ease-in-out infinite alternate;
       }
 
       @keyframes critical {
-        0% {
-          opacity: 1;
-        }
-
-        50% {
-          opacity: 0.7;
-        }
-
-        100% {
-          opacity: 1;
-        }
+        0% { opacity: 1; }
+        50% { opacity: 0.7; }
+        100% { opacity: 1; }
       }
 
       menu,
