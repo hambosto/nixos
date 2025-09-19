@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/exotic-avatar.png;
+    image = ../../assets/turbo_shadows.png;
 
     polarity = "dark";
 

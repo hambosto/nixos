@@ -17,7 +17,7 @@
       indicator = true;
       indicator-radius = 200;
       indicator-thickness = 20;
-      effect-blur = "20x6";
+      effect-blur = "20x10";
       fade-in = 0.2;
       font = "Ubuntu Nerd Font";
     };

@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -53,10 +54,11 @@
       }
 
       window {
-        background: linear-gradient(
-          rgba(0, 0, 0, 0.75), 
-          rgba(0, 0, 0, 0.75)
-        ), url("${config.stylix.image}");
+        background: url("${
+          pkgs.runCommand "blurred-background.png" { } ''
+            ${lib.getExe' pkgs.imagemagick "magick"} "${config.stylix.image}" -blur 50x30 $out
+          ''
+        }");
         background-size: cover;
         font-size: 16pt;
         color: #${config.lib.stylix.colors.base0D};
