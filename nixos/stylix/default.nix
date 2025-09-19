@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/turbo_shadows.png;
+    image = ../../assets/sakura.jpg;
 
     polarity = "dark";
 
