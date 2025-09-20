@@ -139,7 +139,6 @@
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
         "SUPER, L, exec, ${lib.getExe pkgs.swaylock-effects}"
-        "SUPER, B, exec, ${lib.getExe pkgs.brave}"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
         "SUPER, PRINT, exec, screenshot screen"
