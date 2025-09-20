@@ -12,6 +12,7 @@
       unzip
       wl-clipboard
       ripgrep
+      gnumake
     ];
   };
 }

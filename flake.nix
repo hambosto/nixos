@@ -14,10 +14,6 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-nix = {
-      url = "github:hambosto/rust-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
