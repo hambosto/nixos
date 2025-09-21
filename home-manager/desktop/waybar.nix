@@ -240,13 +240,13 @@
         padding: 2px 3px;
         border: none;
         border-radius: 5px;
-        background: alpha(#${config.lib.stylix.colors.base0D}, 0.1);
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
         color: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
         transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
 
       #workspaces button:hover {
-        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
         color: alpha(#${config.lib.stylix.colors.base0D}, 0.8);
       }
 
@@ -308,7 +308,7 @@
       #custom-swaync:hover,
       #custom-wlogout:hover {
         border-radius: 15px;
-        background: #${config.lib.stylix.colors.base02};
+        background: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
       }
 
       #custom-rofi,

@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -13,18 +14,20 @@
     };
 
     targets = {
+      cava.rainbow.enable = true;
+      fish.enable = true;
+      gtk.enable = true;
+      hyprpaper.enable = lib.mkForce false;
+      kitty.enable = true;
+      neovide.enable = false;
+      neovim.enable = false;
+      qt.enable = true;
       spicetify.enable = false;
+      swaync.enable = false;
+      vencord.enable = false;
       vscode.enable = false;
       waybar.enable = false;
-      fish.enable = true;
-      qt.enable = true;
-      gtk.enable = true;
-      kitty.enable = true;
-      neovim.enable = false;
-      vencord.enable = false;
-      swaync.enable = false;
-      neovide.enable = false;
-      cava.rainbow.enable = true;
     };
+
   };
 }
