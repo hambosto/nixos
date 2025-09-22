@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   ...
 }:
@@ -17,7 +16,7 @@
       cava.rainbow.enable = true;
       fish.enable = true;
       gtk.enable = true;
-      hyprpaper.enable = lib.mkForce false;
+      hyprland.hyprpaper.enable = false;
       kitty.enable = true;
       neovide.enable = false;
       neovim.enable = false;
