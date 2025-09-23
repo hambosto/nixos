@@ -102,6 +102,28 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1758600213,
+        "narHash": "sha256-YP7+UxybMCzHPd5k93pulILnFvSisjgUAGUB/cxWbqU=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "8a0333bf11a0fab386c80fa018617bb050156ec5",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -238,11 +260,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758464306,
-        "narHash": "sha256-i56XRXqjwJRdVYmpzVUQ0ktqBBHqNzQHQMQvFRF/acQ=",
+        "lastModified": 1758593331,
+        "narHash": "sha256-p+904PfmINyekyA/LieX3IYGsiFtExC00v5gSYfJtpM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "939e91e1cff1f99736c5b02529658218ed819a2a",
+        "rev": "9a2dc0efbc569ce9352a6ffb8e8ec8dbc098e142",
         "type": "github"
       },
       "original": {
@@ -284,11 +306,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758506356,
-        "narHash": "sha256-iknNs+oHeJwWUc5CFRBB5qce9O+KL19zA7c7z16jBHk=",
+        "lastModified": 1758592277,
+        "narHash": "sha256-8CMtZGn6ElDS781wgk4mshWPpDtEeoWlsDbS6dk31OI=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "1e7142381cf24de5a4f854d15590bff38cdc64da",
+        "rev": "40e29737a7ec5627c42d237ca29f3b7a64158cf2",
         "type": "github"
       },
       "original": {
@@ -367,6 +389,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix4vscode": "nix4vscode",

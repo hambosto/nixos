@@ -9,6 +9,7 @@
     ./clock-rs.nix
     ./eza.nix
     ./fastfetch.nix
+    ./firefox.nix
     ./fish.nix
     ./fzf.nix
     ./ghostty.nix

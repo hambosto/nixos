@@ -14,6 +14,7 @@
 
     targets = {
       cava.rainbow.enable = true;
+      firefox.enable = false;
       fish.enable = true;
       gtk.enable = true;
       hyprland.hyprpaper.enable = false;
