@@ -41,6 +41,5 @@ buildGoModule {
     homepage = "https://github.com/hambosto/sweetbyte";
     mainProgram = "sweetbyte";
     license = licenses.gpl3;
-    maintainers = with maintainers; [ hambosto ];
   };
 }

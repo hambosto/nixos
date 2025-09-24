@@ -110,7 +110,7 @@
             car = "󰄋";
             default = "󰕾";
           };
-          on-click = lib.getExe pkgs.pavucontrol;
+          on-click = "${lib.getExe pkgs.pwmenu} --launcher rofi";
           tooltip = false;
         };
 
