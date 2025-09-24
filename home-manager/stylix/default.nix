@@ -14,7 +14,11 @@
 
     targets = {
       cava.rainbow.enable = true;
-      firefox.enable = false;
+      firefox = {
+        enable = true;
+        firefoxGnomeTheme.enable = true;
+        profileNames = [ "default" ];
+      };
       fish.enable = true;
       gtk.enable = true;
       hyprland.hyprpaper.enable = true;
