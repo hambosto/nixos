@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -40,23 +39,20 @@
       animations = {
         enabled = true;
         bezier = [
-          "specialWorkSwitch, 0.05, 0.7, 0.1, 1"
-          "emphasizedAccel, 0.3, 0, 0.8, 0.15"
-          "emphasizedDecel, 0.05, 0.7, 0.1, 1"
-          "standard, 0.2, 0, 0, 1"
+          "wind, 0.05, 0.9, 0.1, 1.05"
+          "winIn, 0.1, 1.1, 0.1, 1.1"
+          "winOut, 0.3, -0.3, 0, 1"
+          "liner, 1, 1, 1, 1"
         ];
         animation = [
-          "layersIn, 1, 5, emphasizedDecel, slide"
-          "layersOut, 1, 4, emphasizedAccel, slide"
-          "fadeLayers, 1, 5, standard"
-          "windowsIn, 1, 5, emphasizedDecel"
-          "windowsOut, 1, 3, emphasizedAccel"
-          "windowsMove, 1, 6, standard"
-          "workspaces, 1, 5, standard"
-          "specialWorkspace, 1, 4, specialWorkSwitch, slidefadevert 15%"
-          "fade, 1, 6, standard"
-          "fadeDim, 1, 6, standard"
-          "border, 1, 6, standard"
+          "windows, 1, 6, wind, slide"
+          "windowsIn, 1, 6, winIn, slide"
+          "windowsOut, 1, 5, winOut, slide"
+          "windowsMove, 1, 5, wind, slide"
+          "border, 1, 1, liner"
+          "borderangle, 1, 30, liner, loop"
+          "fade, 1, 10, default"
+          "workspaces, 1, 5, wind"
         ];
       };
 
@@ -221,7 +217,6 @@
         "ALT, Tab, bringactivetotop"
       ];
 
-      exec-once = [ "${lib.getExe pkgs.swww} img ${config.stylix.image}" ];
     };
   };
 }

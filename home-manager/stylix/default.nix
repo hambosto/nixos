@@ -17,7 +17,7 @@
       firefox.enable = false;
       fish.enable = true;
       gtk.enable = true;
-      hyprland.hyprpaper.enable = false;
+      hyprland.hyprpaper.enable = true;
       kitty.enable = true;
       neovide.enable = false;
       neovim.enable = false;
