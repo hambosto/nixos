@@ -4,6 +4,12 @@
   pkgs,
   ...
 }:
+let
+  imageFormat = lib.last (lib.splitString "." (baseNameOf config.stylix.image));
+  blurredBackground = pkgs.runCommand "wlogout-blurred.${imageFormat}" { } ''
+    ${lib.getExe' pkgs.imagemagick "magick"} "${config.stylix.image}" -blur 50x30 $out
+  '';
+in
 {
   programs.wlogout = {
     enable = true;
@@ -54,14 +60,9 @@
       }
 
       window {
-        background: url("${
-          pkgs.runCommand "blurred-background.png" { } ''
-            ${lib.getExe' pkgs.imagemagick "magick"} "${config.stylix.image}" -blur 50x30 $out
-          ''
-        }");
+        background: url("${blurredBackground}");
         background-size: cover;
         font-size: 16pt;
-        color: #${config.lib.stylix.colors.base0D};
       }
 
       button {
