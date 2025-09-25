@@ -1,21 +1,8 @@
-{
-  fullname,
-  hostname,
-  inputs,
-  system,
-  username,
-  ...
-}:
+{ inputs, ... }:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  home-manager.users.${username} = import ../../home-manager;
+  home-manager.users.ilham = import ../../home-manager;
 
-  home-manager.extraSpecialArgs = {
-    inherit username;
-    inherit inputs;
-    inherit hostname;
-    inherit system;
-    inherit fullname;
-  };
+  home-manager.extraSpecialArgs = { inherit inputs; };
 }

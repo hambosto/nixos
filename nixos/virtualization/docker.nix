@@ -1,6 +1,21 @@
 {
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = false;
-    setSocketVariable = true;
+    enableOnBoot = true;
+    daemon.settings = {
+      data-root = "/home/ilham/.docker";
+      features = {
+        buildkit = true;
+      };
+      registry-mirrors = [ "https://mirror.gcr.io" ];
+    };
+
+    autoPrune = {
+      enable = true;
+      dates = "weekly";
+      flags = [ "--all" ];
+    };
+
+    storageDriver = "btrfs";
   };
 }

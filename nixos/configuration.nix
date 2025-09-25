@@ -22,7 +22,6 @@
     ./programs
     ./security
     ./services
-    ./shell
     ./stylix
     ./system
     ./time

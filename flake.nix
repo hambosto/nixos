@@ -30,21 +30,9 @@
 
   outputs =
     { nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      hostname = "vivobook-m1403qa";
-      username = "ilham";
-      fullname = "Ilham Putra Husada";
-    in
     {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit hostname;
-          inherit fullname;
-        };
+      nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [ ./nixos/configuration.nix ];
       };
     };

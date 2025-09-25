@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  username,
   ...
 }:
 {
@@ -15,7 +14,7 @@
       ];
     };
 
-    home-manager.users.${username}.xdg.configFile."xfce4/helpers.rc" =
+    home-manager.users.ilham.xdg.configFile."xfce4/helpers.rc" =
       lib.mkIf config.programs.thunar.enable
         {
           text = ''

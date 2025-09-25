@@ -1,6 +1,3 @@
 {
-  imports = [
-    ./screenshot.nix
-    ./toolbox.nix
-  ];
+  imports = [ ./screenshot.nix ];
 }
