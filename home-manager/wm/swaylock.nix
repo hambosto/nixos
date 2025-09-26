@@ -1,11 +1,7 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   programs.swaylock = {
-    enable = true;
+    enable = config.wayland.windowManager.hyprland.enable;
     package = pkgs.swaylock-effects;
     settings = {
       show-failed-attempts = true;

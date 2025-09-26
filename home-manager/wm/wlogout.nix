@@ -12,7 +12,7 @@ let
 in
 {
   programs.wlogout = {
-    enable = true;
+    enable = config.wayland.windowManager.hyprland.enable;
     layout = [
       {
         label = "shutdown";

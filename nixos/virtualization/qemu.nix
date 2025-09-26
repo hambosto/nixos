@@ -1,22 +1,13 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}:
-{
-  virtualisation.libvirtd = {
-    enable = false;
-    qemu = {
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMFFull.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
-    };
-  };
+  virtualisation.libvirtd.enable = false;
+  virtualisation.libvirtd.qemu.runAsRoot = true;
+  virtualisation.libvirtd.qemu.swtpm.enable = true;
+  virtualisation.libvirtd.qemu.ovmf.enable = true;
+  virtualisation.libvirtd.qemu.ovmf.packages = [
+    (pkgs.OVMFFull.override {
+      secureBoot = true;
+      tpmSupport = true;
+    }).fd
+  ];
 }

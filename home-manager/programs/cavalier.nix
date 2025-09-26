@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, ... }:
 {
   programs.cavalier = {
     enable = false;

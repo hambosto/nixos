@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   # ---- Secure Boot and TPM Setup with Lanzaboote ----
   #
