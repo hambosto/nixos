@@ -2,8 +2,8 @@
 {
   nixpkgs = {
     overlays = [
-      (import ../../pkgs)
       inputs.nur.overlays.default
+      inputs.mac-style-plymouth.overlays.default
     ];
     config = {
       allowUnfree = true;

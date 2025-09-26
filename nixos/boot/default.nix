@@ -36,10 +36,24 @@
 
   boot = {
     bootspec.enable = true;
+    consoleLogLevel = 0;
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "boot.shell_on_fail"
+      "vt.global_cursor_default=0"
+      "systemd.debug-shell=0"
+    ];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = lib.mkForce false; # Disable this if using lanzaboote instead.
+      systemd-boot.consoleMode = "auto";
+      systemd-boot.configurationLimit = 5;
     };
     lanzaboote = {
       enable = true; # Set to `true` to enable lanzaboote for Secure Boot.
@@ -47,5 +61,13 @@
     };
     tmp.cleanOnBoot = true;
     initrd.systemd.enable = true; # Set to `true` if using systemd-based initrd for TPM.
+    initrd.verbose = false;
+    initrd.includeDefaultModules = true;
+
+    plymouth = {
+      enable = true;
+      theme = lib.mkForce "mac-style";
+      themePackages = [ pkgs.mac-style-plymouth ];
+    };
   };
 }
