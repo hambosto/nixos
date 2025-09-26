@@ -2,7 +2,6 @@
 {
   nixpkgs = {
     overlays = [
-      (import ../../pkgs)
       inputs.nur.overlays.default
     ];
     config = {
