@@ -16,7 +16,6 @@ in
       chmod = "${yazi-plugins}/chmod.yazi";
       full-border = "${yazi-plugins}/full-border.yazi";
       toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
-      mime-ext = "${yazi-plugins}/mime-ext.yazi";
       smart-filter = "${yazi-plugins}/smart-filter.yazi";
       mount = "${yazi-plugins}/mount.yazi";
     };
@@ -29,7 +28,7 @@ in
       opener = {
         edit = [
           {
-            run = "${lib.getExe' pkgs.helix "hx"} \"$@\"";
+            run = ''${lib.getExe' pkgs.helix "hx"} "$@"'';
             block = true;
             for = "unix";
           }
@@ -43,17 +42,6 @@ in
         sort_by = "natural";
         sort_dir_first = true;
         sort_reverse = false;
-      };
-
-      plugin = {
-        prepend_fetchers = [
-          {
-            id = "mime";
-            name = "*";
-            run = "mime-ext";
-            prio = "high";
-          }
-        ];
       };
     };
 

@@ -53,25 +53,25 @@
       };
 
       decoration = {
-        active_opacity = 1;
-        inactive_opacity = 1;
-        fullscreen_opacity = 1;
         rounding = 5;
 
         shadow = {
           enabled = true;
-          range = 5;
+          range = 10;
           render_power = 3;
+          sharp = false;
         };
 
         blur = {
           enabled = true;
-          size = 10;
-          passes = 4;
+          size = 9;
+          passes = 3;
           ignore_opacity = true;
           new_optimizations = true;
           xray = false;
         };
+
+        dim_inactive = false;
       };
 
       input = {
@@ -128,7 +128,7 @@
       bind = [
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
-        "SUPER, L, exec, ${lib.getExe pkgs.swaylock-effects}"
+        "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
         "SUPER, PRINT, exec, screenshot screen"

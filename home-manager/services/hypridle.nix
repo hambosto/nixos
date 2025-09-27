@@ -9,7 +9,7 @@
     enable = config.wayland.windowManager.hyprland.enable;
     settings = {
       general = {
-        lock_cmd = "${lib.getExe pkgs.swaylock-effects}";
+        lock_cmd = "${lib.getExe pkgs.hyprlock}";
         before_sleep_cmd = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
         after_sleep_cmd = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
       };

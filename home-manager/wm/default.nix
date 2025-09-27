@@ -1,8 +1,8 @@
 {
   imports = [
     ./hyprland.nix
+    ./hyprlock.nix
     ./rofi.nix
-    ./swaylock.nix
     ./waybar.nix
     ./wlogout.nix
   ];

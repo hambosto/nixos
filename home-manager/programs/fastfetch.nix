@@ -8,6 +8,11 @@
         type = "kitty-direct";
         height = 15;
         width = 30;
+        padding = {
+          top = 1;
+          left = 2;
+        };
+
       };
 
       display = {

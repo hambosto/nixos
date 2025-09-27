@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/sakura.jpg;
+    image = ../../assets/exotic-avatar.png;
 
     polarity = "dark";
 
