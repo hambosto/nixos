@@ -3,8 +3,8 @@ let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
-    rev = "b8860253fc44e500edeb7a09db648a829084facd";
-    hash = "sha256-29K8PmBoqAMcQhDIfOVnbJt2FU4BR6k23Es9CqyEloo=";
+    rev = "d1c8baab86100afb708694d22b13901b9f9baf00";
+    hash = "sha256-52Zn6OSSsuNNAeqqZidjOvfCSB7qPqUeizYq/gO+UbE=";
   };
 in
 {
@@ -43,6 +43,17 @@ in
         sort_by = "natural";
         sort_dir_first = true;
         sort_reverse = false;
+      };
+
+      plugin = {
+        prepend_fetchers = [
+          {
+            id = "mime";
+            name = "*";
+            run = "mime-ext";
+            prio = "high";
+          }
+        ];
       };
     };
 
