@@ -1,7 +1,12 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   services.hypridle = {
-    enable = true;
+    enable = config.wayland.windowManager.hyprland.enable;
     settings = {
       general = {
         lock_cmd = "${lib.getExe pkgs.swaylock-effects}";

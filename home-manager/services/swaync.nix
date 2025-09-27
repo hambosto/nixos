@@ -1,7 +1,7 @@
 { config, ... }:
 {
   services.swaync = {
-    enable = true;
+    enable = config.wayland.windowManager.hyprland.enable;
     settings = {
       ignore-gtk-theme = true;
       positionX = "right";
