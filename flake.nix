@@ -1,5 +1,6 @@
 {
-  description = "NixOS systems and tools by hambosto";
+  description = "A simple flake for an atomic system";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -28,12 +29,10 @@
     };
   };
 
-  outputs =
-    { nixpkgs, ... }@inputs:
-    {
-      nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./nixos/configuration.nix ];
-      };
+  outputs = { nixpkgs, ... }@inputs: {
+    nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
+      modules = [ ./nixos/configuration.nix ];
+      specialArgs = { inherit inputs; };
     };
+  };
 }

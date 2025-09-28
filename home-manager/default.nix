@@ -1,7 +1,6 @@
 {
   imports = [
     ./home
-    ./nixpkgs
     ./programs
     ./scripts
     ./services
