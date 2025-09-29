@@ -16,37 +16,37 @@ in
     layout = [
       {
         label = "shutdown";
-        action = "${pkgs.systemd}/bin/systemctl poweroff";
+        action = "${lib.getExe' pkgs.systemd "systemctl"} poweroff";
         text = "Shutdown";
         keybind = "s";
       }
       {
         label = "reboot";
-        action = "${pkgs.systemd}/bin/systemctl reboot";
+        action = "${lib.getExe' pkgs.systemd "systemctl"} reboot";
         text = "Reboot";
         keybind = "r";
       }
       {
         label = "logout";
-        action = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch exit";
+        action = "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch exit";
         text = "Exit";
         keybind = "e";
       }
       {
         label = "suspend";
-        action = "${pkgs.systemd}/bin/systemctl suspend";
+        action = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
         text = "Suspend";
         keybind = "u";
       }
       {
         label = "lock";
-        action = "${pkgs.swaylock-effects}/bin/swaylock";
+        action = "${lib.getExe config.programs.hyprlock.package}";
         text = "Lock";
         keybind = "l";
       }
       {
         label = "hibernate";
-        action = "${pkgs.systemd}/bin/systemctl hibernate";
+        action = "${lib.getExe' pkgs.systemd "systemctl"} hibernate";
         text = "Hibernate";
         keybind = "h";
       }
