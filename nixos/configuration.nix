@@ -23,6 +23,6 @@
     ./system
     ./time
     ./users
-    ./virtualization
+    ./virtualisation
   ];
 }

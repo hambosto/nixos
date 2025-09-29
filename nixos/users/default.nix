@@ -1,13 +1,13 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   users.users.ilham = {
     isNormalUser = true;
     description = "Ilham Putra Husada";
     extraGroups = [
-      "docker"
       "networkmanager"
       "wheel"
-    ];
+    ]
+    ++ lib.optionals config.virtualisation.docker.enable "docker";
     shell = config.programs.fish.package;
     initialHashedPassword = "$6$/h/R3yYQDg0n3oNL$dqkwBWyN0KyOo4R/u9o9RUjqkNvg9W5B3gnGoR19YokrCIVt17/69L3X5efshhAE8GymqrxOYMRM54hV21tOF1";
   };
