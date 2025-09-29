@@ -58,7 +58,8 @@
             ".*Nvim.*" = " Neovim";
             ".*yazi.*" = " Yazi";
             ".*Terminal.*" = " Terminal";
-            ".*btop.*" = " Resource Monitor";
+            ".*btop.*" = " Process Monitor";
+            ".*htop.*" = " Process Monitor";
             ".*hx.*" = "󰅴 Helix";
           };
         };

@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
@@ -28,7 +33,7 @@ in
       opener = {
         edit = [
           {
-            run = ''${lib.getExe' pkgs.helix "hx"} "$@"'';
+            run = ''${lib.getExe' config.programs.helix.package "hx"} "$@"'';
             block = true;
             for = "unix";
           }

@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   defaultApps = {
@@ -96,7 +101,7 @@ in
     portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-      configPackages = [ pkgs.hyprland ];
+      configPackages = [ config.wayland.windowManager.hyprland.package ];
     };
     userDirs = {
       enable = true;

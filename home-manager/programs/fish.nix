@@ -34,9 +34,9 @@
       }
     ];
     shellAliases = {
-      cat = "${lib.getExe pkgs.bat} --paging=never";
-      tree = "${lib.getExe pkgs.eza} --icons=always --tree --no-quotes";
-      ssh = "${lib.getExe pkgs.kitty} +kitten ssh";
+      cat = "${lib.getExe config.programs.bat.package} --paging=never";
+      tree = "${lib.getExe config.programs.eza.package} --icons=always --tree --no-quotes";
+      ssh = "${lib.getExe config.programs.kitty.package} +kitten ssh";
 
       # nix specific aliases
       nix-rebuild = "sudo nixos-rebuild switch --flake ${config.xdg.configHome}/nixos#vivobook-m1403qa";
@@ -50,7 +50,7 @@
     interactiveShellInit = ''
       set fish_greeting
       if [ -z "$NVIM" ]; and [ "$TERM_PROGRAM" != "vscode" ]
-          ${lib.getExe pkgs.fastfetch}
+          ${lib.getExe config.programs.fastfetch.package}
       end
     '';
   };

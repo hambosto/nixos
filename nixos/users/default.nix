@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, ... }:
 {
   users.users.ilham = {
     isNormalUser = true;
@@ -8,7 +8,7 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.fish;
+    shell = config.programs.fish.package;
     initialHashedPassword = "$6$/h/R3yYQDg0n3oNL$dqkwBWyN0KyOo4R/u9o9RUjqkNvg9W5B3gnGoR19YokrCIVt17/69L3X5efshhAE8GymqrxOYMRM54hV21tOF1";
   };
 }

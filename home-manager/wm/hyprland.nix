@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -126,11 +126,11 @@
       };
 
       bind = [
-        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
-        "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
-        "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
-        "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
-        "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
+        "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package} --title Terminal"
+        "SUPER, E, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.yazi.package}"
+        "SUPER, L, exec, ${lib.getExe config.programs.hyprlock.package}"
+        "SUPER SHIFT, M, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.htop.package}"
+        "SUPER, SPACE, exec, ${lib.getExe config.programs.rofi.package} -show drun"
         "SUPER, PRINT, exec, screenshot screen"
         "SUPER SHIFT, PRINT, exec, screenshot area"
 
@@ -196,11 +196,18 @@
         "SUPER CTRL, down, workspace, empty"
 
         # Fn keys
-        ", XF86AudioRaiseVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86AudioLowerVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ", XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
-        ", XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
-        ", XF86AudioMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        # ", XF86AudioRaiseVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        # ", XF86AudioLowerVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        # ", XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
+        # ", XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
+        # ", XF86AudioMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+        ", XF86AudioRaiseVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume raise --max-volume 100"
+        ", XF86AudioLowerVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume lower --max-volume 100"
+        ", XF86MonBrightnessUp, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --brightness +5"
+        ", XF86MonBrightnessDown, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --brightness -5"
+        ", XF86AudioMute, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume mute-toggle"
+        ", XF86AudioMicMute, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --input-volume mute-toggle"
       ];
 
       bindm = [
@@ -211,6 +218,10 @@
       binde = [
         "ALT, Tab, cyclenext"
         "ALT, Tab, bringactivetotop"
+      ];
+
+      bindr = [
+        "CAPS, Caps_Lock, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --caps-lock"
       ];
 
     };
