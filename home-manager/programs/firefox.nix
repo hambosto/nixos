@@ -20,6 +20,16 @@
     };
     profiles.default = {
       settings = {
+        # Enable DRM
+        "media.eme.enabled" = true;
+
+        # Use a better password manager instead.
+        "signon.rememberSignons" = false;
+
+        # GPU acceleration
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+
         "content.notify.interval" = 100000;
         "gfx.canvas.accelerated.cache-size" = 512;
         "gfx.content.skia-font-cache-size" = 20;

@@ -13,7 +13,6 @@
       cava.rainbow.enable = true;
       firefox = {
         enable = true;
-        firefoxGnomeTheme.enable = true;
         profileNames = [ "default" ];
       };
       fish.enable = true;

@@ -47,6 +47,7 @@
           rewrite = {
             "" = " Desktop";
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
+            ".*VSCodium.*" = " VSCodium";
             ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
             ".*Chromium.*" = " Chromium";
             ".*Brave.*" = "󰖟 Brave";
