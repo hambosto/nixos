@@ -22,8 +22,8 @@
         "editor.semanticHighlighting.enabled" = true;
         "editor.stickyScroll.enabled" = false;
 
-        "workbench.colorTheme" = "Monospace IDX Dark";
-        "workbench.iconTheme" = "monospace-idx-file-icon-theme";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
+        "workbench.iconTheme" = "symbols";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -87,8 +87,10 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "spacebox.monospace-idx-theme"
+        "jdinhlife.gruvbox"
+        "miguelsolorio.symbols"
 
+        # "spacebox.monospace-idx-theme"
         # "miguelsolorio.symbols"
         # "enkia.tokyo-night"
         # "supermaven.supermaven"

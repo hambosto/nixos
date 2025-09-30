@@ -6,7 +6,7 @@
 }:
 let
   imageFormat = lib.last (lib.splitString "." (baseNameOf config.stylix.image));
-  blurredBackground = pkgs.runCommand "wlogout-blurred.${imageFormat}" { } ''
+  blurredBackground = pkgs.runCommand "wlogout-background.${imageFormat}" { } ''
     ${lib.getExe' pkgs.imagemagick "magick"} "${config.stylix.image}" -blur 50x30 $out
   '';
 in
