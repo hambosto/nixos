@@ -1,10 +1,10 @@
 { inputs, ... }:
 [
   (final: prev: {
-    iwmenu = prev.callPackage ../packages/iwmenu.nix { };
     pokego = prev.callPackage ../packages/pokego.nix { };
-    pwmenu = prev.callPackage ../packages/pwmenu.nix { };
     sweetbyte = prev.callPackage ../packages/sweetbyte.nix { };
+    pwmenu = inputs.pwmenu.packages.x86_64-linux.default;
+    iwmenu = inputs.iwmenu.packages.x86_64-linux.default;
   })
   inputs.nur.overlays.default
   inputs.nix4vscode.overlays.default

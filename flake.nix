@@ -27,6 +27,14 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    iwmenu = {
+      url = "github:e-tho/iwmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pwmenu = {
+      url = "github:e-tho/pwmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs: {
