@@ -35,20 +35,27 @@
       animations = {
         enabled = true;
         bezier = [
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1"
+          "o2_shot, 0, 0.72, 0.4, 1.15"
+          "o2_smooth, 0.4, 0, 0.2, 1"
+          "wind_up, 0.1, 0.8, 0.1, 1.1"
+          "bounce, 1.1, 1.2, 0.1, 1.05"
+          "fluffy, 0.1, 1.3, 0.1, 1.0"
+          "slingshot, 1, -0.15, 0.75, 1.25"
+          "drop_in, 0.2, 1.5, 0.2, 0.95"
+          "rise_up, 0.75, -0.25, 0.25, 1.2"
         ];
         animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
+          "global, 1, 3, o2_shot"
+          "windows, 1, 2, drop_in, slidevert"
+          "windowsOut, 0.7, 3, rise_up, slidevert"
+          "windowsMove, 1, 4, wind_up, slidevert"
+          "border, 1, 2, o2_smooth"
+          "borderangle, 1, 100, o2_shot, loop"
+          "fade, 1, 4, o2_smooth"
+          "workspaces, 1, 5, slingshot, slidevert"
+          "specialWorkspace, 1, 3, bounce, slidevert"
+          "fadeSwitch, 1, 5, fluffy"
+          "fadeDim, 1, 3, o2_smooth"
         ];
       };
 
@@ -129,6 +136,7 @@
         "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package} --title Terminal"
         "SUPER, E, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.yazi.package}"
         "SUPER, L, exec, ${lib.getExe config.programs.hyprlock.package}"
+        "SUPER, B, exec, ${lib.getExe config.programs.firefox.package}"
         "SUPER SHIFT, M, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.htop.package}"
         "SUPER, SPACE, exec, ${lib.getExe config.programs.rofi.package} -show drun"
         "SUPER, PRINT, exec, screenshot screen"
@@ -196,12 +204,6 @@
         "SUPER CTRL, down, workspace, empty"
 
         # Fn keys
-        # ", XF86AudioRaiseVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        # ", XF86AudioLowerVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        # ", XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
-        # ", XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
-        # ", XF86AudioMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle"
-
         ", XF86AudioRaiseVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume raise --max-volume 100"
         ", XF86AudioLowerVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume lower --max-volume 100"
         ", XF86MonBrightnessUp, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --brightness +5"
