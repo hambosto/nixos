@@ -236,8 +236,6 @@
       bindr = [
         "CAPS, Caps_Lock, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --caps-lock"
       ];
-
-      exec-once = [ "${lib.getExe pkgs.swww} img ${config.stylix.image}" ];
     };
   };
 }

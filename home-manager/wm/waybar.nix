@@ -128,27 +128,6 @@
           tooltip-format = "Open the application launcher";
         };
 
-        "custom/swaync" = {
-          tooltip = false;
-          format = "{icon} {}";
-          format-icons = {
-            notification = "󰂚";
-            none = "󰂜";
-            dnd-notification = "󰂛";
-            dnd-none = "󰪑";
-            inhibited-notification = "󰂚";
-            inhibited-none = "󰂜";
-            dnd-inhibited-notification = "󰂛";
-            dnd-inhibited-none = "󰪑";
-
-          };
-          return-type = "json";
-          exec = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} -swb";
-          on-click = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} -t -sw";
-          on-click-right = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} -d -sw";
-          escape = true;
-        };
-
         battery = {
           states = {
             critical = 20;
@@ -196,7 +175,6 @@
             "group/modules-control"
             "power-profiles-daemon"
             "clock"
-            "custom/swaync"
             "custom/wlogout"
           ];
         };
@@ -291,7 +269,6 @@
       #custom-rofi,
       #power-profiles-daemon,
       #clock,
-      #custom-swaync,
       #custom-wlogout {
         padding: 3px 6px;
         color: #${config.lib.stylix.colors.base05};
@@ -304,7 +281,6 @@
       #custom-rofi:hover,
       #power-profiles-daemon:hover,
       #clock:hover,
-      #custom-swaync:hover,
       #custom-wlogout:hover {
         border-radius: 15px;
         background: alpha(#${config.lib.stylix.colors.base0D}, 0.4);
@@ -313,7 +289,6 @@
       #custom-rofi,
       #power-profiles-daemon,
       #clock,
-      #custom-swaync,
       #custom-wlogout {
         margin: 2px 3px;
         padding: 0 10px;
