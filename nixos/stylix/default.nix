@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/misty_forest.jpg;
+    image = ../../assets/gruv-abstract-maze.png;
 
     base16Scheme = {
       base00 = "32302f"; # ----

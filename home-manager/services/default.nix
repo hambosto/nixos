@@ -4,5 +4,6 @@
     ./polkit-gnome.nix
     ./swaync.nix
     ./swayosd.nix
+    ./swww.nix
   ];
 }

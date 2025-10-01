@@ -17,7 +17,7 @@
       };
       fish.enable = true;
       gtk.enable = true;
-      hyprland.hyprpaper.enable = true;
+      hyprland.hyprpaper.enable = false;
       kitty.enable = true;
       neovide.enable = false;
       neovim.enable = false;
