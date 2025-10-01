@@ -215,12 +215,12 @@
         "SUPER CTRL, down, workspace, empty"
 
         # Fn keys
-        ", XF86AudioRaiseVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume raise --max-volume 100"
-        ", XF86AudioLowerVolume, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume lower --max-volume 100"
-        ", XF86MonBrightnessUp, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --brightness +5"
-        ", XF86MonBrightnessDown, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --brightness -5"
-        ", XF86AudioMute, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --output-volume mute-toggle"
-        ", XF86AudioMicMute, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --input-volume mute-toggle"
+        ", XF86AudioRaiseVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1"
+        ", XF86AudioLowerVolume, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
+        ", XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
+        ", XF86AudioMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ];
 
       bindm = [
@@ -231,10 +231,6 @@
       binde = [
         "ALT, Tab, cyclenext"
         "ALT, Tab, bringactivetotop"
-      ];
-
-      bindr = [
-        "CAPS, Caps_Lock, exec, ${lib.getExe' config.services.swayosd.package "swayosd-client"} --caps-lock"
       ];
     };
   };
