@@ -36,7 +36,7 @@
 
   boot = {
     bootspec.enable = true;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = lib.mkForce false; # Disable this if using lanzaboote instead.
