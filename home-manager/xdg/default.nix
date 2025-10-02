@@ -9,7 +9,7 @@ let
   defaultApps = {
     # browser = [ "brave-browser.desktop" ];
     browser = [ "firefox.desktop" ];
-    text = [ "code.desktop" ];
+    text = [ "codium.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
