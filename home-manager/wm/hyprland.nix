@@ -147,7 +147,7 @@
         "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package} --title Terminal"
         "SUPER, E, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.yazi.package}"
         "SUPER, L, exec, ${lib.getExe config.programs.hyprlock.package}"
-        "SUPER, B, exec, ${lib.getExe config.programs.brave.package}"
+        "SUPER, B, exec, ${lib.getExe config.programs.firefox.package}"
         "SUPER SHIFT, M, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.htop.package}"
         "SUPER, SPACE, exec, ${lib.getExe config.programs.rofi.package} -show drun"
         "SUPER, PRINT, exec, screenshot screen"
