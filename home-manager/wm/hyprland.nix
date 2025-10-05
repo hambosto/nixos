@@ -7,6 +7,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     systemd.enable = true;
     xwayland.enable = true;
 
@@ -51,11 +52,9 @@
         "SUPER, B, exec, ${lib.getExe config.programs.firefox.package}"
         "SUPER, E, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.yazi.package}"
         "SUPER, L, exec, ${lib.getExe config.programs.hyprlock.package}"
-        "SUPER, PRINT, exec, screenshot screen"
         "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package} --title Terminal"
         "SUPER, SPACE, exec, ${lib.getExe config.programs.rofi.package} -show drun"
         "SUPER SHIFT, M, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.htop.package}"
-        "SUPER SHIFT, PRINT, exec, screenshot area"
 
         # Window Management
         "SUPER, down, movefocus, d"
@@ -172,6 +171,7 @@
         "GDK_SCALE,1"
         "MOZ_ENABLE_WAYLAND,1"
         "OZONE_PLATFORM,wayland"
+        "NIXOS_OZONE_WL,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM,wayland;xcb"
         "QT_QPA_PLATFORMTHEME,qt5ct"
@@ -181,6 +181,8 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
       ];
+
+      exec-once = [ "${lib.getExe pkgs.swww} img ${config.stylix.image}" ];
 
       general = {
         border_size = 2;

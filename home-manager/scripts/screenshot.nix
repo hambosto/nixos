@@ -59,5 +59,8 @@ let
   '';
 in
 {
-  home.packages = [ screenshot ];
+  wayland.windowManager.hyprland.settings.bind = [
+    "SUPER SHIFT, PRINT, exec, ${lib.getExe screenshot} area"
+    "SUPER, PRINT, exec, ${lib.getExe screenshot} screen"
+  ];
 }
