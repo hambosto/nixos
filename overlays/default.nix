@@ -5,5 +5,5 @@
   })
   inputs.nur.overlays.default
   inputs.nix4vscode.overlays.default
-  inputs.nixpkgs-overlay.overlays.default
+  inputs.mynixpkgs.overlays.default
 ]

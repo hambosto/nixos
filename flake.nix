@@ -27,8 +27,8 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-overlay = {
-      url = "github:hambosto/nixpkgs-overlay";
+    mynixpkgs = {
+      url = "github:hambosto/mynixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
