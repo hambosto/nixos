@@ -1,0 +1,3 @@
+{
+  gtksourceview.enable = false;
+}

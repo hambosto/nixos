@@ -48,7 +48,7 @@
 
       bind = [
         # Applications
-        "SUPER, B, exec, ${lib.getExe config.programs.firefox.package}"
+        "SUPER, B, exec, ${lib.getExe config.programs.chromium.package}"
         "SUPER, E, exec, ${lib.getExe config.programs.kitty.package} -e ${lib.getExe config.programs.yazi.package}"
         "SUPER, L, exec, ${lib.getExe config.programs.hyprlock.package}"
         "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package} --title Terminal"

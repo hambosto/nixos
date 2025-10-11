@@ -39,5 +39,7 @@
         terminal = 14;
       };
     };
+
+    targets = import ./targets.nix;
   };
 }

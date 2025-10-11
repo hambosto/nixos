@@ -2,7 +2,7 @@
 {
 
   programs.firefox = {
-    enable = true;
+    enable = false;
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;

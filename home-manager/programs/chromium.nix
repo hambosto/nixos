@@ -1,12 +1,12 @@
 {
-  programs.brave = {
-    enable = false;
+  programs.chromium = {
+    enable = true;
     commandLineArgs = [
       "--ozone-platform=wayland"
       "--ozone-platform-hint=auto"
     ];
     extensions = [
-      # { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+      { id = "ddkjiahejlhfcafbddmgiahcphecmpfh"; } # ublock origin lite
       { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # SponsorBlock
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       # { id = "bfnaelmomeimhlpmgjnjophhpkkoljpa"; } # Phantom Wallet
