@@ -22,7 +22,7 @@
         "editor.semanticHighlighting.enabled" = true;
         "editor.stickyScroll.enabled" = false;
 
-        "workbench.colorTheme" = "Gruvbox Dark Hard";
+        "workbench.colorTheme" = "Monospace Studio Dark";
         "workbench.iconTheme" = "symbols";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
@@ -87,8 +87,8 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "jdinhlife.gruvbox"
         "miguelsolorio.symbols"
+        "flaviodelgrosso.vscode-monospace-theme"
 
         # "spacebox.monospace-idx-theme"
         # "miguelsolorio.symbols"

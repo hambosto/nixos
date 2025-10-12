@@ -57,7 +57,7 @@
     };
 
     settings = {
-      theme = lib.mkForce "gruvbox";
+      theme = "tokyonight_storm";
       editor = {
         color-modes = true;
         completion-replace = true;

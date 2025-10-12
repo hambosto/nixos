@@ -9,6 +9,7 @@
   };
   fish.enable = true;
   gtk.enable = true;
+  helix.enable = false;
   hyprland.hyprpaper.enable = false;
   kitty.enable = true;
   neovide.enable = false;
