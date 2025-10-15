@@ -8,7 +8,7 @@
       enableExtensionUpdateCheck = false;
       userSettings = {
         "editor.fontSize" = 14;
-        "editor.fontFamily" = "Maple Mono NF";
+        "editor.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontWeight" = "500";
         "editor.formatOnSave" = true;
@@ -42,7 +42,7 @@
         "breadcrumbs.enabled" = false;
 
         "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "Maple Mono NF";
+        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
         "terminal.integrated.fontWeight" = "600";
         "terminal.integrated.minimumContrastRatio" = 1;
 

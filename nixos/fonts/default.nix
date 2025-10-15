@@ -3,7 +3,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.ubuntu
-      maple-mono.NF
+      nerd-fonts.jetbrains-mono
     ];
 
     enableDefaultPackages = false;
