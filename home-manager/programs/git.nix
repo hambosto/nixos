@@ -1,15 +1,12 @@
 {
   programs.git = {
     enable = true;
-    difftastic.enable = true;
-    userName = "hambosto";
-    userEmail = "106536348+hambosto@users.noreply.github.com";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
-      pull = {
-        rebase = true;
+    settings = {
+      init.defaultBranch = "main";
+      pull.rebase = true;
+      user = {
+        email = "106536348+hambosto@users.noreply.github.com";
+        name = "Ilham Putra Husada";
       };
     };
   };
