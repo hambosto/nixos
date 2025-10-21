@@ -1,9 +1,7 @@
 { config, ... }:
 {
   programs.nh = {
-    enable = true;
+    enable = false;
     flake = "${config.xdg.configHome}/nixos";
-    clean.enable = false;
-    clean.extraArgs = "--keep-since 4d --keep 3";
   };
 }

@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/sakura.jpg;
+    image = ../../assets/nixos_wp_cat_glow.png;
 
     polarity = "dark";
     cursor = {

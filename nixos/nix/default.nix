@@ -1,13 +1,9 @@
+{ pkgs, ... }:
 {
   nix = {
+    channel.enable = false;
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
-
-    gc = {
-      automatic = false;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
 
     optimise.automatic = true;
     settings = {
@@ -28,5 +24,12 @@
       trusted-users = [ "@wheel" ];
       warn-dirty = false;
     };
+  };
+
+  system.activationScripts.diff = {
+    supportsDryActivation = true;
+    text = ''
+      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff /run/current-system "$systemConfig"
+    '';
   };
 }
