@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   nix = {
-    channel.enable = false;
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
 
