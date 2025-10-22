@@ -26,6 +26,7 @@
     ./neovim.nix
     ./nh.nix
     ./obs-studio.nix
+    ./obsidian.nix
     ./oh-my-posh.nix
     ./starship.nix
     ./uv.nix

@@ -20,4 +20,5 @@
   vencord.enable = false;
   vscode.enable = false;
   waybar.enable = false;
+  obsidian.enable = false;
 }
