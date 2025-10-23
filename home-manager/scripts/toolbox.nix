@@ -77,12 +77,12 @@ let
 
         def show_ui():
             menu = [
-                ("  Edit Configuration", cmd_edit_config),
                 ("󰑓  Rebuild", cmd_rebuild),
                 ("󰐊  Test", cmd_test),
                 ("󰚰  Update", cmd_update),
                 ("  Garbage Collection", cmd_garbage_collection),
                 ("  List Generations", cmd_list_generations),
+                ("  Edit Configuration", cmd_edit_config),
             ]
             choice = inquirer.select(
                 message="Select action:",
@@ -101,12 +101,12 @@ let
                 return
             cmd = sys.argv[1]
             commands = {
-                "edit": cmd_edit_config,
                 "rebuild": cmd_rebuild,
                 "test": cmd_test,
                 "update": cmd_update,
                 "garbage-collection": cmd_garbage_collection,
                 "list-generations": cmd_list_generations,
+                "edit": cmd_edit_config,
             }
             func = commands.get(cmd)
             if func:
