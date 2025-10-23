@@ -10,16 +10,6 @@ let
             p.inquirerpy
           ]
         );
-        makeWrapperArgs = [
-          "--prefix"
-          "PATH"
-          ":"
-          (lib.makeBinPath [
-            pkgs.git
-            pkgs.nix
-            pkgs.nixos-rebuild
-          ])
-        ];
       }
       ''
         from rich.console import Console
@@ -53,19 +43,19 @@ let
         def cmd_rebuild():
             log_info("Starting NixOS rebuild...")
             os.chdir(CONFIG_DIR)
-            execute("git add .")
-            execute("nixos-rebuild switch --flake .", use_sudo=True)
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nixos-rebuild} switch --flake .", use_sudo=True)
 
         def cmd_test():
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
-            execute("git add .")
-            execute("nixos-rebuild test --flake .", use_sudo=True)
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nixos-rebuild} test --flake .", use_sudo=True)
 
         def cmd_update():
             log_info("Updating flake inputs...")
             os.chdir(CONFIG_DIR)
-            execute("nix flake update")
+            execute("${lib.getExe pkgs.nix} flake update")
 
         def cmd_garbage_collection():
             log_info("Starting Nix garbage collection...")
@@ -74,30 +64,25 @@ let
             execute("nix-collect-garbage -d")
             execute("nix-store --gc")
             execute("nix-store --optimise")
-            log_info("Garbage collection complete.")
-
-        def cmd_clean_boot():
-            log_info("Cleaning boot menu...")
             execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
+            log_info("Garbage collection complete.")
 
         def cmd_list_generations():
             log_info("Listing system generations...")
             execute("nix-env -p /nix/var/nix/profiles/system --list-generations", use_sudo=True)
 
-        def cmd_optimise_store():
-            log_info("Optimising Nix store...")
-            execute("nix store optimise")
-            log_info("Store optimisation complete.")
+        def cmd_edit_config():
+            log_info(f"Opening config directory in Helix: {CONFIG_DIR}")
+            subprocess.run(f"${lib.getExe pkgs.helix} {CONFIG_DIR}", shell=True)
 
         def show_ui():
             menu = [
+                ("  Edit Configuration", cmd_edit_config),
                 ("󰑓  Rebuild", cmd_rebuild),
                 ("󰐊  Test", cmd_test),
                 ("󰚰  Update", cmd_update),
-                ("󰘳  Garbage Collection", cmd_garbage_collection),
-                ("󰍜  Clean Boot Menu", cmd_clean_boot),
-                ("󰘳  List Generations", cmd_list_generations),
-                ("󰢻  Optimise Store", cmd_optimise_store),
+                ("  Garbage Collection", cmd_garbage_collection),
+                ("  List Generations", cmd_list_generations),
             ]
             choice = inquirer.select(
                 message="Select action:",
@@ -116,13 +101,12 @@ let
                 return
             cmd = sys.argv[1]
             commands = {
+                "edit": cmd_edit_config,
                 "rebuild": cmd_rebuild,
                 "test": cmd_test,
                 "update": cmd_update,
                 "garbage-collection": cmd_garbage_collection,
-                "clean-boot": cmd_clean_boot,
                 "list-generations": cmd_list_generations,
-                "optimise-store": cmd_optimise_store,
             }
             func = commands.get(cmd)
             if func:
