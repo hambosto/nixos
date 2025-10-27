@@ -3,13 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko";
+    iwmenu = {
+      url = "github:e-tho/iwmenu";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
@@ -19,24 +24,40 @@
       url = "github:nix-community/nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mynixpkgs = {
-      url = "github:hambosto/mynixpkgs";
+    pwmenu = {
+      url = "github:e-tho/pwmenu";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sweetbyte = {
+      url = "github:hambosto/sweetbyte";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    swww = {
+      url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
-      modules = [ ./nixos/configuration.nix ];
-      specialArgs = { inherit inputs; };
+  outputs =
+    { nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
+        modules = [ ./nixos/configuration.nix ];
+        specialArgs = { inherit inputs; };
+      };
     };
-  };
 }
