@@ -6,6 +6,21 @@
       nerd-fonts.jetbrains-mono
     ];
 
-    enableDefaultPackages = false;
+    fontconfig = {
+      enable = true;
+
+      hinting = {
+        enable = true;
+        style = "slight";
+        autohint = false;
+      };
+
+      antialias = true;
+
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
+    };
   };
 }
