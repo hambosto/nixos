@@ -40,7 +40,7 @@
     };
     interactiveShellInit = ''
       set fish_greeting
-      if [ -z "$NVIM" ]; and [ "$TERM_PROGRAM" != "vscode" ]
+      if [ -z "$NVIM" ] && [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ]
           ${lib.getExe config.programs.fastfetch.package}
       end
     '';

@@ -21,4 +21,5 @@
   vscode.enable = false;
   waybar.enable = false;
   obsidian.enable = false;
+  zed.enable = false;
 }
