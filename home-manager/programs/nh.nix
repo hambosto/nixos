@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.nh = {
-    enable = false;
+    enable = true;
     flake = "${config.xdg.configHome}/nixos";
   };
 }

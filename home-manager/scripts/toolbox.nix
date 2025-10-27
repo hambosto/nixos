@@ -46,6 +46,12 @@ let
             execute("${lib.getExe pkgs.git} add .")
             execute("${lib.getExe pkgs.nixos-rebuild} switch --flake .", use_sudo=True)
 
+        def cmd_rebuild_nh():
+            log_info("Starting NixOS rebuild with nh...")
+            os.chdir(CONFIG_DIR)
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nh} os switch")
+
         def cmd_test():
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
@@ -78,6 +84,7 @@ let
         def show_ui():
             menu = [
                 ("󰑓  Rebuild", cmd_rebuild),
+                ("󰑓  Rebuild (nh)", cmd_rebuild_nh),
                 ("󰐊  Test", cmd_test),
                 ("󰚰  Update", cmd_update),
                 ("  Garbage Collection", cmd_garbage_collection),
@@ -102,6 +109,7 @@ let
             cmd = sys.argv[1]
             commands = {
                 "rebuild": cmd_rebuild,
+                "rebuild-nh": cmd_rebuild_nh,
                 "test": cmd_test,
                 "update": cmd_update,
                 "garbage-collection": cmd_garbage_collection,

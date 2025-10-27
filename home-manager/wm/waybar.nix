@@ -62,6 +62,7 @@
             ".*btop.*" = " Process Monitor";
             ".*htop.*" = " Process Monitor";
             ".*hx.*" = "󰅴 Helix";
+            ".*Obsidian.*" = "󱓧 Obsidian";
           };
         };
 
