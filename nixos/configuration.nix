@@ -24,5 +24,6 @@
     ./time
     ./users
     ./virtualisation
+    ./xdg
   ];
 }
