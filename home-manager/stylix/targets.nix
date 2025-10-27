@@ -1,6 +1,7 @@
 {
   blender.enable = false;
   cava.rainbow.enable = true;
+  dunst.enable = false;
   firefox = {
     enable = false;
     profileNames = [ "default" ];

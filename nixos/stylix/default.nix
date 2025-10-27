@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/zenless.png;
+    image = ../../assets/red-samurai.png;
 
     polarity = "dark";
     cursor = {
