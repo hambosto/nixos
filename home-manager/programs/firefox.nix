@@ -2,7 +2,7 @@
 {
 
   programs.firefox = {
-    enable = false;
+    enable = true;
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -148,6 +148,15 @@
         "browser.menu.showViewImageInfo" = true;
         "findbar.highlightAll" = true;
         "layout.word_select.eat_space_to_next_word" = false;
+        "extensions.ml.enabled" = false;
+        "browser.ml.chat.page" = false;
+        "browser.ml.chat.page.footerBadge" = false;
+        "browser.ml.chat.page.menuBadge" = false;
+        "browser.ml.chat.menu" = false;
+        "browser.ml.linkPreview.enabled" = false;
+        "browser.ml.pageAssist.enabled" = false;
+        "browser.tabs.groups.smart.enabled" = false;
+        "browser.tabs.groups.smart.userEnable" = false;
       };
 
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
