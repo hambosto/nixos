@@ -23,7 +23,7 @@
         "editor.stickyScroll.enabled" = false;
 
         "workbench.colorTheme" = "Monospace Studio Dark";
-        "workbench.iconTheme" = "symbols";
+        "workbench.iconTheme" = "monospace-studio-icons";
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.showTabs" = "single";
         "workbench.statusBar.visible" = false;
@@ -87,7 +87,6 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "miguelsolorio.symbols"
         "flaviodelgrosso.vscode-monospace-theme"
 
         # "spacebox.monospace-idx-theme"

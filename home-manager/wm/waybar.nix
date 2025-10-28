@@ -16,78 +16,6 @@
         modules-left = [ "group/modules-left" ];
         modules-right = [ "group/modules-right" ];
 
-        "hyprland/workspaces" = {
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-          persistent-workspaces = {
-            "*" = 5;
-          };
-        };
-
-        power-profiles-daemon = {
-          format = "{icon}";
-          tooltip-format = "Power profile: {profile}";
-          tooltip = true;
-          format-icons = {
-            default = "";
-            performance = "";
-            balanced = "󰈐";
-            power-saver = "";
-          };
-        };
-
-        clock = {
-          format = "󰥔 {:L%H:%M %Z}";
-          tooltip = false;
-        };
-
-        "hyprland/window" = {
-          max-length = 20;
-          separate-outputs = false;
-          rewrite = {
-            "" = " Desktop";
-            ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
-            ".*VSCodium.*" = " VSCodium";
-            ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
-            ".*Chromium.*" = " Chromium";
-            ".*Brave.*" = "󰖟 Brave";
-            ".*Thunar.*" = " Thunar";
-            ".*mpv.*" = " MPV";
-            ".*imv.*" = " IMV";
-            ".*Spotify.*" = " Spotify";
-            ".*\.pdf" = " PDF Viewer";
-            ".*Nvim.*" = " Neovim";
-            ".*yazi.*" = " Yazi";
-            ".*Terminal.*" = " Terminal";
-            ".*btop.*" = " Process Monitor";
-            ".*htop.*" = " Process Monitor";
-            ".*hx.*" = "󰅴 Helix";
-            ".*Obsidian.*" = "󱓧 Obsidian";
-          };
-        };
-
-        network = {
-          format = "{ifname}";
-          format-ethernet = " {ifname}";
-          format-wifi = "{icon} {signalStrength}%";
-          format-disconnected = "󰅛 Disconnected";
-          format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
-          ];
-          tooltip = false;
-          on-click = "${lib.getExe pkgs.iwmenu} --launcher rofi";
-        };
-
-        tray = {
-          icon-size = 18;
-          spacing = 10;
-          show-passive-items = true;
-        };
-
         backlight = {
           format = "{icon} {percent}%";
           format-icons = [
@@ -97,36 +25,6 @@
           ];
           scroll-step = 1;
           tooltip = false;
-        };
-
-        pulseaudio = {
-          format = "{icon} {volume}%";
-          format-muted = "󰝟 {volume}%";
-          format-source = " {volume}%";
-          format-source-muted = "";
-          format-icons = {
-            headphone = "󰋋";
-            hands-free = "󱡏";
-            headset = "󰋎";
-            phone = "󰏲";
-            portable = "󰦧";
-            car = "󰄋";
-            default = "󰕾";
-          };
-          on-click = "${lib.getExe pkgs.pwmenu} --launcher rofi";
-          tooltip = false;
-        };
-
-        "custom/wlogout" = {
-          format = "";
-          on-click = lib.getExe pkgs.wlogout;
-          tooltip = false;
-        };
-
-        "custom/rofi" = {
-          format = "";
-          on-click = "${lib.getExe pkgs.rofi} -show drun";
-          tooltip-format = "Open the application launcher";
         };
 
         battery = {
@@ -148,6 +46,23 @@
             "󰂂"
             "󰁹"
           ];
+          tooltip = false;
+        };
+
+        clock = {
+          format = "󰥔 {:L%H:%M %Z}";
+          tooltip = false;
+        };
+
+        "custom/rofi" = {
+          format = "";
+          on-click = "${lib.getExe pkgs.rofi} -show drun";
+          tooltip-format = "Open the application launcher";
+        };
+
+        "custom/wlogout" = {
+          format = "";
+          on-click = lib.getExe pkgs.wlogout;
           tooltip = false;
         };
 
@@ -175,9 +90,104 @@
             "tray"
             "group/modules-control"
             "power-profiles-daemon"
+            "idle_inhibitor"
             "clock"
             "custom/wlogout"
           ];
+        };
+
+        "hyprland/window" = {
+          max-length = 20;
+          separate-outputs = false;
+          rewrite = {
+            "" = " Desktop";
+            ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
+            ".*VSCodium.*" = " VSCodium";
+            ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
+            ".*Chromium.*" = " Chromium";
+            ".*Brave.*" = "󰖟 Brave";
+            ".*Thunar.*" = " Thunar";
+            ".*mpv.*" = " MPV";
+            ".*imv.*" = " IMV";
+            ".*Spotify.*" = " Spotify";
+            ".*\.pdf" = " PDF Viewer";
+            ".*Nvim.*" = " Neovim";
+            ".*yazi.*" = " Yazi";
+            ".*Terminal.*" = " Terminal";
+            ".*btop.*" = " Process Monitor";
+            ".*htop.*" = " Process Monitor";
+            ".*hx.*" = "󰅴 Helix";
+            ".*Obsidian.*" = "󱓧 Obsidian";
+          };
+        };
+
+        "hyprland/workspaces" = {
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
+          persistent-workspaces = {
+            "*" = 5;
+          };
+        };
+
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰅶";
+            deactivated = "󰾪";
+          };
+          tooltip = true;
+        };
+
+        network = {
+          format = "{ifname}";
+          format-ethernet = " {ifname}";
+          format-wifi = "{icon} {signalStrength}%";
+          format-disconnected = "󰅛 Disconnected";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
+          tooltip = false;
+          on-click = "${lib.getExe pkgs.iwmenu} --launcher rofi";
+        };
+
+        power-profiles-daemon = {
+          format = "{icon}";
+          tooltip-format = "Power profile: {profile}";
+          tooltip = true;
+          format-icons = {
+            default = "";
+            performance = "";
+            balanced = "󰈐";
+            power-saver = "";
+          };
+        };
+
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-muted = "󰝟 {volume}%";
+          format-source = " {volume}%";
+          format-source-muted = "";
+          format-icons = {
+            headphone = "󰋋";
+            hands-free = "󱡏";
+            headset = "󰋎";
+            phone = "󰏲";
+            portable = "󰦧";
+            car = "󰄋";
+            default = "󰕾";
+          };
+          on-click = "${lib.getExe pkgs.pwmenu} --launcher rofi";
+          tooltip = false;
+        };
+
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+          show-passive-items = true;
         };
       }
     ];
@@ -268,6 +278,7 @@
       #battery,
       #backlight,
       #custom-rofi,
+      #idle_inhibitor,
       #power-profiles-daemon,
       #clock,
       #custom-wlogout {
@@ -281,6 +292,7 @@
       #backlight:hover,
       #custom-rofi:hover,
       #power-profiles-daemon:hover,
+      #idle_inhibitor:hover,
       #clock:hover,
       #custom-wlogout:hover {
         border-radius: 15px;
@@ -289,6 +301,7 @@
 
       #custom-rofi,
       #power-profiles-daemon,
+      #idle_inhibitor,
       #clock,
       #custom-wlogout {
         margin: 2px 3px;
