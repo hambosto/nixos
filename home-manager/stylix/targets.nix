@@ -3,7 +3,7 @@
   cava.rainbow.enable = true;
   dunst.enable = false;
   firefox = {
-    enable = false;
+    enable = true;
     profileNames = [ "default" ];
   };
   fish.enable = true;
