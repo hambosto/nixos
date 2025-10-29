@@ -2,6 +2,7 @@
   blender.enable = false;
   cava.rainbow.enable = true;
   dunst.enable = false;
+  emacs.enable = false;
   firefox = {
     enable = true;
     profileNames = [ "default" ];
