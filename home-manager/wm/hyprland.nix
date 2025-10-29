@@ -73,7 +73,6 @@
         "SUPER ALT, up, swapwindow, u"
         "SUPER SHIFT, down, resizeactive, 0 100"
         "SUPER SHIFT, left, resizeactive, -100 0"
-        "SUPER SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"
         "SUPER SHIFT, right, resizeactive, 100 0"
         "SUPER SHIFT, T, workspaceopt, allfloat"
         "SUPER SHIFT, up, resizeactive, 0 -100"
