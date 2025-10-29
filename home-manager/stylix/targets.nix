@@ -22,6 +22,7 @@
   obsidian.enable = false;
   qt.enable = true;
   spicetify.enable = false;
+  sxiv.enable = false;
   swaync.enable = false;
   vencord.enable = false;
   vscode.enable = false;
