@@ -1,6 +1,6 @@
 {
   imports = [
-    ./night-shift.nix
+    ./night-light.nix
     ./screenshot.nix
     ./toolbox.nix
     ./workspace.nix

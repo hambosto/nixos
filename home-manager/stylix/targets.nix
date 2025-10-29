@@ -7,11 +7,14 @@
     profileNames = [ "default" ];
   };
   fish.enable = true;
+  forge.enable = false;
   gedit.enable = false;
+  gnome.enable = false;
   gtk.enable = true;
   gtksourceview.enable = false;
   helix.enable = false;
   hyprland.hyprpaper.enable = false;
+  kde.enable = false;
   kitty.enable = true;
   neovide.enable = false;
   neovim.enable = false;
@@ -22,5 +25,6 @@
   vencord.enable = false;
   vscode.enable = false;
   waybar.enable = false;
+  xresources.enable = false;
   zed.enable = false;
 }
