@@ -1,11 +1,16 @@
 { lib, pkgs, ... }:
 {
   programs.helix = {
-    enable = true;
     defaultEditor = true;
-
+    enable = true;
     languages = {
       language = [
+        # {
+        #   auto-format = true;
+        #   formatter.command = "${lib.getExe' pkgs.clang-tools "clang-format"}";
+        #   language-servers = [ "clangd" ];
+        #   name = "c";
+        # }
         {
           auto-format = true;
           formatter.command = lib.getExe pkgs.gosimports;
@@ -20,48 +25,51 @@
         }
         # {
         #   auto-format = true;
-        #   formatter.command = lib.getExe pkgs.black;
         #   formatter.args = [
         #     "-"
         #     "--quiet"
         #   ];
+        #   formatter.command = lib.getExe pkgs.black;
         #   language-servers = [ "pyright" ];
         #   name = "python";
-        # }
-        # {
-        #   auto-format = true;
-        #   formatter = {
-        #     command = lib.getExe pkgs.zig;
-        #     args = [
-        #       "fmt"
-        #       "--stdin"
-        #     ];
-        #   };
-        #   language-servers = [ "zls" ];
-        #   name = "zig";
         # }
         # {
         #   auto-format = true;
         #   formatter.command = lib.getExe pkgs.rustfmt;
         #   name = "rust";
         # }
+        # {
+        #   auto-format = true;
+        #   formatter = {
+        #     args = [
+        #       "fmt"
+        #       "--stdin"
+        #     ];
+        #     command = lib.getExe pkgs.zig;
+        #   };
+        #   language-servers = [ "zls" ];
+        #   name = "zig";
+        # }
       ];
-
       language-server = {
+        # clangd.command = "${lib.getExe' pkgs.clang-tools "clangd"}";
         gopls.command = lib.getExe pkgs.gopls;
         nixd.command = lib.getExe pkgs.nixd;
         # pyright.command = "${lib.getExe' pkgs.pyright "pyright-langserver"}";
-        # zls.command = lib.getExe pkgs.zls;
         # rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
+        # zls.command = lib.getExe pkgs.zls;
       };
     };
-
     settings = {
-      theme = "tokyonight_storm";
       editor = {
         color-modes = true;
         completion-replace = true;
         completion-timeout = 1;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
         cursorline = true;
         end-of-line-diagnostics = "hint";
         file-picker.hidden = false;
@@ -119,12 +127,8 @@
             tabpad = "·";
           };
         };
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
       };
+      theme = "tokyonight_storm";
     };
   };
 }

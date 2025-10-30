@@ -14,10 +14,12 @@
     iwmenu = {
       url = "github:e-tho/iwmenu";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
@@ -29,6 +31,11 @@
     };
     pwmenu = {
       url = "github:e-tho/pwmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
@@ -42,6 +49,7 @@
     swww = {
       url = "github:LGFae/swww";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
   };
 
