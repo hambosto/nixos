@@ -28,6 +28,7 @@
     ./obs-studio.nix
     ./obsidian.nix
     ./oh-my-posh.nix
+    ./spicetify.nix
     ./starship.nix
     ./uv.nix
     ./vesktop.nix

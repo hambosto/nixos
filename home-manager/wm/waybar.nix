@@ -339,8 +339,8 @@
       menu,
       menuitem {
         background: #${config.lib.stylix.colors.base00};
-        border: 1px solid #${config.lib.stylix.colors.base0D};
-        border-radius: 8px;
+        border: 2px solid #${config.lib.stylix.colors.base0D};
+        border-radius: 5px;
         color: #${config.lib.stylix.colors.base05};
         padding: 4px 10px;
       }
