@@ -68,8 +68,7 @@ let
             os.chdir(CONFIG_DIR)
             execute("nix-collect-garbage -d", use_sudo=True)
             execute("nix-collect-garbage -d")
-            execute("nix-store --gc")
-            execute("nix-store --optimise")
+            execute("${lib.getExe pkgs.nix} store optimise")
             execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
             log_info("Garbage collection complete.")
 
