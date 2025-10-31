@@ -18,11 +18,14 @@
         name = "JetBrainsMono Nerd Font";
       };
 
-      serif = config.stylix.fonts.sansSerif;
+      serif = {
+        package = pkgs.source-serif-pro;
+        name = "Source Serif Pro";
+      };
 
       sansSerif = {
-        package = pkgs.nur.repos.guanran928.harmonyos-sans;
-        name = "HarmonyOS Sans";
+        package = pkgs.source-sans-pro;
+        name = "Source Sans Pro";
       };
 
       emoji = {
