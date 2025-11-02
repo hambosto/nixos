@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   stylix = {
     enable = true;
 
-    image = ../../assets/lofi.png;
+    image = ../../assets/limbo.png;
 
     polarity = "dark";
     cursor = {
