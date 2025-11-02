@@ -22,10 +22,13 @@
   obsidian.enable = false;
   qt.enable = true;
   spicetify.enable = false;
-  sxiv.enable = false;
   swaync.enable = false;
+  sxiv.enable = false;
   vencord.enable = false;
-  vscode.enable = false;
+  vscode = {
+    enable = false;
+    profileNames = [ "default" ];
+  };
   waybar.enable = false;
   xresources.enable = false;
   zed.enable = false;

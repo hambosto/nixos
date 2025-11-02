@@ -2,74 +2,57 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
     profiles.default = {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       userSettings = {
-        "editor.fontSize" = 14;
-        "editor.fontFamily" = "JetBrainsMono Nerd Font";
-        "editor.fontLigatures" = true;
-        "editor.fontWeight" = "500";
-        "editor.formatOnSave" = true;
-        "editor.minimap.enabled" = false;
-        "editor.cursorBlinking" = "expand";
-        "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.suggestSelection" = "first";
+        "breadcrumbs.enabled" = false;
+        "chat.editor.fontFamily" = "JetBrainsMono Nerd Font";
+        "chat.editor.fontSize" = 14;
+        "debug.console.fontFamily" = "JetBrainsMono Nerd Font";
+        "debug.console.fontSize" = 14;
         "editor.acceptSuggestionOnCommitCharacter" = true;
         "editor.acceptSuggestionOnEnter" = "on";
         "editor.autoClosingBrackets" = "always";
+        "editor.cursorBlinking" = "expand";
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.fontFamily" = "JetBrainsMono Nerd Font";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 14;
+        "editor.fontWeight" = "500";
+        "editor.formatOnSave" = true;
+        "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font";
+        "editor.inlineSuggest.fontFamily" = "JetBrainsMono Nerd Font";
+        "editor.minimap.enabled" = false;
+        "editor.minimap.sectionHeaderFontSize" = 14;
         "editor.semanticHighlighting.enabled" = true;
         "editor.stickyScroll.enabled" = false;
-
-        "workbench.colorTheme" = "Monospace Studio Dark";
-        "workbench.iconTheme" = "monospace-studio-icons";
-        "workbench.activityBar.location" = "hidden";
-        "workbench.editor.showTabs" = "single";
-        "workbench.statusBar.visible" = false;
-        "workbench.startupEditor" = "none";
-        "workbench.sideBar.location" = "right";
-        "workbench.tips.enabled" = false;
-        "workbench.tree.enableStickyScroll" = false;
-        "workbench.tree.renderIndentGuides" = "none";
-        "workbench.tree.indent" = 8;
-
+        "editor.suggestSelection" = "first";
         "explorer.compactFolders" = false;
-        "explorer.confirmDragAndDrop" = false;
         "explorer.confirmDelete" = false;
+        "explorer.confirmDragAndDrop" = false;
         "explorer.decorations.badges" = false;
         "git.decorations.enabled" = false;
-        "breadcrumbs.enabled" = false;
-
-        "terminal.integrated.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
-        "terminal.integrated.fontWeight" = "600";
-        "terminal.integrated.minimumContrastRatio" = 1;
-
-        "telemetry.telemetryLevel" = "off";
-        "window.menuBarVisibility" = "toggle";
-        "window.titleBarStyle" = "native";
-        "window.customTitleBarVisibility" = "never";
-
-        "go.inlayHints.assignVariableTypes" = true;
-        "go.inlayHints.constantValues" = true;
-        "go.inlayHints.parameterNames" = true;
-        "go.inlayHints.rangeVariableTypes" = true;
         "go.alternateTools" = {
+          "delve" = "${lib.getExe pkgs.delve}";
           "gofumpt" = "${lib.getExe pkgs.gofumpt}";
           "golangci-lint" = "${lib.getExe pkgs.golangci-lint}";
           "gomodifytags" = "${lib.getExe pkgs.gomodifytags}";
           "gopls" = "${lib.getExe pkgs.gopls}";
           "impl" = "${lib.getExe pkgs.impl}";
           "staticcheck" = "${lib.getExe' pkgs.go-tools "staticcheck"}";
-          "delve" = "${lib.getExe pkgs.delve}";
         };
+        "go.inlayHints.assignVariableTypes" = true;
+        "go.inlayHints.constantValues" = true;
+        "go.inlayHints.parameterNames" = true;
+        "go.inlayHints.rangeVariableTypes" = true;
         "go.lintTool" = "golangci-lint";
         "gopls" = {
           "formatting.gofumpt" = true;
           "ui.semanticTokens" = true;
         };
-
+        "markdown.preview.fontFamily" = "JetBrainsMono Nerd Font";
+        "markdown.preview.fontSize" = 14;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
         "nix.serverSettings" = {
@@ -79,10 +62,31 @@
             };
           };
         };
+        "scm.inputFontFamily" = "JetBrainsMono Nerd Font";
+        "scm.inputFontSize" = 14;
+        "screencastMode.fontSize" = 14;
+        "telemetry.telemetryLevel" = "off";
+        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+        "terminal.integrated.fontSize" = 14;
+        "terminal.integrated.fontWeight" = "600";
+        "terminal.integrated.minimumContrastRatio" = 1;
+        "window.customTitleBarVisibility" = "never";
+        "window.menuBarVisibility" = "toggle";
+        "window.titleBarStyle" = "native";
+        "workbench.activityBar.location" = "hidden";
+        "workbench.colorTheme" = "Monospace Studio Dark";
+        "workbench.editor.showTabs" = "single";
+        "workbench.iconTheme" = "monospace-studio-icons";
+        "workbench.sideBar.location" = "right";
+        "workbench.startupEditor" = "none";
+        "workbench.statusBar.visible" = false;
+        "workbench.tips.enabled" = false;
+        "workbench.tree.enableStickyScroll" = false;
+        "workbench.tree.indent" = 8;
+        "workbench.tree.renderIndentGuides" = "none";
 
         # "zig.path" = "${lib.getExe pkgs.zig}";
         # "zig.zls.path" = "${lib.getExe pkgs.zls}";
-
       };
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
