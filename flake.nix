@@ -50,8 +50,8 @@
       url = "github:hambosto/sweetbyte";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    swww = {
-      url = "github:LGFae/swww";
+    awww = {
+      url = "git+https://codeberg.org/LGFae/awww.git";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-overlay.follows = "rust-overlay";
     };
