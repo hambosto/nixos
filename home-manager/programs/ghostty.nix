@@ -20,8 +20,8 @@
       cursor-style = "bar";
       adjust-cursor-thickness = 1;
       mouse-hide-while-typing = true;
-      window-padding-x = 4;
-      window-padding-y = 6;
+      window-padding-x = 1;
+      window-padding-y = 1;
       window-padding-balance = true;
       gtk-single-instance = true;
     };
