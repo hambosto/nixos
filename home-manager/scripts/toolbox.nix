@@ -4,6 +4,18 @@ let
     pkgs.writers.writePython3Bin "nixos-toolbox"
       {
         doCheck = false;
+        makeWrapperArgs = [
+          "--prefix"
+          "PATH"
+          ":"
+          "${lib.makeBinPath [
+            pkgs.git
+            pkgs.nix
+            pkgs.helix
+            pkgs.nixos-rebuild
+            pkgs.nh
+          ]}"
+        ];
         libraries = (
           p: [
             p.rich
@@ -30,8 +42,8 @@ let
         def log_error(msg):
             console.print(f"[bold red][ERROR][/bold red] {msg}", file=sys.stderr)
 
-        def execute(cmd, use_sudo=False):
-            full_cmd = f"sudo {cmd}" if use_sudo else cmd
+        def execute(cmd, use_doas=False):
+            full_cmd = f"doas {cmd}" if use_doas else cmd
             log_info(f"Executing: {full_cmd}")
             try:
                 subprocess.run(full_cmd, shell=True, check=True)
@@ -43,42 +55,42 @@ let
         def cmd_rebuild():
             log_info("Starting NixOS rebuild...")
             os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nixos-rebuild} switch --flake .", use_sudo=True)
+            execute("git add .")
+            execute("nixos-rebuild switch --flake .", use_doas=True)
 
         def cmd_rebuild_nh():
             log_info("Starting NixOS rebuild with nh...")
             os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nh} os switch")
+            execute("git add .")
+            execute("nh os switch")
 
         def cmd_test():
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nixos-rebuild} test --flake .", use_sudo=True)
+            execute("git add .")
+            execute("nixos-rebuild test --flake .", use_doas=True)
 
         def cmd_update():
             log_info("Updating flake inputs...")
             os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.nix} flake update")
+            execute("nix flake update")
 
         def cmd_garbage_collection():
             log_info("Starting Nix garbage collection...")
             os.chdir(CONFIG_DIR)
-            execute("nix-collect-garbage -d", use_sudo=True)
+            execute("nix-collect-garbage -d", use_doas=True)
             execute("nix-collect-garbage -d")
-            execute("${lib.getExe pkgs.nix} store optimise")
-            execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
+            execute("nix store optimise")
+            execute("/run/current-system/bin/switch-to-configuration boot", use_doas=True)
             log_info("Garbage collection complete.")
 
         def cmd_list_generations():
             log_info("Listing system generations...")
-            execute("nix-env -p /nix/var/nix/profiles/system --list-generations", use_sudo=True)
+            execute("nix-env -p /nix/var/nix/profiles/system --list-generations", use_doas=True)
 
         def cmd_edit_config():
             log_info(f"Opening config directory in Helix: {CONFIG_DIR}")
-            subprocess.run(f"${lib.getExe pkgs.helix} {CONFIG_DIR}", shell=True)
+            subprocess.run(f"hx {CONFIG_DIR}", shell=True)
 
         def show_ui():
             menu = [
