@@ -11,4 +11,5 @@
   (import ../packages/obsidian-builders)
   inputs.nix4vscode.overlays.default
   inputs.nur.overlays.default
+  inputs.rust-overlay.overlays.default
 ]

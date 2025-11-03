@@ -26,6 +26,7 @@
     ./neovim.nix
     ./nh.nix
     ./obs-studio.nix
+    ./rust-nix.nix
     ./obsidian.nix
     ./oh-my-posh.nix
     ./spicetify.nix
