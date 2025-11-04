@@ -34,14 +34,14 @@
       }
     ];
     shellAliases = {
-      cat = "${lib.getExe config.programs.bat.package} --paging=never";
-      tree = "${lib.getExe config.programs.eza.package} --icons=always --tree --no-quotes";
-      ssh = "${lib.getExe config.programs.kitty.package} +kitten ssh";
+      cat = "${lib.getExe pkgs.bat} --paging=never";
+      tree = "${lib.getExe pkgs.eza} --icons=always --tree --no-quotes";
+      ssh = "${lib.getExe pkgs.kitty} +kitten ssh";
     };
     interactiveShellInit = ''
       set fish_greeting
       if [ -z "$NVIM" ] && [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ]
-          ${lib.getExe config.programs.fastfetch.package}
+          ${lib.getExe pkgs.fastfetch}
       end
     '';
   };

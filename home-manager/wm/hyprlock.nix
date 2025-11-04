@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.hyprlock = {
-    enable = config.wayland.windowManager.hyprland.enable;
+    enable = true;
     settings = {
       general = {
         disable_loading_bar = true;

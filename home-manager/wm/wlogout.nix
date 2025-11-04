@@ -12,7 +12,7 @@ let
 in
 {
   programs.wlogout = {
-    enable = config.wayland.windowManager.hyprland.enable;
+    enable = true;
     layout = [
       {
         label = "shutdown";
@@ -28,7 +28,7 @@ in
       }
       {
         label = "logout";
-        action = "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch exit";
+        action = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch exit";
         text = "Exit";
         keybind = "e";
       }
@@ -40,7 +40,7 @@ in
       }
       {
         label = "lock";
-        action = "${lib.getExe config.programs.hyprlock.package}";
+        action = "${lib.getExe pkgs.hyprlock}";
         text = "Lock";
         keybind = "l";
       }

@@ -6,7 +6,7 @@
 }:
 {
   programs.waybar = {
-    enable = config.wayland.windowManager.hyprland.enable;
+    enable = true;
     systemd.enable = true;
     settings = [
       {

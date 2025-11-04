@@ -1,17 +1,12 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   services.hypridle = {
-    enable = config.wayland.windowManager.hyprland.enable;
+    enable = true;
     settings = {
       general = {
-        lock_cmd = "${lib.getExe config.programs.hyprlock.package}";
+        lock_cmd = "${lib.getExe pkgs.hyprlock}";
         before_sleep_cmd = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
-        after_sleep_cmd = "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on";
+        after_sleep_cmd = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
       };
       listener = [
         {
@@ -30,8 +25,8 @@
         }
         {
           timeout = 240;
-          on-timeout = "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms off";
-          on-resume = "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch dpms on && ${lib.getExe pkgs.brightnessctl} -r";
+          on-timeout = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
+          on-resume = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on && ${lib.getExe pkgs.brightnessctl} -r";
         }
         {
           timeout = 300;

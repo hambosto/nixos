@@ -33,7 +33,7 @@ in
       opener = {
         edit = [
           {
-            run = ''${lib.getExe' config.programs.helix.package "hx"} "$@"'';
+            run = ''${lib.getExe pkgs.helix} "$@"'';
             block = true;
             for = "unix";
           }

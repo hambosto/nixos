@@ -6,7 +6,7 @@
 }:
 {
   programs.rofi = {
-    enable = config.wayland.windowManager.hyprland.enable;
+    enable = true;
     package = pkgs.rofi;
     extraConfig = {
       font = "Ubuntu Nerd Font 14";

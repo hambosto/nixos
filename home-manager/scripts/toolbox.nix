@@ -4,19 +4,6 @@ let
     pkgs.writers.writePython3Bin "nixos-toolbox"
       {
         doCheck = false;
-        makeWrapperArgs = [
-          "--prefix"
-          "PATH"
-          ":"
-          "${lib.makeBinPath [
-            pkgs.git
-            pkgs.nix
-            pkgs.helix
-            pkgs.nixos-rebuild
-            pkgs.nh
-            pkgs.systemd
-          ]}"
-        ];
         libraries = (
           p: [
             p.rich
@@ -53,9 +40,9 @@ let
             console.print(f"[bold red][ERROR][/bold red] {msg}", file=sys.stderr)
 
 
-        def execute(cmd: str, use_doas: bool = False) -> None:
+        def execute(cmd: str, use_sudo: bool = False) -> None:
             """Execute a shell command with optional privilege escalation."""
-            full_cmd = f"doas {cmd}" if use_doas else cmd
+            full_cmd = f"sudo {cmd}" if use_sudo else cmd
             log_info(f"Executing: {full_cmd}")
             try:
                 subprocess.run(full_cmd, shell=True, check=True)
@@ -69,54 +56,54 @@ let
             """Rebuild NixOS configuration."""
             log_info("Starting NixOS rebuild...")
             os.chdir(CONFIG_DIR)
-            execute("git add .")
-            execute("nixos-rebuild switch --flake .", use_doas=True)
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nixos-rebuild} switch --flake .", use_sudo=True)
 
 
         def cmd_rebuild_nh() -> None:
             """Rebuild NixOS configuration using nh."""
             log_info("Starting NixOS rebuild with nh...")
             os.chdir(CONFIG_DIR)
-            execute("git add .")
-            execute("nh os switch")
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nh} os switch")
 
 
         def cmd_test() -> None:
             """Test NixOS configuration without switching."""
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
-            execute("git add .")
-            execute("nixos-rebuild test --flake .", use_doas=True)
+            execute("${lib.getExe pkgs.git} add .")
+            execute("${lib.getExe pkgs.nixos-rebuild} test --flake .", use_sudo=True)
 
 
         def cmd_update() -> None:
             """Update flake inputs."""
             log_info("Updating flake inputs...")
             os.chdir(CONFIG_DIR)
-            execute("nix flake update")
+            execute("${lib.getExe pkgs.nix} flake update")
 
 
         def cmd_garbage_collection() -> None:
             """Perform Nix garbage collection."""
             log_info("Starting Nix garbage collection...")
             os.chdir(CONFIG_DIR)
-            execute("nix-collect-garbage -d", use_doas=True)
-            execute("nix-collect-garbage -d")
-            execute("nix store optimise")
-            execute("/run/current-system/bin/switch-to-configuration boot", use_doas=True)
+            execute("${lib.getExe' pkgs.nix "nix-collect-garbage"} -d", use_sudo=True)
+            execute("${lib.getExe' pkgs.nix "nix-collect-garbage"} -d")
+            execute("${lib.getExe pkgs.nix} store optimise")
+            execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
             log_info("Garbage collection complete.")
 
 
         def cmd_list_generations() -> None:
             """List system generations."""
             log_info("Listing system generations...")
-            execute("nix-env -p /nix/var/nix/profiles/system --list-generations", use_doas=True)
+            execute("${lib.getExe' pkgs.nix "nix-env"} -p /nix/var/nix/profiles/system --list-generations", use_sudo=True)
 
 
         def cmd_edit_config() -> None:
             """Open configuration directory in Helix editor."""
             log_info(f"Opening config directory in Helix: {CONFIG_DIR}")
-            subprocess.run(f"hx {CONFIG_DIR}", shell=True)
+            subprocess.run(f"${lib.getExe pkgs.helix} {CONFIG_DIR}", shell=True)
 
 
         def cmd_enter_bios() -> None:
@@ -129,7 +116,7 @@ let
             
             if confirm:
                 log_info("Rebooting into firmware setup...")
-                execute("systemctl reboot --firmware-setup", use_doas=True)
+                execute("${lib.getExe' pkgs.systemd "systemctl"} reboot --firmware-setup", use_sudo=True)
             else:
                 log_info("BIOS reboot cancelled.")
 

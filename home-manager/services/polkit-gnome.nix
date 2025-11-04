@@ -1,4 +1,3 @@
-{ config, ... }:
 {
-  services.polkit-gnome.enable = config.wayland.windowManager.hyprland.enable;
+  services.polkit-gnome.enable = true;
 }

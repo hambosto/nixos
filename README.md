@@ -47,13 +47,13 @@ nixos-generate-config --no-filesystems --show-hardware-config > nixos/hardware/c
 ### 5. Run the Partitioning Script
 
 ```bash
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount /nixos/disko
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount nixos/disko
 ```
 
 ### 6. Install the System
 
 ```bash
-sudo nixos-install --root /mnt --flake .#vivobook-m1403qa
+sudo nixos-install --root /mnt --no-root-passwd --flake .#vivobook-m1403qa
 ```
 
 After installation completes, reboot your system. You'll be greeted with the NixOS login screen where you can sign in using the root password you set during installation.

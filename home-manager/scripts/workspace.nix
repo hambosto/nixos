@@ -1,16 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   quit-workspace = pkgs.writeShellScriptBin "quit-workspace" ''
-    active_workspace=$(${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} -j activeworkspace | ${lib.getExe pkgs.jq} -r '.id')
-    addresses=$(${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} -j clients | ${lib.getExe pkgs.jq} -r ".[] | select(.workspace.id == $active_workspace) | .address")
+    active_workspace=$(${lib.getExe' pkgs.hyprland "hyprctl"} -j activeworkspace | ${lib.getExe pkgs.jq} -r '.id')
+    addresses=$(${lib.getExe' pkgs.hyprland "hyprctl"} -j clients | ${lib.getExe pkgs.jq} -r ".[] | select(.workspace.id == $active_workspace) | .address")
 
     for address in $addresses; do
-      ${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} dispatch closewindow address:$address
+      ${lib.getExe' pkgs.hyprland "hyprctl"} dispatch closewindow address:$address
     done
   '';
 in
