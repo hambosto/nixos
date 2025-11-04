@@ -1,13 +1,19 @@
 { config, ... }:
 {
-  users.users.ilham = {
-    isNormalUser = true;
-    description = "Ilham Putra Husada";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = config.programs.fish.package;
-    initialHashedPassword = "$6$/h/R3yYQDg0n3oNL$dqkwBWyN0KyOo4R/u9o9RUjqkNvg9W5B3gnGoR19YokrCIVt17/69L3X5efshhAE8GymqrxOYMRM54hV21tOF1";
+  users = {
+    mutableUsers = false;
+    users = {
+      ilham = {
+        isNormalUser = true;
+        description = "Ilham Putra Husada";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
+        shell = config.programs.fish.package;
+        hashedPassword = "$6$/1/Fc9yZLcNu6KVM$VxT6dGXJj81BlYnOrJ0pji/bxWe7PvRKOojy5kj3sjFvmtUxnNw2MHbhgVPay2RMygByKYd.t1ijaeohzyNcq/";
+      };
+      root.hashedPassword = "!"; # Lock the root user.
+    };
   };
 }

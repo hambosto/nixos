@@ -14,6 +14,7 @@ let
             pkgs.helix
             pkgs.nixos-rebuild
             pkgs.nh
+            pkgs.systemd
           ]}"
         ];
         libraries = (
@@ -24,25 +25,36 @@ let
         );
       }
       ''
-        from rich.console import Console
-        from InquirerPy import inquirer
-        import subprocess
+        """NixOS configuration management utility."""
+
         import os
+        import subprocess
         import sys
+
+        from InquirerPy import inquirer
+        from rich.console import Console
 
         console = Console()
         CONFIG_DIR = os.path.expanduser("~/.config/nixos")
 
-        def log_info(msg):
+
+        def log_info(msg: str) -> None:
+            """Log an informational message."""
             console.print(f"[bold green][INFO][/bold green] {msg}")
 
-        def log_warn(msg):
+
+        def log_warn(msg: str) -> None:
+            """Log a warning message."""
             console.print(f"[bold yellow][WARN][/bold yellow] {msg}")
 
-        def log_error(msg):
+
+        def log_error(msg: str) -> None:
+            """Log an error message."""
             console.print(f"[bold red][ERROR][/bold red] {msg}", file=sys.stderr)
 
-        def execute(cmd, use_doas=False):
+
+        def execute(cmd: str, use_doas: bool = False) -> None:
+            """Execute a shell command with optional privilege escalation."""
             full_cmd = f"doas {cmd}" if use_doas else cmd
             log_info(f"Executing: {full_cmd}")
             try:
@@ -52,30 +64,40 @@ let
                 log_error(f"Command failed with exit code {e.returncode}")
                 sys.exit(e.returncode)
 
-        def cmd_rebuild():
+
+        def cmd_rebuild() -> None:
+            """Rebuild NixOS configuration."""
             log_info("Starting NixOS rebuild...")
             os.chdir(CONFIG_DIR)
             execute("git add .")
             execute("nixos-rebuild switch --flake .", use_doas=True)
 
-        def cmd_rebuild_nh():
+
+        def cmd_rebuild_nh() -> None:
+            """Rebuild NixOS configuration using nh."""
             log_info("Starting NixOS rebuild with nh...")
             os.chdir(CONFIG_DIR)
             execute("git add .")
             execute("nh os switch")
 
-        def cmd_test():
+
+        def cmd_test() -> None:
+            """Test NixOS configuration without switching."""
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
             execute("git add .")
             execute("nixos-rebuild test --flake .", use_doas=True)
 
-        def cmd_update():
+
+        def cmd_update() -> None:
+            """Update flake inputs."""
             log_info("Updating flake inputs...")
             os.chdir(CONFIG_DIR)
             execute("nix flake update")
 
-        def cmd_garbage_collection():
+
+        def cmd_garbage_collection() -> None:
+            """Perform Nix garbage collection."""
             log_info("Starting Nix garbage collection...")
             os.chdir(CONFIG_DIR)
             execute("nix-collect-garbage -d", use_doas=True)
@@ -84,15 +106,36 @@ let
             execute("/run/current-system/bin/switch-to-configuration boot", use_doas=True)
             log_info("Garbage collection complete.")
 
-        def cmd_list_generations():
+
+        def cmd_list_generations() -> None:
+            """List system generations."""
             log_info("Listing system generations...")
             execute("nix-env -p /nix/var/nix/profiles/system --list-generations", use_doas=True)
 
-        def cmd_edit_config():
+
+        def cmd_edit_config() -> None:
+            """Open configuration directory in Helix editor."""
             log_info(f"Opening config directory in Helix: {CONFIG_DIR}")
             subprocess.run(f"hx {CONFIG_DIR}", shell=True)
 
-        def show_ui():
+
+        def cmd_enter_bios() -> None:
+            """Reboot into UEFI/BIOS firmware settings."""
+            log_warn("System will reboot into UEFI/BIOS settings...")
+            confirm = inquirer.confirm(
+                message="Are you sure you want to reboot into BIOS?",
+                default=False,
+            ).execute()
+            
+            if confirm:
+                log_info("Rebooting into firmware setup...")
+                execute("systemctl reboot --firmware-setup", use_doas=True)
+            else:
+                log_info("BIOS reboot cancelled.")
+
+
+        def show_ui() -> None:
+            """Display interactive menu."""
             menu = [
                 ("󰑓  Rebuild", cmd_rebuild),
                 ("󰑓  Rebuild (nh)", cmd_rebuild_nh),
@@ -101,22 +144,29 @@ let
                 ("  Garbage Collection", cmd_garbage_collection),
                 ("  List Generations", cmd_list_generations),
                 ("  Edit Configuration", cmd_edit_config),
+                ("  Enter BIOS", cmd_enter_bios),
             ]
+            
             choice = inquirer.select(
                 message="Select action:",
                 choices=[label for label, _ in menu],
                 height=10,
             ).execute()
+            
             for label, func in menu:
                 if label == choice:
                     func()
                     break
 
-        def main():
+
+        def main() -> None:
+            """Main entry point."""
             os.system("clear")
+            
             if len(sys.argv) < 2:
                 show_ui()
                 return
+            
             cmd = sys.argv[1]
             commands = {
                 "rebuild": cmd_rebuild,
@@ -126,13 +176,16 @@ let
                 "garbage-collection": cmd_garbage_collection,
                 "list-generations": cmd_list_generations,
                 "edit": cmd_edit_config,
+                "bios": cmd_enter_bios,
             }
+            
             func = commands.get(cmd)
             if func:
                 func()
             else:
                 log_error(f"Unknown command: {cmd}")
                 sys.exit(1)
+
 
         if __name__ == "__main__":
             main()
