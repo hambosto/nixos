@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   night-light = pkgs.writeShellScriptBin "night-light" ''
     if ${lib.getExe' pkgs.procps "pgrep"} -x "hyprsunset" > /dev/null; then

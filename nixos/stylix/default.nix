@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/lofi.png;
+    image = ../../assets/lion.png;
 
     polarity = "dark";
     cursor = {

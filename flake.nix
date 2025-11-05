@@ -62,12 +62,10 @@
     };
   };
 
-  outputs =
-    { nixpkgs, ... }@inputs:
-    {
-      nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
-        modules = [ ./nixos/configuration.nix ];
-        specialArgs = { inherit inputs; };
-      };
+  outputs = { nixpkgs, ... }@inputs: {
+    nixosConfigurations.vivobook-m1403qa = nixpkgs.lib.nixosSystem {
+      modules = [ ./nixos/configuration.nix ];
+      specialArgs = { inherit inputs; };
     };
+  };
 }
