@@ -32,6 +32,7 @@
         "explorer.confirmDelete" = false;
         "explorer.confirmDragAndDrop" = false;
         "explorer.decorations.badges" = false;
+        "files.enableTrash" = false;
         "git.decorations.enabled" = false;
         "go.alternateTools" = {
           "delve" = "${lib.getExe pkgs.delve}";
@@ -64,7 +65,7 @@
         };
         "scm.inputFontFamily" = "JetBrainsMono Nerd Font";
         "scm.inputFontSize" = 14;
-        "screencastMode.fontSize" = 14;
+        "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
         "terminal.integrated.fontSize" = 14;

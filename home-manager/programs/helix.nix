@@ -128,7 +128,7 @@
           };
         };
       };
-      theme = "tokyonight_storm";
+      theme = "kanagawa";
     };
   };
 }

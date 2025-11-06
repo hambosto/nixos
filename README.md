@@ -47,7 +47,7 @@ nixos-generate-config --no-filesystems --show-hardware-config > nixos/hardware/c
 ### 5. Run the Partitioning Script
 
 ```bash
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount nixos/disko
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount nixos/disko/ext4-luks.nix
 ```
 
 ### 6. Install the System
