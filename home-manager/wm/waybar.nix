@@ -140,7 +140,7 @@
 
         network = {
           format = "{ifname}";
-          format-ethernet = " {ifname}";
+          format-ethernet = " {ifname}";
           format-wifi = "{icon} {signalStrength}%";
           format-disconnected = "󰅛 Disconnected";
           format-icons = [
