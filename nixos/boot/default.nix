@@ -39,13 +39,13 @@
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot.enable = lib.mkForce false; # Disable this if using lanzaboote instead.
+      systemd-boot.enable = lib.mkForce true; # Disable this if using lanzaboote instead.
     };
     lanzaboote = {
-      enable = true; # Set to `true` to enable lanzaboote for Secure Boot.
+      enable = false; # Set to `true` to enable lanzaboote for Secure Boot.
       pkiBundle = "/var/lib/sbctl"; # Path to the sbctl public key infrastructure (PKI) bundle.
     };
     tmp.cleanOnBoot = true;
-    initrd.systemd.enable = true; # Set to `true` if using systemd-based initrd for TPM.
+    initrd.systemd.enable = false; # Set to `true` if using systemd-based initrd for TPM.
   };
 }
