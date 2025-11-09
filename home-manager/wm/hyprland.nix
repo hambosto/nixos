@@ -220,6 +220,15 @@
         "float,title:^(Picture-in-Picture)$"
         "move 69.5% 4%,title:^(Picture-in-Picture)$"
         "pin,title:^(Picture-in-Picture)$"
+
+        "float,class:(launch-floating)"
+        "size 1000 700,class:(launch-floating)"
+        "center,class:(launch-floating)"
+
+        "float,class:(.*org.pulseaudio.pavucontrol.*)"
+        "size 700 600,class:(.*org.pulseaudio.pavucontrol.*)"
+        "center,class:(.*org.pulseaudio.pavucontrol.*)"
+        "pin,class:(.*org.pulseaudio.pavucontrol.*)"
       ];
 
       xwayland = {
