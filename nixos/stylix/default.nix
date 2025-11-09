@@ -19,13 +19,13 @@
       };
 
       serif = {
-        package = pkgs.source-serif-pro;
-        name = "Source Serif Pro";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
 
       sansSerif = {
-        package = pkgs.source-sans-pro;
-        name = "Source Sans Pro";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
       };
 
       emoji = {
