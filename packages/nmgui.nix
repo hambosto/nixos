@@ -6,6 +6,9 @@
   gobject-introspection,
   gtk4,
   glib,
+  makeDesktopItem,
+  copyDesktopItems,
+  networkmanager,
 }:
 
 python3Packages.buildPythonApplication {
@@ -23,6 +26,7 @@ python3Packages.buildPythonApplication {
   nativeBuildInputs = [
     wrapGAppsHook4
     gobject-introspection
+    copyDesktopItems
   ];
 
   buildInputs = [
@@ -33,6 +37,21 @@ python3Packages.buildPythonApplication {
   dependencies = with python3Packages; [
     pygobject3
     nmcli
+  ];
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "nmgui";
+      exec = "nmgui";
+      icon = "network-wireless-symbolic";
+      comment = "GTK4-based Network Manager GUI using nmcli";
+      desktopName = "NM GUI";
+      categories = [
+        "Network"
+        "GTK"
+      ];
+      startupNotify = true;
+    })
   ];
 
   installPhase = ''
@@ -56,5 +75,6 @@ python3Packages.buildPythonApplication {
     homepage = "https://github.com/s-adi-dev/nmgui";
     license = lib.licenses.gpl3Plus;
     mainProgram = "nmgui";
+    inherit (networkmanager.meta) platforms;
   };
 }
