@@ -135,7 +135,7 @@
             "󰤨"
           ];
           tooltip = false;
-          on-click = "${lib.getExe pkgs.kitty} --class launch-floating -e ${lib.getExe' pkgs.impala "impala"}";
+          on-click = "${lib.getExe pkgs.nmgui}";
         };
 
         power-profiles-daemon = {

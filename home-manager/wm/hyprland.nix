@@ -229,6 +229,11 @@
         "size 700 600,class:(.*org.pulseaudio.pavucontrol.*)"
         "center,class:(.*org.pulseaudio.pavucontrol.*)"
         "pin,class:(.*org.pulseaudio.pavucontrol.*)"
+
+        "float,class:(.*com.network.manager.*)"
+        "size 700 600,class:(.*com.network.manager.*)"
+        "center,class:(.*com.network.manager.*)"
+        "pin,class:(.*com.network.manager.*)"
       ];
 
       xwayland = {
