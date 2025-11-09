@@ -8,7 +8,7 @@
   glib,
 }:
 
-python3Packages.buildPythonApplication rec {
+python3Packages.buildPythonApplication {
   pname = "nmgui";
   version = "1.0";
   format = "other";
