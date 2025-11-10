@@ -1,9 +1,4 @@
 {
-  virtualisation.docker.rootless = {
-    enable = false;
-    setSocketVariable = true;
-    daemon.settings = {
-      registry-mirrors = [ "https://mirror.gcr.io" ];
-    };
-  };
+  virtualisation.docker.rootless.enable = true;
+  virtualisation.docker.rootless.setSocketVariable = true;
 }
