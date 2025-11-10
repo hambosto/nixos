@@ -24,7 +24,6 @@
     ./lazydocker.nix
     ./lazygit.nix
     ./mpv.nix
-    ./neovim.nix
     ./nh.nix
     ./obs-studio.nix
     ./rust-nix.nix
