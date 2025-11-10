@@ -21,6 +21,7 @@
     ./htop.nix
     ./imv.nix
     ./kitty.nix
+    ./lazydocker.nix
     ./lazygit.nix
     ./mpv.nix
     ./neovim.nix

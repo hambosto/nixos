@@ -1,4 +1,4 @@
 {
-  virtualisation.docker.rootless.enable = true;
+  virtualisation.docker.rootless.enable = false;
   virtualisation.docker.rootless.setSocketVariable = true;
 }
