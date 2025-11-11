@@ -227,6 +227,8 @@
         "pin,class:(.*org.pulseaudio.pavucontrol.*)"
 
         "float, title:^(.*Network Manager.*)$"
+
+        "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
       ];
 
       xwayland = {

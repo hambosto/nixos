@@ -1,3 +1,3 @@
 {
-  imports = [ ./ext4-luks.nix ];
+  imports = [ ./btrfs-luks.nix ];
 }
