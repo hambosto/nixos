@@ -88,7 +88,7 @@
         };
 
         "hyprland/window" = {
-          max-length = 20;
+          max-length = 25;
           separate-outputs = false;
           rewrite = {
             "" = " Desktop";
@@ -104,12 +104,12 @@
             ".*\.pdf" = " PDF Viewer";
             ".*Nvim.*" = " Neovim";
             ".*yazi.*" = " Yazi";
-            ".*Terminal.*" = " Terminal";
+            ".*kitty.*" = "󰄛 Kitty";
             ".*btop.*" = " Process Monitor";
             ".*htop.*" = " Process Monitor";
             ".*hx.*" = "󰅴 Helix";
             ".*Obsidian.*" = "󱓧 Obsidian";
-            ".*impala.*" = "󰖩 Impala";
+            ".*Network Manager.*" = "󱫋 Network Manager GUI";
           };
         };
 

@@ -51,7 +51,7 @@
         "SUPER, B, exec, ${lib.getExe pkgs.firefox}"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
         "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
-        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title Terminal"
+        "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title kitty"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
 
