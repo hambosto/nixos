@@ -19,6 +19,8 @@
         modules-center = [ "hyprland/workspaces" ];
         modules-right = [
           "tray"
+          "memory"
+          "cpu"
           "pulseaudio"
           "network"
           "battery"
@@ -59,6 +61,12 @@
             "󰂂"
             "󰁹"
           ];
+          tooltip = false;
+        };
+
+        cpu = {
+          format = " {usage}%";
+          interval = 1;
           tooltip = false;
         };
 
@@ -120,6 +128,12 @@
             deactivated = "󰾪";
           };
           tooltip = true;
+        };
+
+        memory = {
+          format = " {}%";
+          interval = 1;
+          tooltip = false;
         };
 
         network = {
@@ -208,6 +222,8 @@
       #workspaces,
       #window,
       #clock,
+      #cpu,
+      #memory,
       #network,
       #tray,
       #pulseaudio,
@@ -222,6 +238,8 @@
 
       #window:hover,
       #clock:hover,
+      #cpu:hover,
+      #memory:hover,
       #backlight:hover,
       #battery:hover,
       #tray:hover {
