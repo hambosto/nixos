@@ -95,8 +95,8 @@
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
             ".*VSCodium.*" = " VSCodium";
             ".*Mozilla Firefox.*" = "󰈹 Mozilla Firefox";
-            ".*Chromium.*" = " Chromium";
-            ".*Brave.*" = "󰖟 Brave";
+            ".*Chromium.*" = " Chromium Browser";
+            ".*Brave.*" = " Brave Browser";
             ".*Thunar.*" = " Thunar";
             ".*mpv.*" = " MPV";
             ".*imv.*" = " IMV";

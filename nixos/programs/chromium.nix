@@ -1,47 +1,57 @@
 {
   programs.chromium = {
     enable = true;
+    defaultSearchProviderEnabled = true;
+    defaultSearchProviderSearchURL = "https://www.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
+    defaultSearchProviderSuggestURL = "https://www.google.com/complete/search?output=chrome&q={searchTerms}";
     extraOpts = {
-      BrowserSignin = 0;
-      SyncDisabled = true;
+      AIModeSettings = 0;
+      CreateThemesSettings = 2;
+      GeminiActOnWebSettings = 1;
+      HistorySearchSettings = 2;
+      TabOrganizerSettings = 2;
+      AutofillPredictionSettings = 2;
+      DevToolsGenAiSettings = 2;
+      GeminiSettings = 1;
+      GenAILocalFoundationalModelSettings = 1;
+      GenAiDefaultSettings = 1;
+      HelpMeWriteSettings = 2;
+      TabCompareSettings = 2;
+
       PasswordManagerEnabled = false;
-      SpellcheckEnabled = false;
-      HideWebStoreIcon = true;
-      MetricsReportingEnabled = false;
-      BrowserNetworkTimeQueriesEnabled = false;
-      DeviceMetricsReportingEnabled = false;
-      DomainReliabilityAllowed = false;
-      FeedbackSurveysEnabled = false;
-      SpellCheckServiceEnabled = false;
-      AllowSystemNotifications = true;
+      PasswordSharingEnabled = false;
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
+
+      BrowserSignin = 0;
+      SyncDisabled = true;
+
+      SpellcheckEnabled = false;
+      SpellCheckServiceEnabled = false;
+      HideWebStoreIcon = true;
+      AllowSystemNotifications = true;
       BackgroundModeEnabled = false;
       BookmarkBarEnabled = false;
-      BrowserAddPersonEnabled = true;
+      BrowserAddPersonEnabled = false;
       BrowserLabsEnabled = false;
       PromotionalTabsEnabled = false;
       ShoppingListEnabled = false;
       ShowFullUrlsInAddressBar = true;
-      CloudReportingEnabled = false;
-      CloudProfileReportingEnabled = false;
-      CreateThemesSettings = 2;
-      DevToolsGenAiSettings = 2;
-      GenAILocalFoundationalModelSettings = 1;
-      HelpMeWriteSettings = 2;
-      TabOrganizerSettings = 2;
-      ZstdContentEncodingEnabled = true;
-      PasswordDismissCompromisedAlertEnabled = false;
-      PasswordLeakDetectionEnabled = false;
-      PasswordSharingEnabled = false;
-      RelatedWebsiteSetsEnabled = false;
       HomePageIsNewTabPage = true;
       RestoreOnStartup = 5;
-      ShowHomeButton = false;
-      SafeBrowsingExtendedReportingEnabled = false;
-      SafeBrowsingProtectionLevel = 0;
-      SafeBrowsingProxiedRealTimeChecksAllowed = false;
-      SafeBrowsingSurveysEnabled = false;
+      ShowHomeButton = true;
+
+      TorDisabled = true;
+      BraveRewardsDisabled = true;
+      BraveWalletDisabled = true;
+      BraveVPNDisabled = true;
+      BraveAIChatEnabled = false;
+      BraveNewsDisabled = true;
+      BraveTalkDisabled = true;
+      BraveSpeedreaderEnabled = false;
+      BraveWaybackMachineEnabled = false;
+      BraveWebDiscoveryEnabled = false;
+      BravePlaylistEnabled = false;
     };
   };
 }
