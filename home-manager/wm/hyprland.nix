@@ -48,7 +48,7 @@
 
       bind = [
         # Applications
-        # "SUPER, B, exec, ${lib.getExe pkgs.firefox}"
+        "SUPER, B, exec, ${lib.getExe pkgs.chromium}"
         "SUPER, E, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
         "SUPER, L, exec, ${lib.getExe pkgs.hyprlock}"
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title kitty"
