@@ -2,10 +2,11 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "brave-browser.desktop" ];
-    # browser = [ "firefox.desktop" ];
+    # browser = [ "brave-browser.desktop" ];
+    browser = [ "firefox.desktop" ];
     # browser = [ "chromium-browser.desktop" ];
-    text = [ "codium.desktop" ];
+    # text = [ "codium.desktop" ];
+    text = [ "code.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
