@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   stylix = {
     enable = true;
@@ -20,14 +20,11 @@
         name = "JetBrainsMono Nerd Font";
       };
 
-      serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
-      };
+      serif = config.stylix.fonts.sansSerif;
 
       sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+        package = pkgs.nur.repos.guanran928.harmonyos-sans;
+        name = "HarmonyOS Sans";
       };
 
       emoji = {

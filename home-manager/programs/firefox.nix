@@ -2,8 +2,15 @@
 {
 
   programs.firefox = {
-    enable = false;
+    enable = true;
     policies = {
+      AppAutoUpdate = false;
+      CaptivePortal = false;
+      DisableProfileImport = true;
+      DisableSetDesktopBackground = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
@@ -13,6 +20,40 @@
       DisableAccounts = true;
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
+      FirefoxHome = {
+        Highlights = false;
+        Locked = true;
+        Pocket = false;
+        Search = true;
+        Snippets = false;
+        SponsoredPocket = false;
+        SponsoredStories = false;
+        SponsoredTopSites = false;
+        Stories = false;
+        TopSites = true;
+      };
+      FirefoxSuggest = {
+        ImproveSuggest = false;
+        Locked = true;
+        SponsoredSuggestions = false;
+        WebSuggestions = false;
+      };
+      GenerativeAI = {
+        Chatbot = false;
+        Enabled = false;
+        LinkPreviews = false;
+        Locked = true;
+        TabGroups = false;
+      };
+      UserMessaging = {
+        ExtensionRecommendations = false;
+        FeatureRecommendations = false;
+        FirefoxLabs = false;
+        Locked = true;
+        MoreFromMozilla = false;
+        SkipOnboarding = true;
+        UrlbarInterventions = false;
+      };
       Preferences = {
         "extensions.autoDisableScopes" = 0; # Automatically enable extensions
         "extensions.update.enabled" = false;
@@ -30,19 +71,28 @@
         "gfx.webrender.all" = true;
         "media.ffmpeg.vaapi.enabled" = true;
 
-        "content.notify.interval" = 100000;
-        "gfx.canvas.accelerated.cache-size" = 512;
-        "gfx.content.skia-font-cache-size" = 20;
+        # Fastfox settings
+        "gfx.content.skia-font-cache-size" = 32;
+        "gfx.canvas.accelerated.cache-items" = 32768;
+        "gfx.canvas.accelerated.cache-size" = 4096;
+        "webgl.max-size" = 16384;
         "browser.cache.disk.enable" = false;
+        "browser.cache.memory.capacity" = 131072;
+        "browser.cache.memory.max_entry_size" = 20480;
         "browser.sessionhistory.max_total_viewers" = 4;
-        "media.memory_cache_max_size" = 65536;
-        "media.cache_readahead_limit" = 7200;
-        "media.cache_resume_threshold" = 3600;
-        "image.mem.decode_bytes_at_a_time" = 32768;
+        "browser.sessionstore.max_tabs_undo" = 10;
+        "media.memory_cache_max_size" = 262144;
+        "media.memory_caches_combined_limit_kb" = 1048576;
+        "media.cache_readahead_limit" = 600;
+        "media.cache_resume_threshold" = 300;
+        "image.cache.size" = 10485760;
+        "image.mem.decode_bytes_at_a_time" = 65536;
         "network.http.max-connections" = 1800;
         "network.http.max-persistent-connections-per-server" = 10;
         "network.http.max-urgent-start-excessive-connections-per-host" = 5;
+        "network.http.request.max-start-delay" = 5;
         "network.http.pacing.requests.enabled" = false;
+        "network.dnsCacheEntries" = 10000;
         "network.dnsCacheExpiration" = 3600;
         "network.ssl_tokens_cache_capacity" = 10240;
         "network.http.speculative-parallel-limit" = 0;
@@ -52,24 +102,23 @@
         "browser.places.speculativeConnect.enabled" = false;
         "network.prefetch-next" = false;
         "network.predictor.enabled" = false;
-        "layout.css.grid-template-masonry-value.enabled" = true;
+
+        # Securefox settings
         "browser.contentblocking.category" = "strict";
         "privacy.trackingprotection.allow_list.baseline.enabled" = true;
-        "privacy.trackingprotection.allow_list.convenience.enabled" = true;
         "browser.download.start_downloads_in_tmp_dir" = true;
         "browser.helperApps.deleteTempFileOnExit" = true;
         "browser.uitour.enabled" = false;
         "privacy.globalprivacycontrol.enabled" = true;
         "security.OCSP.enabled" = 0;
-        "security.pki.crlite_mode" = 2;
         "security.csp.reporting.enabled" = false;
         "security.ssl.treat_unsafe_negotiation_as_broken" = true;
         "browser.xul.error_pages.expert_bad_cert" = true;
         "security.tls.enable_0rtt_data" = false;
         "browser.privatebrowsing.forceMediaMemoryCache" = true;
         "browser.sessionstore.interval" = 60000;
-        "browser.privatebrowsing.resetPBM.enabled" = true;
         "privacy.history.custom" = true;
+        "browser.privatebrowsing.resetPBM.enabled" = true;
         "browser.urlbar.trimHttps" = true;
         "browser.urlbar.untrimOnUserInteraction.featureGate" = true;
         "browser.search.separatePrivateDefault.ui.enabled" = true;
@@ -116,6 +165,8 @@
         "app.normandy.api_url" = "";
         "breakpad.reportURL" = "";
         "browser.tabs.crashReporting.sendReport" = false;
+
+        # Peskyfox settings
         "browser.privatebrowsing.vpnpromourl" = "";
         "extensions.getAddons.showPane" = false;
         "extensions.htmlaboutaddons.recommendations.enabled" = false;
@@ -132,6 +183,9 @@
         "browser.privateWindowSeparation.enabled" = false;
         "browser.ml.enable" = false;
         "browser.ml.chat.enabled" = false;
+        "browser.ml.chat.menu" = false;
+        "browser.tabs.groups.smart.enabled" = false;
+        "browser.ml.linkPreview.enabled" = false;
         "full-screen-api.transition-duration.enter" = "0 0";
         "full-screen-api.transition-duration.leave" = "0 0";
         "full-screen-api.warning.timeout" = 0;
@@ -141,28 +195,19 @@
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
-        "extensions.pocket.enabled" = false;
         "browser.download.manager.addToRecentDocs" = false;
         "browser.download.open_pdf_attachments_inline" = true;
         "browser.bookmarks.openInTabClosesMenu" = false;
         "browser.menu.showViewImageInfo" = true;
         "findbar.highlightAll" = true;
         "layout.word_select.eat_space_to_next_word" = false;
-        "extensions.ml.enabled" = false;
-        "browser.ml.chat.page" = false;
-        "browser.ml.chat.page.footerBadge" = false;
-        "browser.ml.chat.page.menuBadge" = false;
-        "browser.ml.chat.menu" = false;
-        "browser.ml.linkPreview.enabled" = false;
-        "browser.ml.pageAssist.enabled" = false;
-        "browser.tabs.groups.smart.enabled" = false;
-        "browser.tabs.groups.smart.userEnable" = false;
       };
 
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
         ublock-origin
         sponsorblock
+        material-icons-for-github
       ];
     };
   };
