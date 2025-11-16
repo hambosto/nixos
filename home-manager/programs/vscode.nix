@@ -20,7 +20,7 @@
         "editor.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
-        "editor.fontWeight" = "500";
+        "editor.fontWeight" = "650";
         "editor.formatOnSave" = true;
         "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.inlineSuggest.fontFamily" = "JetBrainsMono Nerd Font";
@@ -76,9 +76,9 @@
         "window.menuBarVisibility" = "toggle";
         "window.titleBarStyle" = "native";
         "workbench.activityBar.location" = "hidden";
-        "workbench.colorTheme" = "Monospace Studio Dark";
+        "workbench.colorTheme" = "Xcode Default (Dark)";
         "workbench.editor.showTabs" = "single";
-        "workbench.iconTheme" = "monospace-studio-icons";
+        "workbench.iconTheme" = "material-icon-theme";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;
@@ -93,8 +93,10 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "flaviodelgrosso.vscode-monospace-theme"
+        "pkief.material-icon-theme"
+        "mateocerquetella.xcode-12-theme"
 
+        # "flaviodelgrosso.vscode-monospace-theme"
         # "spacebox.monospace-idx-theme"
         # "miguelsolorio.symbols"
         # "enkia.tokyo-night"
