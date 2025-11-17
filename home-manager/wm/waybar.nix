@@ -103,7 +103,7 @@
             ".*Spotify.*" = " Spotify";
             ".*\.pdf" = " PDF Viewer";
             ".*Nvim.*" = " Neovim";
-            ".*yazi.*" = " Yazi";
+            ".*yazi.*" = "󰇥 Yazi";
             ".*kitty.*" = "󰄛 Kitty";
             ".*btop.*" = " Process Monitor";
             ".*htop.*" = " Process Monitor";
