@@ -19,7 +19,7 @@
         "editor.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
-        "editor.fontWeight" = "650";
+        "editor.fontWeight" = "600";
         "editor.formatOnSave" = true;
         "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.inlineSuggest.fontFamily" = "JetBrainsMono Nerd Font";
@@ -75,9 +75,9 @@
         "window.menuBarVisibility" = "toggle";
         "window.titleBarStyle" = "native";
         "workbench.activityBar.location" = "hidden";
-        "workbench.colorTheme" = "Xcode Default (Dark)";
+        "workbench.colorTheme" = "Monospace Dark";
         "workbench.editor.showTabs" = "single";
-        "workbench.iconTheme" = "material-icon-theme";
+        "workbench.iconTheme" = "monospace-studio-icons";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;
@@ -92,13 +92,9 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "pkief.material-icon-theme"
-        "mateocerquetella.xcode-12-theme"
+        "flaviodelgrosso.vscode-monospace-theme"
 
-        # "flaviodelgrosso.vscode-monospace-theme"
-        # "spacebox.monospace-idx-theme"
-        # "miguelsolorio.symbols"
-        # "enkia.tokyo-night"
+        # "pkief.material-icon-theme"
         # "supermaven.supermaven"
         # "oven.bun-vscode"
         # "ziglang.vscode-zig"

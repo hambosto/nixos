@@ -5,7 +5,7 @@
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
 
-    image = ../../assets/limbo.png;
+    image = ../../assets/beach.png;
 
     polarity = "dark";
     cursor = {

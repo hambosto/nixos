@@ -8,7 +8,7 @@
         frame_width = 2;
         offset = "9x9";
         progress_bar_corner_radius = 5;
-        font = "JetBrainsMono Nerd Font 14";
+        font = "Ubuntu Nerd Font 14";
         separator_color = config.lib.stylix.colors.withHashtag.base02;
       };
       urgency_low = {

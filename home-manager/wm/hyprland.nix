@@ -135,7 +135,7 @@
           enabled = true;
           ignore_opacity = true;
           new_optimizations = true;
-          passes = 3;
+          passes = 4;
           size = 9;
           xray = false;
         };
