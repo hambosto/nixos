@@ -21,6 +21,7 @@
   neovim.enable = false;
   obsidian.enable = false;
   qt.enable = true;
+  rofi.enable = false;
   spicetify.enable = false;
   swaync.enable = false;
   sxiv.enable = false;
