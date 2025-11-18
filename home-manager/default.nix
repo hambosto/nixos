@@ -1,6 +1,7 @@
 {
   imports = [
     ./home
+    ./modules
     ./programs
     ./scripts
     ./services

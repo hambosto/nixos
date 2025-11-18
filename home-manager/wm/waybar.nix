@@ -8,8 +8,8 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    settings = [
-      {
+    settings = {
+      mainBar = {
         layer = "top";
         position = "top";
         modules-left = [
@@ -187,8 +187,8 @@
           spacing = 10;
           show-passive-items = true;
         };
-      }
-    ];
+      };
+    };
 
     style = ''
       * {

@@ -26,9 +26,8 @@
     ./mpv.nix
     ./nh.nix
     ./obs-studio.nix
-    ./rust-nix.nix
-    ./obsidian.nix
     ./oh-my-posh.nix
+    ./rust-lang.nix
     ./spicetify.nix
     ./starship.nix
     ./uv.nix

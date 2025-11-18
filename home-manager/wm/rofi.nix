@@ -15,7 +15,7 @@
         location = mkLiteral "center";
         anchor = mkLiteral "center";
         fullscreen = mkLiteral "false";
-        width = mkLiteral "600px";
+        width = mkLiteral "400px";
         x-offset = mkLiteral "0px";
         y-offset = mkLiteral "0px";
         enabled = mkLiteral "true";
