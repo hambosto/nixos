@@ -6,11 +6,7 @@
 }:
 {
   options.programs.rust-lang = {
-    enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable Rust developer packages and environment variables for Home Manager.";
-    };
+    enable = lib.mkEnableOption "Enable Rust developer packages and environment variables for Home Manager.";
 
     packages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
