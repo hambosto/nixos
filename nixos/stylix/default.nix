@@ -3,9 +3,7 @@
   stylix = {
     enable = true;
 
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-
-    image = ../../assets/beach.png;
+    image = ../../assets/limbo.png;
 
     polarity = "dark";
     cursor = {

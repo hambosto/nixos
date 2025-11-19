@@ -250,7 +250,7 @@
         "float, title:^(File Upload)(.*)$"
 
         "center, title:^(.*Network Manager.*)$"
-        "size 800 600, title:^(.*Network Manager.*)$"
+        "size 500 400, title:^(.*Network Manager.*)$"
         "float, title:^(.*Network Manager.*)$"
 
         "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
