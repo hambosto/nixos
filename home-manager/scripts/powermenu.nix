@@ -1,18 +1,24 @@
 { lib, pkgs, ... }:
 let
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
-    shutdown='󰐥 Shutdown'
-    reboot='󰜉 Reboot'
-    lock='󰌾 Lock'
-    suspend='󰤄 Suspend'
-    logout='󰍃 Logout'
+    shutdown="󰐥 Shutdown"
+    reboot="󰜉 Reboot"
+    lock="󰌾 Lock"
+    suspend="󰤄 Suspend"
+    logout="󰍃 Logout"
 
     rofi_cmd() {
       ${lib.getExe pkgs.rofi} -dmenu -p "Power Menu"
     }
 
     run_rofi() {
-      echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+      {
+        echo "$shutdown"
+        echo "$reboot"
+        echo "$suspend"
+        echo "$lock"
+        echo "$logout"
+      } | rofi_cmd
     }
 
     chosen="$(run_rofi)"
@@ -28,7 +34,7 @@ let
         ${lib.getExe' pkgs.systemd "systemctl"} suspend
         ;;
       "$logout")
-        ${lib.getExe pkgs.hyprland} dispatch exit
+        ${lib.getExe' pkgs.hyprland "hyprctl"} dispatch exit
         ;;
       "$lock")
         ${lib.getExe pkgs.hyprlock}
@@ -42,4 +48,7 @@ in
       on-click = "${lib.getExe powermenu}";
     };
   };
+  wayland.windowManager.hyprland.settings.bind = [
+    "SUPER SHIFT, P, exec, ${lib.getExe powermenu}"
+  ];
 }
