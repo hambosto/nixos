@@ -133,22 +133,16 @@
       decoration = {
         blur = {
           enabled = true;
+          size = 6;
+          passes = 3;
+          popups = false;
           ignore_opacity = true;
           new_optimizations = true;
-          passes = 4;
-          size = 9;
-          xray = false;
+          xray = true;
         };
 
         dim_inactive = false;
         rounding = 5;
-
-        shadow = {
-          enabled = true;
-          range = 10;
-          render_power = 3;
-          sharp = false;
-        };
       };
 
       dwindle = {
@@ -225,6 +219,38 @@
         "center,class:(.*org.pulseaudio.pavucontrol.*)"
         "pin,class:(.*org.pulseaudio.pavucontrol.*)"
 
+        # Open File dialogs
+        "center, title:^(Open File)(.*)$"
+        "size 800 600, title:^(Open File)(.*)$"
+        "float, title:^(Open File)(.*)$"
+
+        # Select a File dialogs
+        "center, title:^(Select a File)(.*)$"
+        "size 800 600, title:^(Select a File)(.*)$"
+        "float, title:^(Select a File)(.*)$"
+
+        # Choose wallpaper dialogs
+        "center, title:^(Choose wallpaper)(.*)$"
+        "size 800 600, title:^(Choose wallpaper)(.*)$"
+        "float, title:^(Choose wallpaper)(.*)$"
+
+        # Open Folder dialogs
+        "center, title:^(Open Folder)(.*)$"
+        "size 800 600, title:^(Open Folder)(.*)$"
+        "float, title:^(Open Folder)(.*)$"
+
+        # Save As dialogs
+        "center, title:^(Save As)(.*)$"
+        "size 800 600, title:^(Save As)(.*)$"
+        "float, title:^(Save As)(.*)$"
+
+        # File Upload dialogs
+        "center, title:^(File Upload)(.*)$"
+        "size 800 600, title:^(File Upload)(.*)$"
+        "float, title:^(File Upload)(.*)$"
+
+        "center, title:^(.*Network Manager.*)$"
+        "size 800 600, title:^(.*Network Manager.*)$"
         "float, title:^(.*Network Manager.*)$"
 
         "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
