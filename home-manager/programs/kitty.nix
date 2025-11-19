@@ -7,8 +7,7 @@
       size = 11;
     };
     settings = lib.mkForce {
-      background_blur = 10;
-      background_opacity = 0.4;
+      background_opacity = 0.7;
       bold_font = "auto";
       bold_italic_font = "auto";
       confirm_os_window_close = 0;
