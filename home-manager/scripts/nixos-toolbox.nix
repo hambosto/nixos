@@ -51,18 +51,9 @@ let
                 log_error(f"Command failed with exit code {e.returncode}")
                 sys.exit(e.returncode)
 
-
         def cmd_rebuild() -> None:
-            """Rebuild NixOS configuration."""
-            log_info("Starting NixOS rebuild...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nixos-rebuild} switch --flake .", use_sudo=True)
-
-
-        def cmd_rebuild_nh() -> None:
             """Rebuild NixOS configuration using nh."""
-            log_info("Starting NixOS rebuild with nh...")
+            log_info("Starting NixOS rebuild...")
             os.chdir(CONFIG_DIR)
             execute("${lib.getExe pkgs.git} add .")
             execute("${lib.getExe pkgs.nh} os switch")
@@ -73,7 +64,7 @@ let
             log_info("Testing NixOS configuration...")
             os.chdir(CONFIG_DIR)
             execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nixos-rebuild} test --flake .", use_sudo=True)
+            execute("${lib.getExe pkgs.nh} os test")
 
 
         def cmd_update() -> None:
@@ -83,12 +74,18 @@ let
             execute("${lib.getExe pkgs.nix} flake update")
 
 
+        def cmd_rollback() -> None:
+            """Rollback to the previous NixOS generation."""
+            log_info("Rolling back to previous generation...")
+            os.chdir(CONFIG_DIR)
+            execute("${lib.getExe pkgs.nh} os rollback")
+
+
         def cmd_garbage_collection() -> None:
             """Perform Nix garbage collection."""
             log_info("Starting Nix garbage collection...")
             os.chdir(CONFIG_DIR)
-            execute("${lib.getExe' pkgs.nix "nix-collect-garbage"} -d", use_sudo=True)
-            execute("${lib.getExe' pkgs.nix "nix-collect-garbage"} -d")
+            execute("${lib.getExe pkgs.nh} clean all")
             execute("${lib.getExe pkgs.nix} store optimise")
             execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
             log_info("Garbage collection complete.")
@@ -97,7 +94,7 @@ let
         def cmd_list_generations() -> None:
             """List system generations."""
             log_info("Listing system generations...")
-            execute("${lib.getExe' pkgs.nix "nix-env"} -p /nix/var/nix/profiles/system --list-generations", use_sudo=True)
+            execute("${lib.getExe pkgs.nh} os info")
 
 
         def cmd_edit_config() -> None:
@@ -124,14 +121,14 @@ let
         def show_ui() -> None:
             """Display interactive menu."""
             menu = [
-                ("󰑓  Rebuild", cmd_rebuild),
-                ("󰑓  Rebuild (nh)", cmd_rebuild_nh),
-                ("󰐊  Test", cmd_test),
-                ("󰚰  Update", cmd_update),
-                ("  Garbage Collection", cmd_garbage_collection),
-                ("  List Generations", cmd_list_generations),
-                ("  Edit Configuration", cmd_edit_config),
-                ("  Enter BIOS", cmd_enter_bios),
+                ("󱌢 Rebuild", cmd_rebuild),
+                ("󰙨 Test", cmd_test),
+                ("󰚰 Update", cmd_update),
+                ("󰑓 Rollback", cmd_rollback),
+                (" Garbage Collection", cmd_garbage_collection),
+                (" List Generations", cmd_list_generations),
+                (" Edit Configuration", cmd_edit_config),
+                (" Enter BIOS", cmd_enter_bios),
             ]
             
             choice = inquirer.select(
@@ -157,7 +154,6 @@ let
             cmd = sys.argv[1]
             commands = {
                 "rebuild": cmd_rebuild,
-                "rebuild-nh": cmd_rebuild_nh,
                 "test": cmd_test,
                 "update": cmd_update,
                 "garbage-collection": cmd_garbage_collection,
