@@ -302,11 +302,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759991118,
-        "narHash": "sha256-pDyrtUQyeP1lVTMIYqJtftzDtsXEZaJjYy9ZQ/SGhL8=",
+        "lastModified": 1763571144,
+        "narHash": "sha256-Zh+uoUUCb9EiaCv0C1wNbjdrJvUrGJI1k5l1lPvk7iA=",
         "owner": "nix-community",
         "repo": "gomod2nix",
-        "rev": "7f8d7438f5870eb167abaf2c39eea3d2302019d1",
+        "rev": "9b6058eb92b71f2aa20c86a118aab9e41632e8bc",
         "type": "github"
       },
       "original": {
@@ -366,11 +366,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1763517711,
-        "narHash": "sha256-uY0Vr7ene4VlHyeZRHRNvT4WRwakAr8JShwmNEg7JB0=",
+        "lastModified": 1763604084,
+        "narHash": "sha256-PNcP4qUOAi1/p7Voab38NJcn2jmM8gQNJZbn9vSBnO0=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "ce4507078be02de77c001ca498657436ec815a35",
+        "rev": "e4176772efe39ddf77a62fa3e7caea664fcf41b5",
         "type": "github"
       },
       "original": {
@@ -403,11 +403,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763564536,
-        "narHash": "sha256-6eeVfw5G3mqzGonC2tmlpE3IJGcOTdHUwnnOR4ea3Nw=",
+        "lastModified": 1763628778,
+        "narHash": "sha256-IuDMOmIhUyIWqpv3zRMuE/RF20LTjlTA/clWJb8d+VI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "52379c7579ae0066e94088f32491dc0af35d1864",
+        "rev": "7f0cb5d451db13ff3d511220fc1e8bda2261072e",
         "type": "github"
       },
       "original": {
@@ -562,11 +562,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1763562411,
-        "narHash": "sha256-66IHhsBS1gAhmnpCr8Oc7JHyhBEuduMV9DdAV/HbTsQ=",
+        "lastModified": 1763590746,
+        "narHash": "sha256-bsEu7Ohdo2OEudXdQzk+jc9fiO0rNMGaH+Wee7FXxNc=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "948720e2979e6db4602b0232ba613dda668c3d97",
+        "rev": "3013f98e28e52b3bd3859b0c454554aae54d5060",
         "type": "github"
       },
       "original": {
@@ -584,11 +584,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763521490,
-        "narHash": "sha256-VFkXkMhdegIfRNTW8mTiwMU6HhWkZQpJAd+OL7NffwQ=",
+        "lastModified": 1763607772,
+        "narHash": "sha256-RUtmqPpR++owOFxaR4RfgaTKqnsINmfqTELNhfLj8kI=",
         "owner": "hambosto",
         "repo": "sweetbyte",
-        "rev": "29ec38b981f71bcfb4ae279730d32388c8140526",
+        "rev": "eb44b5905c3a62bf46030491cc2e951b6b1ca2ae",
         "type": "github"
       },
       "original": {

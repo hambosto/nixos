@@ -7,8 +7,12 @@
       enableExtensionUpdateCheck = false;
       userSettings = {
         "breadcrumbs.enabled" = false;
+        "chat.agent.enabled" = false;
+        "chat.commandCenter.enabled" = false;
+        "chat.disableAIFeatures" = true;
         "chat.editor.fontFamily" = "JetBrainsMono Nerd Font";
         "chat.editor.fontSize" = 14;
+        "chat.fontFamily" = "JetBrainsMono Nerd Font";
         "debug.console.fontFamily" = "JetBrainsMono Nerd Font";
         "debug.console.fontSize" = 14;
         "editor.acceptSuggestionOnCommitCharacter" = true;
@@ -32,8 +36,13 @@
         "explorer.confirmDelete" = false;
         "explorer.confirmDragAndDrop" = false;
         "explorer.decorations.badges" = false;
+        "extensions.autoCheckUpdates" = false;
+        "extensions.autoUpdate" = false;
+        "extensions.ignoreRecommendations" = true;
         "files.enableTrash" = false;
         "git.decorations.enabled" = false;
+        "github.copilot.editor.enableAutoCompletions" = false;
+        "github.copilot.enable" = false;
         "go.alternateTools" = {
           "delve" = "${lib.getExe pkgs.delve}";
           "gofumpt" = "${lib.getExe pkgs.gofumpt}";
@@ -52,10 +61,11 @@
           "formatting.gofumpt" = true;
           "ui.semanticTokens" = true;
         };
+        "inlineChat.accessibleDiffView" = "off";
         "markdown.preview.fontFamily" = "JetBrainsMono Nerd Font";
         "markdown.preview.fontSize" = 14;
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+        "nix.serverPath" = "${lib.getExe pkgs.nixd}";
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
@@ -63,13 +73,17 @@
             };
           };
         };
+        "notebook.markup.fontFamily" = "JetBrainsMono Nerd Font";
         "scm.inputFontFamily" = "JetBrainsMono Nerd Font";
         "scm.inputFontSize" = 14;
         "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
+        "telemetry.editStats.enabled" = false;
+        "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
         "terminal.integrated.fontSize" = 14;
         "terminal.integrated.fontWeight" = "600";
+        "terminal.integrated.initialHint" = false;
         "terminal.integrated.minimumContrastRatio" = 1;
         "window.customTitleBarVisibility" = "never";
         "window.menuBarVisibility" = "toggle";
