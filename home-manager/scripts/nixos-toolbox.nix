@@ -37,7 +37,7 @@ let
 
         def log_error(msg: str) -> None:
             """Log an error message."""
-            console.print(f"[bold red][ERROR][/bold red] {msg}", file=sys.stderr)
+            console.print(f"[bold red][ERROR][/bold red] {msg}")
 
 
         def execute(cmd: str, use_sudo: bool = False) -> None:
@@ -49,7 +49,7 @@ let
                 log_info("Command completed successfully")
             except subprocess.CalledProcessError as e:
                 log_error(f"Command failed with exit code {e.returncode}")
-                sys.exit(e.returncode)
+                sys.exit(1)
 
         def cmd_rebuild() -> None:
             """Rebuild NixOS configuration using nh."""
@@ -131,16 +131,20 @@ let
                 (" Enter BIOS", cmd_enter_bios),
             ]
             
-            choice = inquirer.select(
-                message="Select action:",
-                choices=[label for label, _ in menu],
-                height=10,
-            ).execute()
-            
-            for label, func in menu:
-                if label == choice:
-                    func()
-                    break
+            try:
+                choice = inquirer.select(
+                    message="Select action:",
+                    choices=[label for label, _ in menu],
+                    height=10,
+                ).execute()
+                
+                for label, func in menu:
+                    if label == choice:
+                        func()
+                        break
+            except KeyboardInterrupt:
+                log_info("Menu cancelled by user. Exiting.")
+                sys.exit(0)
 
 
         def main() -> None:
