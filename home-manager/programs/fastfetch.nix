@@ -1,16 +1,22 @@
+{ config, ... }:
 {
   programs.fastfetch = {
     enable = true;
     settings = {
 
       logo = {
-        source = ../../assets/nixos_custom_cat.png;
-        type = "kitty-direct";
-        height = 15;
-        width = 30;
+        source = ../../assets/nixos_ascii.txt;
+        type = "file";
         padding = {
-          top = 1;
-          left = 2;
+          left = 3;
+        };
+        color = {
+          "1" = "#${config.lib.stylix.colors.base08}";
+          "2" = "#${config.lib.stylix.colors.base09}";
+          "3" = "#${config.lib.stylix.colors.base0A}";
+          "4" = "#${config.lib.stylix.colors.base0B}";
+          "5" = "#${config.lib.stylix.colors.base0D}";
+          "6" = "#${config.lib.stylix.colors.base0E}";
         };
 
       };

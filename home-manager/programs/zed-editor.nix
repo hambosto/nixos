@@ -6,7 +6,7 @@
       "material-icon-theme"
       "nix"
       "tokyo-night"
-      # "toml"
+      "toml"
       # "dockerfile"
       # "docker-compose"
       # "crates-lsp"
@@ -35,16 +35,16 @@
         show_type_hints = true;
       };
       languages = {
-        Go = {
-          format_on_save = "on";
-          formatter.external.command = lib.getExe pkgs.gosimports;
-          language_servers = [ "gopls" ];
-        };
-        Nix = {
-          format_on_save = "on";
-          formatter.external.command = lib.getExe pkgs.nixfmt-rfc-style;
-          language_servers = [ "nixd" ];
-        };
+        # Go = {
+        #   format_on_save = "on";
+        #   formatter.external.command = lib.getExe pkgs.gosimports;
+        #   language_servers = [ "gopls" ];
+        # };
+        # Nix = {
+        #   format_on_save = "on";
+        #   formatter.external.command = lib.getExe pkgs.nixfmt-rfc-style;
+        #   language_servers = [ "nixd" ];
+        # };
         # Python = {
         #   format_on_save = "on";
         #   formatter.external = {
@@ -56,25 +56,25 @@
         #   };
         #   language_servers = [ "pyright" ];
         # };
-        # Rust = {
-        #   format_on_save = "on";
-        #   formatter.external.command = lib.getExe pkgs.rustfmt;
-        #   language_servers = [ "rust-analyzer" ];
-        # };
+        Rust = {
+          format_on_save = "on";
+          formatter.external.command = lib.getExe pkgs.rustfmt;
+          language_servers = [ "rust-analyzer" ];
+        };
       };
       lsp = {
-        gopls = {
-          binary.path = lib.getExe pkgs.gopls;
-        };
-        nixd = {
-          binary.path = lib.getExe pkgs.nixd;
-        };
+        # gopls = {
+        #   binary.path = lib.getExe pkgs.gopls;
+        # };
+        # nixd = {
+        #   binary.path = lib.getExe pkgs.nixd;
+        # };
         # pyright = {
         #   binary.path = lib.getExe pkgs.pyright;
         # };
-        # rust-analyzer = {
-        #   binary.path = lib.getExe pkgs.rust-analyzer;
-        # };
+        rust-analyzer = {
+          binary.path = lib.getExe pkgs.rust-analyzer;
+        };
       };
       project_panel = {
         entry_spacing = "standard";
