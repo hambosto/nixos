@@ -32,7 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:nix-community/stylix";
+      url = "github:nix-community/stylix/687a8c1bf20124c66580679e3c87fe35eb7365b9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sweetbyte = {
