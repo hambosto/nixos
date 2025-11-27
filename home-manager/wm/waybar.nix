@@ -208,7 +208,6 @@
         background-color: #${config.lib.stylix.colors.base00};
         border: 2px solid #${config.lib.stylix.colors.base0D};
         border-radius: 5px;
-        opacity: 0.95;
       }
 
       tooltip {
@@ -252,7 +251,7 @@
       #power-profiles-daemon:hover,
       #custom-rofi:hover,
       #custom-powermenu:hover {
-        background-color: #${config.lib.stylix.colors.base0E};
+        background-color: #${config.lib.stylix.colors.base0D};
         color: #${config.lib.stylix.colors.base00};
         border-radius: 5px;
       }
@@ -267,7 +266,7 @@
       }
 
       #workspaces button.active {
-        background-color: #${config.lib.stylix.colors.base0E};
+        background-color: #${config.lib.stylix.colors.base0D};
         color: #${config.lib.stylix.colors.base00};
         margin: 2px 1px;
         padding: 0 6px;
@@ -275,7 +274,7 @@
       }
 
       #workspaces button:hover {
-        background-color: #${config.lib.stylix.colors.base0E};
+        background-color: #${config.lib.stylix.colors.base0D};
         color: #${config.lib.stylix.colors.base00};
         transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
       }
