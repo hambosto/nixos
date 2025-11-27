@@ -14,6 +14,7 @@
         pkgs.cargo
         pkgs.rustc
         pkgs.rustfmt
+        pkgs.clippy
         pkgs.stdenv.cc
       ];
       description = "List of pkgs package expressions to add to home.packages when programs.rust-lang.enable = true.";
