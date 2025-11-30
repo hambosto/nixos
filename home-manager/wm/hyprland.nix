@@ -171,8 +171,6 @@
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
 
-      exec-once = [ "${lib.getExe pkgs.awww} img ${config.stylix.image}" ];
-
       general = {
         border_size = 2;
         gaps_in = 6;

@@ -15,7 +15,6 @@
   gtk.enable = true;
   gtksourceview.enable = false;
   helix.enable = false;
-  hyprland.hyprpaper.enable = false;
   kde.enable = false;
   kitty.enable = true;
   neovide.enable = false;
