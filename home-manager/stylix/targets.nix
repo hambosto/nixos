@@ -9,7 +9,7 @@
   };
   fish.enable = true;
   forge.enable = false;
-  "go DiskUsage()".enable = false;
+  gdu.enable = false;
   gedit.enable = false;
   gnome.enable = false;
   gtk.enable = true;

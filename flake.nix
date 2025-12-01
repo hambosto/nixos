@@ -2,37 +2,66 @@
   description = "A simple flake for an atomic system";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     disko = {
-      url = "github:nix-community/disko";
+      type = "github";
+      owner = "nix-community";
+      repo = "disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     home-manager = {
-      url = "github:nix-community/home-manager";
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     lanzaboote = {
-      url = "github:nix-community/lanzaboote";
+      type = "github";
+      owner = "nix-community";
+      repo = "lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nix4vscode = {
-      url = "github:nix-community/nix4vscode";
+      type = "github";
+      owner = "nix-community";
+      repo = "nix4vscode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
+
     nur = {
-      url = "github:nix-community/NUR";
+      type = "github";
+      owner = "nix-community";
+      repo = "NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+      type = "github";
+      owner = "Gerg-L";
+      repo = "spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     stylix = {
-      url = "github:nix-community/stylix";
+      type = "github";
+      owner = "nix-community";
+      repo = "stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     sweetbyte = {
-      url = "github:hambosto/sweetbyte";
+      type = "github";
+      owner = "hambosto";
+      repo = "sweetbyte";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
