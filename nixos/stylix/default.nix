@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/setup.png;
+    image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";
     cursor = {
