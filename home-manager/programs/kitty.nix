@@ -7,7 +7,7 @@
       size = 11;
     };
     settings = lib.mkForce {
-      background_opacity = 0.7;
+      background_opacity = 0.5;
       bold_font = "auto";
       bold_italic_font = "auto";
       cursor_blink = true;
