@@ -1,4 +1,10 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 {
   programs.vscode = {
     enable = true;
@@ -70,6 +76,16 @@
           "nixd" = {
             "formatting" = {
               "command" = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
+            };
+            "options" = {
+              "home-manager" = {
+                "expr" =
+                  "(builtins.getFlake \"${config.programs.nh.flake}\").nixosConfigurations.${osConfig.networking.hostName}.options.home-manager.users.type.getSubOptions []";
+              };
+              "nixos" = {
+                "expr" =
+                  "(builtins.getFlake \"${config.programs.nh.flake}\").nixosConfigurations.${osConfig.networking.hostName}.options";
+              };
             };
           };
         };
