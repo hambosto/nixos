@@ -2,6 +2,12 @@
   description = "A simple flake for an atomic system";
 
   inputs = {
+
+    awww = {
+      url = "git+https://codeberg.org/LGFae/awww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       type = "github";
       owner = "nix-community";

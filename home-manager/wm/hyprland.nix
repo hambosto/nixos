@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -169,8 +164,6 @@
         "OZONE_PLATFORM,wayland"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
-
-      exec-once = [ "${lib.getExe pkgs.swww} img ${config.stylix.image}" ];
 
       general = {
         border_size = 2;
