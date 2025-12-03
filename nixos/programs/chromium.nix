@@ -1,11 +1,23 @@
 {
   programs.chromium = {
-    enable = false;
+    enable = true;
     defaultSearchProviderEnabled = true;
     defaultSearchProviderSearchURL = "https://www.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
     defaultSearchProviderSuggestURL = "https://www.google.com/complete/search?output=chrome&q={searchTerms}";
     extraOpts = {
-      AIModeSettings = 0;
+      AdsSettingForIntrusiveAdsSites = 2;
+      DefaultBrowserSettingEnabled = false;
+      DefaultNotificationsSetting = 2;
+      DefaultPopupsSetting = 2;
+      MetricsReportingEnabled = false;
+      NetworkPredictionOptions = 2;
+      PrivacySandboxAdMeasurementEnabled = false;
+      PrivacySandboxAdTopicsEnabled = false;
+      PrivacySandboxPromptEnabled = false;
+      PrivacySandboxSiteEnabledAdsEnabled = false;
+      SearchSuggestEnabled = false;
+      UrlKeyedAnonymizedDataCollectionEnabled = false;
+      AIModeSettings = 1;
       CreateThemesSettings = 2;
       GeminiActOnWebSettings = 1;
       HistorySearchSettings = 2;
@@ -14,18 +26,15 @@
       DevToolsGenAiSettings = 2;
       GeminiSettings = 1;
       GenAILocalFoundationalModelSettings = 1;
-      GenAiDefaultSettings = 1;
+      GenAiDefaultSettings = 2;
       HelpMeWriteSettings = 2;
       TabCompareSettings = 2;
-
       PasswordManagerEnabled = false;
       PasswordSharingEnabled = false;
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
-
       BrowserSignin = 0;
       SyncDisabled = true;
-
       SpellcheckEnabled = false;
       SpellCheckServiceEnabled = false;
       HideWebStoreIcon = true;
@@ -40,7 +49,17 @@
       HomePageIsNewTabPage = true;
       RestoreOnStartup = 5;
       ShowHomeButton = true;
-
+      BrowserSwitcherEnabled = false;
+      ImportAutofillFormData = false;
+      ImportBookmarks = false;
+      ImportHistory = false;
+      ImportHomepage = false;
+      ImportSavedPasswords = false;
+      ImportSearchEngine = false;
+      PromptForDownloadLocation = true;
+      CloudReportingEnabled = false;
+      FirstPartySetsEnabled = false;
+      UserFeedbackAllowed = false;
       TorDisabled = true;
       BraveRewardsDisabled = true;
       BraveWalletDisabled = true;
