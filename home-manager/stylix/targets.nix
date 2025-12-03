@@ -4,7 +4,7 @@
   dunst.enable = false;
   emacs.enable = false;
   firefox = {
-    enable = true;
+    enable = false;
     profileNames = [ "default" ];
   };
   fish.enable = true;
