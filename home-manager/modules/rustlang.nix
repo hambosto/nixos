@@ -15,8 +15,6 @@ let
     ;
 in
 {
-  meta.maintainers = [ lib.maintainers.hambosto ];
-
   options = {
     programs.rustlang = {
       enable = mkEnableOption "Rust development environment";
