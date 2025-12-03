@@ -1,3 +1,3 @@
 {
-  imports = [ ./rust-lang.nix ];
+  imports = [ ./rustlang.nix ];
 }

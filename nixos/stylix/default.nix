@@ -3,6 +3,8 @@
   stylix = {
     enable = true;
 
+    enableReleaseChecks = false;
+
     image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";

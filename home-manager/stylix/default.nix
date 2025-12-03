@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   stylix = {
+    enableReleaseChecks = false;
 
     iconTheme = {
       enable = true;
