@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/vintage-ascent.jpg;
+    image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";
     cursor = {
