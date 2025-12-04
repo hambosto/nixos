@@ -16,8 +16,8 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
       };
 
       serif = config.stylix.fonts.sansSerif;

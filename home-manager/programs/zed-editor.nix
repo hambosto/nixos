@@ -13,7 +13,7 @@
     ];
     userSettings = {
       base_keymap = "VSCode";
-      buffer_font_family = "JetBrainsMono Nerd Font";
+      buffer_font_family = "GeistMono Nerd Font";
       buffer_font_size = 13;
       buffer_line_height = {
         custom = 1.4;
@@ -89,7 +89,7 @@
       terminal = {
         blinking = "on";
         cursor_shape = "bar";
-        font_family = "JetBrainsMono Nerd Font";
+        font_family = "GeistMono Nerd Font";
         font_size = 13;
       };
       theme = "Tokyo Night";
@@ -97,7 +97,7 @@
         breadcrumbs = false;
         quick_actions = false;
       };
-      ui_font_family = "JetBrainsMono Nerd Font";
+      ui_font_family = "GeistMono Nerd Font";
       ui_font_size = 14;
     };
   };
