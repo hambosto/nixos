@@ -22,13 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lanzaboote = {
-      type = "github";
-      owner = "nix-community";
-      repo = "lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix4vscode = {
       type = "github";
       owner = "nix-community";
