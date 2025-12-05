@@ -3,7 +3,6 @@
   imports = [
     inputs.disko.nixosModules.disko
     inputs.stylix.nixosModules.stylix
-    inputs.lanzaboote.nixosModules.lanzaboote
     ./boot
     ./disko
     ./docs
