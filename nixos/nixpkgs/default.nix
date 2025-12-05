@@ -1,6 +1,10 @@
 { inputs, ... }:
 {
-  nixpkgs.overlays = import ../../overlays { inherit inputs; };
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowBroken = true;
+  nixpkgs = {
+    config = {
+      allowBroken = true;
+      allowUnfree = true;
+    };
+    overlays = import ../../overlays { inherit inputs; };
+  };
 }
