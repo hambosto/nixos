@@ -106,9 +106,9 @@
         "window.titleBarStyle" = "native";
         "window.zoomLevel" = 0.7;
         "workbench.activityBar.location" = "hidden";
-        "workbench.colorTheme" = "Monospace Dark";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
         "workbench.editor.showTabs" = "single";
-        "workbench.iconTheme" = "monospace-studio-icons";
+        "workbench.iconTheme" = "gruvbox-material-icon-theme";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;
@@ -123,8 +123,10 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "flaviodelgrosso.vscode-monospace-theme"
+        "jdinhlife.gruvbox"
+        "jonathanharty.gruvbox-material-icon-theme"
 
+        # "flaviodelgrosso.vscode-monospace-theme"
         # "pkief.material-icon-theme"
         # "supermaven.supermaven"
         # "oven.bun-vscode"

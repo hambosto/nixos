@@ -3,11 +3,14 @@
   stylix = {
     enable = true;
 
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+
     enableReleaseChecks = false;
 
-    image = ../../assets/marina-bay-sands.png;
+    image = ../../assets/forest-foggy-misty-cloudy.png;
 
     polarity = "dark";
+
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";
@@ -31,6 +34,7 @@
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
+
       sizes = {
         applications = 14;
         desktop = 14;
