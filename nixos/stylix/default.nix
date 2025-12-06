@@ -3,11 +3,9 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-
     enableReleaseChecks = false;
 
-    image = ../../assets/rose_pine_contourline.png;
+    image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";
     cursor = {
