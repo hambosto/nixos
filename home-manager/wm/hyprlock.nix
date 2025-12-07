@@ -3,10 +3,6 @@
   programs.hyprlock = {
     enable = true;
     settings = {
-      general = {
-        disable_loading_bar = true;
-      };
-
       background = {
         blur_passes = 2;
         contrast = 0.9;

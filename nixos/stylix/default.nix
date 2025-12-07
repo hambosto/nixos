@@ -7,7 +7,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/forest-foggy-misty-cloudy.png;
+    image = ../../assets/gruvbox-forest.jpg;
 
     polarity = "dark";
 
