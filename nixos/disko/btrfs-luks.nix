@@ -32,45 +32,33 @@
                   type = "btrfs";
                   extraArgs = [ "-f" ];
                   subvolumes = {
-                    "/root" = {
+                    "@" = {
                       mountOptions = [
-                        "subvol=root"
                         "compress=zstd"
                         "noatime"
                       ];
                       mountpoint = "/";
                     };
-                    "/home" = {
+                    "@home" = {
                       mountOptions = [
-                        "subvol=home"
                         "compress=zstd"
                         "noatime"
                       ];
                       mountpoint = "/home";
                     };
-                    "/nix" = {
+                    "@nix" = {
                       mountOptions = [
-                        "subvol=nix"
                         "compress=zstd"
                         "noatime"
                       ];
                       mountpoint = "/nix";
                     };
-                    "/var" = {
+                    "@var" = {
                       mountOptions = [
-                        "subvol=var"
                         "compress=zstd"
                         "noatime"
                       ];
                       mountpoint = "/var";
-                    };
-                    "/tmp" = {
-                      mountOptions = [
-                        "subvol=tmp"
-                        "compress=zstd"
-                        "noatime"
-                      ];
-                      mountpoint = "/tmp";
                     };
                   };
                 };
