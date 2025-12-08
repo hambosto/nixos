@@ -4,20 +4,21 @@
     enable = false;
     extensions = [
       "material-icon-theme"
-      "nix"
-      "tokyo-night"
-      "toml"
+      # "nix"
+      "gleam-theme"
+      # "toml"
       # "dockerfile"
       # "docker-compose"
       # "crates-lsp"
     ];
     userSettings = {
       base_keymap = "VSCode";
-      buffer_font_family = "GeistMono Nerd Font";
-      buffer_font_size = 13;
+      buffer_font_family = "Maple Mono NF";
+      buffer_font_size = 14;
       buffer_line_height = {
         custom = 1.4;
       };
+      buffer_font_weight = 500;
       current_line_highlight = "none";
       git = {
         inline_blame = {
@@ -89,16 +90,17 @@
       terminal = {
         blinking = "on";
         cursor_shape = "bar";
-        font_family = "GeistMono Nerd Font";
+        font_family = "Maple Mono NF";
         font_size = 13;
       };
-      theme = "Tokyo Night";
+      theme = "Gleam Dark";
       toolbar = {
         breadcrumbs = false;
         quick_actions = false;
       };
-      ui_font_family = "GeistMono Nerd Font";
+      ui_font_family = "Maple Mono NF";
       ui_font_size = 14;
+      ui_font_weight = 500;
     };
   };
 }

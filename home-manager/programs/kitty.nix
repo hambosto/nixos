@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = lib.mkForce {
-      name = "GeistMono Nerd Font";
+      name = "Maple Mono NF";
       size = 11;
     };
     settings = lib.mkForce {

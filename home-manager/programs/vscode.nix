@@ -16,23 +16,23 @@
         "chat.agent.enabled" = false;
         "chat.commandCenter.enabled" = false;
         "chat.disableAIFeatures" = true;
-        "chat.editor.fontFamily" = "GeistMono Nerd Font";
+        "chat.editor.fontFamily" = "Maple Mono NF";
         "chat.editor.fontSize" = 14;
-        "chat.fontFamily" = "GeistMono Nerd Font";
-        "debug.console.fontFamily" = "GeistMono Nerd Font";
+        "chat.fontFamily" = "Maple Mono NF";
+        "debug.console.fontFamily" = "Maple Mono NF";
         "debug.console.fontSize" = 14;
         "editor.acceptSuggestionOnCommitCharacter" = true;
         "editor.acceptSuggestionOnEnter" = "on";
         "editor.autoClosingBrackets" = "always";
         "editor.cursorBlinking" = "expand";
         "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.fontFamily" = "GeistMono Nerd Font";
+        "editor.fontFamily" = "Maple Mono NF";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
         "editor.fontWeight" = "500";
         "editor.formatOnSave" = true;
-        "editor.inlayHints.fontFamily" = "GeistMono Nerd Font";
-        "editor.inlineSuggest.fontFamily" = "GeistMono Nerd Font";
+        "editor.inlayHints.fontFamily" = "Maple Mono NF";
+        "editor.inlineSuggest.fontFamily" = "Maple Mono NF";
         "editor.minimap.enabled" = false;
         "editor.minimap.sectionHeaderFontSize" = 14;
         "editor.semanticHighlighting.enabled" = true;
@@ -68,7 +68,7 @@
           "ui.semanticTokens" = true;
         };
         "inlineChat.accessibleDiffView" = "off";
-        "markdown.preview.fontFamily" = "GeistMono Nerd Font";
+        "markdown.preview.fontFamily" = "Maple Mono NF";
         "markdown.preview.fontSize" = 14;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${lib.getExe pkgs.nixd}";
@@ -89,14 +89,14 @@
             };
           };
         };
-        "notebook.markup.fontFamily" = "GeistMono Nerd Font";
-        "scm.inputFontFamily" = "GeistMono Nerd Font";
+        "notebook.markup.fontFamily" = "Maple Mono NF";
+        "scm.inputFontFamily" = "Maple Mono NF";
         "scm.inputFontSize" = 14;
         "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
         "telemetry.editStats.enabled" = false;
         "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
-        "terminal.integrated.fontFamily" = "GeistMono Nerd Font";
+        "terminal.integrated.fontFamily" = "Maple Mono NF";
         "terminal.integrated.fontSize" = 14;
         "terminal.integrated.fontWeight" = "500";
         "terminal.integrated.initialHint" = false;
@@ -106,9 +106,9 @@
         "window.titleBarStyle" = "native";
         "window.zoomLevel" = 0.7;
         "workbench.activityBar.location" = "hidden";
-        "workbench.colorTheme" = "Gruvbox Dark Hard";
+        "workbench.colorTheme" = "Monospace Dark";
         "workbench.editor.showTabs" = "single";
-        "workbench.iconTheme" = "gruvbox-material-icon-theme";
+        "workbench.iconTheme" = "monospace-studio-icons";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;
@@ -123,10 +123,8 @@
       extensions = pkgs.nix4vscode.forVscode [
         "golang.go"
         "jnoortheen.nix-ide"
-        "jdinhlife.gruvbox"
-        "jonathanharty.gruvbox-material-icon-theme"
 
-        # "flaviodelgrosso.vscode-monospace-theme"
+        "flaviodelgrosso.vscode-monospace-theme"
         # "pkief.material-icon-theme"
         # "supermaven.supermaven"
         # "oven.bun-vscode"

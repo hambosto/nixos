@@ -3,11 +3,9 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-
     enableReleaseChecks = false;
 
-    image = ../../assets/gruvbox-forest.jpg;
+    image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";
 
@@ -19,8 +17,8 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.geist-mono;
-        name = "GeistMono Nerd Font";
+        package = pkgs.maple-mono.NF;
+        name = "Maple Mono NF";
       };
 
       serif = config.stylix.fonts.sansSerif;
