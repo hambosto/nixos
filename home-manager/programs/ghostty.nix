@@ -1,10 +1,10 @@
 { lib, ... }:
 {
   programs.ghostty = {
-    enable = false;
+    enable = true;
     enableFishIntegration = true;
     settings = {
-      background-opacity = lib.mkForce 0.4;
+      background-opacity = lib.mkForce 0.7;
       background-blur = true;
       font-family = lib.mkForce "Maple Mono NF";
       font-size = lib.mkForce 11;
@@ -15,7 +15,6 @@
       confirm-close-surface = false;
       font-synthetic-style = true;
       font-thicken = false;
-      bold-is-bright = false;
       adjust-box-thickness = 1;
       cursor-style = "bar";
       adjust-cursor-thickness = 1;
