@@ -1,5 +1,6 @@
 {
   imports = [
+    ./alacritty.nix
     ./bat.nix
     ./btop.nix
     ./bun.nix

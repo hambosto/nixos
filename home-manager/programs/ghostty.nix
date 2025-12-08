@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   programs.ghostty = {
-    enable = true;
+    enable = false;
     enableFishIntegration = true;
     settings = {
       background-opacity = lib.mkForce 0.7;
