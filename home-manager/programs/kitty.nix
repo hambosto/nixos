@@ -27,6 +27,7 @@
       selection_foreground = "none";
       wheel_scroll_min_lines = 1;
       window_padding_width = 0;
+      window_margin_width = 0;
       dynamic_background_opacity = "yes";
       confirm_os_window_close = 0;
     };

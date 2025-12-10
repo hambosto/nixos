@@ -24,6 +24,7 @@
     ./kitty.nix
     ./lazydocker.nix
     ./lazygit.nix
+    ./lazyvim.nix
     ./mpv.nix
     ./nh.nix
     ./obs-studio.nix
