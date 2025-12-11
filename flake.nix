@@ -22,12 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lazyvim = {
-      type = "github";
-      owner = "pfassina";
-      repo = "lazyvim-nix";
-    };
-
     nix4vscode = {
       type = "github";
       owner = "nix-community";

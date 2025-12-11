@@ -1,0 +1,31 @@
+{
+  imports = [
+    ./angular.nix
+    ./ansible.nix
+    ./astro.nix
+    ./clangd.nix
+    ./clojure.nix
+    ./cmake.nix
+    ./docker.nix
+    ./go.nix
+    ./java.nix
+    ./json.nix
+    ./lean.nix
+    ./markdown.nix
+    ./nix.nix
+    ./omnisharp.nix
+    ./php.nix
+    ./python.nix
+    ./quarto.nix
+    ./r.nix
+    ./rust.nix
+    ./tailwind.nix
+    ./tex.nix
+    ./toml.nix
+    ./typescript.nix
+    ./typst.nix
+    ./vue.nix
+    ./yaml.nix
+    ./zig.nix
+  ];
+}

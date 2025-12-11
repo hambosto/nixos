@@ -1,3 +1,6 @@
 {
-  imports = [ ./rustlang.nix ];
+  imports = [
+    ./lazyvim
+    ./rustlang.nix
+  ];
 }
