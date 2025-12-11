@@ -16,14 +16,13 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.editor.mini-files" ];
       extraPlugins = with pkgs.vimPlugins; [
         {
           name = "mini.files";
           path = mini-nvim;
         }
       ];
-
-      config = [ "editor/mini-files.lua" ];
     };
   };
 }

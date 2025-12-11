@@ -11,17 +11,16 @@ in
 {
   config = mkIf (cfg.picker == "telescope") {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.editor.telescope" ];
       extraPlugins = with pkgs.vimPlugins; [
         telescope-nvim
-        telescope-undo-nvim
-        scope-nvim
+        telescope-fzf-native-nvim
+        dressing-nvim
       ];
 
       excludePlugins = with pkgs.vimPlugins; [
         fzf-lua
       ];
-
-      config = [ "editor/telescope.lua" ];
     };
   };
 }

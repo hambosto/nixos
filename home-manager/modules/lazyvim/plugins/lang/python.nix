@@ -16,13 +16,12 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.lang.python" ];
       extraPlugins = with pkgs.vimPlugins; [
         neotest-python
         nvim-dap-python
         venv-selector-nvim
       ];
-
-      imports = [ "lazyvim.plugins.extras.lang.python" ];
 
       extraPackages = with pkgs; [
         pyright

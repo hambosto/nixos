@@ -16,6 +16,7 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.lang.markdown" ];
       extraPlugins = with pkgs.vimPlugins; [
         markdown-preview-nvim
         render-markdown-nvim
@@ -31,8 +32,6 @@ in
         ghostscript # for snacks.image
         mermaid-cli # for snacks.image
       ];
-
-      config = [ "lang/markdown.lua" ];
     };
   };
 }

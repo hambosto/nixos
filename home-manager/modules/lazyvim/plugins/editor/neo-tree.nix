@@ -11,11 +11,10 @@ in
 {
   config = mkIf (cfg.explorer == "neo-tree") {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.editor.neo-tree" ];
       extraPlugins = with pkgs.vimPlugins; [
         neo-tree
       ];
-
-      config = [ "editor/neo-tree.lua" ];
     };
   };
 }

@@ -16,7 +16,6 @@
     ./omnisharp.nix
     ./php.nix
     ./python.nix
-    ./quarto.nix
     ./r.nix
     ./rust.nix
     ./tailwind.nix

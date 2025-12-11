@@ -16,14 +16,13 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.editor.mini-move" ];
       extraPlugins = with pkgs.vimPlugins; [
         {
           name = "mini.move";
           path = mini-nvim;
         }
       ];
-
-      config = [ "editor/mini-move.lua" ];
     };
   };
 }

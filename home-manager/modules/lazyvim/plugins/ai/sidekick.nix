@@ -16,11 +16,10 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.ai.sidekick" ];
       extraPlugins = with pkgs.vimPlugins; [
         sidekick-nvim
       ];
-
-      config = [ "ai/sidekick.lua" ];
     };
   };
 }

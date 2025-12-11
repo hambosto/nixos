@@ -16,14 +16,11 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.lang.nix" ];
       extraPackages = with pkgs; [
         nil
         alejandra
       ];
-      # programs.lazyvim.extraSpec = ''
-      #   { import = "lazyvim.plugins.extras.lang.nix" },
-      # '';
-      config = [ "lang/nix.lua" ];
     };
   };
 }

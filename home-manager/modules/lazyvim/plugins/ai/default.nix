@@ -4,6 +4,5 @@
     ./sidekick.nix
     ./supermaven.nix
     ./tabnine.nix
-    ./windsurf.nix
   ];
 }

@@ -16,14 +16,13 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.coding.mini-surround" ];
       extraPlugins = with pkgs.vimPlugins; [
         {
           name = "mini.surround";
           path = mini-nvim;
         }
       ];
-
-      config = [ "coding/mini-surround.lua" ];
     };
   };
 }

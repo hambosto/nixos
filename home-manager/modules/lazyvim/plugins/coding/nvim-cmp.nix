@@ -11,6 +11,7 @@ in
 {
   config = mkIf (cfg.cmp == "nvim-cmp") {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.coding.cmp" ];
       extraPlugins = with pkgs.vimPlugins; [
         nvim-cmp
         cmp-nvim-lsp
@@ -18,20 +19,12 @@ in
         cmp-path
         nvim-snippets
         friendly-snippets
-        # my custom nvim plugins
-        cmp-cmdline
-        cmp-emoji
-        cmp-nvim-lua
-        cmp-cmdline-history
-        cmp-nvim-lsp
       ];
 
       excludePlugins = with pkgs.vimPlugins; [
         blink-cmp
         blink-compat
       ];
-
-      config = [ "coding/nvim-cmp.lua" ];
     };
   };
 }

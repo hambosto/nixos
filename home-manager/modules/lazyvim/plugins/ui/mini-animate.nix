@@ -16,13 +16,13 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.ui.mini-animate" ];
       extraPlugins = with pkgs.vimPlugins; [
         {
           name = "mini.animate";
           path = mini-nvim;
         }
       ];
-      config = [ "ui/mini-animate.lua" ];
     };
   };
 }

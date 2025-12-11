@@ -16,6 +16,7 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.lang.clangd" ];
       extraPlugins = with pkgs.vimPlugins; [
         clangd_extensions-nvim
       ];
@@ -24,8 +25,6 @@ in
         vscode-extensions.vadimcn.vscode-lldb
         clang-tools
       ];
-
-      config = [ "lang/clangd.lua" ];
     };
   };
 }

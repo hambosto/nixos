@@ -16,20 +16,14 @@ in
 
   config = mkIf cfg.enable {
     programs.lazyvim = {
+      imports = [ "lazyvim.plugins.extras.editor.dap" ];
       extraPlugins = with pkgs.vimPlugins; [
         nvim-dap
         nvim-dap-ui
         nvim-dap-virtual-text
         nvim-nio
-        one-small-step-for-vimkind
+        mason-nvim-dap-nvim
       ];
-
-      # disable mason-nvim-dap.nvim
-      extraSpec = ''
-        { "jay-babu/mason-nvim-dap.nvim", enabled = false },
-      '';
-
-      config = [ "editor/dap.lua" ];
     };
   };
 }

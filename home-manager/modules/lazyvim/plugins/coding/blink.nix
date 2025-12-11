@@ -20,6 +20,8 @@ in
       excludePlugins = with pkgs.vimPlugins; [
         nvim-cmp
       ];
+
+      imports = [ "lazyvim.plugins.extras.coding.blink" ];
     };
   };
 }

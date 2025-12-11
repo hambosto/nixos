@@ -31,6 +31,7 @@ in
       programs.lazyvim.extraPackages = with pkgs; [ nodejs_24 ];
     })
     (mkIf cfg.lua.enable {
+      programs.lazyvim.imports = [ "lazyvim.plugins.extras.ai.copilot" ];
       programs.lazyvim.extraPlugins =
         with pkgs.vimPlugins;
         [ copilot-lua ]
@@ -38,13 +39,11 @@ in
         ++ optionals (config.programs.lazyvim.cmp == "blink" || config.programs.lazyvim.cmp == "auto") [
           blink-cmp-copilot
         ];
-
-      programs.lazyvim.config = [ "ai/copilot.lua" ];
     })
     (mkIf cfg.chat.enable {
       programs.lazyvim = {
+        imports = [ "lazyvim.plugins.extras.ai.copilot-chat" ];
         extraPlugins = with pkgs.vimPlugins; [ CopilotChat-nvim ];
-        config = [ "ai/copilot-chat.lua" ];
       };
     })
     (mkIf cfg.native.enable {
