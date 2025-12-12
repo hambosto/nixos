@@ -109,6 +109,7 @@
             ".*hx.*" = "󰅴 Helix";
             ".*Obsidian.*" = "󱓧 Obsidian";
             ".*Network Manager.*" = "󱫋 Network Manager GUI";
+            ".*Vesktop.*" = " Vesktop";
           };
         };
 

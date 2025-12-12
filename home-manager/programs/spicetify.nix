@@ -6,13 +6,13 @@ in
   imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
 
   programs.spicetify = {
-    enable = false;
+    enable = true;
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
-      beautifulLyrics
       fullAppDisplay
     ];
-    theme = spicePkgs.themes.lucid;
+    theme = spicePkgs.themes.text;
+    colorScheme = "CatppuccinMocha";
   };
 }

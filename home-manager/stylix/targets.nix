@@ -27,6 +27,7 @@
   swaync.enable = false;
   sxiv.enable = false;
   vencord.enable = false;
+  vesktop.enable = false;
   vscode = {
     enable = false;
     profileNames = [ "default" ];
