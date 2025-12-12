@@ -298,14 +298,23 @@ in
         in
         ''
           local uv = vim.uv or vim.loop
+
           local function path_exists(path)
             return type(path) == "string" and uv.fs_stat(path) ~= nil
           end
 
-          local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-          local has_lazy = path_exists(lazypath)
+          local function find_glob_matches(pattern)
+            local matches = vim.fn.glob(pattern, true, true)
+            return type(matches) == "string" and { matches } or matches
+          end
 
-          if not has_lazy then
+          local function find_lazy_path()
+            local default_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+            
+            if path_exists(default_path) then
+              return default_path, true
+            end
+
             local fallback_patterns = {
               vim.env.LAZY_NVIM_PATH,
               vim.fn.stdpath("config") .. "/lazy.nvim",
@@ -314,88 +323,106 @@ in
             }
 
             for _, pattern in ipairs(fallback_patterns) do
-              if type(pattern) == "string" and pattern ~= "" then
-                if pattern:find("%*") then
-                  local matches = vim.fn.glob(pattern, true, true)
-                  if type(matches) == "string" then
-                    matches = { matches }
+              if type(pattern) ~= "string" or pattern == "" then
+                goto continue
+              end
+
+              if pattern:find("%*") then
+                for _, match in ipairs(find_glob_matches(pattern)) do
+                  if path_exists(match) then
+                    return match, true
                   end
-                  for _, match in ipairs(matches) do
-                    if path_exists(match) then
-                      lazypath = match
-                      has_lazy = true
-                      break
-                    end
-                  end
-                elseif path_exists(pattern) then
-                  lazypath = pattern
-                  has_lazy = true
                 end
+              elseif path_exists(pattern) then
+                return pattern, true
               end
-              if has_lazy then
-                break
-              end
+
+              ::continue::
             end
+
+            return default_path, false
           end
 
-          if not has_lazy then
+          local function install_lazy(path)
             local repo = "https://github.com/folke/lazy.nvim.git"
-            vim.fn.system({ "git", "clone", "--filter=blob:none", repo, lazypath })
-            has_lazy = path_exists(lazypath)
+            vim.fn.system({ "git", "clone", "--filter=blob:none", repo, path })
+            return path_exists(path)
           end
 
-          if not has_lazy then
-            vim.api.nvim_err_writeln("lazy.nvim not found; install it or update your configuration.")
-            return
+          local function configure_globals()
+            vim.g.lazyvim_cmp = "${cfg.cmp}"
+            vim.g.lazyvim_picker = "${cfg.picker}"
+            vim.g.lazyvim_explorer = "${cfg.explorer}"
+            vim.g.lazyvim_check_order = false
           end
 
-          vim.opt.rtp:prepend(lazypath)
-          vim.g.lazyvim_cmp = "${cfg.cmp}"
-          vim.g.lazyvim_picker = "${cfg.picker}"
-          vim.g.lazyvim_explorer = "${cfg.explorer}"
-          vim.g.lazyvim_check_order = false
-          require("lazy").setup({
-            change_detection = { notify = false },
-            defaults = {
-              lazy = true,
-              version = false
-            },
-            ui = { border = "rounded" },
-            dev = {
-              path = "${lazyvimPlugins}",
-              patterns = { "" },
-              fallback = true,
-            },
-            checker = { enabled = false },
-            rocks = {
-              enabled = false,
-            },
-            performance = {
-              cache = {
-                enabled = true,
-              },
-              rtp = {
-                disabled_plugins = {
-                  "gzip",
-                  "tarPlugin",
-                  "tohtml",
-                  "tutor",
-                  "zipPlugin",
-                },
-              },
-            },
-            spec = {
+          local function get_lazy_spec()
+            return {
               { "LazyVim/LazyVim", import = "lazyvim.plugins" },
               ${cfg.finalExtraSpec}
-              -- The following configs are needed for fixing lazyvim on nix
-              -- disable mason.nvim, use programs.lazyvim.extraPackages
+              -- Nix-specific configurations
               { "mason-org/mason-lspconfig.nvim", enabled = false },
               { "mason-org/mason.nvim", enabled = false },
-              -- import/override with your plugins
-              -- treesitter ships with all grammars via overlay; keep ensure_installed empty to skip downloads
-              { "nvim-treesitter/nvim-treesitter", opts = function(_, opts) opts.ensure_installed = {} end },
-            },
-          })
+              { 
+                "nvim-treesitter/nvim-treesitter",
+                opts = function(_, opts)
+                  opts.ensure_installed = {}
+                end
+              },
+            }
+          end
+
+          local function get_lazy_config()
+            return {
+              change_detection = { notify = false },
+              defaults = {
+                lazy = true,
+                version = false
+              },
+              ui = { border = "rounded" },
+              dev = {
+                path = "${lazyvimPlugins}",
+                patterns = { "" },
+                fallback = true,
+              },
+              checker = { enabled = false },
+              rocks = { enabled = false },
+              performance = {
+                cache = { enabled = true },
+                rtp = {
+                  disabled_plugins = {
+                    "gzip",
+                    "tarPlugin",
+                    "tohtml",
+                    "tutor",
+                    "zipPlugin",
+                  },
+                },
+              },
+              spec = get_lazy_spec()
+            }
+          end
+
+          local function init_lazy()
+            local lazypath, has_lazy = find_lazy_path()
+
+            if not has_lazy then
+              has_lazy = install_lazy(lazypath)
+            end
+
+            if not has_lazy then
+              vim.api.nvim_err_writeln(
+                "lazy.nvim not found; install it or update your configuration."
+              )
+              return
+            end
+
+            vim.opt.rtp:prepend(lazypath)
+            configure_globals()
+            require("lazy").setup(get_lazy_config())
+          end
+
+          init_lazy()
         '';
     };
   };
