@@ -297,13 +297,13 @@
       }
 
       #tray menu menuitem:hover {
-        background-color: #${config.lib.stylix.colors.base0E};
+        background-color: #${config.lib.stylix.colors.base0D};
       }
 
       #battery.charging {
         border-radius: 5px;
-        background: alpha(#${config.lib.stylix.colors.base0D}, 0.2);
-        color: #${config.lib.stylix.colors.base0D};
+        background: alpha(#${config.lib.stylix.colors.base0B}, 0.2);
+        color: #${config.lib.stylix.colors.base0B};
       }
 
       #network.disconnected,

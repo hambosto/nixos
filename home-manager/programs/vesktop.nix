@@ -1,6 +1,10 @@
 {
+  config,
+  ...
+}:
+{
   programs.vesktop = {
-    enable = true;
+    enable = false;
     settings = {
       appBadge = false;
       arRPC = true;
@@ -37,13 +41,13 @@
               --subtle-top-bar-title: off;
               --custom-window-controls: off;
               --window-control-size: 14px;
-              --custom-dms-icon: hide;
+              --custom-dms-icon: off;
               --dms-icon-svg-url: url("");
               --dms-icon-svg-size: 90%;
               --dms-icon-color-before: var(--icon-secondary);
               --dms-icon-color-after: var(--white);
-              --custom-dms-background: image;
-              --dms-background-image-url: url("https://raw.githubusercontent.com/catppuccin/catppuccin/refs/heads/main/assets/logos/exports/macchiato_square.png");
+              --custom-dms-background: off;
+              --dms-background-image-url: url("");
               --dms-background-image-size: cover;
               --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
               --background-image: off;
@@ -65,26 +69,26 @@
 
           :root {
               --colors: on;
-              --text-0: var(--bg-3);
-              --text-1: hsl(226, 64%, 95%);
-              --text-2: #cdd6f4;
-              --text-3: #bac2de;
-              --text-4: #7f849c;
-              --text-5: #585b70;
-              --bg-1: #45475a;
-              --bg-2: #313244;
-              --bg-3: #181825;
-              --bg-4: #1e1e2e;
-              --hover: hsla(235, 15%, 53%, 0.1);
-              --active: hsla(235, 15%, 53%, 0.2);
-              --active-2: hsla(235, 15%, 53%, 0.3);
-              --message-hover: hsla(235, 0%, 0%, 0.1);
-              --accent-1: var(--purple-1);
-              --accent-2: var(--purple-2);
-              --accent-3: var(--purple-3);
-              --accent-4: var(--purple-4);
-              --accent-5: var(--purple-5);
-              --accent-new: var(--accent-2);
+              --text-0: var(--bg-4);
+              --text-1: #${config.lib.stylix.colors.base07};
+              --text-2: #${config.lib.stylix.colors.base06};
+              --text-3: #${config.lib.stylix.colors.base05};
+              --text-4: #${config.lib.stylix.colors.base04};
+              --text-5: #${config.lib.stylix.colors.base03};
+              --bg-1: #${config.lib.stylix.colors.base01};
+              --bg-2: #${config.lib.stylix.colors.base01};
+              --bg-3: #${config.lib.stylix.colors.base00};
+              --bg-4: #${config.lib.stylix.colors.base00};
+              --hover: #${config.lib.stylix.colors.base02}40;
+              --active: #${config.lib.stylix.colors.base02}60;
+              --active-2: #${config.lib.stylix.colors.base02}80;
+              --message-hover: var(--hover);
+              --accent-1: var(--blue-1);
+              --accent-2: var(--blue-2);
+              --accent-3: var(--blue-3);
+              --accent-4: var(--blue-4);
+              --accent-5: var(--blue-5);
+              --accent-new: var(--red-2);
               --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
               --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
               --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
@@ -92,37 +96,37 @@
               --online: var(--green-2);
               --dnd: var(--red-2);
               --idle: var(--yellow-2);
-              --streaming: var(--purple-2);
+              --streaming: var(--blue-2);
               --offline: var(--text-4);
               --border-light: var(--hover);
               --border: var(--active);
               --border-hover: var(--accent-2);
-              --button-border: hsl(235, 0%, 100%, 0.1);
-              --red-1: hsl(343deg, 81%, 80%);
-              --red-2: hsl(343deg, 81%, 75%);
-              --red-3: hsl(343deg, 81%, 75%);
-              --red-4: hsl(343deg, 81%, 70%);
-              --red-5: hsl(343deg, 81%, 65%);
-              --green-1: hsl(115deg, 54%, 81%);
-              --green-2: hsl(115deg, 54%, 76%);
-              --green-3: hsl(115deg, 54%, 76%);
-              --green-4: hsl(115deg, 54%, 71%);
-              --green-5: hsl(115deg, 54%, 66%);
-              --blue-1: hsl(199deg, 76%, 74%);
-              --blue-2: hsl(199deg, 76%, 69%);
-              --blue-3: hsl(199deg, 76%, 69%);
-              --blue-4: hsl(199deg, 76%, 64%);
-              --blue-5: hsl(199deg, 76%, 59%);
-              --yellow-1: hsl(41deg, 86%, 88%);
-              --yellow-2: hsl(41deg, 86%, 83%);
-              --yellow-3: hsl(41deg, 86%, 83%);
-              --yellow-4: hsl(41deg, 86%, 78%);
-              --yellow-5: hsl(41deg, 86%, 73%);
-              --purple-1: hsl(267deg, 84%, 86%);
-              --purple-2: hsl(267deg, 84%, 81%);
-              --purple-3: hsl(267deg, 84%, 81%);
-              --purple-4: hsl(267deg, 84%, 76%);
-              --purple-5: hsl(267deg, 84%, 71%);
+              --button-border: #${config.lib.stylix.colors.base05}20;
+              --red-1: #${config.lib.stylix.colors.base08};
+              --red-2: #${config.lib.stylix.colors.base08};
+              --red-3: #${config.lib.stylix.colors.base08};
+              --red-4: #${config.lib.stylix.colors.base08};
+              --red-5: #${config.lib.stylix.colors.base08};
+              --green-1: #${config.lib.stylix.colors.base0B};
+              --green-2: #${config.lib.stylix.colors.base0B};
+              --green-3: #${config.lib.stylix.colors.base0B};
+              --green-4: #${config.lib.stylix.colors.base0B};
+              --green-5: #${config.lib.stylix.colors.base0B};
+              --blue-1: #${config.lib.stylix.colors.base0D};
+              --blue-2: #${config.lib.stylix.colors.base0D};
+              --blue-3: #${config.lib.stylix.colors.base0D};
+              --blue-4: #${config.lib.stylix.colors.base0D};
+              --blue-5: #${config.lib.stylix.colors.base0D};
+              --yellow-1: #${config.lib.stylix.colors.base0A};
+              --yellow-2: #${config.lib.stylix.colors.base0A};
+              --yellow-3: #${config.lib.stylix.colors.base0A};
+              --yellow-4: #${config.lib.stylix.colors.base0A};
+              --yellow-5: #${config.lib.stylix.colors.base0A};
+              --purple-1: #${config.lib.stylix.colors.base0E};
+              --purple-2: #${config.lib.stylix.colors.base0E};
+              --purple-3: #${config.lib.stylix.colors.base0E};
+              --purple-4: #${config.lib.stylix.colors.base0E};
+              --purple-5: #${config.lib.stylix.colors.base0E};
           }
         '';
       };
