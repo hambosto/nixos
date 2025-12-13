@@ -48,6 +48,9 @@
         "SUPER, RETURN, exec, ${lib.getExe pkgs.kitty} --title kitty"
         "SUPER, SPACE, exec, ${lib.getExe pkgs.rofi} -show drun"
         "SUPER SHIFT, M, exec, ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}"
+        "SUPER SHIFT, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save area"
+        "SUPER, PRINT, exec, ${lib.getExe pkgs.grimblast} --notify save screen"
+        "SUPER SHIFT, P, exec, ${lib.getExe pkgs.wlogout}"
 
         # Window Management
         "SUPER, down, movefocus, d"

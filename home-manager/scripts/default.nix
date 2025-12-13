@@ -1,8 +1,3 @@
 {
-  imports = [
-    ./nightlight.nix
-    ./nixos-toolbox.nix
-    ./powermenu.nix
-    ./screenshot.nix
-  ];
+  imports = [ ./nixos-toolbox.nix ];
 }

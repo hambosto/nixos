@@ -28,7 +28,7 @@
           "power-profiles-daemon"
           "idle_inhibitor"
           "clock"
-          "custom/powermenu"
+          "custom/wlogout"
         ];
 
         backlight = {
@@ -81,8 +81,9 @@
           tooltip-format = "Open the application launcher";
         };
 
-        "custom/powermenu" = {
+        "custom/wlogout" = {
           format = "";
+          on-click = "${lib.getExe pkgs.wlogout}";
           tooltip = false;
         };
 
@@ -230,7 +231,7 @@
       #power-profiles-daemon,
       #battery,
       #custom-rofi,
-      #custom-powermenu {
+      #custom-wlogout {
         padding: 0 6px;
         margin: 0 4px;
       }
@@ -251,7 +252,7 @@
       #pulseaudio:hover,
       #power-profiles-daemon:hover,
       #custom-rofi:hover,
-      #custom-powermenu:hover {
+      #custom-wlogout:hover {
         background-color: #${config.lib.stylix.colors.base0D};
         color: #${config.lib.stylix.colors.base00};
         border-radius: 5px;
