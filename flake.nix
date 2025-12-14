@@ -63,6 +63,13 @@
       repo = "sweetbyte";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zed-extensions = {
+      type = "github";
+      owner = "DuskSystems";
+      repo = "nix-zed-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

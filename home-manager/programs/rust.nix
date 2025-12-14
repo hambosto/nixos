@@ -1,5 +1,5 @@
 {
-  programs.rustlang = {
+  programs.rust = {
     enable = false;
     setRustSrcPath = true;
   };

@@ -8,4 +8,5 @@
   })
   inputs.nix4vscode.overlays.default
   inputs.nur.overlays.default
+  inputs.zed-extensions.overlays.default
 ]

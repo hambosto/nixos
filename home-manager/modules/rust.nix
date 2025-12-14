@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.programs.rustlang;
+  cfg = config.programs.rust;
   tomlFormat = pkgs.formats.toml { };
   inherit (lib)
     mkEnableOption
@@ -16,7 +16,7 @@ let
 in
 {
   options = {
-    programs.rustlang = {
+    programs.rust = {
       enable = mkEnableOption "Rust development environment";
 
       packages = mkOption {

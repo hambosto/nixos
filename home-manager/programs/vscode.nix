@@ -8,8 +8,8 @@
   programs.vscode = {
     enable = true;
     profiles.default = {
-      enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
+      enableUpdateCheck = false;
       userSettings = {
         "breadcrumbs.enabled" = false;
         "chat.agent.enabled" = false;
@@ -47,7 +47,6 @@
         "extensions.ignoreRecommendations" = true;
         "files.enableTrash" = false;
         "git.decorations.enabled" = false;
-
         "inlineChat.accessibleDiffView" = "off";
         "markdown.preview.fontFamily" = "Maple Mono NF";
         "markdown.preview.fontSize" = 14;
@@ -77,9 +76,11 @@
         "window.titleBarStyle" = "native";
         "window.zoomLevel" = 0.7;
         "workbench.activityBar.location" = "hidden";
-        "workbench.colorTheme" = "Monospace Dark";
+        # "workbench.colorTheme" = "Monospace Dark";
+        "workbench.colorTheme" = "Tokyo Night";
         "workbench.editor.showTabs" = "single";
-        "workbench.iconTheme" = "monospace-studio-icons";
+        # "workbench.iconTheme" = "monospace-studio-icons";
+        "workbench.iconTheme" = "material-icon-theme";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;
@@ -88,6 +89,7 @@
         "workbench.tree.indent" = 8;
         "workbench.tree.renderIndentGuides" = "none";
       }
+      // lib.optionalAttrs (config.programs.bun.enable or false) { }
       // lib.optionalAttrs (config.programs.go.enable or false) {
         "go.alternateTools" = {
           "delve" = "${lib.getExe pkgs.delve}";
@@ -98,74 +100,103 @@
           "impl" = "${lib.getExe pkgs.impl}";
           "staticcheck" = "${lib.getExe' pkgs.go-tools "staticcheck"}";
         };
+        "go.diagnostic.vulncheck" = "Imports";
         "go.inlayHints.assignVariableTypes" = true;
-        "go.inlayHints.constantValues" = true;
-        "go.inlayHints.parameterNames" = true;
         "go.inlayHints.compositeLiteralFields" = true;
         "go.inlayHints.compositeLiteralTypes" = true;
+        "go.inlayHints.constantValues" = true;
         "go.inlayHints.functionTypeParameters" = true;
+        "go.inlayHints.parameterNames" = true;
         "go.inlayHints.rangeVariableTypes" = true;
-        "go.diagnostic.vulncheck" = "Imports";
+        "go.lintTool" = "golangci-lint";
         "go.showWelcome" = false;
         "go.survey.prompt" = false;
-        "go.lintTool" = "golangci-lint";
         "go.useLanguageServer" = true;
         "gopls" = {
           "formatting.gofumpt" = true;
           "ui.semanticTokens" = true;
         };
       }
-      // lib.optionalAttrs (config.programs.zig.enable or false) {
-        "zig.path" = "${lib.getExe pkgs.zig}";
-        "zig.zls.path" = "${lib.getExe pkgs.zls}";
+      // lib.optionalAttrs (config.programs.rust.enable or false) {
+        "rust-analyzer.cargo.buildScripts.enable" = true;
+        "rust-analyzer.cargo.check.command" = "clippy";
+        "rust-analyzer.check.command" = "clippy";
+        "rust-analyzer.diagnostics.useRustcErrorCode" = true;
+        "rust-analyzer.imports.group.enable" = false;
+        "rust-analyzer.inlayHints.bindingModeHints.enable" = true;
+        "rust-analyzer.inlayHints.chainingHints.enable" = true;
+        "rust-analyzer.inlayHints.closureCaptureHints.enable" = true;
+        "rust-analyzer.inlayHints.closureReturnTypeHints.enable" = true;
+        "rust-analyzer.inlayHints.discriminantHints.enable" = true;
+        "rust-analyzer.inlayHints.expressionAdjustmentHints.enable" = "always";
+        "rust-analyzer.inlayHints.expressionAdjustmentHints.mode" = "postfix";
+        "rust-analyzer.inlayHints.lifetimeElisionHints.enable" = "skip_trivial";
+        "rust-analyzer.inlayHints.parameterHints.enable" = true;
+        "rust-analyzer.inlayHints.renderColons" = true;
+        "rust-analyzer.inlayHints.typeHints.enable" = true;
+        "rust-analyzer.lens.enable" = true;
+        "rust-analyzer.lens.implementations.enable" = true;
+        "rust-analyzer.lens.references.adt.enable" = true;
+        "rust-analyzer.lens.references.method.enable" = true;
+        "rust-analyzer.lens.references.trait.enable" = true;
+        "rust-analyzer.lens.run.enable" = true;
+        "rust-analyzer.procMacro.enable" = true;
+        "rust-analyzer.restartServerOnConfigChange" = true;
+        "rust-analyzer.semanticHighlighting.operator.specialization.enable" = true;
+        "rust-analyzer.server.path" = "${lib.getExe pkgs.rust-analyzer}";
       }
       // lib.optionalAttrs (config.programs.uv.enable or false) {
-        "python.defaultInterpreterPath" = ".venv/bin/python";
-        "python.terminal.activateEnvironment" = true;
-        "python.venvPath" = ".venv";
-        "python.terminal.activateEnvInCurrentTerminal" = true;
-        "python.analysis.autoFormatStrings" = true;
-        "python.analysis.autoImportCompletions" = true;
-        "python.analysis.completeFunctionParens" = true;
-        "python.analysis.typeCheckingMode" = "strict";
-        "python.analysis.inlayHints.callArgumentNames" = "all";
-        "python.analysis.inlayHints.pytestParameters" = true;
-        "python.analysis.inlayHints.variableTypes" = true;
-        "python.analysis.inlayHints.functionReturnTypes" = true;
-        "python.experiments.enabled" = false;
-        "python.languageServer" = "Pylance";
-        "python.testing.pytestEnabled" = true;
-
         "[python]" = {
-          "editor.defaultFormatter" = "ms-python.black-formatter";
-          "editor.formatOnSave" = true;
           "editor.codeActionsOnSave" = {
             "source.fixAll" = "explicit";
             "source.organizeImports" = "explicit";
           };
+          "editor.defaultFormatter" = "ms-python.black-formatter";
+          "editor.formatOnSave" = true;
         };
+        "python.analysis.autoFormatStrings" = true;
+        "python.analysis.autoImportCompletions" = true;
+        "python.analysis.completeFunctionParens" = true;
+        "python.analysis.inlayHints.callArgumentNames" = "all";
+        "python.analysis.inlayHints.functionReturnTypes" = true;
+        "python.analysis.inlayHints.pytestParameters" = true;
+        "python.analysis.inlayHints.variableTypes" = true;
+        "python.analysis.typeCheckingMode" = "strict";
+        "python.defaultInterpreterPath" = ".venv/bin/python";
+        "python.experiments.enabled" = false;
+        "python.languageServer" = "Pylance";
+        "python.terminal.activateEnvInCurrentTerminal" = true;
+        "python.terminal.activateEnvironment" = true;
+        "python.testing.pytestEnabled" = true;
+        "python.venvPath" = ".venv";
+      }
+      // lib.optionalAttrs (config.programs.zig.enable or false) {
+        "zig.path" = "${lib.getExe pkgs.zig}";
+        "zig.zls.path" = "${lib.getExe pkgs.zls}";
       };
 
       extensions = pkgs.nix4vscode.forVscode (
         [
+          # "flaviodelgrosso.vscode-monospace-theme"
+          "enkia.tokyo-night"
           "jnoortheen.nix-ide"
-          "flaviodelgrosso.vscode-monospace-theme"
+          "pkief.material-icon-theme"
         ]
-        ++ lib.optionals (config.programs.rust-lang.enable or false) [
+        ++ lib.optionals (config.programs.bun.enable or false) [ "oven.bun-vscode" ]
+        ++ lib.optionals (config.programs.go.enable or false) [ "golang.go" ]
+        ++ lib.optionals (config.programs.rust.enable or false) [
+          "fill-labs.dependi"
           "rust-lang.rust-analyzer"
           "tamasfe.even-better-toml"
-          "fill-labs.dependi"
         ]
-        ++ lib.optionals (config.programs.go.enable or false) [ "golang.go" ]
-        ++ lib.optionals (config.programs.bun.enable or false) [ "oven.bun-vscode" ]
-        ++ lib.optionals (config.programs.zig.enable or false) [ "ziglang.vscode-zig" ]
         ++ lib.optionals (config.programs.uv.enable or false) [
-          "ms-python.python"
-          "ms-python.debugpy"
-          "ms-python.vscode-pylance"
           "ms-python.black-formatter"
+          "ms-python.debugpy"
           "ms-python.isort"
+          "ms-python.python"
+          "ms-python.vscode-pylance"
         ]
+        ++ lib.optionals (config.programs.zig.enable or false) [ "ziglang.vscode-zig" ]
       );
     };
   };

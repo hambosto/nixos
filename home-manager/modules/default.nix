@@ -1,6 +1,6 @@
 {
   imports = [
-    ./rustlang.nix
-    ./ziglang.nix
+    ./rust.nix
+    ./zig.nix
   ];
 }
