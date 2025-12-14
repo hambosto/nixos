@@ -1,0 +1,3 @@
+{
+  programs.zig.enable = false;
+}

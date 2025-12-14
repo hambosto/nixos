@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  osConfig,
   pkgs,
   ...
 }:
@@ -24,6 +23,7 @@
         "editor.acceptSuggestionOnCommitCharacter" = true;
         "editor.acceptSuggestionOnEnter" = "on";
         "editor.autoClosingBrackets" = "always";
+        "editor.bracketPairColorization.enabled" = true;
         "editor.cursorBlinking" = "expand";
         "editor.cursorSmoothCaretAnimation" = "on";
         "editor.fontFamily" = "Maple Mono NF";
@@ -47,26 +47,7 @@
         "extensions.ignoreRecommendations" = true;
         "files.enableTrash" = false;
         "git.decorations.enabled" = false;
-        "github.copilot.editor.enableAutoCompletions" = false;
-        "github.copilot.enable" = false;
-        "go.alternateTools" = {
-          "delve" = "${lib.getExe pkgs.delve}";
-          "gofumpt" = "${lib.getExe pkgs.gofumpt}";
-          "golangci-lint" = "${lib.getExe pkgs.golangci-lint}";
-          "gomodifytags" = "${lib.getExe pkgs.gomodifytags}";
-          "gopls" = "${lib.getExe pkgs.gopls}";
-          "impl" = "${lib.getExe pkgs.impl}";
-          "staticcheck" = "${lib.getExe' pkgs.go-tools "staticcheck"}";
-        };
-        "go.inlayHints.assignVariableTypes" = true;
-        "go.inlayHints.constantValues" = true;
-        "go.inlayHints.parameterNames" = true;
-        "go.inlayHints.rangeVariableTypes" = true;
-        "go.lintTool" = "golangci-lint";
-        "gopls" = {
-          "formatting.gofumpt" = true;
-          "ui.semanticTokens" = true;
-        };
+
         "inlineChat.accessibleDiffView" = "off";
         "markdown.preview.fontFamily" = "Maple Mono NF";
         "markdown.preview.fontSize" = 14;
@@ -76,16 +57,6 @@
           "nixd" = {
             "formatting" = {
               "command" = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
-            };
-            "options" = {
-              "home-manager" = {
-                "expr" =
-                  "(builtins.getFlake \"${config.programs.nh.flake}\").nixosConfigurations.${osConfig.networking.hostName}.options.home-manager.users.type.getSubOptions []";
-              };
-              "nixos" = {
-                "expr" =
-                  "(builtins.getFlake \"${config.programs.nh.flake}\").nixosConfigurations.${osConfig.networking.hostName}.options";
-              };
             };
           };
         };
@@ -116,23 +87,86 @@
         "workbench.tree.enableStickyScroll" = false;
         "workbench.tree.indent" = 8;
         "workbench.tree.renderIndentGuides" = "none";
+      }
+      // lib.optionalAttrs (config.programs.go.enable or false) {
+        "go.alternateTools" = {
+          "delve" = "${lib.getExe pkgs.delve}";
+          "gofumpt" = "${lib.getExe pkgs.gofumpt}";
+          "golangci-lint" = "${lib.getExe pkgs.golangci-lint}";
+          "gomodifytags" = "${lib.getExe pkgs.gomodifytags}";
+          "gopls" = "${lib.getExe pkgs.gopls}";
+          "impl" = "${lib.getExe pkgs.impl}";
+          "staticcheck" = "${lib.getExe' pkgs.go-tools "staticcheck"}";
+        };
+        "go.inlayHints.assignVariableTypes" = true;
+        "go.inlayHints.constantValues" = true;
+        "go.inlayHints.parameterNames" = true;
+        "go.inlayHints.compositeLiteralFields" = true;
+        "go.inlayHints.compositeLiteralTypes" = true;
+        "go.inlayHints.functionTypeParameters" = true;
+        "go.inlayHints.rangeVariableTypes" = true;
+        "go.diagnostic.vulncheck" = "Imports";
+        "go.showWelcome" = false;
+        "go.survey.prompt" = false;
+        "go.lintTool" = "golangci-lint";
+        "go.useLanguageServer" = true;
+        "gopls" = {
+          "formatting.gofumpt" = true;
+          "ui.semanticTokens" = true;
+        };
+      }
+      // lib.optionalAttrs (config.programs.zig.enable or false) {
+        "zig.path" = "${lib.getExe pkgs.zig}";
+        "zig.zls.path" = "${lib.getExe pkgs.zls}";
+      }
+      // lib.optionalAttrs (config.programs.uv.enable or false) {
+        "python.defaultInterpreterPath" = ".venv/bin/python";
+        "python.terminal.activateEnvironment" = true;
+        "python.venvPath" = ".venv";
+        "python.terminal.activateEnvInCurrentTerminal" = true;
+        "python.analysis.autoFormatStrings" = true;
+        "python.analysis.autoImportCompletions" = true;
+        "python.analysis.completeFunctionParens" = true;
+        "python.analysis.typeCheckingMode" = "strict";
+        "python.analysis.inlayHints.callArgumentNames" = "all";
+        "python.analysis.inlayHints.pytestParameters" = true;
+        "python.analysis.inlayHints.variableTypes" = true;
+        "python.analysis.inlayHints.functionReturnTypes" = true;
+        "python.experiments.enabled" = false;
+        "python.languageServer" = "Pylance";
+        "python.testing.pytestEnabled" = true;
 
-        # "zig.path" = "${lib.getExe pkgs.zig}";
-        # "zig.zls.path" = "${lib.getExe pkgs.zls}";
+        "[python]" = {
+          "editor.defaultFormatter" = "ms-python.black-formatter";
+          "editor.formatOnSave" = true;
+          "editor.codeActionsOnSave" = {
+            "source.fixAll" = "explicit";
+            "source.organizeImports" = "explicit";
+          };
+        };
       };
-      extensions = pkgs.nix4vscode.forVscode [
-        "golang.go"
-        "jnoortheen.nix-ide"
 
-        "flaviodelgrosso.vscode-monospace-theme"
-        # "pkief.material-icon-theme"
-        # "supermaven.supermaven"
-        # "oven.bun-vscode"
-        # "ziglang.vscode-zig"
-        # "rust-lang.rust-analyzer"
-        # "tamasfe.even-better-toml"
-        # "fill-labs.dependi"
-      ];
+      extensions = pkgs.nix4vscode.forVscode (
+        [
+          "jnoortheen.nix-ide"
+          "flaviodelgrosso.vscode-monospace-theme"
+        ]
+        ++ lib.optionals (config.programs.rust-lang.enable or false) [
+          "rust-lang.rust-analyzer"
+          "tamasfe.even-better-toml"
+          "fill-labs.dependi"
+        ]
+        ++ lib.optionals (config.programs.go.enable or false) [ "golang.go" ]
+        ++ lib.optionals (config.programs.bun.enable or false) [ "oven.bun-vscode" ]
+        ++ lib.optionals (config.programs.zig.enable or false) [ "ziglang.vscode-zig" ]
+        ++ lib.optionals (config.programs.uv.enable or false) [
+          "ms-python.python"
+          "ms-python.debugpy"
+          "ms-python.vscode-pylance"
+          "ms-python.black-formatter"
+          "ms-python.isort"
+        ]
+      );
     };
   };
 }

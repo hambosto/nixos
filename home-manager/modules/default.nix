@@ -1,6 +1,6 @@
 {
   imports = [
-    ./lazyvim
     ./rustlang.nix
+    ./ziglang.nix
   ];
 }

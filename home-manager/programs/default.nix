@@ -24,7 +24,6 @@
     ./kitty.nix
     ./lazydocker.nix
     ./lazygit.nix
-    ./lazyvim.nix
     ./mpv.nix
     ./nh.nix
     ./obs-studio.nix
@@ -38,6 +37,7 @@
     ./yazi.nix
     ./zathura.nix
     ./zed-editor.nix
+    ./zig.nix
     ./zoxide.nix
   ];
 }
