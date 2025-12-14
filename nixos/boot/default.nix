@@ -47,10 +47,10 @@
       limine = {
         enable = true;
         efiSupport = true;
-        secureBoot.enable = true; # Set to `true` to enable Secure Boot with sbctl signing.
+        secureBoot.enable = false; # Set to `true` to enable Secure Boot with sbctl signing.
       };
     };
     tmp.cleanOnBoot = true;
-    initrd.systemd.enable = true; # Set to `true` if using systemd-based initrd for TPM.
+    initrd.systemd.enable = false; # Set to `true` if using systemd-based initrd for TPM.
   };
 }

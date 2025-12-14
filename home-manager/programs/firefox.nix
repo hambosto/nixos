@@ -2,7 +2,7 @@
 {
 
   programs.firefox = {
-    enable = false;
+    enable = true;
     policies = {
       AppAutoUpdate = false;
       CaptivePortal = false;
