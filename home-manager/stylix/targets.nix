@@ -4,9 +4,10 @@
   dunst.enable = false;
   emacs.enable = false;
   firefox = {
-    enable = true;
+    enable = false;
     profileNames = [ "default" ];
-    firefoxGnomeTheme.enable = true;
+    colorTheme.enable = false;
+    firefoxGnomeTheme.enable = false;
   };
   fish.enable = true;
   forge.enable = false;

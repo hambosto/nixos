@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/boy.png;
+    image = ../../assets/marina-bay-sands.png;
 
     polarity = "dark";
 

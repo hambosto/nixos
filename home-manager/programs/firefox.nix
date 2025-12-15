@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   programs.firefox = {
     enable = true;
     policies = {
@@ -203,12 +202,15 @@
         "layout.word_select.eat_space_to_next_word" = false;
       };
 
-      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        bitwarden
-        ublock-origin
-        sponsorblock
-        material-icons-for-github
-      ];
+      extensions = {
+        force = true;
+        packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          bitwarden
+          ublock-origin
+          sponsorblock
+          material-icons-for-github
+        ];
+      };
     };
   };
 }
