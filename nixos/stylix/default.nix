@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/tokyo-cityscape-night-japan.jpg;
+    image = ../../assets/boy.png;
 
     polarity = "dark";
 

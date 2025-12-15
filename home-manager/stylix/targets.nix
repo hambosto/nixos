@@ -4,8 +4,9 @@
   dunst.enable = false;
   emacs.enable = false;
   firefox = {
-    enable = false;
+    enable = true;
     profileNames = [ "default" ];
+    firefoxGnomeTheme.enable = true;
   };
   fish.enable = true;
   forge.enable = false;
