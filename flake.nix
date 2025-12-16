@@ -9,65 +9,44 @@
     };
 
     disko = {
-      type = "github";
-      owner = "nix-community";
-      repo = "disko";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
-      type = "github";
-      owner = "nix-community";
-      repo = "home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix4vscode = {
-      type = "github";
-      owner = "nix-community";
-      repo = "nix4vscode";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-unstable";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nur = {
-      type = "github";
-      owner = "nix-community";
-      repo = "NUR";
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix = {
-      type = "github";
-      owner = "Gerg-L";
-      repo = "spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
-      type = "github";
-      owner = "nix-community";
-      repo = "stylix";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sweetbyte = {
-      type = "github";
-      owner = "hambosto";
-      repo = "sweetbyte";
+      url = "github:hambosto/sweetbyte";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zed-extensions = {
-      type = "github";
-      owner = "DuskSystems";
-      repo = "nix-zed-extensions";
+      url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -6,7 +6,7 @@
 }:
 {
   programs.vscode = {
-    enable = true;
+    enable = false;
     package = pkgs.vscodium;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -176,29 +176,31 @@
         "zig.zls.path" = "${lib.getExe pkgs.zls}";
       };
 
-      extensions = pkgs.nix4vscode.forVscode (
-        [
-          # "flaviodelgrosso.vscode-monospace-theme"
-          "enkia.tokyo-night"
-          "jnoortheen.nix-ide"
-          "pkief.material-icon-theme"
-        ]
-        ++ lib.optionals (config.programs.bun.enable or false) [ "oven.bun-vscode" ]
-        ++ lib.optionals (config.programs.go.enable or false) [ "golang.go" ]
-        ++ lib.optionals (config.programs.rust.enable or false) [
-          "fill-labs.dependi"
-          "rust-lang.rust-analyzer"
-          "tamasfe.even-better-toml"
-        ]
-        ++ lib.optionals (config.programs.uv.enable or false) [
-          "ms-python.black-formatter"
-          "ms-python.debugpy"
-          "ms-python.isort"
-          "ms-python.python"
-          "ms-python.vscode-pylance"
-        ]
-        ++ lib.optionals (config.programs.zig.enable or false) [ "ziglang.vscode-zig" ]
-      );
+      extensions =
+        with pkgs.vscode-marketplace;
+        (
+          [
+            # flaviodelgrosso.vscode-monospace-theme
+            enkia.tokyo-night
+            jnoortheen.nix-ide
+            pkief.material-icon-theme
+          ]
+          ++ lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ]
+          ++ lib.optionals (config.programs.go.enable or false) [ golang.go ]
+          ++ lib.optionals (config.programs.rust.enable or false) [
+            fill-labs.dependi
+            rust-lang.rust-analyzer
+            tamasfe.even-better-toml
+          ]
+          ++ lib.optionals (config.programs.uv.enable or false) [
+            ms-python.black-formatter
+            ms-python.debugpy
+            ms-python.isort
+            ms-python.python
+            ms-python.vscode-pylance
+          ]
+          ++ lib.optionals (config.programs.zig.enable or false) [ ziglang.vscode-zig ]
+        );
     };
   };
 }
