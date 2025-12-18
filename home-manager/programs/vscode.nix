@@ -74,7 +74,7 @@
         "window.customTitleBarVisibility" = "never";
         "window.menuBarVisibility" = "toggle";
         "window.titleBarStyle" = "native";
-        "window.zoomLevel" = 0.7;
+        "window.zoomLevel" = 0.5;
         "workbench.activityBar.location" = "hidden";
         # "workbench.colorTheme" = "Monospace Dark";
         "workbench.colorTheme" = "Tokyo Night";
