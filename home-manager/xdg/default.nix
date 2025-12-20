@@ -1,24 +1,31 @@
 { lib, ... }:
-with lib;
+
 let
-  defaultApps = {
-    # browser = [ "brave-browser.desktop" ];
-    # browser = [ "firefox.desktop" ];
-    browser = [ "chromium-browser.desktop" ];
-    # text = [ "codium.desktop" ];
-    text = [ "code.desktop" ];
-    image = [ "imv-dir.desktop" ];
-    audio = [ "mpv.desktop" ];
-    video = [ "mpv.desktop" ];
-    directory = [ "yazi.desktop" ];
-    office = [ "libreoffice.desktop" ];
-    pdf = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-    terminal = [ "kitty.desktop" ];
-    discord = [ "vesktop.desktop" ];
+  inherit (lib)
+    listToAttrs
+    flatten
+    mapAttrsToList
+    nameValuePair
+    ;
+
+  # Application configurations
+  apps = {
+    browser = "chromium-browser.desktop";
+    editor = "code.desktop";
+    imageViewer = "imv-dir.desktop";
+    audioPlayer = "mpv.desktop";
+    videoPlayer = "mpv.desktop";
+    fileManager = "yazi.desktop";
+    officeSuite = "libreoffice.desktop";
+    pdfViewer = "org.pwmt.zathura-pdf-mupdf.desktop";
+    terminal = "kitty.desktop";
+    discord = "vesktop.desktop";
   };
 
-  mimeMap = {
+  # MIME type mappings
+  mimeTypes = {
     text = [ "text/plain" ];
+
     image = [
       "image/bmp"
       "image/gif"
@@ -30,6 +37,7 @@ let
       "image/vnd.microsoft.icon"
       "image/webp"
     ];
+
     audio = [
       "audio/aac"
       "audio/mpeg"
@@ -39,6 +47,7 @@ let
       "audio/webm"
       "audio/x-matroska"
     ];
+
     video = [
       "video/mp2t"
       "video/mp4"
@@ -49,7 +58,9 @@ let
       "video/x-matroska"
       "video/x-msvideo"
     ];
+
     directory = [ "inode/directory" ];
+
     browser = [
       "text/html"
       "x-scheme-handler/about"
@@ -57,44 +68,64 @@ let
       "x-scheme-handler/https"
       "x-scheme-handler/unknown"
     ];
+
     office = [
+      # OpenDocument formats
       "application/vnd.oasis.opendocument.text"
       "application/vnd.oasis.opendocument.spreadsheet"
       "application/vnd.oasis.opendocument.presentation"
+      # Microsoft Office XML formats
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      # Legacy Microsoft formats
       "application/msword"
       "application/vnd.ms-excel"
       "application/vnd.ms-powerpoint"
       "application/rtf"
     ];
+
     pdf = [ "application/pdf" ];
     terminal = [ "terminal" ];
-    # archive = [
-    #   "application/zip"
-    #   "application/rar"
-    #   "application/7z"
-    #   "application/*tar"
-    # ];
     discord = [ "x-scheme-handler/discord" ];
   };
 
-  associations =
-    with lists;
-    listToAttrs (
-      flatten (mapAttrsToList (key: map (type: attrsets.nameValuePair type defaultApps."${key}")) mimeMap)
-    );
+  # Map category names to their apps
+  categoryToApp = {
+    text = apps.editor;
+    image = apps.imageViewer;
+    audio = apps.audioPlayer;
+    video = apps.videoPlayer;
+    directory = apps.fileManager;
+    browser = apps.browser;
+    office = apps.officeSuite;
+    pdf = apps.pdfViewer;
+    terminal = apps.terminal;
+    discord = apps.discord;
+  };
+
+  # Build associations: MIME type -> [app]
+  buildAssociations = listToAttrs (
+    flatten (
+      mapAttrsToList (
+        category: mimes: map (mime: nameValuePair mime [ categoryToApp.${category} ]) mimes
+      ) mimeTypes
+    )
+  );
+
 in
 {
   xdg = {
     enable = true;
+
     configFile."mimeapps.list".force = true;
+
     mimeApps = {
       enable = true;
-      associations.added = associations;
-      defaultApplications = associations;
+      associations.added = buildAssociations;
+      defaultApplications = buildAssociations;
     };
+
     userDirs = {
       enable = true;
       createDirectories = true;

@@ -1,8 +1,6 @@
-{ config, ... }:
+{ pkgs, ... }:
 {
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ config.home-manager.users.ilham.wayland.windowManager.hyprland.portalPackage ];
-    configPackages = [ config.home-manager.users.ilham.wayland.windowManager.hyprland.package ];
-  };
+  xdg.portal.enable = true;
+  xdg.portal.configPackages = [ pkgs.hyprland ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 }

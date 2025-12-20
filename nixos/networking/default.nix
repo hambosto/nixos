@@ -5,8 +5,6 @@
   # NetworkManager configuration
   networking.networkmanager.enable = true;
 
-  networking.networkmanager.wifi = {
-    macAddress = "random";
-    scanRandMacAddress = true;
-  };
+  networking.networkmanager.wifi.macAddress = "random";
+  networking.networkmanager.wifi.scanRandMacAddress = true;
 }
