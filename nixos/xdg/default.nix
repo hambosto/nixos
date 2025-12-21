@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   xdg.portal.enable = true;
-  xdg.portal.configPackages = [ pkgs.hyprland ];
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.configPackages = [ pkgs.niri-unstable ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
 }

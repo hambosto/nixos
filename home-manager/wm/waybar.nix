@@ -14,9 +14,9 @@
         position = "top";
         modules-left = [
           "custom/rofi"
-          "hyprland/window"
+          "niri/window"
         ];
-        modules-center = [ "hyprland/workspaces" ];
+        modules-center = [ "niri/workspaces" ];
         modules-right = [
           "tray"
           "memory"
@@ -87,8 +87,7 @@
           tooltip = false;
         };
 
-        "hyprland/window" = {
-          max-length = 25;
+        "niri/window" = {
           separate-outputs = false;
           rewrite = {
             "" = " Desktop";
@@ -114,12 +113,8 @@
           };
         };
 
-        "hyprland/workspaces" = {
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-          persistent-workspaces = {
-            "*" = 5;
-          };
+        "niri/workspaces" = {
+          all-outputs = true;
         };
 
         idle_inhibitor = {

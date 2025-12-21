@@ -10,7 +10,7 @@ let
 
   # Application configurations
   apps = {
-    browser = "chromium-browser.desktop";
+    browser = "brave-browser.desktop";
     editor = "code.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";

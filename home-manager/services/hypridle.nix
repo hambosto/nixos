@@ -6,7 +6,7 @@
       general = {
         lock_cmd = "${lib.getExe pkgs.hyprlock}";
         before_sleep_cmd = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
-        after_sleep_cmd = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
+        after_sleep_cmd = "${lib.getExe pkgs.niri-unstable} msg power-on-monitors";
       };
       listener = [
         {
@@ -25,8 +25,8 @@
         }
         {
           timeout = 240;
-          on-timeout = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
-          on-resume = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on && ${lib.getExe pkgs.brightnessctl} -r";
+          on-timeout = "${lib.getExe pkgs.niri-unstable} msg power-off-monitors";
+          on-resume = "${lib.getExe pkgs.niri-unstable} msg power-on-monitors && ${lib.getExe pkgs.brightnessctl} -r";
         }
         {
           timeout = 300;

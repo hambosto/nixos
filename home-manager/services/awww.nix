@@ -25,8 +25,4 @@
       ${lib.getExe pkgs.awww} img ${config.stylix.image}
     fi
   '';
-
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "${lib.getExe pkgs.awww} img ${config.stylix.image}"
-  ];
 }
