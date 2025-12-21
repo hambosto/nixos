@@ -6,7 +6,7 @@
 }:
 {
   programs.vscode = {
-    enable = true;
+    enable = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
