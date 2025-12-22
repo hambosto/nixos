@@ -7,27 +7,11 @@
 {
   programs.niri.settings = {
     binds = with config.lib.niri.actions; {
-      "Mod+Return".action = spawn [
-        "${lib.getExe pkgs.kitty}"
-        "--title"
-        "kitty"
-      ];
-      "Mod+E".action = spawn [
-        "${lib.getExe pkgs.kitty}"
-        "-e"
-        "${lib.getExe pkgs.yazi}"
-      ];
-      "Mod+Space".action = spawn [
-        "${lib.getExe pkgs.rofi}"
-        "-show"
-        "drun"
-      ];
+      "Mod+Return".action = spawn "${lib.getExe pkgs.kitty}" "--title" "kitty";
+      "Mod+E".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe pkgs.yazi}";
+      "Mod+Space".action = spawn "${lib.getExe pkgs.rofi}" "-show" "drun";
       "Mod+L".action = spawn "${lib.getExe pkgs.hyprlock}";
-      "Mod+Shift+M".action = spawn [
-        "${lib.getExe pkgs.kitty}"
-        "-e"
-        "${lib.getExe pkgs.btop}"
-      ];
+      "Mod+Shift+M".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe pkgs.btop}";
       "Mod+Shift+P".action = spawn "${lib.getExe pkgs.wlogout}";
 
       # Screenshots
@@ -91,47 +75,39 @@
       "Mod+Shift+0".action.move-window-to-workspace = 10;
 
       # Fn Keys
-      "XF86AudioRaiseVolume".action = spawn [
-        "${lib.getExe' pkgs.wireplumber "wpctl"}"
-        "set-volume"
-        "@DEFAULT_AUDIO_SINK@"
-        "5%+"
-        "-l"
-        "1"
-      ];
+      "XF86AudioRaiseVolume" = {
+        action =
+          spawn "${lib.getExe' pkgs.wireplumber "wpctl"}" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "-l"
+            "1";
+        allow-when-locked = true;
+      };
 
-      "XF86AudioLowerVolume".action = spawn [
-        "${lib.getExe' pkgs.wireplumber "wpctl"}"
-        "set-volume"
-        "@DEFAULT_AUDIO_SINK@"
-        "5%-"
-      ];
+      "XF86AudioLowerVolume" = {
+        action = spawn "${lib.getExe' pkgs.wireplumber "wpctl"}" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-";
+        allow-when-locked = true;
+      };
 
-      "XF86AudioMute".action = spawn [
-        "${lib.getExe' pkgs.wireplumber "wpctl"}"
-        "set-mute"
-        "@DEFAULT_AUDIO_SINK@"
-        "toggle"
-      ];
+      "XF86AudioMute" = {
+        action = spawn "${lib.getExe' pkgs.wireplumber "wpctl"}" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
+        allow-when-locked = true;
+      };
 
-      "XF86AudioMicMute".action = spawn [
-        "${lib.getExe' pkgs.wireplumber "wpctl"}"
-        "set-mute"
-        "@DEFAULT_AUDIO_SOURCE@"
-        "toggle"
-      ];
+      "XF86AudioMicMute" = {
+        action =
+          spawn "${lib.getExe' pkgs.wireplumber "wpctl"}" "set-mute" "@DEFAULT_AUDIO_SOURCE@"
+            "toggle";
+        allow-when-locked = true;
+      };
 
-      "XF86MonBrightnessUp".action = spawn [
-        "${lib.getExe pkgs.brightnessctl}"
-        "set"
-        "+5%"
-      ];
+      "XF86MonBrightnessUp" = {
+        action = spawn "${lib.getExe pkgs.brightnessctl}" "set" "+5%";
+        allow-when-locked = true;
+      };
 
-      "XF86MonBrightnessDown".action = spawn [
-        "${lib.getExe pkgs.brightnessctl}"
-        "set"
-        "5%-"
-      ];
+      "XF86MonBrightnessDown" = {
+        action = spawn "${lib.getExe pkgs.brightnessctl}" "set" "5%-";
+        allow-when-locked = true;
+      };
     };
 
     cursor = {
@@ -160,12 +136,7 @@
 
     input = {
       focus-follows-mouse.enable = true;
-
-      keyboard = {
-        numlock = true;
-        xkb.layout = "us";
-      };
-
+      keyboard.xkb.layout = "us";
       mouse.natural-scroll = false;
 
       touchpad = {
@@ -173,6 +144,9 @@
         scroll-factor = 1.0;
         tap = true;
       };
+
+      warp-mouse-to-focus.enable = true;
+      workspace-auto-back-and-forth = true;
     };
 
     layout = {
@@ -229,6 +203,7 @@
     window-rules = [
       {
         clip-to-geometry = true;
+        draw-border-with-background = false;
         geometry-corner-radius = {
           bottom-left = 5.0;
           bottom-right = 5.0;
