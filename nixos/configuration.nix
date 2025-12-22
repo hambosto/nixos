@@ -3,6 +3,7 @@
   imports = [
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
+    inputs.niri.nixosModules.niri
     inputs.stylix.nixosModules.stylix
     ./boot
     ./disko
