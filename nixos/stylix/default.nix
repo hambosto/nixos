@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/limbo.png;
+    image = ../../assets/vintage-ascent.jpg;
 
     polarity = "dark";
 

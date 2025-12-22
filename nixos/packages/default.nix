@@ -3,8 +3,8 @@
   environment = {
     defaultPackages = lib.mkForce [ ];
     systemPackages = with pkgs; [
-      sbctl
       nautilus
+      sbctl
       stdenv.cc
     ];
   };

@@ -13,9 +13,10 @@
       After = [ config.wayland.systemd.target ];
       PartOf = [ config.wayland.systemd.target ];
     };
+
     Service = {
       ExecStart = "${lib.getExe' pkgs.awww "awww-daemon"} --no-cache";
-      Restart = "always";
+      Restart = "on-failure";
       RestartSec = 10;
     };
   };
