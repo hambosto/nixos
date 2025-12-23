@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/light-ring.jpg;
+    image = ../../assets/marina-bay-sands-colorized-full.png;
 
     polarity = "dark";
 
