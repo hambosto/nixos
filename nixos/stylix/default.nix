@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/Mokkaxero.jpg;
+    image = ../../assets/light-ring.jpg;
 
     polarity = "dark";
 
