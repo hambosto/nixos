@@ -2,7 +2,6 @@
   description = "A simple flake for an atomic system";
 
   inputs = {
-
     awww = {
       type = "git";
       url = "https://codeberg.org/LGFae/awww";

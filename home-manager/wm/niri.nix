@@ -59,8 +59,8 @@
       "Mod+9".action = focus-workspace 9;
       "Mod+0".action = focus-workspace 10;
 
-      "Mod+Tab".action = focus-workspace-down;
-      "Mod+Shift+Tab".action = focus-workspace-up;
+      "Mod+WheelScrollDown".action = focus-workspace-down;
+      "Mod+WheelScrollUp".action = focus-workspace-up;
 
       # Move Window to Workspace
       "Mod+Shift+1".action.move-window-to-workspace = 1;
@@ -149,8 +149,16 @@
       workspace-auto-back-and-forth = true;
     };
 
+    layer-rules = [
+      {
+        matches = [ { namespace = "^awww-daemon$"; } ];
+        place-within-backdrop = true;
+      }
+    ];
+
     layout = {
       always-center-single-column = true;
+      background-color = "transparent";
       default-column-width.proportion = 0.5;
       focus-ring.enable = false;
       gaps = 6;
@@ -188,6 +196,7 @@
       };
     };
 
+    overview.workspace-shadow.enable = false;
     prefer-no-csd = true;
     screenshot-path = "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png";
     spawn-at-startup = [

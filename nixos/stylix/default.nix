@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/marina-bay-sands.png;
+    image = ../../assets/Mokkaxero.jpg;
 
     polarity = "dark";
 

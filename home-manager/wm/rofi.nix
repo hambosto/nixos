@@ -49,7 +49,7 @@
         margin = mkLiteral "0px";
         padding = mkLiteral "3px 10px";
         border = mkLiteral "0px solid";
-        border-radius = mkLiteral "10px";
+        border-radius = mkLiteral "5px";
         border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
         background-color = mkLiteral "#${config.lib.stylix.colors.base01}";
         text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
@@ -106,7 +106,7 @@
         margin = mkLiteral "0px";
         padding = mkLiteral "5px 10px";
         border = mkLiteral "0px solid";
-        border-radius = mkLiteral "10px";
+        border-radius = mkLiteral "5px";
         border-color = mkLiteral "#${config.lib.stylix.colors.base0D}";
         background-color = mkLiteral "transparent";
         text-color = mkLiteral "#${config.lib.stylix.colors.base05}";
