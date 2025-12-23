@@ -5,7 +5,7 @@
 
     enableReleaseChecks = false;
 
-    image = ../../assets/marina-bay-sands-colorized-full.png;
+    image = ../../assets/marina-bay-sands-catppuccin.png;
 
     polarity = "dark";
 
