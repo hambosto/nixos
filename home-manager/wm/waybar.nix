@@ -47,20 +47,34 @@
             critical = 20;
           };
           format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          format-plugged = "󰂅 {capacity}%";
-          format-icons = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
+          format-charging = "{icon} {capacity}%";
+          format-plugged = " {capacity}%";
+          format-icons = {
+            charging = [
+              "󰢜"
+              "󰂆"
+              "󰂇"
+              "󰂈"
+              "󰢝"
+              "󰂉"
+              "󰢞"
+              "󰂊"
+              "󰂋"
+              "󰂅"
+            ];
+            default = [
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
+          };
           tooltip = false;
         };
 
@@ -114,6 +128,11 @@
 
         "niri/workspaces" = {
           all-outputs = true;
+          format = "{icon}";
+          format-icons = {
+            default = "";
+            active = "";
+          };
         };
 
         idle_inhibitor = {
@@ -199,7 +218,7 @@
       }
 
       window#waybar > box {
-        margin: 5px 9px 0px 9px;
+        margin: 5px 9px 0;
         padding: 2px 0;
         background-color: #${config.lib.stylix.colors.base00};
         border: 2px solid #${config.lib.stylix.colors.base0D};
@@ -264,8 +283,6 @@
       #workspaces button.active {
         background-color: #${config.lib.stylix.colors.base0D};
         color: #${config.lib.stylix.colors.base00};
-        margin: 2px 1px;
-        padding: 0 6px;
         transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
       }
 
@@ -301,8 +318,8 @@
         color: #${config.lib.stylix.colors.base0B};
       }
 
-      #network.disconnected,
-      #battery.critical:not(.charging) {
+      #battery.critical:not(.charging),
+      #network.disconnected {
         border-radius: 5px;
         background: alpha(#${config.lib.stylix.colors.base08}, 0.2);
         color: #${config.lib.stylix.colors.base08};
@@ -310,15 +327,9 @@
       }
 
       @keyframes critical {
-        0% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.7;
-        }
-        100% {
-          opacity: 1;
-        }
+        0% { opacity: 1; }
+        50% { opacity: 0.7; }
+        100% { opacity: 1; }
       }
     '';
   };

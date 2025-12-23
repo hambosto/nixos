@@ -9,8 +9,11 @@
   imports = [ inputs.zed-extensions.homeManagerModules.default ];
 
   programs.zed-editor = {
-    enable = false;
-
+    enable = true;
+    mutableUserSettings = false;
+    mutableUserKeymaps = false;
+    mutableUserTasks = false;
+    mutableUserDebug = false;
     userSettings = {
       base_keymap = "VSCode";
       buffer_font_family = "Maple Mono NF";
@@ -20,6 +23,7 @@
         custom = 1.4;
       };
       current_line_highlight = "none";
+      disable_ai = true;
       git = {
         inline_blame = {
           enabled = false;
@@ -68,8 +72,20 @@
           };
           language_servers = [ "pyright" ];
         };
+      }
+      // lib.optionalAttrs config.programs.zig.enable {
+        Zig = {
+          format_on_save = true;
+          formatter.external = {
+            arguments = [
+              "fmt"
+              "--stdin"
+            ];
+            command = lib.getExe pkgs.zig;
+          };
+          language_servers = [ "zls" ];
+        };
       };
-
       lsp = {
         nixd = {
           binary.path = lib.getExe pkgs.nixd;
@@ -89,8 +105,12 @@
         pyright = {
           binary.path = lib.getExe pkgs.pyright;
         };
+      }
+      // lib.optionalAttrs config.programs.zig.enable {
+        zls = {
+          binary.path = lib.getExe pkgs.zls;
+        };
       };
-
       project_panel = {
         entry_spacing = "standard";
       };
