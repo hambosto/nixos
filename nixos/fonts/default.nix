@@ -4,4 +4,6 @@
     nerd-fonts.ubuntu
     maple-mono.NF
   ];
+
+  fonts.enableDefaultPackages = false;
 }

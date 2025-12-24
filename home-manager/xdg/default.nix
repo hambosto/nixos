@@ -7,11 +7,9 @@ let
     mapAttrsToList
     nameValuePair
     ;
-
-  # Application configurations
   apps = {
-    browser = "brave-browser.desktop";
-    editor = "code.desktop";
+    browser = "firefox.desktop";
+    editor = "codium.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
     videoPlayer = "mpv.desktop";
@@ -22,7 +20,6 @@ let
     discord = "vesktop.desktop";
   };
 
-  # MIME type mappings
   mimeTypes = {
     text = [ "text/plain" ];
 
@@ -70,15 +67,12 @@ let
     ];
 
     office = [
-      # OpenDocument formats
       "application/vnd.oasis.opendocument.text"
       "application/vnd.oasis.opendocument.spreadsheet"
       "application/vnd.oasis.opendocument.presentation"
-      # Microsoft Office XML formats
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-      # Legacy Microsoft formats
       "application/msword"
       "application/vnd.ms-excel"
       "application/vnd.ms-powerpoint"
@@ -90,7 +84,6 @@ let
     discord = [ "x-scheme-handler/discord" ];
   };
 
-  # Map category names to their apps
   categoryToApp = {
     text = apps.editor;
     image = apps.imageViewer;
@@ -104,7 +97,6 @@ let
     discord = apps.discord;
   };
 
-  # Build associations: MIME type -> [app]
   buildAssociations = listToAttrs (
     flatten (
       mapAttrsToList (
@@ -117,9 +109,7 @@ in
 {
   xdg = {
     enable = true;
-
     configFile."mimeapps.list".force = true;
-
     mimeApps = {
       enable = true;
       associations.added = buildAssociations;

@@ -6,7 +6,8 @@
 }:
 {
   programs.vscode = {
-    enable = false;
+    enable = true;
+    package = pkgs.vscodium;
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;

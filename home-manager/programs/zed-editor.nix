@@ -9,7 +9,7 @@
   imports = [ inputs.zed-extensions.homeManagerModules.default ];
 
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     mutableUserSettings = false;
     mutableUserKeymaps = false;
     mutableUserTasks = false;
