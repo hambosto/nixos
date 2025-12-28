@@ -2,51 +2,35 @@
   description = "A simple flake for an atomic system";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     awww = {
-      type = "git";
-      url = "https://codeberg.org/LGFae/awww";
+      url = "git+https://codeberg.org/LGFae/awww";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
-      type = "github";
-      owner = "nix-community";
-      repo = "disko";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
-      type = "github";
-      owner = "nix-community";
-      repo = "home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {
-      type = "github";
-      owner = "sodiboo";
-      repo = "niri-flake";
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-vscode-extensions = {
-      type = "github";
-      owner = "nix-community";
-      repo = "nix-vscode-extensions";
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-unstable";
-    };
-
     stylix = {
-      type = "github";
-      owner = "nix-community";
-      repo = "stylix";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
