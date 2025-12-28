@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.firefox = {
-    enable = true;
+    enable = false;
     policies = {
       AppAutoUpdate = false;
       CaptivePortal = false;

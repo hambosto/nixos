@@ -1,9 +1,11 @@
 { pkgs, ... }:
 {
-  fonts.packages = with pkgs; [
-    nerd-fonts.ubuntu
-    maple-mono.NF
-  ];
-
-  fonts.enableDefaultPackages = false;
+  fonts = {
+    enableDefaultPackages = false;
+    packages = with pkgs; [
+      maple-mono.NF
+      nerd-fonts.ubuntu
+      font-collections.sf-mono-nf
+    ];
+  };
 }

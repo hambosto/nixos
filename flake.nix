@@ -15,6 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    font-collections = {
+      type = "github";
+      owner = "hambosto";
+      repo = "font-collections";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       type = "github";
       owner = "nix-community";

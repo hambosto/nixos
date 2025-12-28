@@ -6,6 +6,7 @@
     pokego = prev.callPackage ../packages/pokego.nix { };
     sweetbyte = inputs.sweetbyte.packages.${final.stdenv.hostPlatform.system}.default;
   })
+  inputs.font-collections.overlays.default
   inputs.niri.overlays.niri
   inputs.nix-vscode-extensions.overlays.default
   inputs.nur.overlays.default

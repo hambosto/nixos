@@ -24,7 +24,7 @@
       serif = config.stylix.fonts.sansSerif;
 
       sansSerif = {
-        package = pkgs.nur.repos.guanran928.harmonyos-sans;
+        package = pkgs.font-collections.harmonyos-sans;
         name = "HarmonyOS Sans";
       };
 
