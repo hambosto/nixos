@@ -5,7 +5,7 @@
     settings = {
       font = lib.mkForce {
         normal = {
-          family = "Maple Mono NF";
+          family = "GeistMono Nerd Font";
           style = "Regular";
         };
         size = 11;

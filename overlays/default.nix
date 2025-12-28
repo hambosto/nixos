@@ -2,13 +2,10 @@
 [
   (final: prev: {
     awww = inputs.awww.packages.${final.stdenv.hostPlatform.system}.default;
+    harmonyos-sans = prev.callPackage ../packages/harmonyos-sans.nix { };
     nmgui = prev.callPackage ../packages/nmgui.nix { };
     pokego = prev.callPackage ../packages/pokego.nix { };
-    sweetbyte = inputs.sweetbyte.packages.${final.stdenv.hostPlatform.system}.default;
   })
-  inputs.font-collections.overlays.default
   inputs.niri.overlays.niri
   inputs.nix-vscode-extensions.overlays.default
-  inputs.nur.overlays.default
-  inputs.zed-extensions.overlays.default
 ]

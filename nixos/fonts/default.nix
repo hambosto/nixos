@@ -3,9 +3,8 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      maple-mono.NF
+      nerd-fonts.geist-mono
       nerd-fonts.ubuntu
-      font-collections.sf-mono-nf
     ];
   };
 }

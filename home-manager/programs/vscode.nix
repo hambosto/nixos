@@ -16,10 +16,10 @@
         "chat.agent.enabled" = false;
         "chat.commandCenter.enabled" = false;
         "chat.disableAIFeatures" = true;
-        "chat.editor.fontFamily" = "SFMono Nerd Font";
+        "chat.editor.fontFamily" = "GeistMono Nerd Font";
         "chat.editor.fontSize" = 14;
-        "chat.fontFamily" = "SFMono Nerd Font";
-        "debug.console.fontFamily" = "SFMono Nerd Font";
+        "chat.fontFamily" = "GeistMono Nerd Font";
+        "debug.console.fontFamily" = "GeistMono Nerd Font";
         "debug.console.fontSize" = 14;
         "editor.acceptSuggestionOnCommitCharacter" = true;
         "editor.acceptSuggestionOnEnter" = "on";
@@ -27,13 +27,13 @@
         "editor.bracketPairColorization.enabled" = true;
         "editor.cursorBlinking" = "expand";
         "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.fontFamily" = "SFMono Nerd Font";
+        "editor.fontFamily" = "GeistMono Nerd Font";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
         "editor.fontWeight" = "500";
         "editor.formatOnSave" = true;
-        "editor.inlayHints.fontFamily" = "SFMono Nerd Font";
-        "editor.inlineSuggest.fontFamily" = "SFMono Nerd Font";
+        "editor.inlayHints.fontFamily" = "GeistMono Nerd Font";
+        "editor.inlineSuggest.fontFamily" = "GeistMono Nerd Font";
         "editor.minimap.enabled" = false;
         "editor.minimap.sectionHeaderFontSize" = 14;
         "editor.semanticHighlighting.enabled" = true;
@@ -49,7 +49,7 @@
         "files.enableTrash" = false;
         "git.decorations.enabled" = false;
         "inlineChat.accessibleDiffView" = "off";
-        "markdown.preview.fontFamily" = "SFMono Nerd Font";
+        "markdown.preview.fontFamily" = "GeistMono Nerd Font";
         "markdown.preview.fontSize" = 14;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${lib.getExe pkgs.nixd}";
@@ -60,14 +60,14 @@
             };
           };
         };
-        "notebook.markup.fontFamily" = "SFMono Nerd Font";
-        "scm.inputFontFamily" = "SFMono Nerd Font";
+        "notebook.markup.fontFamily" = "GeistMono Nerd Font";
+        "scm.inputFontFamily" = "GeistMono Nerd Font";
         "scm.inputFontSize" = 14;
         "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
         "telemetry.editStats.enabled" = false;
         "telemetry.feedback.enabled" = false;
         "telemetry.telemetryLevel" = "off";
-        "terminal.integrated.fontFamily" = "SFMono Nerd Font";
+        "terminal.integrated.fontFamily" = "GeistMono Nerd Font";
         "terminal.integrated.fontSize" = 14;
         "terminal.integrated.fontWeight" = "500";
         "terminal.integrated.initialHint" = false;
@@ -80,8 +80,10 @@
         # "workbench.colorTheme" = "Monospace Dark";
         "workbench.colorTheme" = "Tokyo Night";
         "workbench.editor.showTabs" = "single";
+
         # "workbench.iconTheme" = "monospace-studio-icons";
         "workbench.iconTheme" = "material-icon-theme";
+
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.statusBar.visible" = false;

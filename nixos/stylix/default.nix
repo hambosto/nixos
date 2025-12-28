@@ -2,13 +2,9 @@
 {
   stylix = {
     enable = true;
-
     enableReleaseChecks = false;
-
     image = ../../assets/marina-bay-sands-catppuccin.png;
-
     polarity = "dark";
-
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";
@@ -16,22 +12,22 @@
     };
 
     fonts = {
-      monospace = {
-        package = pkgs.maple-mono.NF;
-        name = "Maple Mono NF";
-      };
-
-      serif = config.stylix.fonts.sansSerif;
-
-      sansSerif = {
-        package = pkgs.font-collections.harmonyos-sans;
-        name = "HarmonyOS Sans";
-      };
-
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
+
+      monospace = {
+        package = pkgs.nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
+      };
+
+      sansSerif = {
+        package = pkgs.harmonyos-sans;
+        name = "HarmonyOS Sans";
+      };
+
+      serif = config.stylix.fonts.sansSerif;
 
       sizes = {
         applications = 14;

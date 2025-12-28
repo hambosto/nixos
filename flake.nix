@@ -15,13 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    font-collections = {
-      type = "github";
-      owner = "hambosto";
-      repo = "font-collections";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       type = "github";
       owner = "nix-community";
@@ -50,38 +43,10 @@
       ref = "nixos-unstable";
     };
 
-    nur = {
-      type = "github";
-      owner = "nix-community";
-      repo = "NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix = {
-      type = "github";
-      owner = "Gerg-L";
-      repo = "spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       type = "github";
       owner = "nix-community";
       repo = "stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    sweetbyte = {
-      type = "github";
-      owner = "hambosto";
-      repo = "sweetbyte";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zed-extensions = {
-      type = "github";
-      owner = "DuskSystems";
-      repo = "nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

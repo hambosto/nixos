@@ -11,7 +11,6 @@
     ./clock-rs.nix
     ./eza.nix
     ./fastfetch.nix
-    ./firefox.nix
     ./fish.nix
     ./fzf.nix
     ./ghostty.nix
@@ -30,14 +29,11 @@
     ./obs-studio.nix
     ./oh-my-posh.nix
     ./rust.nix
-    ./spicetify.nix
     ./starship.nix
     ./uv.nix
-    ./vesktop.nix
     ./vscode.nix
     ./yazi.nix
     ./zathura.nix
-    ./zed-editor.nix
     ./zig.nix
     ./zoxide.nix
   ];
