@@ -1,27 +1,21 @@
 { lib, pkgs, ... }:
-let
-  yazi-plugins = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "plugins";
-    rev = "eaf6920b7439fa7164a1c162a249c3c76dc0acd9";
-    hash = "sha256-B6zhZfp3SEaiviIzosI2aD8fk+hQF0epOTKi1qm8V3E=";
-  };
-in
 {
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
 
     plugins = {
-      chmod = "${yazi-plugins}/chmod.yazi";
-      full-border = "${yazi-plugins}/full-border.yazi";
-      toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
-      smart-filter = "${yazi-plugins}/smart-filter.yazi";
-      mount = "${yazi-plugins}/mount.yazi";
+      chmod = pkgs.yaziPlugins.chmod;
+      full-border = pkgs.yaziPlugins.full-border;
+      toggle-pane = pkgs.yaziPlugins.toggle-pane;
+      smart-filter = pkgs.yaziPlugins.smart-filter;
+      mount = pkgs.yaziPlugins.mount;
+      starship = pkgs.yaziPlugins.starship;
     };
 
     initLua = ''
       require("full-border"):setup()
+      require("starship"):setup()
     '';
 
     settings = {

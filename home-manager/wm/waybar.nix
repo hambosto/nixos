@@ -14,9 +14,10 @@
         position = "top";
         modules-left = [
           "custom/rofi"
+          "niri/workspaces"
           "niri/window"
         ];
-        modules-center = [ "niri/workspaces" ];
+        modules-center = [ "clock" ];
         modules-right = [
           "tray"
           "memory"
@@ -27,7 +28,6 @@
           "backlight"
           "power-profiles-daemon"
           "idle_inhibitor"
-          "clock"
           "custom/wlogout"
         ];
 
@@ -85,12 +85,12 @@
         };
 
         clock = {
-          format = "󰥔 {:L%H:%M %Z}";
+          format = " {:L%H:%M %Z • %a %d}";
           tooltip = false;
         };
 
         "custom/rofi" = {
-          format = "";
+          format = "󰀻";
           on-click = "${lib.getExe pkgs.rofi} -show drun";
           tooltip-format = "Open the application launcher";
         };
@@ -102,7 +102,7 @@
         };
 
         "niri/window" = {
-          separate-outputs = false;
+          separate-outputs = true;
           rewrite = {
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
             ".*VSCodium.*" = " VSCodium";
@@ -121,18 +121,12 @@
             ".*htop.*" = " Process Monitor";
             ".*hx.*" = "󰅴 Helix";
             ".*Obsidian.*" = "󱓧 Obsidian";
-            ".*Network Manager.*" = "󱫋 Network Manager GUI";
             ".*Vesktop.*" = " Vesktop";
           };
         };
 
         "niri/workspaces" = {
-          all-outputs = true;
-          format = "{icon}";
-          format-icons = {
-            default = "";
-            active = "";
-          };
+          all-outputs = false;
         };
 
         idle_inhibitor = {
@@ -163,7 +157,7 @@
             "󰤨"
           ];
           tooltip = false;
-          on-click = "${lib.getExe pkgs.nmgui}";
+          on-click = "${lib.getExe pkgs.iwmenu} -l rofi";
         };
 
         power-profiles-daemon = {
@@ -192,7 +186,7 @@
             car = "󰄋";
             default = "󰕾";
           };
-          on-click = "${lib.getExe pkgs.pavucontrol}";
+          on-click = "${lib.getExe pkgs.pwmenu} -l rofi";
           tooltip = false;
         };
 
@@ -219,7 +213,7 @@
 
       window#waybar > box {
         margin: 5px 9px 0;
-        padding: 2px 0;
+        padding: 3px 0;
         background-color: #${config.lib.stylix.colors.base00};
         border: 2px solid #${config.lib.stylix.colors.base0D};
         border-radius: 5px;
@@ -271,25 +265,34 @@
         border-radius: 5px;
       }
 
-      #workspaces button {
-        color: #${config.lib.stylix.colors.base05};
-        background: transparent;
-        border-radius: 5px;
-        margin: 2px 1px;
+      #workspace {
         padding: 0 6px;
+      }
+
+      #workspaces button {
+        background-color: #${config.lib.stylix.colors.base01};
+        border-radius: 10px;
+        margin: 1px 4px;
+        min-width: 15px;
+        min-height: 10px;
         transition: all 0.3s ease-in-out;
       }
 
       #workspaces button.active {
         background-color: #${config.lib.stylix.colors.base0D};
-        color: #${config.lib.stylix.colors.base00};
-        transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+        min-width: 40px;
       }
 
       #workspaces button:hover {
         background-color: #${config.lib.stylix.colors.base0D};
-        color: #${config.lib.stylix.colors.base00};
-        transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+      }
+
+      #workspaces button.active:hover {
+        background-color: #${config.lib.stylix.colors.base03};
+      }
+
+      #workspaces button.urgent {
+        background-color: #${config.lib.stylix.colors.base08};
       }
 
       #tray {

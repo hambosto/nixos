@@ -1,6 +1,4 @@
 {
-  programs.rust = {
-    enable = false;
-    setRustSrcPath = true;
-  };
+  programs.rust.enable = false;
+  programs.rust.setRustSrcPath = true;
 }

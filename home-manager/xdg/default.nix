@@ -1,14 +1,7 @@
 { lib, ... }:
-
 let
-  inherit (lib)
-    listToAttrs
-    flatten
-    mapAttrsToList
-    nameValuePair
-    ;
   apps = {
-    browser = "firefox.desktop";
+    browser = "chromium-browser.desktop";
     editor = "codium.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
@@ -97,14 +90,13 @@ let
     discord = apps.discord;
   };
 
-  buildAssociations = listToAttrs (
-    flatten (
-      mapAttrsToList (
-        category: mimes: map (mime: nameValuePair mime [ categoryToApp.${category} ]) mimes
+  buildAssociations = lib.listToAttrs (
+    lib.flatten (
+      lib.mapAttrsToList (
+        category: mimes: map (mime: lib.nameValuePair mime [ categoryToApp.${category} ]) mimes
       ) mimeTypes
     )
   );
-
 in
 {
   xdg = {

@@ -6,7 +6,6 @@
     ./btop.nix
     ./bun.nix
     ./cava.nix
-    ./cavalier.nix
     ./chromium.nix
     ./clock-rs.nix
     ./eza.nix

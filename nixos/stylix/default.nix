@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
     enableReleaseChecks = false;
-    image = ../../assets/marina-bay-sands-catppuccin.png;
+    image = ../../assets/japan_street_light-dracula.png;
     polarity = "dark";
     cursor = {
       package = pkgs.apple-cursor;
