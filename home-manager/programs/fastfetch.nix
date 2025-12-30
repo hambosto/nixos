@@ -1,112 +1,75 @@
-{ config, ... }:
 {
   programs.fastfetch = {
     enable = true;
     settings = {
-
-      logo = {
-        source = ../../assets/nixos_ascii.txt;
-        type = "file";
-        padding = {
-          left = 3;
+      display = {
+        key = {
+          width = 8;
         };
-        color = {
-          "1" = "#${config.lib.stylix.colors.base08}";
-          "2" = "#${config.lib.stylix.colors.base09}";
-          "3" = "#${config.lib.stylix.colors.base0A}";
-          "4" = "#${config.lib.stylix.colors.base0B}";
-          "5" = "#${config.lib.stylix.colors.base0D}";
-          "6" = "#${config.lib.stylix.colors.base0E}";
-        };
-
+        separator = "  ";
       };
 
-      display = {
-        separator = "  ";
+      logo = {
+        padding = {
+          left = 3;
+          top = 2;
+        };
+        source = ../../assets/fastfetch-logo.txt;
+        type = "file";
       };
 
       modules = [
         {
           type = "custom";
-          format = "────────────────────────────────────────────────";
+          format = "";
         }
         {
           type = "os";
-          key = " ";
-          keyColor = "blue";
+          key = "os";
+          keyColor = "magenta";
         }
         {
           type = "kernel";
-          key = " ";
-          keyColor = "yellow";
+          key = "ker";
+          keyColor = "green";
         }
         {
           type = "packages";
-          key = " ";
-          keyColor = "red";
-        }
-
-        {
-          type = "terminal";
-          key = " ";
-          keyColor = "yellow";
+          key = "pkgs";
+          keyColor = "cyan";
         }
         {
-          type = "wm";
-          key = " ";
+          type = "shell";
+          key = "sh";
           keyColor = "blue";
-        }
-        {
-          type = "custom";
-          format = "────────────────────────────────────────────────";
-        }
-        {
-          type = "title";
-          key = " ";
-          keyColor = "magenta";
-        }
-        {
-          type = "custom";
-          format = "────────────────────────────────────────────────";
-        }
-        {
-          type = "host";
-          key = " 󰌢";
-          keyColor = "green";
-        }
-        {
-          type = "display";
-          key = " 󰍹";
-          keyColor = "red";
-        }
-        {
-          type = "cpu";
-          key = " ";
-          keyColor = "magenta";
-        }
-        {
-          type = "gpu";
-          key = " ";
-          keyColor = "blue";
+          format = "{6}";
         }
         {
           type = "memory";
-          key = " ";
-          keyColor = "green";
-        }
-        {
-          type = "disk";
-          key = " ";
-          keyColor = "cyan";
-        }
-        {
-          type = "uptime";
-          key = " ";
-          keyColor = "cyan";
+          key = "ram";
+          keyColor = "yellow";
         }
         {
           type = "custom";
-          format = "────────────────────────────────────────────────";
+          key = "init";
+          format = "systemd";
+          keyColor = "magenta";
+        }
+        {
+          type = "wm";
+          key = "de/wm";
+          keyColor = "green";
+        }
+        {
+          type = "uptime";
+          key = "up";
+          keyColor = "cyan";
+        }
+        {
+          type = "disk";
+          key = "disk";
+          keyColor = "yellow";
+          format = "{1} / {2} ({9})";
         }
         {
           type = "colors";
