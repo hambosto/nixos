@@ -14,31 +14,26 @@
       "Mod+Shift+M".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe pkgs.btop}";
       "Mod+Shift+P".action = spawn "${lib.getExe pkgs.wlogout}";
 
-      # Screenshots
       "Print".action.screenshot-screen.write-to-disk = true;
       "Mod+Print".action.screenshot-window = [ ];
       "Mod+Shift+Print".action.screenshot.show-pointer = false;
 
-      # Window Management
       "Mod+Q".action = close-window;
       "Mod+F".action = fullscreen-window;
       "Mod+M".action = maximize-column;
       "Mod+T".action = toggle-window-floating;
       "Mod+W".action = toggle-overview;
 
-      # Focus Movement
       "Mod+Left".action = focus-column-left;
       "Mod+Right".action = focus-column-right;
       "Mod+Up".action = focus-window-up;
       "Mod+Down".action = focus-window-down;
 
-      # Window Movement
       "Mod+Shift+Left".action = move-column-left;
       "Mod+Shift+Right".action = move-column-right;
       "Mod+Shift+Up".action = move-window-up;
       "Mod+Shift+Down".action = move-window-down;
 
-      # Window Resizing
       "Mod+Ctrl+Left".action = set-column-width "-10%";
       "Mod+Ctrl+Right".action = set-column-width "+10%";
       "Mod+Ctrl+Up".action = set-window-height "-10%";
@@ -47,7 +42,6 @@
       "Mod+Alt+Down".action = move-column-to-workspace-down;
       "Mod+Alt+Up".action = move-column-to-workspace-up;
 
-      # Workspace Switching
       "Mod+1".action = focus-workspace 1;
       "Mod+2".action = focus-workspace 2;
       "Mod+3".action = focus-workspace 3;
@@ -62,7 +56,6 @@
       "Mod+WheelScrollDown".action = focus-workspace-down;
       "Mod+WheelScrollUp".action = focus-workspace-up;
 
-      # Move Window to Workspace
       "Mod+Shift+1".action.move-window-to-workspace = 1;
       "Mod+Shift+2".action.move-window-to-workspace = 2;
       "Mod+Shift+3".action.move-window-to-workspace = 3;
@@ -74,7 +67,6 @@
       "Mod+Shift+9".action.move-window-to-workspace = 9;
       "Mod+Shift+0".action.move-window-to-workspace = 10;
 
-      # Fn Keys
       "XF86AudioRaiseVolume" = {
         action =
           spawn "${lib.getExe' pkgs.wireplumber "wpctl"}" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "-l"
@@ -220,24 +212,6 @@
           top-right = 5.0;
         };
       }
-
-      {
-        matches = [ { title = "^Picture-in-Picture$"; } ];
-        open-floating = true;
-        default-floating-position = {
-          relative-to = "top-left";
-          x = 1400;
-          y = 40;
-        };
-      }
-
-      {
-        matches = [ { app-id = ".*org\\.pulseaudio\\.pavucontrol.*"; } ];
-        default-column-width.fixed = 700;
-        default-window-height.fixed = 600;
-        open-floating = true;
-      }
-
       {
         matches = [
           { title = "^Open File.*$"; }
@@ -250,22 +224,6 @@
         default-column-width.fixed = 800;
         default-window-height.fixed = 600;
         open-floating = true;
-      }
-
-      {
-        matches = [ { title = "^.*Network Manager.*$"; } ];
-        default-column-width.fixed = 500;
-        default-window-height.fixed = 400;
-        open-floating = true;
-      }
-
-      {
-        matches = [ { title = "^.*is sharing (your screen|a window)\\.$"; } ];
-        default-floating-position = {
-          relative-to = "top";
-          x = 0;
-          y = 0;
-        };
       }
     ];
 
