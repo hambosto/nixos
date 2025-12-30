@@ -2,7 +2,7 @@
 let
   apps = {
     browser = "chromium-browser.desktop";
-    editor = "codium.desktop";
+    editor = "code.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
     videoPlayer = "mpv.desktop";
