@@ -2,11 +2,11 @@
 {
   programs.lazydocker = {
     enable = false;
-    settings.gui.theme = {
-      activeBorderColor = [ "#${config.lib.stylix.colors.base0A}" ];
-      inactiveBorderColor = [ "#${config.lib.stylix.colors.base03}" ];
-      selectedLineBgColor = [ "#${config.lib.stylix.colors.base02}" ];
-      optionsTextColor = [ "#${config.lib.stylix.colors.base0D}" ];
+    settings.gui.theme = with config.lib.stylix.colors.withHashtag; {
+      activeBorderColor = [ base0A ];
+      inactiveBorderColor = [ base03 ];
+      selectedLineBgColor = [ base02 ];
+      optionsTextColor = [ base0D ];
     };
   };
 }

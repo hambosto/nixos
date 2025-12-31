@@ -1,6 +1,4 @@
 {
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  programs.starship.enable = true;
+  programs.starship.enableFishIntegration = true;
 }

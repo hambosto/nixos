@@ -1,6 +1,4 @@
 {
-  programs.fzf = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  programs.fzf.enable = true;
+  programs.fzf.enableFishIntegration = true;
 }
