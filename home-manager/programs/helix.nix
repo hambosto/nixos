@@ -144,7 +144,6 @@
           };
         };
       };
-      theme = "tokyonight";
     };
   };
 }

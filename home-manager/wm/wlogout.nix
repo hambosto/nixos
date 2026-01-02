@@ -51,7 +51,7 @@ in
         keybind = "h";
       }
     ];
-    style = ''
+    style = with config.lib.stylix.colors.withHashtag; ''
       * {
         font-family: Ubuntu Nerd Font;
       	background-image: none;

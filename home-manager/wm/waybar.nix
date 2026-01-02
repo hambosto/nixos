@@ -198,13 +198,13 @@
       };
     };
 
-    style = ''
+    style = with config.lib.stylix.colors.withHashtag; ''
       * {
         border: none;
         font-family: Ubuntu Nerd Font;
         font-weight: bold;
         font-size: 13px;
-        color: #${config.lib.stylix.colors.base05};
+        color: ${base05};
       }
 
       window#waybar {
@@ -214,14 +214,14 @@
       window#waybar > box {
         margin: 5px 9px 0;
         padding: 3px 0;
-        background-color: #${config.lib.stylix.colors.base00};
-        border: 2px solid #${config.lib.stylix.colors.base0D};
+        background-color: ${base00};
+        border: 2px solid ${base0D};
         border-radius: 5px;
       }
 
       tooltip {
-        background-color: #${config.lib.stylix.colors.base00};
-        border: 2px solid #${config.lib.stylix.colors.base0D};
+        background-color: ${base00};
+        border: 2px solid ${base0D};
         border-radius: 5px;
       }
 
@@ -251,7 +251,7 @@
       #battery:hover,
       #tray:hover {
         background-color: transparent;
-        color: #${config.lib.stylix.colors.base05};
+        color: ${base05};
       }
 
       #idle_inhibitor:hover,
@@ -260,8 +260,8 @@
       #power-profiles-daemon:hover,
       #custom-rofi:hover,
       #custom-wlogout:hover {
-        background-color: #${config.lib.stylix.colors.base0D};
-        color: #${config.lib.stylix.colors.base00};
+        background-color: ${base0D};
+        color: ${base00};
         border-radius: 5px;
       }
 
@@ -270,7 +270,7 @@
       }
 
       #workspaces button {
-        background-color: #${config.lib.stylix.colors.base01};
+        background-color: ${base01};
         border-radius: 10px;
         margin: 1px 4px;
         min-width: 15px;
@@ -279,30 +279,30 @@
       }
 
       #workspaces button.active {
-        background-color: #${config.lib.stylix.colors.base0D};
+        background-color: ${base0D};
         min-width: 40px;
       }
 
       #workspaces button:hover {
-        background-color: #${config.lib.stylix.colors.base0D};
+        background-color: ${base0D};
       }
 
       #workspaces button.active:hover {
-        background-color: #${config.lib.stylix.colors.base03};
+        background-color: ${base03};
       }
 
       #workspaces button.urgent {
-        background-color: #${config.lib.stylix.colors.base08};
+        background-color: ${base08};
       }
 
       #tray {
         padding: 0 8px;
-        background-color: #${config.lib.stylix.colors.base00};
+        background-color: ${base00};
         border-radius: 5px;
       }
 
       #tray menu {
-        background-color: #${config.lib.stylix.colors.base00};
+        background-color: ${base00};
         border-radius: 5px;
       }
 
@@ -312,20 +312,20 @@
       }
 
       #tray menu menuitem:hover {
-        background-color: #${config.lib.stylix.colors.base0D};
+        background-color: ${base0D};
       }
 
       #battery.charging {
         border-radius: 5px;
-        background: alpha(#${config.lib.stylix.colors.base0B}, 0.2);
-        color: #${config.lib.stylix.colors.base0B};
+        background: alpha(${base0B}, 0.2);
+        color: ${base0B};
       }
 
       #battery.critical:not(.charging),
       #network.disconnected {
         border-radius: 5px;
-        background: alpha(#${config.lib.stylix.colors.base08}, 0.2);
-        color: #${config.lib.stylix.colors.base08};
+        background: alpha(${base08}, 0.2);
+        color: ${base08};
         animation: critical 1s ease-in-out infinite alternate;
       }
 

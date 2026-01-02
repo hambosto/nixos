@@ -2,9 +2,9 @@
 {
   programs.clock-rs = {
     enable = true;
-    settings = {
+    settings = with config.lib.stylix.colors.withHashtag; {
       general = {
-        color = "#${config.lib.stylix.colors.base0D}";
+        color = base0D;
         interval = 250;
         blink = true;
         bold = true;

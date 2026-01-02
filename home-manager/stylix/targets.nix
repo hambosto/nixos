@@ -16,10 +16,11 @@
   gnome.enable = false;
   gtk.enable = true;
   gtksourceview.enable = false;
-  helix.enable = false;
+  helix.enable = true;
   hyprland.hyprpaper.enable = false;
   kde.enable = false;
   kitty.enable = true;
+  mako.enable = false;
   neovide.enable = false;
   neovim.enable = false;
   obsidian.enable = false;

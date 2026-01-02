@@ -1,8 +1,8 @@
 {
   imports = [
     ./awww.nix
-    ./dunst.nix
     ./hypridle.nix
+    ./mako.nix
     ./polkit-gnome.nix
   ];
 }
