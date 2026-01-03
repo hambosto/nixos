@@ -14,20 +14,18 @@
         position = "top";
         modules-left = [
           "custom/rofi"
-          "niri/workspaces"
           "niri/window"
         ];
-        modules-center = [ "clock" ];
+        modules-center = [ "niri/workspaces" ];
         modules-right = [
           "tray"
-          "memory"
-          "cpu"
           "pulseaudio"
           "network"
           "battery"
           "backlight"
           "power-profiles-daemon"
           "idle_inhibitor"
+          "clock"
           "custom/wlogout"
         ];
 
@@ -75,12 +73,6 @@
               "󰁹"
             ];
           };
-          tooltip = false;
-        };
-
-        cpu = {
-          format = " {usage}%";
-          interval = 1;
           tooltip = false;
         };
 
@@ -144,12 +136,6 @@
           tooltip = true;
         };
 
-        memory = {
-          format = " {}%";
-          interval = 1;
-          tooltip = false;
-        };
-
         network = {
           format = "{ifname}";
           format-ethernet = " {ifname}";
@@ -197,7 +183,7 @@
         };
 
         tray = {
-          icon-size = 18;
+          icon-size = 20;
           spacing = 10;
           show-passive-items = true;
         };
@@ -219,19 +205,14 @@
 
       tooltip {
         background-color: ${base00};
-        color: ${base05};
-        border-radius: 5px;
-        padding: 10px 16px;
         border: 2px solid ${base0D};
+        border-radius: 5px;
       }
 
       #custom-rofi,
       #workspaces,
       #window,
       #clock,
-      #tray,
-      #memory,
-      #cpu,
       #pulseaudio,
       #network,
       #battery,
@@ -246,41 +227,49 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
+      #tray {
+        background-color: transparent;
+        margin: 6px 0;
+      }
+
+      #custom-rofi,
       #tray,
-      #memory,
-      #cpu,
-      #pulseaudio,
       #network,
       #battery,
       #backlight,
       #power-profiles-daemon,
       #idle_inhibitor,
+      #clock,
       #custom-wlogout {
         padding: 0 12px;
-      }
-
-      #custom-rofi,
-      #tray,
-      #memory {
-        margin-left: 8px;
-        border-left: 2px solid ${base0D};
-        border-radius: 5px 0 0 5px;
-      }
-
-      #window,
-      #custom-wlogout {
-        margin-right: 8px;
-        border-right: 2px solid ${base0D};
-        border-radius: 0 5px 5px 0;
       }
 
       #custom-rofi {
         color: ${base08};
         padding: 0 14px;
+        margin-left: 8px;
+        border-left: 2px solid ${base0D};
+        border-radius: 5px 0 0 5px;
+      }
+
+      #tray {
+        color: ${base05};
+        margin-left: 8px;
+      }
+
+      #pulseaudio {
+        color: ${base0C};
+        padding: 0 12px;
+        margin-left: 8px;
+        border-left: 2px solid ${base0D};
+        border-radius: 5px 0 0 5px;
       }
 
       #workspaces {
         padding: 0 4px;
+        border: 2px solid ${base0D};
+        border-radius: 5px;
+        margin: 6px 8px;
       }
 
       #workspaces button {
@@ -289,6 +278,7 @@
         margin: 0 2px;
         min-width: 10px;
         border-radius: 5px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       #workspaces button.active {
@@ -308,26 +298,14 @@
       #window {
         color: ${base0C};
         padding: 0 14px;
+        margin-right: 8px;
+        border-right: 2px solid ${base0D};
+        border-radius: 0 5px 5px 0;
       }
 
       #clock {
         color: ${base0E};
-        padding: 0 20px;
-        margin: 6px 8px;
-        border: 2px solid ${base0D};
-        border-radius: 5px;
-      }
-
-      #memory {
-        color: ${base09};
-      }
-
-      #cpu {
-        color: ${base0A};
-      }
-
-      #pulseaudio {
-        color: ${base0C};
+        padding: 0 14px;
       }
 
       #network {
@@ -352,24 +330,19 @@
 
       #custom-wlogout {
         color: ${base08};
+        margin-right: 8px;
+        border-right: 2px solid ${base0D};
+        border-radius: 0 5px 5px 0;
       }
 
-      #custom-rofi:hover {
+      #custom-rofi:hover,
+      #custom-wlogout:hover {
         background-color: ${base08};
         color: ${base00};
       }
 
-      #memory:hover {
-        background-color: ${base09};
-        color: ${base00};
-      }
-
-      #cpu:hover {
-        background-color: ${base0A};
-        color: ${base00};
-      }
-
-      #pulseaudio:hover {
+      #pulseaudio:hover,
+      #idle_inhibitor:hover {
         background-color: ${base0C};
         color: ${base00};
       }
@@ -379,7 +352,8 @@
         color: ${base00};
       }
 
-      #battery:hover {
+      #battery:hover,
+      #clock:hover {
         background-color: ${base0E};
         color: ${base00};
       }
@@ -394,14 +368,8 @@
         color: ${base00};
       }
 
-      #idle_inhibitor:hover {
-        background-color: ${base0C};
-        color: ${base00};
-      }
-
-      #custom-wlogout:hover {
-        background-color: ${base08};
-        color: ${base00};
+      #tray:hover {
+        color: ${base0D};
       }
 
       #network.disconnected {
@@ -414,6 +382,26 @@
 
       #battery.critical:not(.charging) {
         color: ${base08};
+      }
+
+      #tray menu {
+        background-color: ${base00};
+        border: 2px solid ${base0D};
+        border-radius: 5px;
+        padding: 2px;
+      }
+
+      #tray menu menuitem {
+        background-color: transparent;
+        color: ${base05};
+        padding: 4px 8px;
+        border-radius: 3px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #tray menu menuitem:hover {
+        background-color: ${base0D};
+        color: ${base00};
       }
     '';
   };
