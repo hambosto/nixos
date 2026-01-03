@@ -1,5 +1,4 @@
 {
-
   networking.hostName = "vivobook-m1403qa";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";

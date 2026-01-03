@@ -85,12 +85,12 @@
         };
 
         clock = {
-          format = " {:L%H:%M %Z • %a %d}";
+          format = "󰥔 {:L%H:%M %Z}";
           tooltip = false;
         };
 
         "custom/rofi" = {
-          format = "󰀻";
+          format = "";
           on-click = "${lib.getExe pkgs.rofi} -show drun";
           tooltip-format = "Open the application launcher";
         };
@@ -102,6 +102,7 @@
         };
 
         "niri/window" = {
+          format = "{title}";
           separate-outputs = true;
           rewrite = {
             ".*Visual Studio Code.*" = "󰨞 Visual Studio Code";
@@ -127,6 +128,11 @@
 
         "niri/workspaces" = {
           all-outputs = false;
+          format = "{icon}";
+          format-icons = {
+            default = "󰊠";
+            active = "󰮯";
+          };
         };
 
         idle_inhibitor = {
@@ -201,138 +207,213 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       * {
         border: none;
-        font-family: Ubuntu Nerd Font;
+        font-family: "Ubuntu Nerd Font";
+        font-size: 14px;
         font-weight: bold;
-        font-size: 13px;
-        color: ${base05};
+        min-height: 32px;
       }
 
       window#waybar {
-        background: transparent;
-      }
-
-      window#waybar > box {
-        margin: 5px 9px 0;
-        padding: 3px 0;
-        background-color: ${base00};
-        border: 2px solid ${base0D};
-        border-radius: 5px;
+        background-color: transparent;
       }
 
       tooltip {
         background-color: ${base00};
-        border: 2px solid ${base0D};
+        color: ${base05};
         border-radius: 5px;
+        padding: 10px 16px;
+        border: 2px solid ${base0D};
       }
 
-      #idle_inhibitor,
+      #custom-rofi,
       #workspaces,
       #window,
       #clock,
-      #cpu,
-      #memory,
-      #network,
       #tray,
+      #memory,
+      #cpu,
       #pulseaudio,
+      #network,
+      #battery,
       #backlight,
       #power-profiles-daemon,
-      #battery,
-      #custom-rofi,
+      #idle_inhibitor,
       #custom-wlogout {
-        padding: 0 6px;
-        margin: 0 4px;
+        background-color: ${base00};
+        border-top: 2px solid ${base0D};
+        border-bottom: 2px solid ${base0D};
+        margin: 6px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      #window:hover,
-      #clock:hover,
-      #cpu:hover,
-      #memory:hover,
-      #backlight:hover,
-      #battery:hover,
-      #tray:hover {
-        background-color: transparent;
-        color: ${base05};
+      #tray,
+      #memory,
+      #cpu,
+      #pulseaudio,
+      #network,
+      #battery,
+      #backlight,
+      #power-profiles-daemon,
+      #idle_inhibitor,
+      #custom-wlogout {
+        padding: 0 12px;
       }
 
-      #idle_inhibitor:hover,
-      #network:hover,
-      #pulseaudio:hover,
-      #power-profiles-daemon:hover,
-      #custom-rofi:hover,
-      #custom-wlogout:hover {
-        background-color: ${base0D};
-        color: ${base00};
-        border-radius: 5px;
+      #custom-rofi,
+      #tray,
+      #memory {
+        margin-left: 8px;
+        border-left: 2px solid ${base0D};
+        border-radius: 5px 0 0 5px;
       }
 
-      #workspace {
-        padding: 0 6px;
+      #window,
+      #custom-wlogout {
+        margin-right: 8px;
+        border-right: 2px solid ${base0D};
+        border-radius: 0 5px 5px 0;
+      }
+
+      #custom-rofi {
+        color: ${base08};
+        padding: 0 14px;
+      }
+
+      #workspaces {
+        padding: 0 4px;
       }
 
       #workspaces button {
-        background-color: ${base01};
-        border-radius: 10px;
-        margin: 1px 4px;
-        min-width: 15px;
-        min-height: 10px;
-        transition: all 0.3s ease-in-out;
+        color: ${base04};
+        padding: 0 8px;
+        margin: 0 2px;
+        min-width: 10px;
+        border-radius: 5px;
       }
 
       #workspaces button.active {
-        background-color: ${base0D};
-        min-width: 40px;
-      }
-
-      #workspaces button:hover {
-        background-color: ${base0D};
-      }
-
-      #workspaces button.active:hover {
-        background-color: ${base03};
+        color: ${base0D};
+        padding: 0 10px;
       }
 
       #workspaces button.urgent {
         background-color: ${base08};
+        color: ${base00};
       }
 
-      #tray {
-        padding: 0 8px;
-        background-color: ${base00};
+      #workspaces button:hover {
+        background-color: ${base02};
+      }
+
+      #window {
+        color: ${base0C};
+        padding: 0 14px;
+      }
+
+      #clock {
+        color: ${base0E};
+        padding: 0 20px;
+        margin: 6px 8px;
+        border: 2px solid ${base0D};
         border-radius: 5px;
       }
 
-      #tray menu {
-        background-color: ${base00};
-        border-radius: 5px;
+      #memory {
+        color: ${base09};
       }
 
-      #tray menu menuitem {
-        border-radius: 5px;
-        transition: background-color 0.2s ease-in-out;
+      #cpu {
+        color: ${base0A};
       }
 
-      #tray menu menuitem:hover {
-        background-color: ${base0D};
+      #pulseaudio {
+        color: ${base0C};
       }
 
-      #battery.charging {
-        border-radius: 5px;
-        background: alpha(${base0B}, 0.2);
+      #network {
         color: ${base0B};
       }
 
-      #battery.critical:not(.charging),
-      #network.disconnected {
-        border-radius: 5px;
-        background: alpha(${base08}, 0.2);
-        color: ${base08};
-        animation: critical 1s ease-in-out infinite alternate;
+      #battery {
+        color: ${base0E};
       }
 
-      @keyframes critical {
-        0% { opacity: 1; }
-        50% { opacity: 0.7; }
-        100% { opacity: 1; }
+      #backlight {
+        color: ${base0A};
+      }
+
+      #power-profiles-daemon {
+        color: ${base09};
+      }
+
+      #idle_inhibitor {
+        color: ${base0C};
+      }
+
+      #custom-wlogout {
+        color: ${base08};
+      }
+
+      #custom-rofi:hover {
+        background-color: ${base08};
+        color: ${base00};
+      }
+
+      #memory:hover {
+        background-color: ${base09};
+        color: ${base00};
+      }
+
+      #cpu:hover {
+        background-color: ${base0A};
+        color: ${base00};
+      }
+
+      #pulseaudio:hover {
+        background-color: ${base0C};
+        color: ${base00};
+      }
+
+      #network:hover {
+        background-color: ${base0B};
+        color: ${base00};
+      }
+
+      #battery:hover {
+        background-color: ${base0E};
+        color: ${base00};
+      }
+
+      #backlight:hover {
+        background-color: ${base0A};
+        color: ${base00};
+      }
+
+      #power-profiles-daemon:hover {
+        background-color: ${base09};
+        color: ${base00};
+      }
+
+      #idle_inhibitor:hover {
+        background-color: ${base0C};
+        color: ${base00};
+      }
+
+      #custom-wlogout:hover {
+        background-color: ${base08};
+        color: ${base00};
+      }
+
+      #network.disconnected {
+        color: ${base08};
+      }
+
+      #battery.charging {
+        color: ${base0B};
+      }
+
+      #battery.critical:not(.charging) {
+        color: ${base08};
       }
     '';
   };

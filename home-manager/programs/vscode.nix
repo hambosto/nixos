@@ -76,12 +76,15 @@
         "window.titleBarStyle" = "native";
         "window.zoomLevel" = 0.5;
         "workbench.activityBar.location" = "hidden";
-        # "workbench.colorTheme" = "Monospace Dark";
-        "workbench.colorTheme" = "Tokyo Night";
         "workbench.editor.showTabs" = "single";
 
+        # "workbench.colorTheme" = "Monospace Dark";
+        # "workbench.colorTheme" = "Tokyo Night";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
+
         # "workbench.iconTheme" = "monospace-studio-icons";
-        "workbench.iconTheme" = "material-icon-theme";
+        # "workbench.iconTheme" = "material-icon-theme";
+        "workbench.iconTheme" = "gruvbox-material-icon-theme";
 
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
@@ -181,10 +184,12 @@
         with pkgs.vscode-marketplace;
         (
           [
-            # flaviodelgrosso.vscode-monospace-theme
-            enkia.tokyo-night
             jnoortheen.nix-ide
-            pkief.material-icon-theme
+            # enkia.tokyo-night
+            # pkief.material-icon-theme
+            # flaviodelgrosso.vscode-monospace-theme
+            jdinhlife.gruvbox
+            jonathanharty.gruvbox-material-icon-theme
           ]
           ++ lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ]
           ++ lib.optionals (config.programs.go.enable or false) [ golang.go ]

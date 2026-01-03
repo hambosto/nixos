@@ -3,10 +3,8 @@
     enable = true;
     settings = {
       display = {
-        key = {
-          width = 8;
-        };
-        separator = "  ";
+        key.width = 8;
+        separator = " ";
       };
 
       logo = {
