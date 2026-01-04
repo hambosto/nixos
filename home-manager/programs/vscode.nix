@@ -7,6 +7,7 @@
 {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
@@ -81,6 +82,7 @@
         # "workbench.colorTheme" = "Monospace Dark";
         # "workbench.colorTheme" = "Tokyo Night";
         "workbench.colorTheme" = "Gruvbox Dark Hard";
+        # "workbench.colorTheme" = "Catppuccin Mocha";
 
         # "workbench.iconTheme" = "monospace-studio-icons";
         # "workbench.iconTheme" = "material-icon-theme";
@@ -94,7 +96,13 @@
         "workbench.tree.indent" = 8;
         "workbench.tree.renderIndentGuides" = "none";
       }
-      // lib.optionalAttrs (config.programs.bun.enable or false) { }
+      // lib.optionalAttrs (config.programs.bun.enable or false) {
+        "bun.runtime" = "${lib.getExe pkgs.bun}";
+        "bun.debugTerminal.enabled" = true;
+        "bun.debugTerminal.stopOnEntry" = false;
+        "bun.test.filePattern" = "**/*{.test.,.spec.,_test_,_spec_}{js,ts,tsx,jsx,mts,cts}";
+        "bun.test.customScript" = "bun test";
+      }
       // lib.optionalAttrs (config.programs.go.enable or false) {
         "go.alternateTools" = {
           "delve" = "${lib.getExe pkgs.delve}";
@@ -124,19 +132,20 @@
       }
       // lib.optionalAttrs (config.programs.rust.enable or false) {
         "rust-analyzer.cargo.buildScripts.enable" = true;
-        "rust-analyzer.cargo.check.command" = "clippy";
         "rust-analyzer.check.command" = "clippy";
         "rust-analyzer.diagnostics.useRustcErrorCode" = true;
         "rust-analyzer.imports.group.enable" = false;
         "rust-analyzer.inlayHints.bindingModeHints.enable" = true;
         "rust-analyzer.inlayHints.chainingHints.enable" = true;
         "rust-analyzer.inlayHints.closureCaptureHints.enable" = true;
-        "rust-analyzer.inlayHints.closureReturnTypeHints.enable" = true;
-        "rust-analyzer.inlayHints.discriminantHints.enable" = true;
+        "rust-analyzer.inlayHints.closureReturnTypeHints.enable" = "always";
+        "rust-analyzer.inlayHints.discriminantHints.enable" = "always";
         "rust-analyzer.inlayHints.expressionAdjustmentHints.enable" = "always";
         "rust-analyzer.inlayHints.expressionAdjustmentHints.mode" = "postfix";
         "rust-analyzer.inlayHints.lifetimeElisionHints.enable" = "skip_trivial";
         "rust-analyzer.inlayHints.parameterHints.enable" = true;
+        "rust-analyzer.inlayHints.reborrowHints.enable" = "always";
+        "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames" = true;
         "rust-analyzer.inlayHints.renderColons" = true;
         "rust-analyzer.inlayHints.typeHints.enable" = true;
         "rust-analyzer.lens.enable" = true;
@@ -185,11 +194,12 @@
         (
           [
             jnoortheen.nix-ide
-            # enkia.tokyo-night
             # pkief.material-icon-theme
+            jonathanharty.gruvbox-material-icon-theme
+            # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
             jdinhlife.gruvbox
-            jonathanharty.gruvbox-material-icon-theme
+            # catppuccin.catppuccin-vsc
           ]
           ++ lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ]
           ++ lib.optionals (config.programs.go.enable or false) [ golang.go ]

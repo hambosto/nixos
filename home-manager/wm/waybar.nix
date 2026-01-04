@@ -304,7 +304,7 @@
       }
 
       #clock {
-        color: ${base0E};
+        color: ${base0D};
         padding: 0 14px;
       }
 
@@ -352,14 +352,18 @@
         color: ${base00};
       }
 
-      #battery:hover,
-      #clock:hover {
+      #battery:hover {
         background-color: ${base0E};
         color: ${base00};
       }
 
       #backlight:hover {
         background-color: ${base0A};
+        color: ${base00};
+      }
+
+      #clock:hover {
+        background-color: ${base0D};
         color: ${base00};
       }
 

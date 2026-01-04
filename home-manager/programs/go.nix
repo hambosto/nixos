@@ -1,6 +1,4 @@
 {
-  programs.go = {
-    enable = false;
-    telemetry.mode = "off";
-  };
+  programs.go.enable = false;
+  programs.go.telemetry.mode = "off";
 }
