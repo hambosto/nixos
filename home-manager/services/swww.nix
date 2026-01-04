@@ -6,7 +6,7 @@
 }:
 {
 
-  systemd.user.services.awww = {
+  systemd.user.services.swww = {
     Install.WantedBy = [ config.wayland.systemd.target ];
     Unit = {
       ConditionEnvironment = "WAYLAND_DISPLAY";
@@ -15,15 +15,15 @@
     };
 
     Service = {
-      ExecStart = "${lib.getExe' pkgs.awww "awww-daemon"} --no-cache";
+      ExecStart = "${lib.getExe' pkgs.swww "swww-daemon"} --no-cache";
       Restart = "on-failure";
       RestartSec = 10;
     };
   };
 
-  home.activation.awww = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if ${lib.getExe' pkgs.procps "pgrep"} -x "awww-daemon" > /dev/null; then
-      ${lib.getExe pkgs.awww} img ${config.stylix.image}
+  home.activation.swww = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if ${lib.getExe' pkgs.procps "pgrep"} -x "swww-daemon" > /dev/null; then
+      ${lib.getExe pkgs.swww} img ${config.stylix.image}
     fi
   '';
 }
