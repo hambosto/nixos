@@ -2,7 +2,7 @@
 {
   stylix = {
     enableReleaseChecks = false;
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.colloid-icon-theme;
       dark = "Colloid-Dark";

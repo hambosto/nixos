@@ -4,7 +4,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     enableReleaseChecks = false;
-    image = ../../assets/village.jpg;
+    image = ../../assets/house_gruv.png;
     polarity = "dark";
     cursor = {
       package = pkgs.apple-cursor;
