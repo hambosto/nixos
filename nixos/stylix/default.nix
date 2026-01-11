@@ -2,9 +2,9 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     enableReleaseChecks = false;
-    image = ../../assets/house_gruv.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    image = ../../assets/cosy-retreat.png;
     polarity = "dark";
     cursor = {
       package = pkgs.apple-cursor;

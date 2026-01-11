@@ -115,6 +115,8 @@
             ".*hx.*" = "󰅴 Helix";
             ".*Obsidian.*" = "󱓧 Obsidian";
             ".*Vesktop.*" = " Vesktop";
+            ".*Network Manager.*" = "󱫋 Network Manager GUI";
+            ".*Volume Control.*" = " Volume Control";
           };
         };
 
@@ -133,7 +135,7 @@
             activated = "󰅶";
             deactivated = "󰾪";
           };
-          tooltip = true;
+          tooltip = false;
         };
 
         network = {
@@ -149,7 +151,7 @@
             "󰤨"
           ];
           tooltip = false;
-          on-click = "${lib.getExe pkgs.iwmenu} -l rofi";
+          on-click = "${lib.getExe pkgs.nmgui}";
         };
 
         power-profiles-daemon = {
@@ -178,7 +180,7 @@
             car = "󰄋";
             default = "󰕾";
           };
-          on-click = "${lib.getExe pkgs.pwmenu} -l rofi";
+          on-click = "${lib.getExe pkgs.pavucontrol}";
           tooltip = false;
         };
 
