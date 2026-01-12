@@ -1,6 +1,6 @@
 {
   programs.chromium = {
-    enable = true;
+    enable = false;
     commandLineArgs = [
       "--ozone-platform=wayland"
       "--ozone-platform-hint=auto"
