@@ -26,7 +26,6 @@ in
           rustc
           rustfmt
           clippy
-          stdenv.cc
         ];
         description = ''
           Rust toolchain packages to install. Defaults include the Rust compiler (rustc),

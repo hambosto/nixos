@@ -6,7 +6,8 @@
 }:
 {
   programs.vscode = {
-    enable = false;
+    enable = true;
+    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -37,6 +38,14 @@
         "editor.minimap.enabled" = false;
         "editor.minimap.sectionHeaderFontSize" = 14;
         "editor.semanticHighlighting.enabled" = true;
+        "editor.semanticTokenColorCustomizations" = {
+          "enabled" = true;
+          "rules" = {
+            "*.mutable" = {
+              "underline" = false;
+            };
+          };
+        };
         "editor.stickyScroll.enabled" = false;
         "editor.suggestSelection" = "first";
         "explorer.compactFolders" = false;
@@ -48,7 +57,6 @@
         "extensions.ignoreRecommendations" = true;
         "files.enableTrash" = false;
         "git.decorations.enabled" = false;
-        "inlineChat.accessibleDiffView" = "off";
         "markdown.preview.fontFamily" = "GeistMono Nerd Font";
         "markdown.preview.fontSize" = 14;
         "nix.enableLanguageServer" = true;
@@ -80,9 +88,11 @@
         "workbench.editor.showTabs" = "single";
 
         # "workbench.colorTheme" = "Monospace Dark";
+        # "workbench.colorTheme" = "Tokyo Night Light";
         # "workbench.colorTheme" = "Tokyo Night";
         "workbench.colorTheme" = "Gruvbox Dark Hard";
         # "workbench.colorTheme" = "Catppuccin Mocha";
+        # "workbench.colorTheme" = "One Dark Pro Night Flat";
 
         # "workbench.iconTheme" = "monospace-studio-icons";
         # "workbench.iconTheme" = "material-icon-theme";
@@ -131,32 +141,7 @@
         };
       }
       // lib.optionalAttrs (config.programs.rust.enable or false) {
-        "rust-analyzer.cargo.buildScripts.enable" = true;
-        "rust-analyzer.check.command" = "clippy";
-        "rust-analyzer.diagnostics.useRustcErrorCode" = true;
-        "rust-analyzer.imports.group.enable" = false;
-        "rust-analyzer.inlayHints.bindingModeHints.enable" = true;
-        "rust-analyzer.inlayHints.chainingHints.enable" = true;
-        "rust-analyzer.inlayHints.closureCaptureHints.enable" = true;
-        "rust-analyzer.inlayHints.closureReturnTypeHints.enable" = "always";
-        "rust-analyzer.inlayHints.discriminantHints.enable" = "always";
-        "rust-analyzer.inlayHints.expressionAdjustmentHints.enable" = "always";
-        "rust-analyzer.inlayHints.expressionAdjustmentHints.mode" = "postfix";
-        "rust-analyzer.inlayHints.lifetimeElisionHints.enable" = "skip_trivial";
-        "rust-analyzer.inlayHints.parameterHints.enable" = true;
-        "rust-analyzer.inlayHints.reborrowHints.enable" = "always";
-        "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames" = true;
-        "rust-analyzer.inlayHints.renderColons" = true;
-        "rust-analyzer.inlayHints.typeHints.enable" = true;
-        "rust-analyzer.lens.enable" = true;
-        "rust-analyzer.lens.implementations.enable" = true;
-        "rust-analyzer.lens.references.adt.enable" = true;
-        "rust-analyzer.lens.references.method.enable" = true;
-        "rust-analyzer.lens.references.trait.enable" = true;
-        "rust-analyzer.lens.run.enable" = true;
-        "rust-analyzer.procMacro.enable" = true;
         "rust-analyzer.restartServerOnConfigChange" = true;
-        "rust-analyzer.semanticHighlighting.operator.specialization.enable" = true;
         "rust-analyzer.server.path" = "${lib.getExe pkgs.rust-analyzer}";
       }
       // lib.optionalAttrs (config.programs.uv.enable or false) {
@@ -200,6 +185,7 @@
             # flaviodelgrosso.vscode-monospace-theme
             jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
+            # zhuangtongfa.material-theme
           ]
           ++ lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ]
           ++ lib.optionals (config.programs.go.enable or false) [ golang.go ]
