@@ -82,13 +82,13 @@ in
       }
 
       button:hover {
-        background-color: #${config.lib.stylix.colors.base0D};
+        background-color: ${base0D};
         opacity: 0.8;
-        color: #${config.lib.stylix.colors.base00};
+        color: ${base00};
         background-size: 30%;
         margin: 30px;
         border-radius: 80px;
-        box-shadow: 0 0 50px #${config.lib.stylix.colors.base0D};
+        box-shadow: 0 0 50px ${base0D};
       }
 
       button span {

@@ -29,11 +29,11 @@ in
         ];
         description = ''
           Rust toolchain packages to install. Defaults include the Rust compiler (rustc),
-          package manager (cargo), code formatter (rustfmt), linter (clippy), and C/C++ toolchain.
+          package manager (cargo), code formatter (rustfmt), linter (clippy).
         '';
       };
 
-      cargoSettings = mkOption {
+      settings = mkOption {
         type = tomlFormat.type;
         default = { };
         description = ''
@@ -61,8 +61,8 @@ in
         RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
       };
 
-      file.".cargo/config.toml" = mkIf (cfg.cargoSettings != { }) {
-        source = tomlFormat.generate "config.toml" cfg.cargoSettings;
+      file.".cargo/config.toml" = mkIf (cfg.settings != { }) {
+        source = tomlFormat.generate "config.toml" cfg.settings;
       };
     };
   };
