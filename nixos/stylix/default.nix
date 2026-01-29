@@ -4,7 +4,7 @@
     enable = true;
     enableReleaseChecks = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    image = ../../assets/outrun.png;
+    image = ../../assets/cosy-retreat.png;
     polarity = "dark";
     cursor = {
       package = pkgs.apple-cursor;
