@@ -88,15 +88,15 @@
 
         # "workbench.colorTheme" = "Monospace Dark";
         # "workbench.colorTheme" = "Tokyo Night Light";
-        "workbench.colorTheme" = "Tokyo Night";
-        # "workbench.colorTheme" = "Gruvbox Dark Hard";
+        # "workbench.colorTheme" = "Tokyo Night";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
         # "workbench.colorTheme" = "One Dark Pro Night Flat";
         # "workbench.colorTheme" = "One Candy";
         # "workbench.colorTheme" = "Catppuccin Mocha";
 
         # "workbench.iconTheme" = "monospace-studio-icons";
-        "workbench.iconTheme" = "material-icon-theme";
-        # "workbench.iconTheme" = "gruvbox-material-icon-theme";
+        # "workbench.iconTheme" = "material-icon-theme";
+        "workbench.iconTheme" = "gruvbox-material-icon-theme";
 
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
@@ -179,11 +179,11 @@
         (
           [
             jnoortheen.nix-ide
-            pkief.material-icon-theme
-            # jonathanharty.gruvbox-material-icon-theme
-            enkia.tokyo-night
+            # pkief.material-icon-theme
+            jonathanharty.gruvbox-material-icon-theme
+            # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
-            # jdinhlife.gruvbox
+            jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
             # zhuangtongfa.material-theme
             # kacperbiedka.one-candy-dark
