@@ -11,7 +11,7 @@
       "Mod+E".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe pkgs.yazi}";
       "Mod+Space".action = spawn "${lib.getExe pkgs.rofi}" "-show" "drun";
       "Mod+L".action = spawn "${lib.getExe pkgs.hyprlock}";
-      "Mod+Shift+M".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe pkgs.btop}";
+      "Mod+Shift+M".action = spawn "${lib.getExe pkgs.kitty}" "-e" "${lib.getExe' pkgs.bottom "btm"}";
       "Mod+Shift+P".action = spawn "${lib.getExe pkgs.wlogout}";
 
       "Print".action.screenshot-screen.write-to-disk = true;

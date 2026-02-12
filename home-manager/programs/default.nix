@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./bat.nix
+    ./bottom.nix
     ./brave.nix
     ./btop.nix
     ./bun.nix
