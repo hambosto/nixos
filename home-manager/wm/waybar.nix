@@ -112,6 +112,7 @@
             ".*kitty.*" = "󰄛 Kitty";
             ".*btop.*" = " Process Monitor";
             ".*htop.*" = " Process Monitor";
+            ".*btm.*" = " Process Monitor";
             ".*hx.*" = "󰅴 Helix";
             ".*Obsidian.*" = "󱓧 Obsidian";
             ".*Vesktop.*" = " Vesktop";
