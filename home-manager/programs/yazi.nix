@@ -4,6 +4,8 @@
     enable = true;
     enableFishIntegration = true;
 
+    shellWrapperName = "y";
+
     plugins = {
       chmod = pkgs.yaziPlugins.chmod;
       full-border = pkgs.yaziPlugins.full-border;
