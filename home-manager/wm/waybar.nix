@@ -14,9 +14,9 @@
         position = "top";
         modules-left = [
           "custom/rofi"
-          "niri/window"
+          "hyprland/window"
         ];
-        modules-center = [ "niri/workspaces" ];
+        modules-center = [ "hyprland/workspaces" ];
         modules-right = [
           "tray"
           "pulseaudio"
@@ -93,7 +93,7 @@
           tooltip = false;
         };
 
-        "niri/window" = {
+        "hyprland/window" = {
           format = "{title}";
           separate-outputs = true;
           rewrite = {
@@ -121,12 +121,14 @@
           };
         };
 
-        "niri/workspaces" = {
-          all-outputs = false;
+        "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
             default = "󰊠";
             active = "󰮯";
+          };
+          persistent-workspaces = {
+            "*" = 5;
           };
         };
 

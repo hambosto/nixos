@@ -28,7 +28,7 @@ in
       }
       {
         label = "logout";
-        action = "${lib.getExe pkgs.niri-unstable} msg action quit --skip-confirmation";
+        action = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch exit";
         text = "Exit";
         keybind = "e";
       }

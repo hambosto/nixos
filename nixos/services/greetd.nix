@@ -10,7 +10,7 @@
           "--asterisks"
           "--time"
           "--cmd"
-          (lib.getExe' pkgs.niri-unstable "niri-session")
+          (lib.getExe' pkgs.hyprland "start-hyprland")
         ];
         user = "greeter";
       };
