@@ -1,4 +1,4 @@
 {
-  programs.rust.enable = true;
+  programs.rust.enable = false;
   programs.rust.setRustSrcPath = true;
 }

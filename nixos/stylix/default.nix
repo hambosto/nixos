@@ -47,7 +47,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/rain-pixel.png;
+    image = ../../assets/cosy-retreat.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };
