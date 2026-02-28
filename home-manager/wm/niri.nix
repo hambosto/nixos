@@ -143,7 +143,7 @@
 
     layer-rules = [
       {
-        matches = [ { namespace = "^swww-daemon$"; } ];
+        matches = [ { namespace = "^awww-daemon$"; } ];
         place-within-backdrop = true;
       }
     ];
@@ -194,7 +194,7 @@
     spawn-at-startup = [
       {
         command = [
-          "${lib.getExe pkgs.swww}"
+          "${lib.getExe pkgs.awww}"
           "img"
           "${config.stylix.image}"
         ];
