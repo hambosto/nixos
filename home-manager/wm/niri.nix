@@ -143,7 +143,7 @@
 
     layer-rules = [
       {
-        matches = [ { namespace = "^awww-daemon$"; } ];
+        matches = [ { namespace = "^wallpaper-rs$"; } ];
         place-within-backdrop = true;
       }
     ];
@@ -191,15 +191,6 @@
     overview.workspace-shadow.enable = false;
     prefer-no-csd = true;
     screenshot-path = "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png";
-    spawn-at-startup = [
-      {
-        command = [
-          "${lib.getExe pkgs.awww}"
-          "img"
-          "${config.stylix.image}"
-        ];
-      }
-    ];
 
     window-rules = [
       {
