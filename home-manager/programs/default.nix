@@ -28,6 +28,7 @@
     ./nh.nix
     ./obs-studio.nix
     ./oh-my-posh.nix
+    ./opencode.nix
     ./rust.nix
     ./starship.nix
     ./uv.nix
