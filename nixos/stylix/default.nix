@@ -47,7 +47,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/aeuna.png;
+    image = ../../assets/marina-bay-sands.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };

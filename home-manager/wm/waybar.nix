@@ -82,7 +82,7 @@
         };
 
         "custom/rofi" = {
-          format = "";
+          format = "";
           on-click = "${lib.getExe pkgs.rofi} -show drun";
           tooltip-format = "Open the application launcher";
         };
