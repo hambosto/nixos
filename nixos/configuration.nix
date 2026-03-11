@@ -4,6 +4,7 @@
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
     inputs.niri.nixosModules.niri
+    inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix
     ./boot
     ./disko
@@ -18,10 +19,12 @@
     ./nixpkgs
     ./packages
     ./programs
+    ./secrets
     ./security
     ./services
     ./stylix
     ./system
+    ./systemd
     ./time
     ./users
     ./virtualisation

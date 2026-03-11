@@ -152,7 +152,7 @@
             "󰤨"
           ];
           tooltip = false;
-          on-click = "${lib.getExe pkgs.nmgui}";
+          on-click = "${lib.getExe pkgs.iwmenu} -l rofi";
         };
 
         power-profiles-daemon = {
@@ -181,7 +181,7 @@
             car = "󰄋";
             default = "󰕾";
           };
-          on-click = "${lib.getExe pkgs.pavucontrol}";
+          on-click = "${lib.getExe pkgs.pwmenu} -l rofi";
           tooltip = false;
         };
 

@@ -1,15 +1,13 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   users = {
     mutableUsers = false;
     users = {
       ilham = {
         description = "Ilham Putra Husada";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-        hashedPassword = "$6$/1/Fc9yZLcNu6KVM$VxT6dGXJj81BlYnOrJ0pji/bxWe7PvRKOojy5kj3sjFvmtUxnNw2MHbhgVPay2RMygByKYd.t1ijaeohzyNcq/";
+        extraGroups = [ "wheel" ];
+        # hashedPassword = "$6$2NNDncfRhhRCNdGt$lAce2eVzcOmL5NEsEerbWQDpqvwOQcqerrzD/SEGET9VK6c1gu/BJA9EzJwpubYAHnyEzrrmreDpJCJS9eqD51";
+        hashedPasswordFile = config.sops.secrets.hashed-password.path;
         isNormalUser = true;
         shell = pkgs.fish;
       };
