@@ -4,6 +4,7 @@
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
       geminicommit
+      ssh-to-age
       sops
     ];
     pointerCursor.x11.enable = lib.mkForce false;
