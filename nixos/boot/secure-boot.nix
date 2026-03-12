@@ -32,7 +32,7 @@
   # - `loader.limine.secureBoot.enable`: Signs the Limine binary with sbctl for Secure Boot.
   # - `initrd.systemd.enable`: Enables systemd-based initrd (required for TPM-based encryption).
   boot = {
-    loader.limine.secureBoot.enable = true; # Set to `true` to enable Secure Boot with sbctl signing.
-    initrd.systemd.enable = true; # Set to `true` if using systemd-based initrd for TPM.
+    loader.limine.secureBoot.enable = false; # Set to `true` to enable Secure Boot with sbctl signing.
+    initrd.systemd.enable = false; # Set to `true` if using systemd-based initrd for TPM.
   };
 }
