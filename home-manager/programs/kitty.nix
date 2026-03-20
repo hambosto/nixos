@@ -10,7 +10,6 @@
       background_opacity = 1;
       bold_font = "auto";
       bold_italic_font = "auto";
-      cursor_blink = true;
       cursor_blink_interval = 0.5;
       cursor_shape = "block";
       cursor_stop_blinking_after = 1;

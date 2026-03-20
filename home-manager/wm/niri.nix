@@ -216,13 +216,10 @@
         open-floating = true;
       }
       {
-        matches = [ { app-id = ".*com\\.network\\.manager.*"; } ];
-        open-floating = true;
-        default-column-width.fixed = 500;
-        default-window-height.fixed = 400;
-      }
-      {
-        matches = [ { app-id = ".*org\\.pulseaudio\\.pavucontrol.*"; } ];
+        matches = [
+          { title = "^Network Manager.*$"; }
+          { title = "^Volume Control.*$"; }
+        ];
         open-floating = true;
         default-column-width.fixed = 700;
         default-window-height.fixed = 600;

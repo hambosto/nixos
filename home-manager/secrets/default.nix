@@ -32,7 +32,7 @@ in
             no_verify = false;
             push = false;
             quiet = false;
-            show_diff = false;
+            show_diff = true;
             stage_all = false;
           };
           commit = {
