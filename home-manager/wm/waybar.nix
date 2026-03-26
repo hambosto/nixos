@@ -261,7 +261,7 @@
       }
 
       #pulseaudio {
-        color: ${base0C};
+        color: ${base0E};
         padding: 0 12px;
         margin-left: 8px;
         border-left: 2px solid ${base0D};
@@ -316,19 +316,19 @@
       }
 
       #battery {
-        color: ${base0E};
-      }
-
-      #backlight {
         color: ${base0A};
       }
 
-      #power-profiles-daemon {
+      #backlight {
         color: ${base09};
       }
 
+      #power-profiles-daemon {
+        color: ${base0D};
+      }
+
       #idle_inhibitor {
-        color: ${base0C};
+        color: ${base0B};
       }
 
       #custom-wlogout {
@@ -344,9 +344,13 @@
         color: ${base00};
       }
 
-      #pulseaudio:hover,
+      #pulseaudio:hover {
+        background-color: ${base0E};
+        color: ${base00};
+      }
+
       #idle_inhibitor:hover {
-        background-color: ${base0C};
+        background-color: ${base0B};
         color: ${base00};
       }
 
@@ -356,12 +360,12 @@
       }
 
       #battery:hover {
-        background-color: ${base0E};
+        background-color: ${base0A};
         color: ${base00};
       }
 
       #backlight:hover {
-        background-color: ${base0A};
+        background-color: ${base09};
         color: ${base00};
       }
 
@@ -371,7 +375,7 @@
       }
 
       #power-profiles-daemon:hover {
-        background-color: ${base09};
+        background-color: ${base0D};
         color: ${base00};
       }
 
