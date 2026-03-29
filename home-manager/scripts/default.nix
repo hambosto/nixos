@@ -1,3 +1,6 @@
 {
-  imports = [ ./nixos-toolbox.nix ];
+  imports = [
+    ./nixos-toolbox.nix
+    ./screen-recorder.nix
+  ];
 }

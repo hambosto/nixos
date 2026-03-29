@@ -1,182 +1,112 @@
 { lib, pkgs, ... }:
 let
-  nixos-toolbox =
-    pkgs.writers.writePython3Bin "nixos-toolbox"
-      {
-        doCheck = false;
-        libraries = (
-          p: [
-            p.rich
-            p.inquirerpy
-          ]
-        );
-      }
-      ''
-        """NixOS configuration management utility."""
+  nixos-toolbox = pkgs.writeShellScriptBin "nixos-toolbox" ''
+    set -e
 
-        import os
-        import subprocess
-        import sys
+    CONFIG_DIR="$HOME/.config/nixos"
 
-        from InquirerPy import inquirer
-        from rich.console import Console
+    cmd_rebuild() {
+      cd "$CONFIG_DIR"
+      ${lib.getExe pkgs.git} add .
+      ${lib.getExe pkgs.nh} os switch
+    }
 
-        console = Console()
-        CONFIG_DIR = os.path.expanduser("~/.config/nixos")
+    cmd_test() {
+      cd "$CONFIG_DIR"
+      ${lib.getExe pkgs.git} add .
+      ${lib.getExe pkgs.nh} os test
+    }
 
+    cmd_update() {
+      cd "$CONFIG_DIR"
+      ${lib.getExe pkgs.nix} flake update
+    }
 
-        def log_info(msg: str) -> None:
-            """Log an informational message."""
-            console.print(f"[bold green][INFO][/bold green] {msg}")
+    cmd_rollback() {
+      cd "$CONFIG_DIR"
+      ${lib.getExe pkgs.nh} os rollback
+    }
 
+    cmd_garbage_collection() {
+      cd "$CONFIG_DIR"
+      ${lib.getExe pkgs.nh} clean all
+      sudo /run/current-system/bin/switch-to-configuration boot
+    }
 
-        def log_warn(msg: str) -> None:
-            """Log a warning message."""
-            console.print(f"[bold yellow][WARN][/bold yellow] {msg}")
+    cmd_optimise_store() {
+      ${lib.getExe pkgs.nix} store optimise
+    }
 
+    cmd_list_generations() {
+      ${lib.getExe pkgs.nh} os info
+    }
 
-        def log_error(msg: str) -> None:
-            """Log an error message."""
-            console.print(f"[bold red][ERROR][/bold red] {msg}")
+    cmd_edit_config() {
+      ${lib.getExe pkgs.helix} "$CONFIG_DIR"
+    }
 
+    cmd_enter_bios() {
+      if ${lib.getExe pkgs.gum} confirm "Are you sure you want to reboot into BIOS?"; then
+        sudo ${lib.getExe' pkgs.systemd "systemctl"} reboot --firmware-setup
+      fi
+    }
 
-        def execute(cmd: str, use_sudo: bool = False) -> None:
-            """Execute a shell command with optional privilege escalation."""
-            full_cmd = f"sudo {cmd}" if use_sudo else cmd
-            log_info(f"Executing: {full_cmd}")
-            try:
-                subprocess.run(full_cmd, shell=True, check=True)
-                log_info("Command completed successfully")
-            except subprocess.CalledProcessError as e:
-                log_error(f"Command failed with exit code {e.returncode}")
-                sys.exit(1)
+    show_ui() {
+      local menu_items=(
+        "󱌢 Rebuild"
+        "󰙨 Test"
+        "󰚰 Update"
+        "󰑓 Rollback"
+        " Garbage Collection"
+        "󰃢 Optimise Store"
+        " List Generations"
+        " Edit Configuration"
+        " Enter BIOS"
+      )
 
-        def cmd_rebuild() -> None:
-            """Rebuild NixOS configuration using nh."""
-            log_info("Starting NixOS rebuild...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nh} os switch")
+      local choice
+      choice=$(printf '%s\n' "''${menu_items[@]}" | ${lib.getExe pkgs.gum} choose --height=11) || return
 
+      case "$choice" in
+        "󱌢 Rebuild")            cmd_rebuild ;;
+        "󰙨 Test")               cmd_test ;;
+        "󰚰 Update")             cmd_update ;;
+        "󰑓 Rollback")           cmd_rollback ;;
+        " Garbage Collection") cmd_garbage_collection ;;
+        "󰃢 Optimise Store")     cmd_optimise_store ;;
+        " List Generations")   cmd_list_generations ;;
+        " Edit Configuration") cmd_edit_config ;;
+        " Enter BIOS")         cmd_enter_bios ;;
+      esac
+    }
 
-        def cmd_test() -> None:
-            """Test NixOS configuration without switching."""
-            log_info("Testing NixOS configuration...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.git} add .")
-            execute("${lib.getExe pkgs.nh} os test")
+    main() {
+      clear
 
+      if [ $# -lt 1 ]; then
+        show_ui
+        return
+      fi
 
-        def cmd_update() -> None:
-            """Update flake inputs."""
-            log_info("Updating flake inputs...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.nix} flake update")
+      case "$1" in
+        rebuild)            cmd_rebuild ;;
+        test)               cmd_test ;;
+        update)             cmd_update ;;
+        rollback)           cmd_rollback ;;
+        garbage-collection) cmd_garbage_collection ;;
+        optimise-store)     cmd_optimise_store ;;
+        list-generations)   cmd_list_generations ;;
+        edit)               cmd_edit_config ;;
+        bios)               cmd_enter_bios ;;
+        *)
+          echo "Unknown command: $1"
+          return 1
+          ;;
+      esac
+    }
 
-
-        def cmd_rollback() -> None:
-            """Rollback to the previous NixOS generation."""
-            log_info("Rolling back to previous generation...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.nh} os rollback")
-
-
-        def cmd_garbage_collection() -> None:
-            """Perform Nix garbage collection."""
-            log_info("Starting Nix garbage collection...")
-            os.chdir(CONFIG_DIR)
-            execute("${lib.getExe pkgs.nh} clean all")
-            execute("${lib.getExe pkgs.nix} store optimise")
-            execute("/run/current-system/bin/switch-to-configuration boot", use_sudo=True)
-            log_info("Garbage collection complete.")
-
-
-        def cmd_list_generations() -> None:
-            """List system generations."""
-            log_info("Listing system generations...")
-            execute("${lib.getExe pkgs.nh} os info")
-
-
-        def cmd_edit_config() -> None:
-            """Open configuration directory in Helix editor."""
-            log_info(f"Opening config directory in Helix: {CONFIG_DIR}")
-            subprocess.run(f"${lib.getExe pkgs.helix} {CONFIG_DIR}", shell=True)
-
-
-        def cmd_enter_bios() -> None:
-            """Reboot into UEFI/BIOS firmware settings."""
-            log_warn("System will reboot into UEFI/BIOS settings...")
-            confirm = inquirer.confirm(
-                message="Are you sure you want to reboot into BIOS?",
-                default=False,
-            ).execute()
-            
-            if confirm:
-                log_info("Rebooting into firmware setup...")
-                execute("${lib.getExe' pkgs.systemd "systemctl"} reboot --firmware-setup", use_sudo=True)
-            else:
-                log_info("BIOS reboot cancelled.")
-
-
-        def show_ui() -> None:
-            """Display interactive menu."""
-            menu = [
-                ("󱌢 Rebuild", cmd_rebuild),
-                ("󰙨 Test", cmd_test),
-                ("󰚰 Update", cmd_update),
-                ("󰑓 Rollback", cmd_rollback),
-                (" Garbage Collection", cmd_garbage_collection),
-                (" List Generations", cmd_list_generations),
-                (" Edit Configuration", cmd_edit_config),
-                (" Enter BIOS", cmd_enter_bios),
-            ]
-            
-            try:
-                choice = inquirer.select(
-                    message="Select action:",
-                    choices=[label for label, _ in menu],
-                    height=10,
-                ).execute()
-                
-                for label, func in menu:
-                    if label == choice:
-                        func()
-                        break
-            except KeyboardInterrupt:
-                log_info("Menu cancelled by user. Exiting.")
-                sys.exit(0)
-
-
-        def main() -> None:
-            """Main entry point."""
-            os.system("clear")
-            
-            if len(sys.argv) < 2:
-                show_ui()
-                return
-            
-            cmd = sys.argv[1]
-            commands = {
-                "rebuild": cmd_rebuild,
-                "test": cmd_test,
-                "update": cmd_update,
-                "garbage-collection": cmd_garbage_collection,
-                "list-generations": cmd_list_generations,
-                "edit": cmd_edit_config,
-                "bios": cmd_enter_bios,
-            }
-            
-            func = commands.get(cmd)
-            if func:
-                func()
-            else:
-                log_error(f"Unknown command: {cmd}")
-                sys.exit(1)
-
-
-        if __name__ == "__main__":
-            main()
-      '';
+    main "$@"
+  '';
 in
 {
   home.packages = [ nixos-toolbox ];

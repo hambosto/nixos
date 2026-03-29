@@ -47,7 +47,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/yuan-jun.png;
+    image = ../../assets/jill-valentine.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };
