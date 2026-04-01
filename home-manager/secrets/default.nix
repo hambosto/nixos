@@ -32,7 +32,7 @@ in
             no_verify = false;
             push = false;
             quiet = false;
-            show_diff = true;
+            show_diff = false;
             stage_all = false;
           };
           commit = {
@@ -41,7 +41,7 @@ in
           };
         }
       );
-      path = "${config.home.homeDirectory}/.config/geminicommit/config.toml";
+      path = "${config.xdg.configHome}/geminicommit/config.toml";
     };
   };
 }

@@ -16,7 +16,6 @@
         {
           "breadcrumbs.enabled" = false;
           "chat.agent.enabled" = false;
-          "chat.commandCenter.enabled" = false;
           "chat.disableAIFeatures" = true;
           "chat.editor.fontFamily" = "GeistMono Nerd Font";
           "chat.editor.fontSize" = 14;
@@ -81,14 +80,15 @@
           # "workbench.colorTheme" = "Monospace Dark";
           # "workbench.colorTheme" = "Tokyo Night Light";
           # "workbench.colorTheme" = "Tokyo Night";
-          "workbench.colorTheme" = "Gruvbox Dark Hard";
+          # "workbench.colorTheme" = "Gruvbox Dark Hard";
           # "workbench.colorTheme" = "One Dark Pro Night Flat";
           # "workbench.colorTheme" = "One Candy";
           # "workbench.colorTheme" = "Catppuccin Mocha";
+          "workbench.colorTheme" = "VS Code Dark";
 
           # "workbench.iconTheme" = "monospace-studio-icons";
-          # "workbench.iconTheme" = "material-icon-theme";
-          "workbench.iconTheme" = "gruvbox-material-icon-theme";
+          "workbench.iconTheme" = "material-icon-theme";
+          # "workbench.iconTheme" = "gruvbox-material-icon-theme";
 
           "workbench.sideBar.location" = "right";
           "workbench.startupEditor" = "none";
@@ -175,11 +175,11 @@
         lib.flatten [
           [
             jnoortheen.nix-ide
-            # pkief.material-icon-theme
-            jonathanharty.gruvbox-material-icon-theme
+            pkief.material-icon-theme
+            # jonathanharty.gruvbox-material-icon-theme
             # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
-            jdinhlife.gruvbox
+            # jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
             # zhuangtongfa.material-theme
             # kacperbiedka.one-candy-dark

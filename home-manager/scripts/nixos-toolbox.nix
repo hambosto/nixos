@@ -1,9 +1,14 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   nixos-toolbox = pkgs.writeShellScriptBin "nixos-toolbox" ''
     set -e
 
-    CONFIG_DIR="$HOME/.config/nixos"
+    CONFIG_DIR="${config.xdg.configHome}/nixos"
 
     cmd_rebuild() {
       cd "$CONFIG_DIR"
