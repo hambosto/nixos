@@ -22,6 +22,12 @@
             enabled = true;
             timeout = 10000;
           };
+          gh_grep = {
+            type = "remote";
+            url = "https://mcp.grep.app/";
+            enabled = true;
+            timeout = 10000;
+          };
         };
       }
       (lib.mkIf (config.programs.rust.enable or false) {
@@ -34,16 +40,18 @@
           command = [ (lib.getExe pkgs.docs-mcp) ];
           enabled = true;
         };
-        mcp.gh_grep = {
-          type = "remote";
-          url = "https://mcp.grep.app/";
-          enabled = true;
-          timeout = 10000;
-        };
         lsp.rust = {
           command = [ (lib.getExe pkgs.rust-analyzer) ];
           extensions = [ ".rs" ];
         };
+      })
+    ];
+    skills = lib.mkMerge [
+      {
+        frontend-design = "${pkgs.anthropics-skills}/skills/frontend-design/";
+      }
+      (lib.mkIf (config.programs.rust.enable or false) {
+        rust-skills = "${pkgs.rust-skills}";
       })
     ];
   };
