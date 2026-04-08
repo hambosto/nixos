@@ -9,5 +9,6 @@
         name = "Ilham Putra Husada";
       };
     };
+    signing.format = "openpgp";
   };
 }
