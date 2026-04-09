@@ -6,7 +6,7 @@
 }:
 {
   programs.gh = {
-    enable = true;
+    enable = false;
     settings = {
       git_protocol = "ssh";
       editor = "hx";
