@@ -27,7 +27,7 @@ in
           tomlFormat.generate "config.toml" {
             api = {
               key = config.sops.placeholder.gemini;
-              model = "gemini-2.5-flash";
+              model = "gemini-3-flash-preview";
             };
             behavior = {
               auto_select = false;
