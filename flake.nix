@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sweetbyte-rs = {
+      url = "github:hambosto/sweetbyte-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wallpaper-rs = {
       url = "github:hambosto/wallpaper-rs";
       inputs.nixpkgs.follows = "nixpkgs";
