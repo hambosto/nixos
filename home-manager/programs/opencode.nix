@@ -6,9 +6,21 @@
 }:
 {
   programs.opencode = {
-    enable = false;
+    enable = true;
     settings = lib.mkMerge [
       {
+        formatter = {
+          nixfmt = {
+            command = [ (lib.getExe pkgs.nixfmt) ];
+            extensions = [ ".nix" ];
+          };
+        };
+        lsp = {
+          nixd = {
+            command = [ (lib.getExe pkgs.nixd) ];
+            extensions = [ ".nix" ];
+          };
+        };
         mcp = {
           deepwiki = {
             type = "remote";
@@ -28,6 +40,11 @@
             enabled = true;
             timeout = 10000;
           };
+          nixos = {
+            type = "local";
+            command = [ (lib.getExe pkgs.mcp-nixos) ];
+            enabled = true;
+          };
         };
       }
       (lib.mkIf (config.programs.rust.enable or false) {
@@ -40,7 +57,7 @@
           command = [ (lib.getExe pkgs.docs-mcp) ];
           enabled = true;
         };
-        lsp.rust = {
+        lsp.rust-analyzer = {
           command = [ (lib.getExe pkgs.rust-analyzer) ];
           extensions = [ ".rs" ];
         };
