@@ -6,7 +6,7 @@
 }:
 {
   programs.opencode = {
-    enable = true;
+    enable = false;
     settings = lib.mkMerge [
       {
         formatter = {
