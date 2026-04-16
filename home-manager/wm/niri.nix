@@ -284,6 +284,13 @@
       (leaf "open-floating" true)
     ])
 
+    (plain "window-rule" [
+      (leaf "match" { app-id = "^dev\.zed\.Zed$"; })
+      (plain "background-effect" [
+        (leaf "blur" true)
+      ])
+    ])
+
     (plain "layer-rule" [
       (leaf "match" { namespace = "^wallpaper-rs$"; })
       (leaf "place-within-backdrop" true)

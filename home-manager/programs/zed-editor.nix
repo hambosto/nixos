@@ -87,8 +87,17 @@
         };
       };
       lsp = {
+        json-language-server = {
+          binary = {
+            path = lib.getExe pkgs.vscode-json-languageserver;
+            arguments = [ "--stdio" ];
+          };
+        };
         nixd = {
           binary.path = lib.getExe pkgs.nixd;
+        };
+        package-version-server = {
+          binary.path = lib.getExe pkgs.package-version-server;
         };
       }
       // lib.optionalAttrs (config.programs.go.enable or false) {
@@ -99,6 +108,9 @@
       // lib.optionalAttrs (config.programs.rust.enable or false) {
         rust-analyzer = {
           binary.path = lib.getExe pkgs.rust-analyzer;
+        };
+        crates-lsp = {
+          binary.path = lib.getExe pkgs.crates-lsp;
         };
       }
       // lib.optionalAttrs (config.programs.uv.enable or false) {
@@ -127,7 +139,7 @@
         font_family = "GeistMono Nerd Font";
         font_size = 13;
       };
-      theme = "Tokyo Night";
+      theme = "Catppuccin Mocha (Blur) [Light]";
       toolbar = {
         breadcrumbs = false;
         quick_actions = false;
@@ -147,7 +159,7 @@
           html
           material-icon-theme
           nix
-          tokyo-night
+          catppuccin-blur
         ]
         ++ lib.optionals (config.programs.rust.enable or false) [
           crates-lsp
