@@ -18,7 +18,7 @@
       base_keymap = "VSCode";
       buffer_font_family = "GeistMono Nerd Font";
       buffer_font_size = 15;
-      buffer_font_weight = 550;
+      buffer_font_weight = 500;
       buffer_line_height = {
         custom = 1.4;
       };
