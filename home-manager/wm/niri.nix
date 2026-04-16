@@ -1,6 +1,6 @@
 {
-  inputs,
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -282,13 +282,6 @@
       (plain "default-column-width" [ (leaf "fixed" 700) ])
       (plain "default-window-height" [ (leaf "fixed" 600) ])
       (leaf "open-floating" true)
-    ])
-
-    (plain "window-rule" [
-      (leaf "match" { app-id = "^dev\.zed\.Zed$"; })
-      (plain "background-effect" [
-        (leaf "blur" true)
-      ])
     ])
 
     (plain "layer-rule" [

@@ -138,16 +138,16 @@
         cursor_shape = "bar";
         font_family = "GeistMono Nerd Font";
         font_size = 15;
-        font_weight = 550;
+        font_weight = 500;
       };
-      theme = "Catppuccin Mocha (Blur) [Light]";
+      theme = "Catppuccin Mocha - No Italics";
       toolbar = {
         breadcrumbs = false;
         quick_actions = false;
       };
       ui_font_family = "GeistMono Nerd Font";
       ui_font_size = 15;
-      ui_font_weight = 550;
+      ui_font_weight = 500;
     };
   };
 
@@ -160,7 +160,7 @@
           html
           material-icon-theme
           nix
-          catppuccin-blur
+          catppuccin
         ]
         ++ lib.optionals (config.programs.rust.enable or false) [
           crates-lsp
