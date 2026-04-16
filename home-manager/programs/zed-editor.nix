@@ -17,8 +17,8 @@
     userSettings = {
       base_keymap = "VSCode";
       buffer_font_family = "GeistMono Nerd Font";
-      buffer_font_size = 14;
-      buffer_font_weight = 500;
+      buffer_font_size = 15;
+      buffer_font_weight = 550;
       buffer_line_height = {
         custom = 1.4;
       };
@@ -137,7 +137,8 @@
         blinking = "on";
         cursor_shape = "bar";
         font_family = "GeistMono Nerd Font";
-        font_size = 13;
+        font_size = 15;
+        font_weight = 550;
       };
       theme = "Catppuccin Mocha (Blur) [Light]";
       toolbar = {
@@ -145,8 +146,8 @@
         quick_actions = false;
       };
       ui_font_family = "GeistMono Nerd Font";
-      ui_font_size = 14;
-      ui_font_weight = 500;
+      ui_font_size = 15;
+      ui_font_weight = 550;
     };
   };
 
