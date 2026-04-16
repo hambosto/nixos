@@ -47,7 +47,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/jill-valentine.png;
+    image = ../../assets/coca-cola.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };

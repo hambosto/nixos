@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   stylix = {
     enableReleaseChecks = false;
@@ -12,4 +12,5 @@
   };
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  gtk.gtk4.theme = config.gtk.theme;
 }

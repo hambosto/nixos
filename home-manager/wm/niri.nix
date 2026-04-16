@@ -169,25 +169,19 @@
         (flag "natural-scroll")
         (leaf "scroll-factor" 1.0)
       ])
-      # (plain "mouse" [
-      #   (flag "natural-scroll")
-      # ])
       (flag "warp-mouse-to-focus")
       (flag "focus-follows-mouse")
       (flag "workspace-auto-back-and-forth")
     ])
 
-    (node "output"
-      [ "eDP-1" ]
-      [
-        (leaf "scale" 1.0)
-        (leaf "transform" "normal")
-        (leaf "position" {
-          x = 0;
-          y = 0;
-        })
-      ]
-    )
+    (node "output" "eDP-1" [
+      (leaf "scale" 1.0)
+      (leaf "transform" "normal")
+      (leaf "position" {
+        x = 0;
+        y = 0;
+      })
+    ])
 
     (leaf "screenshot-path" "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png")
     (flag "prefer-no-csd")
@@ -210,7 +204,6 @@
         (flag "off")
       ])
       (plain "border" [
-        # (flag "on")
         (leaf "width" 2)
         (leaf "active-color" "#${config.lib.stylix.colors.base0D}")
         (leaf "inactive-color" "#${config.lib.stylix.colors.base03}")
@@ -236,6 +229,13 @@
 
     (plain "hotkey-overlay" [
       (flag "skip-at-startup")
+    ])
+
+    (plain "blur" [
+      (leaf "passes" 3)
+      (leaf "offset" 3.0)
+      (leaf "noise" 0.02)
+      (leaf "saturation" 1.5)
     ])
 
     (plain "environment" [

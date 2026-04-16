@@ -43,6 +43,11 @@
       url = "github:hambosto/wallpaper-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-zed-extensions = {
+      url = "github:DuskSystems/nix-zed-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {

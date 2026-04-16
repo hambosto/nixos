@@ -10,4 +10,5 @@
   inputs.niri.overlays.niri
   inputs.nix-vscode-extensions.overlays.default
   inputs.sweetbyte-rs.overlays.default
+  inputs.nix-zed-extensions.overlays.default
 ]
