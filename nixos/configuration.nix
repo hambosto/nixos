@@ -19,7 +19,7 @@
     ./nixpkgs
     ./packages
     ./programs
-    # ./secrets
+    ./secrets
     ./security
     ./services
     ./stylix
