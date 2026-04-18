@@ -4,7 +4,7 @@
     ./modules
     ./programs
     ./scripts
-    ./secrets
+    # ./secrets
     ./services
     ./stylix
     ./wm
