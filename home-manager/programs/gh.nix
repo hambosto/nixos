@@ -9,7 +9,7 @@
     enable = false;
     settings = {
       git_protocol = "ssh";
-      editor = "hx";
+      editor = (lib.getExe' pkgs.helix "hx");
     };
   };
 
@@ -122,7 +122,7 @@
       };
       repoPaths = { };
       pager = {
-        diff = "${lib.getExe pkgs.diffnav}";
+        diff = (lib.getExe pkgs.diffnav);
       };
       confirmQuit = false;
       showAuthorIcons = true;

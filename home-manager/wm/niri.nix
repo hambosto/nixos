@@ -6,7 +6,9 @@
   ...
 }:
 {
-  programs.niri.config = with inputs.niri.lib.kdl; [
+  imports = [ inputs.niri-nix.homeModules.niri ];
+
+  programs.niri.settings = with inputs.niri-nix.lib.kdl; [
     (plain "binds" [
       (plain "Mod+Return" [
         (leaf "spawn" [

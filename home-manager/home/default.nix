@@ -7,6 +7,7 @@
       ssh-to-age
       sops
       sweetbyte-rs
+      stdenv.cc
     ];
     pointerCursor.x11.enable = lib.mkForce false;
     stateVersion = "24.11";
