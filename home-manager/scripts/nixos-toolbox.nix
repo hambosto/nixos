@@ -6,8 +6,6 @@
 }:
 let
   nixos-toolbox = pkgs.writeShellScriptBin "nixos-toolbox" ''
-    set -e
-
     CONFIG_DIR="${config.xdg.configHome}/nixos"
 
     cmd_rebuild() {

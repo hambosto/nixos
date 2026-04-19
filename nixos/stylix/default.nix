@@ -47,7 +47,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/coca-cola.png;
+    image = ../../assets/city.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };
