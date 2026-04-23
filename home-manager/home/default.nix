@@ -3,7 +3,7 @@
   home = {
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
-      geminicommit
+      gcop-rs
       ssh-to-age
       sops
       sweetbyte-rs
