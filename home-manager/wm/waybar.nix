@@ -195,225 +195,225 @@
 
     style = with config.lib.stylix.colors.withHashtag; ''
       * {
-        border: none;
-        font-family: "Ubuntu Nerd Font";
-        font-size: 14px;
-        font-weight: bold;
-        min-height: 32px;
-      }
+          border: none;
+          font-family: "Ubuntu Nerd Font";
+          font-size: 14px;
+          font-weight: bold;
+          min-height: 32px;
+        }
 
-      window#waybar {
-        background-color: transparent;
-      }
+        window#waybar {
+          background-color: transparent;
+        }
 
-      tooltip {
-        background-color: ${base00};
-        border: 2px solid ${base0D};
-        border-radius: 5px;
-      }
+        tooltip {
+          background-color: ${base00};
+          border: 2px solid ${base0D};
+          border-radius: 10px;
+        }
 
-      #custom-rofi,
-      #workspaces,
-      #window,
-      #clock,
-      #pulseaudio,
-      #network,
-      #battery,
-      #backlight,
-      #power-profiles-daemon,
-      #idle_inhibitor,
-      #custom-wlogout {
-        background-color: ${base00};
-        border-top: 2px solid ${base0D};
-        border-bottom: 2px solid ${base0D};
-        margin: 6px 0;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+        #custom-rofi,
+        #workspaces,
+        #window,
+        #clock,
+        #pulseaudio,
+        #network,
+        #battery,
+        #backlight,
+        #power-profiles-daemon,
+        #idle_inhibitor,
+        #custom-wlogout {
+          background-color: ${base00};
+          border-top: 2px solid ${base0D};
+          border-bottom: 2px solid ${base0D};
+          margin: 6px 0;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      #tray {
-        background-color: transparent;
-        margin: 6px 0;
-      }
+        #tray {
+          background-color: transparent;
+          margin: 6px 0;
+        }
 
-      #custom-rofi,
-      #tray,
-      #network,
-      #battery,
-      #backlight,
-      #power-profiles-daemon,
-      #idle_inhibitor,
-      #clock,
-      #custom-wlogout {
-        padding: 0 12px;
-      }
+        #custom-rofi,
+        #tray,
+        #network,
+        #battery,
+        #backlight,
+        #power-profiles-daemon,
+        #idle_inhibitor,
+        #clock,
+        #custom-wlogout {
+          padding: 0 12px;
+        }
 
-      #custom-rofi {
-        color: ${base08};
-        padding: 0 14px;
-        margin-left: 8px;
-        border-left: 2px solid ${base0D};
-        border-radius: 5px 0 0 5px;
-      }
+        #custom-rofi {
+          color: ${base08};
+          padding: 0 14px;
+          margin-left: 8px;
+          border-left: 2px solid ${base0D};
+          border-radius: 10px 0 0 10px;
+        }
 
-      #tray {
-        color: ${base05};
-        margin-left: 8px;
-      }
+        #tray {
+          color: ${base05};
+          margin-left: 8px;
+        }
 
-      #pulseaudio {
-        color: ${base0E};
-        padding: 0 12px;
-        margin-left: 8px;
-        border-left: 2px solid ${base0D};
-        border-radius: 5px 0 0 5px;
-      }
+        #pulseaudio {
+          color: ${base0E};
+          padding: 0 12px;
+          margin-left: 8px;
+          border-left: 2px solid ${base0D};
+          border-radius: 10px 0 0 10px;
+        }
 
-      #workspaces {
-        padding: 0 4px;
-        border: 2px solid ${base0D};
-        border-radius: 5px;
-        margin: 6px 8px;
-      }
+        #workspaces {
+          padding: 0 4px;
+          border: 2px solid ${base0D};
+          border-radius: 10px;
+          margin: 6px 8px;
+        }
 
-      #workspaces button {
-        color: ${base04};
-        padding: 0 8px;
-        margin: 0 2px;
-        min-width: 10px;
-        border-radius: 5px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+        #workspaces button {
+          color: ${base04};
+          padding: 0 8px;
+          margin: 0 2px;
+          min-width: 10px;
+          border-radius: 10px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      #workspaces button.active {
-        color: ${base0D};
-        padding: 0 10px;
-      }
+        #workspaces button.active {
+          color: ${base0D};
+          padding: 0 10px;
+        }
 
-      #workspaces button.urgent {
-        background-color: ${base08};
-        color: ${base00};
-      }
+        #workspaces button.urgent {
+          background-color: ${base08};
+          color: ${base00};
+        }
 
-      #workspaces button:hover {
-        background-color: ${base02};
-      }
+        #workspaces button:hover {
+          background-color: ${base02};
+        }
 
-      #window {
-        color: ${base0C};
-        padding: 0 14px;
-        margin-right: 8px;
-        border-right: 2px solid ${base0D};
-        border-radius: 0 5px 5px 0;
-      }
+        #window {
+          color: ${base0C};
+          padding: 0 14px;
+          margin-right: 8px;
+          border-right: 2px solid ${base0D};
+          border-radius: 0 10px 10px 0;
+        }
 
-      #clock {
-        color: ${base0D};
-        padding: 0 14px;
-      }
+        #clock {
+          color: ${base0D};
+          padding: 0 14px;
+        }
 
-      #network {
-        color: ${base0B};
-      }
+        #network {
+          color: ${base0B};
+        }
 
-      #battery {
-        color: ${base0A};
-      }
+        #battery {
+          color: ${base0A};
+        }
 
-      #backlight {
-        color: ${base09};
-      }
+        #backlight {
+          color: ${base09};
+        }
 
-      #power-profiles-daemon {
-        color: ${base0D};
-      }
+        #power-profiles-daemon {
+          color: ${base0D};
+        }
 
-      #idle_inhibitor {
-        color: ${base0B};
-      }
+        #idle_inhibitor {
+          color: ${base0B};
+        }
 
-      #custom-wlogout {
-        color: ${base08};
-        margin-right: 8px;
-        border-right: 2px solid ${base0D};
-        border-radius: 0 5px 5px 0;
-      }
+        #custom-wlogout {
+          color: ${base08};
+          margin-right: 8px;
+          border-right: 2px solid ${base0D};
+          border-radius: 0 10px 10px 0;
+        }
 
-      #custom-rofi:hover,
-      #custom-wlogout:hover {
-        background-color: ${base08};
-        color: ${base00};
-      }
+        #custom-rofi:hover,
+        #custom-wlogout:hover {
+          background-color: ${base08};
+          color: ${base00};
+        }
 
-      #pulseaudio:hover {
-        background-color: ${base0E};
-        color: ${base00};
-      }
+        #pulseaudio:hover {
+          background-color: ${base0E};
+          color: ${base00};
+        }
 
-      #idle_inhibitor:hover {
-        background-color: ${base0B};
-        color: ${base00};
-      }
+        #idle_inhibitor:hover {
+          background-color: ${base0B};
+          color: ${base00};
+        }
 
-      #network:hover {
-        background-color: ${base0B};
-        color: ${base00};
-      }
+        #network:hover {
+          background-color: ${base0B};
+          color: ${base00};
+        }
 
-      #battery:hover {
-        background-color: ${base0A};
-        color: ${base00};
-      }
+        #battery:hover {
+          background-color: ${base0A};
+          color: ${base00};
+        }
 
-      #backlight:hover {
-        background-color: ${base09};
-        color: ${base00};
-      }
+        #backlight:hover {
+          background-color: ${base09};
+          color: ${base00};
+        }
 
-      #clock:hover {
-        background-color: ${base0D};
-        color: ${base00};
-      }
+        #clock:hover {
+          background-color: ${base0D};
+          color: ${base00};
+        }
 
-      #power-profiles-daemon:hover {
-        background-color: ${base0D};
-        color: ${base00};
-      }
+        #power-profiles-daemon:hover {
+          background-color: ${base0D};
+          color: ${base00};
+        }
 
-      #tray:hover {
-        color: ${base0D};
-      }
+        #tray:hover {
+          color: ${base0D};
+        }
 
-      #network.disconnected {
-        color: ${base08};
-      }
+        #network.disconnected {
+          color: ${base08};
+        }
 
-      #battery.charging {
-        color: ${base0B};
-      }
+        #battery.charging {
+          color: ${base0B};
+        }
 
-      #battery.critical:not(.charging) {
-        color: ${base08};
-      }
+        #battery.critical:not(.charging) {
+          color: ${base08};
+        }
 
-      #tray menu {
-        background-color: ${base00};
-        border: 2px solid ${base0D};
-        border-radius: 5px;
-        padding: 2px;
-      }
+        #tray menu {
+          background-color: ${base00};
+          border: 2px solid ${base0D};
+          border-radius: 10px;
+          padding: 2px;
+        }
 
-      #tray menu menuitem {
-        background-color: transparent;
-        color: ${base05};
-        padding: 4px 8px;
-        border-radius: 3px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+        #tray menu menuitem {
+          background-color: transparent;
+          color: ${base05};
+          padding: 4px 8px;
+          border-radius: 3px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      #tray menu menuitem:hover {
-        background-color: ${base0D};
-        color: ${base00};
-      }
+        #tray menu menuitem:hover {
+          background-color: ${base0D};
+          color: ${base00};
+        }
     '';
   };
 }

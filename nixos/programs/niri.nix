@@ -1,7 +1,6 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
-  imports = [ inputs.niri-nix.nixosModules.niri ];
+  imports = [ inputs.niri-nix.nixosModules.default ];
 
   programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
 }

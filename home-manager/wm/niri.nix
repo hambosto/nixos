@@ -6,7 +6,7 @@
   ...
 }:
 {
-  imports = [ inputs.niri-nix.homeModules.niri ];
+  imports = [ inputs.niri-nix.homeModules.default ];
 
   programs.niri = {
     enable = true;
@@ -262,10 +262,10 @@
         (leaf "clip-to-geometry" true)
         (leaf "draw-border-with-background" false)
         (leaf "geometry-corner-radius" [
-          5.0
-          5.0
-          5.0
-          5.0
+          10.0
+          10.0
+          10.0
+          10.0
         ])
       ])
 

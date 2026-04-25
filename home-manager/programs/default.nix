@@ -33,7 +33,6 @@
     ./rust.nix
     ./starship.nix
     ./uv.nix
-    ./vscode.nix
     ./yazi.nix
     ./zathura.nix
     ./zed-editor.nix
