@@ -1,13 +1,10 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
 }:
 {
-  imports = [ inputs.nix-zed-extensions.homeManagerModules.default ];
-
   programs.zed-editor = {
     enable = true;
     mutableUserSettings = false;

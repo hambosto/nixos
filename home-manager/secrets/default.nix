@@ -10,8 +10,6 @@ let
   yamlFormat = pkgs.formats.yaml { };
 in
 {
-  imports = [ inputs.sops-nix.homeManagerModules.sops ];
-
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     age.keyFile = "/home/ilham/.config/sops/age/keys.txt";
