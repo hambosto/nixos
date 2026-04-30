@@ -20,6 +20,11 @@
         custom = 1.4;
       };
       current_line_highlight = "none";
+      diagnostics = {
+        inline = {
+          enabled = true;
+        };
+      };
       disable_ai = true;
       git = {
         inline_blame = {

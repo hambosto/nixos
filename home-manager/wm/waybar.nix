@@ -152,7 +152,7 @@
             "󰤨"
           ];
           tooltip = false;
-          on-click = "${lib.getExe pkgs.kitty} --title \"Network Manager\" -e ${lib.getExe pkgs.impala}";
+          on-click = "${lib.getExe pkgs.iwmenu} -l rofi";
         };
 
         power-profiles-daemon = {
@@ -181,7 +181,7 @@
             car = "󰄋";
             default = "󰕾";
           };
-          on-click = "${lib.getExe pkgs.kitty} --title \"Volume Control\" -e ${lib.getExe pkgs.wiremix}";
+          on-click = "${lib.getExe pkgs.pwmenu} -l rofi";
           tooltip = false;
         };
 

@@ -280,13 +280,13 @@
         (leaf "open-floating" true)
       ])
 
-      (plain "window-rule" [
-        (leaf "match" { title = "^Network Manager.*$"; })
-        (leaf "match" { title = "^Volume Control.*$"; })
-        (plain "default-column-width" [ (leaf "fixed" 700) ])
-        (plain "default-window-height" [ (leaf "fixed" 600) ])
-        (leaf "open-floating" true)
-      ])
+      # (plain "window-rule" [
+      #   (leaf "match" { title = "^Network Manager.*$"; })
+      #   (leaf "match" { title = "^Volume Control.*$"; })
+      #   (plain "default-column-width" [ (leaf "fixed" 700) ])
+      #   (plain "default-window-height" [ (leaf "fixed" 600) ])
+      #   (leaf "open-floating" true)
+      # ])
 
       (plain "layer-rule" [
         (leaf "match" { namespace = "^wallpaper-rs$"; })

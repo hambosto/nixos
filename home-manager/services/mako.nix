@@ -6,7 +6,7 @@
       font = "Ubuntu Nerd Font 14";
       background-color = base00;
       border-color = base0D;
-      border-radius = 5;
+      border-radius = 10;
       text-color = base05;
       progress-color = "over ${base02}";
 

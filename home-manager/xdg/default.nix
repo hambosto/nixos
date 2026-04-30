@@ -2,7 +2,7 @@
 let
   apps = {
     browser = "brave-browser.desktop";
-    editor = "code.desktop";
+    editor = "dev.zed.Zed.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
     videoPlayer = "mpv.desktop";
