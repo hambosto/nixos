@@ -9,17 +9,18 @@
     plugins = {
       chmod = pkgs.yaziPlugins.chmod;
       compress = pkgs.yaziPlugins.compress;
-      full-border = pkgs.yaziPlugins.full-border;
+      full-border = {
+        package = pkgs.yaziPlugins.full-border;
+        setup = true;
+      };
       toggle-pane = pkgs.yaziPlugins.toggle-pane;
       smart-filter = pkgs.yaziPlugins.smart-filter;
       mount = pkgs.yaziPlugins.mount;
-      starship = pkgs.yaziPlugins.starship;
+      starship = {
+        package = pkgs.yaziPlugins.starship;
+        setup = true;
+      };
     };
-
-    initLua = ''
-      require("full-border"):setup()
-      require("starship"):setup()
-    '';
 
     settings = {
       opener = {

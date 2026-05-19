@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,11 +41,6 @@
 
     wallpaper-rs = {
       url = "github:hambosto/wallpaper-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-zed-extensions = {
-      url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
