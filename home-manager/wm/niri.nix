@@ -6,8 +6,6 @@
   ...
 }:
 {
-  imports = [ inputs.niri-nix.homeModules.default ];
-
   programs.niri = {
     enable = true;
     settings = with inputs.niri-nix.lib.kdl; [
