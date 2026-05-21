@@ -11,11 +11,11 @@ rustPlatform.buildRustPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "AptS-1547";
     repo = "gcop-rs";
-    rev = "0647fafcec1628665098451ff4a15517508baa6f";
-    sha256 = "sha256-MY00/mV6SNG7O1Q7Dpl9T0mQpzqumzZvbyF+HbI2P1M=";
+    rev = "3f99eb2636c602ceff028a87060f1e0234b9c528";
+    sha256 = "sha256-d5q7oEL78EJ/uA/Lva13wnuCVtBofiOIm5AxVP3mYdQ=";
   };
 
-  cargoHash = "sha256-+KzZgHfyEU7JsZXg0ibG/6w+o5yI53FnJka42zfF2Gg=";
+  cargoHash = "sha256-LjXr+shJBQ0eveTDH1wlyzcW8hYMnG9z+3zRv0WNEWI=";
 
   nativeBuildInputs = [ ];
   buildInputs = [ ];
