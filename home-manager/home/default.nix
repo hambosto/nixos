@@ -3,11 +3,11 @@
   home = {
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
-      gcop-rs
-      ssh-to-age
+      geminicommit
       sops
-      sweetbyte-rs
+      ssh-to-age
       stdenv.cc
+      sweetbyte-rs
     ];
     pointerCursor.x11.enable = lib.mkForce false;
     stateVersion = "24.11";
