@@ -7,6 +7,22 @@
 {
   programs.waybar = {
     enable = true;
+    package = (
+      pkgs.waybar.override {
+        cavaSupport = false;
+        gpsSupport = false;
+        inputSupport = false;
+        jackSupport = false;
+        mpdSupport = false;
+        mprisSupport = false;
+        pipewireSupport = false;
+        evdevSupport = false;
+        nlSupport = true;
+        rfkillSupport = false;
+        sndioSupport = false;
+        wireplumberSupport = false;
+      }
+    );
     systemd.enable = true;
     settings = {
       mainBar = {
