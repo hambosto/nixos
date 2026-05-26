@@ -9,6 +9,6 @@
   })
   inputs.niri-nix.overlays.default
   inputs.sweetbyte-rs.overlays.default
-  inputs.nix-cachyos-kernel.overlays.default
+  inputs.nix-cachyos-kernel.overlays.pinned
   inputs.nix-vscode-extensions.overlays.default
 ]
