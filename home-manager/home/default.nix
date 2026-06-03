@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   home = {
+    enableNixpkgsReleaseCheck = false;
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
       geminicommit

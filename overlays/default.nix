@@ -8,7 +8,7 @@
     rust-skills = prev.callPackage ../packages/rust-skills.nix { };
   })
   inputs.niri-nix.overlays.default
-  inputs.sweetbyte-rs.overlays.default
-  inputs.nix-cachyos-kernel.overlays.pinned
   inputs.nix-vscode-extensions.overlays.default
+  inputs.nix-zed-extensions.overlays.default
+  inputs.sweetbyte-rs.overlays.default
 ]

@@ -14,8 +14,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "GeistMono Nerd Font";
-        package = pkgs.nerd-fonts.geist-mono;
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
       sansSerif = {
         name = "HarmonyOS Sans";
@@ -29,7 +29,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/wloop.png;
+    image = ../../assets/jill-valentine.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };

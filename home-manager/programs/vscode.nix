@@ -6,7 +6,7 @@
 }:
 {
   programs.vscode = {
-    enable = true;
+    enable = false;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -17,10 +17,10 @@
           "breadcrumbs.enabled" = false;
           "chat.agent.enabled" = false;
           "chat.disableAIFeatures" = true;
-          "chat.editor.fontFamily" = "GeistMono Nerd Font";
+          "chat.editor.fontFamily" = "JetBrainsMono Nerd Font";
           "chat.editor.fontSize" = 14;
-          "chat.fontFamily" = "GeistMono Nerd Font";
-          "debug.console.fontFamily" = "GeistMono Nerd Font";
+          "chat.fontFamily" = "JetBrainsMono Nerd Font";
+          "debug.console.fontFamily" = "JetBrainsMono Nerd Font";
           "debug.console.fontSize" = 14;
           "editor.acceptSuggestionOnCommitCharacter" = true;
           "editor.acceptSuggestionOnEnter" = "on";
@@ -28,13 +28,13 @@
           "editor.bracketPairColorization.enabled" = true;
           "editor.cursorBlinking" = "expand";
           "editor.cursorSmoothCaretAnimation" = "on";
-          "editor.fontFamily" = "GeistMono Nerd Font";
+          "editor.fontFamily" = "JetBrainsMono Nerd Font";
           "editor.fontLigatures" = true;
           "editor.fontSize" = 14;
           "editor.fontWeight" = "500";
           "editor.formatOnSave" = true;
-          "editor.inlayHints.fontFamily" = "GeistMono Nerd Font";
-          "editor.inlineSuggest.fontFamily" = "GeistMono Nerd Font";
+          "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font";
+          "editor.inlineSuggest.fontFamily" = "JetBrainsMono Nerd Font";
           "editor.minimap.enabled" = false;
           "editor.minimap.sectionHeaderFontSize" = 14;
           "editor.semanticHighlighting.enabled" = true;
@@ -57,7 +57,7 @@
           "extensions.ignoreRecommendations" = true;
           "files.enableTrash" = false;
           "git.decorations.enabled" = true;
-          "markdown.preview.fontFamily" = "GeistMono Nerd Font";
+          "markdown.preview.fontFamily" = "JetBrainsMono Nerd Font";
           "markdown.preview.fontSize" = 14;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = lib.getExe pkgs.nixd;
@@ -68,14 +68,14 @@
               };
             };
           };
-          "notebook.markup.fontFamily" = "GeistMono Nerd Font";
-          "scm.inputFontFamily" = "GeistMono Nerd Font";
+          "notebook.markup.fontFamily" = "JetBrainsMono Nerd Font";
+          "scm.inputFontFamily" = "JetBrainsMono Nerd Font";
           "scm.inputFontSize" = 14;
           "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
           "telemetry.editStats.enabled" = false;
           "telemetry.feedback.enabled" = false;
           "telemetry.telemetryLevel" = "off";
-          "terminal.integrated.fontFamily" = "GeistMono Nerd Font";
+          "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
           "terminal.integrated.fontSize" = 14;
           "terminal.integrated.fontWeight" = "500";
           "terminal.integrated.initialHint" = false;
@@ -110,7 +110,6 @@
           "workbench.tree.renderIndentGuides" = "none";
           "workbench.welcomePage.experimentalOnboarding" = false;
           "workbench.welcomePage.walkthroughs.openOnInstall" = false;
-
         }
 
         (lib.mkIf (config.programs.bun.enable or false) {
@@ -143,8 +142,10 @@
           "go.showWelcome" = false;
           "go.survey.prompt" = false;
           "go.useLanguageServer" = true;
-          "gopls"."formatting.gofumpt" = true;
-          "gopls"."ui.semanticTokens" = true;
+          "gopls" = {
+            "formatting.gofumpt" = true;
+            "ui.semanticTokens" = true;
+          };
         })
 
         (lib.mkIf (config.programs.rust.enable or false) {

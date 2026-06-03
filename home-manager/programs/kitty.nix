@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = lib.mkForce {
-      name = "GeistMono Nerd Font";
+      name = "JetBrainsMono Nerd Font";
       size = 11;
     };
     settings = lib.mkForce {

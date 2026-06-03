@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}:
+{ config, ... }:
 {
   services.wallpaper-rs = {
     enable = true;

@@ -3,14 +3,13 @@
     enable = true;
     settings = {
       display = {
-        key.width = 8;
-        separator = " ";
+        separator = " ─➤ ";
       };
 
       logo = {
         padding = {
           left = 3;
-          top = 2;
+          top = 1;
         };
         source = ../../assets/fastfetch-logo.txt;
         type = "file";
@@ -19,55 +18,47 @@
       modules = [
         {
           type = "custom";
-          format = "";
+          format = "─────────────────────────────────────────";
         }
         {
           type = "os";
-          key = "os";
-          keyColor = "magenta";
+          key = " ";
+          keyColor = "red";
         }
         {
           type = "kernel";
-          key = "ker";
+          key = " ";
           keyColor = "green";
         }
         {
-          type = "packages";
-          key = "pkgs";
-          keyColor = "cyan";
-        }
-        {
-          type = "shell";
-          key = "sh";
-          keyColor = "blue";
-          format = "{6}";
+          type = "cpu";
+          key = " ";
+          "keyColor" = "yellow";
         }
         {
           type = "memory";
-          key = "ram";
-          keyColor = "yellow";
-        }
-        {
-          type = "custom";
-          key = "init";
-          format = "systemd";
-          keyColor = "magenta";
-        }
-        {
-          type = "wm";
-          key = "de/wm";
-          keyColor = "green";
-        }
-        {
-          type = "uptime";
-          key = "up";
-          keyColor = "cyan";
+          key = " ";
+          keyColor = "blue";
         }
         {
           type = "disk";
-          key = "disk";
-          keyColor = "yellow";
+          key = " ";
+          keyColor = "magenta";
           format = "{1} / {2} ({9})";
+        }
+        {
+          type = "wm";
+          key = " ";
+          keyColor = "cyan";
+        }
+        {
+          type = "terminal";
+          key = " ";
+          keyColor = "red";
+        }
+        {
+          type = "custom";
+          format = "─────────────────────────────────────────";
         }
         {
           type = "colors";

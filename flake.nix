@@ -19,10 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-zed-extensions = {
+      url = "github:DuskSystems/nix-zed-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

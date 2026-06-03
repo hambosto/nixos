@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   programs.yazi = {
     enable = true;
@@ -119,62 +114,6 @@
           desc = "Archive selected files (password+header+level)";
         }
       ];
-    };
-
-    # https://github.com/nix-community/stylix/pull/2167
-    theme = with config.lib.stylix.colors.withHashtag; {
-      icon =
-        let
-          mkIcon = text: fg: { inherit text fg; };
-        in
-        {
-          dirs =
-            let
-              mkDirIcon =
-                name: text: fg:
-                ((mkIcon text fg) // { inherit name; });
-            in
-            [
-              (mkDirIcon ".config" "" orange)
-              (mkDirIcon ".git" "" cyan)
-              (mkDirIcon ".github" "" blue)
-              (mkDirIcon ".npm" "" blue)
-              (mkDirIcon "Desktop" "" cyan)
-              (mkDirIcon "Development" "" cyan)
-              (mkDirIcon "Documents" "" cyan)
-              (mkDirIcon "Downloads" "" cyan)
-              (mkDirIcon "Library" "" cyan)
-              (mkDirIcon "Movies" "" cyan)
-              (mkDirIcon "Music" "" cyan)
-              (mkDirIcon "Pictures" "" cyan)
-              (mkDirIcon "Public" "" cyan)
-              (mkDirIcon "Videos" "" cyan)
-            ];
-
-          conds =
-            let
-              mkCondsIcon =
-                cond: text: fg:
-                ((mkIcon text fg) // { "if" = cond; });
-            in
-            [
-              # Special files
-              (mkCondsIcon "orphan" "" base05)
-              (mkCondsIcon "link" "" base04)
-              (mkCondsIcon "block" "" yellow)
-              (mkCondsIcon "char" "" yellow)
-              (mkCondsIcon "fifo" "" yellow)
-              (mkCondsIcon "sock" "" yellow)
-              (mkCondsIcon "sticky" "" yellow)
-              (mkCondsIcon "dummy" "" red)
-
-              # Fallback
-              (mkCondsIcon "dir & hovered" "" blue)
-              (mkCondsIcon "dir" "" blue)
-              (mkCondsIcon "exec" "" green)
-              (mkCondsIcon "!dir" "" base05)
-            ];
-        };
     };
   };
 }
