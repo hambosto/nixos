@@ -4,17 +4,6 @@
   pkgs,
   ...
 }:
-let
-  zedLsp = path: arguments: {
-    binary = {
-      inherit path arguments;
-    };
-  };
-  vscodeLangServer =
-    name: zedLsp "${lib.getExe' pkgs.vscode-langservers-extracted name}" [ "--stdio" ];
-  nodeLangServer = package: arguments: zedLsp "${lib.getExe package}" arguments;
-  mkLsp = pkg: { binary.path = lib.getExe pkg; };
-in
 {
   programs.zed-editor = {
     enable = true;
@@ -112,31 +101,65 @@ in
         };
       };
       lsp = {
-        json-language-server = vscodeLangServer "vscode-json-language-server";
-        vscode-css-language-server = vscodeLangServer "vscode-css-language-server";
-        vscode-html-language-server = vscodeLangServer "vscode-html-language-server";
-        yaml-language-server = nodeLangServer pkgs.yaml-language-server [ "--stdio" ];
-        typescript-language-server = nodeLangServer pkgs.typescript-language-server [ "--stdio" ];
-        nixd = mkLsp pkgs.nixd;
-        package-version-server = mkLsp pkgs.package-version-server;
+        json-language-server = {
+          binary = {
+            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-json-language-server";
+            arguments = [ "--stdio" ];
+          };
+        };
+        nixd = {
+          binary.path = lib.getExe pkgs.nixd;
+        };
+        package-version-server = {
+          binary.path = lib.getExe pkgs.package-version-server;
+        };
+        typescript-language-server = {
+          binary = {
+            path = lib.getExe pkgs.typescript-language-server;
+            arguments = [ "--stdio" ];
+          };
+        };
+        vscode-css-language-server = {
+          binary = {
+            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-css-language-server";
+            arguments = [ "--stdio" ];
+          };
+        };
+        vscode-html-language-server = {
+          binary = {
+            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
+            arguments = [ "--stdio" ];
+          };
+        };
+        yaml-language-server = {
+          binary = {
+            path = lib.getExe pkgs.yaml-language-server;
+            arguments = [ "--stdio" ];
+          };
+        };
       }
       // lib.optionalAttrs (config.programs.go.enable or false) {
         gopls = {
           binary.path = lib.getExe pkgs.gopls;
         };
       }
-      // lib.optionalAttrs (config.programs.go.enable or false) {
-        gopls = mkLsp pkgs.gopls;
-      }
       // lib.optionalAttrs (config.programs.rust.enable or false) {
-        rust-analyzer = mkLsp pkgs.rust-analyzer;
-        crates-lsp = mkLsp pkgs.crates-lsp;
+        crates-lsp = {
+          binary.path = lib.getExe pkgs.crates-lsp;
+        };
+        rust-analyzer = {
+          binary.path = lib.getExe pkgs.rust-analyzer;
+        };
       }
       // lib.optionalAttrs (config.programs.uv.enable or false) {
-        pyright = mkLsp pkgs.pyright;
+        pyright = {
+          binary.path = lib.getExe pkgs.pyright;
+        };
       }
       // lib.optionalAttrs config.programs.zig.enable {
-        zls = mkLsp pkgs.zls;
+        zls = {
+          binary.path = lib.getExe pkgs.zls;
+        };
       };
       project_panel = {
         entry_spacing = "standard";
