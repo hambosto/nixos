@@ -25,9 +25,7 @@
               content = {
                 type = "luks";
                 name = "nixos";
-                settings = {
-                  allowDiscards = true;
-                };
+                settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ];

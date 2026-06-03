@@ -19,9 +19,21 @@ in
   programs.zed-editor = {
     enable = true;
     mutableUserSettings = false;
-    mutableUserKeymaps = true;
+    mutableUserKeymaps = false;
     mutableUserTasks = false;
     mutableUserDebug = false;
+    userKeymaps = [
+      {
+        bindings = {
+          "shift shift" = "file_finder::Toggle";
+        };
+      }
+      {
+        bindings = {
+          ctrl-b = "project_panel::Toggle";
+        };
+      }
+    ];
     userSettings = {
       base_keymap = "VSCode";
       buffer_font_family = "JetBrainsMono Nerd Font";
