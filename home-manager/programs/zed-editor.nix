@@ -164,6 +164,7 @@
       project_panel = {
         entry_spacing = "standard";
       };
+      semantic_tokens = "combined";
       tabs = {
         file_icons = true;
       };

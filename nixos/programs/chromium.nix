@@ -5,6 +5,39 @@
     defaultSearchProviderSearchURL = "https://www.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
     defaultSearchProviderSuggestURL = "https://www.google.com/complete/search?output=chrome&q={searchTerms}";
     extraOpts = {
+      UserSecurityAuthenticatedReporting = false;
+      UserSecuritySignalsReporting = false;
+      FeedbackSurveysEnabled = false;
+      SafeBrowsingSurveysEnabled = false;
+
+      GenAIInlineImageSettings = 2;
+      GenAIPhotoEditingSettings = 2;
+      GenAISmartGroupingSettings = 1;
+      GenAIVcBackgroundSettings = 2;
+      GenAIWallpaperSettings = 2;
+      HelpMeReadSettings = 2;
+      SearchContentSharingSettings = 1;
+      BuiltInAIAPIsEnabled = false;
+
+      DefaultLocalFontsSetting = 2;
+      DefaultIdleDetectionSetting = 2;
+      RelatedWebsiteSetsEnabled = false;
+
+      DefaultSmartCardConnectSetting = 2;
+      DefaultWebHidGuardSetting = 2;
+
+      PasswordManagerPasskeysEnabled = false;
+
+      BuiltInDnsClientEnabled = false;
+
+      BrowserGuestModeEnabled = true;
+      BrowserGuestModeEnforced = false;
+      QuickAnswersDefinitionEnabled = false;
+      QuickAnswersEnabled = false;
+      QuickAnswersTranslationEnabled = false;
+      SuggestedContentEnabled = false;
+      PromotionsEnabled = false;
+
       AdsSettingForIntrusiveAdsSites = 2;
       AiSettingsPageEnabled = false;
       AIModeSettings = 1;
