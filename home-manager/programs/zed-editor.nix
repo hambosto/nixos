@@ -6,7 +6,7 @@
 }:
 {
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     mutableUserSettings = false;
     mutableUserKeymaps = false;
     mutableUserTasks = false;
@@ -38,6 +38,7 @@
         };
       };
       disable_ai = true;
+      format_on_save = "on";
       git = {
         inline_blame = {
           enabled = false;
@@ -70,7 +71,13 @@
       // lib.optionalAttrs (config.programs.rust.enable or false) {
         Rust = {
           format_on_save = "on";
-          formatter.external.command = lib.getExe pkgs.rustfmt;
+          formatter.external = {
+            arguments = [
+              "--emit"
+              "stdout"
+            ];
+            command = lib.getExe pkgs.rustfmt;
+          };
           language_servers = [ "rust-analyzer" ];
         };
       }
@@ -103,8 +110,8 @@
       lsp = {
         json-language-server = {
           binary = {
-            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-json-language-server";
             arguments = [ "--stdio" ];
+            path = lib.getExe pkgs.vscode-json-languageserver;
           };
         };
         nixd = {
@@ -121,20 +128,20 @@
         };
         vscode-css-language-server = {
           binary = {
-            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-css-language-server";
             arguments = [ "--stdio" ];
+            path = lib.getExe pkgs.vscode-css-languageserver;
           };
         };
         vscode-html-language-server = {
           binary = {
-            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
             arguments = [ "--stdio" ];
+            path = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
           };
         };
         yaml-language-server = {
           binary = {
-            path = lib.getExe pkgs.yaml-language-server;
             arguments = [ "--stdio" ];
+            path = lib.getExe pkgs.yaml-language-server;
           };
         };
       }
@@ -179,7 +186,16 @@
         font_size = 15;
         font_weight = 500;
       };
-      theme = "Catppuccin Mocha - No Italics";
+      theme = "Rosé Pine";
+      theme_overrides = {
+        "Rosé Pine" = {
+          syntax = {
+            hint = {
+              color = "#908caa";
+            };
+          };
+        };
+      };
       toolbar = {
         breadcrumbs = false;
         quick_actions = false;
@@ -196,10 +212,10 @@
       with pkgs.zed-extensions;
       (
         [
-          catppuccin
           html
           material-icon-theme
           nix
+          rose-pine-theme
         ]
         ++ lib.optionals (config.programs.rust.enable or false) [
           crates-lsp

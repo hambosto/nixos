@@ -28,11 +28,13 @@
       ++ lib.optionals (config.programs.uv.enable or false) [
         {
           auto-format = true;
-          formatter.args = [
-            "-"
-            "--quiet"
-          ];
-          formatter.command = lib.getExe pkgs.black;
+          formatter = {
+            args = [
+              "-"
+              "--quiet"
+            ];
+            command = lib.getExe pkgs.black;
+          };
           language-servers = [ "pyright" ];
           name = "python";
         }
@@ -40,7 +42,13 @@
       ++ lib.optionals (config.programs.rust.enable or false) [
         {
           auto-format = true;
-          formatter.command = lib.getExe pkgs.rustfmt;
+          formatter = {
+            args = [
+              "--emit"
+              "stdout"
+            ];
+            command = lib.getExe pkgs.rustfmt;
+          };
           name = "rust";
         }
       ]

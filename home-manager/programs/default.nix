@@ -27,10 +27,13 @@
     ./lazygit.nix
     ./mpv.nix
     ./nh.nix
+    ./npm.nix
     ./obs-studio.nix
     ./oh-my-posh.nix
     ./opencode.nix
+    ./ripgrep.nix
     ./rust.nix
+    ./skim.nix
     ./starship.nix
     ./uv.nix
     ./vscode.nix

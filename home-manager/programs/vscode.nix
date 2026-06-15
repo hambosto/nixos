@@ -6,7 +6,7 @@
 }:
 {
   programs.vscode = {
-    enable = false;
+    enable = true;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -148,6 +148,10 @@
           };
         })
 
+        (lib.mkIf (config.programs.npm.enable or false) {
+          "js/ts.experimental.useTsgo" = true;
+        })
+
         (lib.mkIf (config.programs.rust.enable or false) {
           "rust-analyzer.restartServerOnConfigChange" = true;
           "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
@@ -191,6 +195,7 @@
           [
             jnoortheen.nix-ide
             pkief.material-icon-theme
+            mvllow.rose-pine
             # jonathanharty.gruvbox-material-icon-theme
             # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
@@ -201,6 +206,7 @@
           ]
           (lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ])
           (lib.optionals (config.programs.go.enable or false) [ golang.go ])
+          (lib.optionals (config.programs.npm.enable or false) [ typescriptteam.native-preview ])
           (lib.optionals (config.programs.rust.enable or false) [
             fill-labs.dependi
             rust-lang.rust-analyzer
