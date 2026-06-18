@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
   programs.ghostty = {
     enable = false;
@@ -6,7 +6,7 @@
     settings = {
       background-opacity = lib.mkForce 0.7;
       background-blur = true;
-      font-family = lib.mkForce "JetBrainsMono Nerd Font";
+      font-family = lib.mkForce config.stylix.fonts.monospace.name;
       font-size = lib.mkForce 11;
       window-width = 950;
       window-height = 500;

@@ -17,7 +17,7 @@
       };
       transition = {
         duration = 3.0;
-        fps = 60;
+        fps = 30;
 
         fade.bezier = [
           0.54

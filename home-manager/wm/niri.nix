@@ -28,25 +28,35 @@
 
         (plain "Mod+Space" [
           (leaf "spawn" [
-            (lib.getExe pkgs.rofi)
-            "-show"
-            "drun"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "panel-toggle"
+            "launcher"
           ])
         ])
 
-        (plain "Mod+L" [ (leaf "spawn" [ (lib.getExe pkgs.hyprlock) ]) ])
+        (plain "Mod+S" [
+          (leaf "spawn" [
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "panel-toggle"
+            "control-center"
+          ])
+        ])
+
+        (plain "Mod+Comma" [
+          (leaf "spawn" [
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "settings-toggle"
+          ])
+        ])
 
         (plain "Mod+Shift+M" [
           (leaf "spawn" [
             (lib.getExe pkgs.kitty)
             "-e"
             (lib.getExe pkgs.btop)
-          ])
-        ])
-
-        (plain "Mod+Shift+P" [
-          (leaf "spawn" [
-            (lib.getExe pkgs.wlogout)
           ])
         ])
 
@@ -105,51 +115,45 @@
 
         (plain "XF86AudioRaiseVolume" [
           (leaf "spawn" [
-            (lib.getExe' pkgs.wireplumber "wpctl")
-            "set-volume"
-            "@DEFAULT_AUDIO_SINK@"
-            "5%+"
-            "-l"
-            "1"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "volume-up"
           ])
         ])
         (plain "XF86AudioLowerVolume" [
           (leaf "spawn" [
-            (lib.getExe' pkgs.wireplumber "wpctl")
-            "set-volume"
-            "@DEFAULT_AUDIO_SINK@"
-            "5%-"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "volume-down"
           ])
         ])
         (plain "XF86AudioMute" [
           (leaf "spawn" [
-            (lib.getExe' pkgs.wireplumber "wpctl")
-            "set-mute"
-            "@DEFAULT_AUDIO_SINK@"
-            "toggle"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "volume-mute"
           ])
         ])
         (plain "XF86AudioMicMute" [
           (leaf "spawn" [
-            (lib.getExe' pkgs.wireplumber "wpctl")
-            "set-mute"
-            "@DEFAULT_AUDIO_SOURCE@"
-            "toggle"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "mic-mute"
           ])
         ])
 
         (plain "XF86MonBrightnessUp" [
           (leaf "spawn" [
-            (lib.getExe pkgs.brightnessctl)
-            "set"
-            "+5%"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "brightness-up"
           ])
         ])
         (plain "XF86MonBrightnessDown" [
           (leaf "spawn" [
-            (lib.getExe pkgs.brightnessctl)
-            "set"
-            "5%-"
+            (lib.getExe pkgs.noctalia)
+            "msg"
+            "brightness-down"
           ])
         ])
       ])
@@ -277,14 +281,6 @@
         (plain "default-window-height" [ (leaf "fixed" 600) ])
         (leaf "open-floating" true)
       ])
-
-      # (plain "window-rule" [
-      #   (leaf "match" { title = "^Network Manager.*$"; })
-      #   (leaf "match" { title = "^Volume Control.*$"; })
-      #   (plain "default-column-width" [ (leaf "fixed" 700) ])
-      #   (plain "default-window-height" [ (leaf "fixed" 600) ])
-      #   (leaf "open-floating" true)
-      # ])
 
       (plain "layer-rule" [
         (leaf "match" { namespace = "^wallpaper-rs$"; })

@@ -1,8 +1,8 @@
 { lib, ... }:
 let
   apps = {
-    # browser = "brave-browser.desktop";
-    browser = "chromium-browser.desktop";
+    browser = "brave-browser.desktop";
+    # browser = "chromium-browser.desktop";
     editor = "dev.zed.Zed.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";

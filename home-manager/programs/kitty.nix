@@ -1,9 +1,9 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
   programs.kitty = {
     enable = true;
     font = lib.mkForce {
-      name = "JetBrainsMono Nerd Font";
+      name = config.stylix.fonts.monospace.name;
       size = 11;
     };
     settings = lib.mkForce {

@@ -25,7 +25,7 @@
     ];
     userSettings = {
       base_keymap = "VSCode";
-      buffer_font_family = "JetBrainsMono Nerd Font";
+      buffer_font_family = config.stylix.fonts.monospace.name;
       buffer_font_size = 15;
       buffer_font_weight = 500;
       buffer_line_height = {
@@ -182,7 +182,7 @@
       terminal = {
         blinking = "on";
         cursor_shape = "bar";
-        font_family = "JetBrainsMono Nerd Font";
+        font_family = config.stylix.fonts.monospace.name;
         font_size = 15;
         font_weight = 500;
       };
@@ -200,7 +200,7 @@
         breadcrumbs = false;
         quick_actions = false;
       };
-      ui_font_family = "JetBrainsMono Nerd Font";
+      ui_font_family = config.stylix.fonts.monospace.name;
       ui_font_size = 15;
       ui_font_weight = 500;
     };

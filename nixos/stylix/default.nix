@@ -2,7 +2,6 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
@@ -30,7 +29,7 @@
         terminal = 14;
       };
     };
-    image = ../../assets/gruvbox.png;
+    image = ../../assets/city.png;
     polarity = "dark";
     targets = import ./targets.nix;
   };

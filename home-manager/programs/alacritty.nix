@@ -1,11 +1,11 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
   programs.alacritty = {
     enable = false;
     settings = {
       font = lib.mkForce {
         normal = {
-          family = "JetBrainsMono Nerd Font";
+          family = config.stylix.fonts.monospace.name;
           style = "Regular";
         };
         size = 11;
