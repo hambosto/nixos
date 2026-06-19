@@ -26,10 +26,16 @@
         applications = 14;
         desktop = 14;
         popups = 14;
-        terminal = 14;
+        terminal = 11;
       };
     };
     image = ../../assets/city.png;
+    opacity = {
+      applications = 0.7;
+      desktop = 0.7;
+      popups = 0.7;
+      terminal = 0.7;
+    };
     polarity = "dark";
     targets = import ./targets.nix;
   };

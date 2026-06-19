@@ -3,7 +3,8 @@ let
   apps = {
     browser = "brave-browser.desktop";
     # browser = "chromium-browser.desktop";
-    editor = "dev.zed.Zed.desktop";
+    # editor = "dev.zed.Zed.desktop";
+    editor = "code.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
     videoPlayer = "mpv.desktop";

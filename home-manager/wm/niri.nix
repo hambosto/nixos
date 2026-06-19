@@ -189,6 +189,17 @@
         })
       ])
 
+      (plain "recent-windows" [
+        (leaf "debounce-ms" 0)
+        (leaf "open-delay-ms" 0)
+        (plain "highlight" [
+          (leaf "active-color" "#${config.lib.stylix.colors.base0D}")
+          (leaf "urgent-color" "#${config.lib.stylix.colors.base03}")
+          (leaf "corner-radius" 10)
+          (leaf "padding" 5)
+        ])
+      ])
+
       (leaf "screenshot-path" "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png")
       (flag "prefer-no-csd")
 

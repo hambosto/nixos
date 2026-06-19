@@ -15,14 +15,20 @@
           mOnError = base00;
           mSurface = base00;
           mOnSurface = base05;
+          mHover = base0C;
+          mOnHover = base00;
           mSurfaceVariant = base01;
           mOnSurfaceVariant = base04;
           mOutline = base03;
           mShadow = base00;
-          mHover = base0C;
-          mOnHover = base00;
 
           terminal = {
+            foreground = base05;
+            background = base00;
+            cursor = base05;
+            cursorText = base00;
+            selectionFg = base05;
+            selectionBg = base02;
             normal = {
               black = base00;
               red = base08;
@@ -43,12 +49,6 @@
               cyan = base0C;
               white = base07;
             };
-            foreground = base05;
-            background = base00;
-            cursor = base05;
-            cursorText = base00;
-            selectionFg = base05;
-            selectionBg = base02;
           };
         };
       in
@@ -58,9 +58,9 @@
       };
     settings = {
       bar.default = {
-        background_opacity = 0.7;
+        background_opacity = config.stylix.opacity.desktop;
         capsule = true;
-        capsule_opacity = 0.7;
+        capsule_opacity = config.stylix.opacity.desktop;
         capsule_radius = 10;
         capsule_group = [
           {
@@ -70,7 +70,7 @@
               "media"
               "audio_visualizer"
             ];
-            opacity = 0.7;
+            opacity = config.stylix.opacity.desktop;
             padding = 6.0;
             radius = 10.0;
           }
@@ -102,7 +102,7 @@
       };
 
       dock = {
-        background_opacity = 0.7;
+        background_opacity = config.stylix.opacity.desktop;
       };
 
       idle = {
@@ -150,32 +150,34 @@
           visible = true;
         };
 
-        widget."lockscreen-login-box@eDP-1" = {
-          box_height = 0.0;
-          box_width = 0.0;
-          cx = 960.0;
-          cy = 1077.0;
-          output = "eDP-1";
-          rotation = 0.0;
-          type = "login_box";
+        widget = {
+          "lockscreen-login-box@eDP-1" = {
+            box_height = 0.0;
+            box_width = 0.0;
+            cx = 960.0;
+            cy = 1077.0;
+            output = "eDP-1";
+            rotation = 0.0;
+            type = "login_box";
 
-          settings = {
-            background_color = "surface_variant";
-            background_opacity = 0.88;
-            background_radius = 12.0;
-            input_opacity = 1.0;
-            input_radius = 6.0;
-            show_login_button = true;
+            settings = {
+              background_color = "surface_variant";
+              background_opacity = config.stylix.opacity.desktop;
+              background_radius = 12.0;
+              input_opacity = 1.0;
+              input_radius = 6.0;
+              show_login_button = true;
+            };
           };
         };
       };
 
       notification = {
-        background_opacity = 0.7;
+        background_opacity = config.stylix.opacity.popups;
       };
 
       osd = {
-        background_opacity = 0.7;
+        background_opacity = config.stylix.opacity.popups;
         orientation = "vertical";
         position = "center_right";
       };
@@ -185,6 +187,7 @@
         clipboard_enabled = false;
         font_family = config.stylix.fonts.sansSerif.name;
         lang = "en";
+        launch_apps_as_systemd_services = true;
         polkit_agent = false;
         settings_show_advanced = true;
 
@@ -225,7 +228,7 @@
       };
 
       widget.network = {
-        show_label = false;
+        show_label = true;
       };
 
       widget.workspaces = {

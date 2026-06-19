@@ -18,10 +18,10 @@
           "chat.agent.enabled" = false;
           "chat.disableAIFeatures" = true;
           "chat.editor.fontFamily" = config.stylix.fonts.monospace.name;
-          "chat.editor.fontSize" = 14;
-          "chat.fontFamily" = config.stylix.fonts.monospace.name;
+          "chat.editor.fontSize" = config.stylix.fonts.sizes.applications;
+          "chat.fontFamily" = config.stylix.fonts.sansSerif.name;
           "debug.console.fontFamily" = config.stylix.fonts.monospace.name;
-          "debug.console.fontSize" = 14;
+          "debug.console.fontSize" = config.stylix.fonts.sizes.applications;
           "editor.acceptSuggestionOnCommitCharacter" = true;
           "editor.acceptSuggestionOnEnter" = "on";
           "editor.autoClosingBrackets" = "always";
@@ -30,13 +30,13 @@
           "editor.cursorSmoothCaretAnimation" = "on";
           "editor.fontFamily" = config.stylix.fonts.monospace.name;
           "editor.fontLigatures" = true;
-          "editor.fontSize" = 14;
+          "editor.fontSize" = config.stylix.fonts.sizes.applications;
           "editor.fontWeight" = "500";
           "editor.formatOnSave" = true;
           "editor.inlayHints.fontFamily" = config.stylix.fonts.monospace.name;
           "editor.inlineSuggest.fontFamily" = config.stylix.fonts.monospace.name;
           "editor.minimap.enabled" = false;
-          "editor.minimap.sectionHeaderFontSize" = 14;
+          "editor.minimap.sectionHeaderFontSize" = config.stylix.fonts.sizes.applications;
           "editor.semanticHighlighting.enabled" = true;
           "editor.semanticTokenColorCustomizations" = {
             "enabled" = true;
@@ -57,8 +57,8 @@
           "extensions.ignoreRecommendations" = true;
           "files.enableTrash" = false;
           "git.decorations.enabled" = true;
-          "markdown.preview.fontFamily" = config.stylix.fonts.monospace.name;
-          "markdown.preview.fontSize" = 14;
+          "markdown.preview.fontFamily" = config.stylix.fonts.sansSerif.name;
+          "markdown.preview.fontSize" = config.stylix.fonts.sizes.applications;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = lib.getExe pkgs.nixd;
           "nix.serverSettings" = {
@@ -68,15 +68,15 @@
               };
             };
           };
-          "notebook.markup.fontFamily" = config.stylix.fonts.monospace.name;
+          "notebook.markup.fontFamily" = config.stylix.fonts.sansSerif.name;
           "scm.inputFontFamily" = config.stylix.fonts.monospace.name;
-          "scm.inputFontSize" = 14;
-          "screencastMode.fontSize" = 14 * 4.0 / 3.0 * 56.0 / 14.0;
+          "scm.inputFontSize" = config.stylix.fonts.sizes.applications;
+          "screencastMode.fontSize" = config.stylix.fonts.sizes.applications * 4.0 / 3.0 * 56.0 / 14.0;
           "telemetry.editStats.enabled" = false;
           "telemetry.feedback.enabled" = false;
           "telemetry.telemetryLevel" = "off";
           "terminal.integrated.fontFamily" = config.stylix.fonts.monospace.name;
-          "terminal.integrated.fontSize" = 14;
+          "terminal.integrated.fontSize" = config.stylix.fonts.sizes.applications;
           "terminal.integrated.fontWeight" = "500";
           "terminal.integrated.initialHint" = false;
           "terminal.integrated.minimumContrastRatio" = 1;

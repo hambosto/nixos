@@ -4,10 +4,10 @@
     enable = false;
     enableFishIntegration = true;
     settings = {
-      background-opacity = lib.mkForce 0.7;
+      background-opacity = lib.mkForce config.stylix.opacity.terminal;
       background-blur = true;
       font-family = lib.mkForce config.stylix.fonts.monospace.name;
-      font-size = lib.mkForce 11;
+      font-size = lib.mkForce config.stylix.fonts.sizes.terminal;
       window-width = 950;
       window-height = 500;
       cursor-style-blink = true;

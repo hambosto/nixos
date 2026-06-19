@@ -4,11 +4,11 @@
     enable = true;
     font = lib.mkForce {
       name = config.stylix.fonts.monospace.name;
-      size = 11;
+      size = config.stylix.fonts.sizes.terminal;
     };
-    settings = lib.mkForce {
+    settings = {
       background_blur = 10;
-      background_opacity = 0.7;
+      background_opacity = lib.mkForce config.stylix.opacity.terminal;
       bold_font = "auto";
       bold_italic_font = "auto";
       cursor_blink_interval = 0.5;

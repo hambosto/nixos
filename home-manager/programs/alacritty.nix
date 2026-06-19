@@ -8,11 +8,11 @@
           family = config.stylix.fonts.monospace.name;
           style = "Regular";
         };
-        size = 11;
+        size = config.stylix.fonts.sizes.terminal;
       };
       window = {
         decorations = "none";
-        opacity = lib.mkForce 0.7;
+        opacity = lib.mkForce config.stylix.opacity.terminal;
         blur = true;
       };
     };
