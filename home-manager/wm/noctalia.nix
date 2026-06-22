@@ -198,6 +198,8 @@
         panel = {
           control_center_placement = "attached";
           launcher_categories = false;
+          launcher_compact = false;
+          launcher_placement = "attached";
           launcher_sort_by_usage = false;
           session_placement = "attached";
           transparency_mode = "glass";
@@ -218,7 +220,8 @@
       wallpaper.enabled = false;
 
       widget = {
-        launcher.glyph = "rocket";
+        control-center.glyph = "settings-2";
+        launcher.glyph = "snowflake";
         media = {
           art_size = 19.0;
           hide_when_no_media = true;

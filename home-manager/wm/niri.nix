@@ -44,13 +44,10 @@
         ];
 
         "Print".screenshot-screen._props.write-to-disk = true;
-
         "Mod+Print".screenshot-window = { };
-
         "Mod+Shift+Print".screenshot._props.show-pointer = false;
 
         "Mod+Q".close-window = { };
-
         "Mod+F".fullscreen-window = { };
         "Mod+M".maximize-column = { };
         "Mod+T".toggle-window-floating = { };
@@ -61,15 +58,15 @@
         "Mod+Up".focus-window-up = { };
         "Mod+Down".focus-window-down = { };
 
-        "Mod+Shift+Left".move-column-left = { };
-        "Mod+Shift+Right".move-column-right = { };
-        "Mod+Shift+Up".move-window-up = { };
-        "Mod+Shift+Down".move-window-down = { };
+        "Mod+Ctrl+Left".move-column-left = { };
+        "Mod+Ctrl+Right".move-column-right = { };
+        "Mod+Ctrl+Up".move-window-up = { };
+        "Mod+Ctrl+Down".move-window-down = { };
 
-        "Mod+Ctrl+Left".set-column-width = "-10%";
-        "Mod+Ctrl+Right".set-column-width = "+10%";
-        "Mod+Ctrl+Up".set-window-height = "-10%";
-        "Mod+Ctrl+Down".set-window-height = "+10%";
+        "Mod+Shift+Left".set-column-width = "-10%";
+        "Mod+Shift+Right".set-column-width = "+10%";
+        "Mod+Shift+Up".set-window-height = "-10%";
+        "Mod+Shift+Down".set-window-height = "+10%";
 
         "Mod+Alt+Down".move-column-to-workspace-down = { };
         "Mod+Alt+Up".move-column-to-workspace-up = { };
@@ -205,14 +202,12 @@
         default-column-width.proportion = 0.5;
         focus-ring.off = { };
         gaps = 6;
-        preset-column-widths = {
-          _children = [
-            { proportion = 0.25; }
-            { proportion = 0.5; }
-            { proportion = 0.75; }
-            { proportion = 1.0; }
-          ];
-        };
+        preset-column-widths._children = [
+          { proportion = 0.25; }
+          { proportion = 0.5; }
+          { proportion = 0.75; }
+          { proportion = 1.0; }
+        ];
         struts = {
           bottom = 0;
           left = 0;
