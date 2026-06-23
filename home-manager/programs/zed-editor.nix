@@ -6,7 +6,7 @@
 }:
 {
   programs.zed-editor = {
-    enable = false;
+    enable = true;
     mutableUserSettings = false;
     mutableUserKeymaps = false;
     mutableUserTasks = false;
@@ -26,7 +26,7 @@
     userSettings = {
       base_keymap = "VSCode";
       buffer_font_family = config.stylix.fonts.monospace.name;
-      buffer_font_size = config.stylix.sizes.applications;
+      buffer_font_size = config.stylix.fonts.sizes.applications;
       buffer_font_weight = 500;
       buffer_line_height = {
         custom = 1.4;
@@ -183,7 +183,7 @@
         blinking = "on";
         cursor_shape = "bar";
         font_family = config.stylix.fonts.monospace.name;
-        font_size = config.stylix.sizes.applications;
+        font_size = config.stylix.fonts.sizes.applications;
         font_weight = 500;
       };
       theme = "Rosé Pine";
@@ -201,7 +201,7 @@
         quick_actions = false;
       };
       ui_font_family = config.stylix.fonts.monospace.name;
-      ui_font_size = config.stylix.sizes.applications;
+      ui_font_size = config.stylix.fonts.sizes.applications;
       ui_font_weight = 500;
     };
   };
