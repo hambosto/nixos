@@ -29,7 +29,7 @@
         terminal = 11;
       };
     };
-    image = ../../assets/assassin.png;
+    image = ../../assets/wloop.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;
