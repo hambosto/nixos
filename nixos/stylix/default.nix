@@ -3,8 +3,8 @@
   stylix = {
     enable = true;
     cursor = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      name = "macOS";
+      package = pkgs.apple-cursor;
       size = 24;
     };
     enableReleaseChecks = false;
@@ -14,8 +14,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "Maple Mono NF";
+        package = pkgs.maple-mono.NF-unhinted;
       };
       sansSerif = {
         name = "HarmonyOS Sans";
@@ -29,7 +29,7 @@
         terminal = 11;
       };
     };
-    image = ../../assets/wloop.png;
+    image = ../../assets/jill-valentine.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

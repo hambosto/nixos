@@ -36,7 +36,7 @@
     interactiveShellInit = ''
       set fish_greeting
       if [ -z "$NVIM" ] && [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ]
-          ${lib.getExe pkgs.microfetch}
+          ${lib.getExe pkgs.fastfetch}
       end
     '';
   };

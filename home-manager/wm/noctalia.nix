@@ -75,8 +75,9 @@
           "notifications"
           "session"
         ];
+        font_weight = 700;
         margin_edge = 5;
-        margin_ends = 180;
+        margin_ends = 300;
         radius = 10;
         start = [
           "launcher"
@@ -152,7 +153,6 @@
           rotation = 0.0;
           type = "login_box";
           settings = {
-            background_color = "surface_variant";
             background_opacity = config.stylix.opacity.desktop;
             background_radius = 12.0;
             input_opacity = 1.0;
@@ -187,10 +187,10 @@
       ];
 
       shell = {
-        app_icon_colorize = false;
+        app_icon_colorize = true;
         avatar_path = ../../assets/profile-picture.jpg;
         clipboard_enabled = false;
-        font_family = config.stylix.fonts.sansSerif.name;
+        font_family = config.stylix.fonts.monospace.name;
         lang = "en";
         launch_apps_as_systemd_services = true;
         polkit_agent = false;
@@ -220,6 +220,11 @@
       wallpaper.enabled = false;
 
       widget = {
+        active_window.max_length = 200;
+        audio_visualizer = {
+          bands = 20;
+          width = 90.0;
+        };
         control-center.glyph = "settings-2";
         launcher.glyph = "snowflake";
         media = {
@@ -228,12 +233,8 @@
           max_length = 150;
           title_scroll = "always";
         };
-        network.show_label = true;
-        workspaces = {
-          display = "none";
-          empty_color = "secondary";
-          occupied_color = "secondary";
-        };
+        network.show_label = false;
+        workspaces.display = "none";
       };
     };
   };
