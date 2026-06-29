@@ -2,7 +2,6 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       name = "macOS";
       package = pkgs.apple-cursor;
@@ -30,7 +29,7 @@
         terminal = 11;
       };
     };
-    image = ../../assets/gruvbox.png;
+    image = ../../assets/japan.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

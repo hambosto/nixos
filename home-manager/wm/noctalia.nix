@@ -77,7 +77,7 @@
         ];
         font_weight = 700;
         margin_edge = 5;
-        margin_ends = 300;
+        margin_ends = 10;
         radius = 10;
         start = [
           "launcher"
@@ -217,7 +217,6 @@
       wallpaper.enabled = false;
 
       widget = {
-        active_window.max_length = 200;
         audio_visualizer = {
           bands = 20;
           width = 90.0;
@@ -225,12 +224,10 @@
         control-center.glyph = "settings-2";
         launcher.glyph = "snowflake";
         media = {
-          art_size = 19.0;
           hide_when_no_media = true;
-          max_length = 150;
           title_scroll = "always";
         };
-        network.show_label = false;
+        network.show_label = true;
         workspaces.display = "none";
       };
     };

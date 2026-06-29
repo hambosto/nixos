@@ -177,12 +177,7 @@
           repeat-delay = 600;
           repeat-rate = 25;
           track-layout = "global";
-          xkb = {
-            layout = "us";
-            model = "";
-            rules = "";
-            variant = "";
-          };
+          xkb.layout = "us";
         };
         touchpad = {
           natural-scroll = { };
@@ -191,11 +186,6 @@
         };
         warp-mouse-to-focus = { };
         workspace-auto-back-and-forth = { };
-      };
-
-      layer-rule = {
-        match._props.namespace = "^wallpaper-rs$";
-        place-within-backdrop = true;
       };
 
       layout = with config.lib.stylix.colors.withHashtag; {
@@ -226,11 +216,9 @@
 
       output = {
         _args = [ "eDP-1" ];
-        position = {
-          _props = {
-            x = 0;
-            y = 0;
-          };
+        position._props = {
+          x = 0;
+          y = 0;
         };
         scale = 1.0;
         transform = "normal";
@@ -252,10 +240,15 @@
       };
 
       screenshot-path = "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png";
-
       xwayland-satellite.path = (lib.getExe pkgs.xwayland-satellite-unstable);
 
       _children = [
+        {
+          layer-rule = {
+            match._props.namespace = "^wallpaper-rs$";
+            place-within-backdrop = true;
+          };
+        }
         {
           window-rule = {
             clip-to-geometry = true;
