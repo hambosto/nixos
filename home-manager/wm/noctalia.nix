@@ -187,7 +187,7 @@
       ];
 
       shell = {
-        app_icon_colorize = true;
+        app_icon_colorize = false;
         avatar_path = ../../assets/profile-picture.jpg;
         clipboard_enabled = false;
         font_family = config.stylix.fonts.monospace.name;
@@ -197,10 +197,7 @@
         settings_show_advanced = true;
         panel = {
           control_center_placement = "attached";
-          launcher_categories = false;
-          launcher_compact = false;
           launcher_placement = "attached";
-          launcher_sort_by_usage = false;
           session_placement = "attached";
           transparency_mode = "glass";
         };

@@ -195,7 +195,7 @@
           [
             jnoortheen.nix-ide
             pkief.material-icon-theme
-            mvllow.rose-pine
+            # mvllow.rose-pine
             # jonathanharty.gruvbox-material-icon-theme
             # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme

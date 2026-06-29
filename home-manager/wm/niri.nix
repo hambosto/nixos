@@ -51,12 +51,20 @@
         "Mod+F".fullscreen-window = { };
         "Mod+M".maximize-column = { };
         "Mod+T".toggle-window-floating = { };
-        "Mod+W".toggle-overview = { };
+        "Mod+O".toggle-overview = { };
+        "Mod+W".toggle-column-tabbed-display = { };
 
         "Mod+Left".focus-column-left = { };
         "Mod+Right".focus-column-right = { };
         "Mod+Up".focus-window-up = { };
         "Mod+Down".focus-window-down = { };
+        "Mod+H".focus-column-left = { };
+        "Mod+L".focus-column-right = { };
+        "Mod+J".focus-window-down = { };
+        "Mod+K".focus-window-up = { };
+
+        "Mod+BracketLeft".consume-or-expel-window-left = { };
+        "Mod+BracketRight".consume-or-expel-window-right = { };
 
         "Mod+Ctrl+Left".move-column-left = { };
         "Mod+Ctrl+Right".move-column-right = { };
