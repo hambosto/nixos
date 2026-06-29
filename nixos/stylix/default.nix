@@ -29,7 +29,7 @@
         terminal = 11;
       };
     };
-    image = ../../assets/japan.png;
+    image = ../../assets/city.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

@@ -77,7 +77,7 @@
         ];
         font_weight = 700;
         margin_edge = 5;
-        margin_ends = 10;
+        margin_ends = 6;
         radius = 10;
         start = [
           "launcher"
@@ -86,7 +86,6 @@
         ];
         capsule_group = [
           {
-            fill = "surface_variant";
             id = "g1";
             members = [
               "media"
@@ -100,7 +99,6 @@
       };
 
       desktop_widgets.enabled = false;
-
       dock.background_opacity = config.stylix.opacity.desktop;
 
       idle = {
@@ -112,17 +110,17 @@
         behavior = {
           lock = {
             action = "lock";
-            enabled = false;
+            enabled = true;
             timeout = 600;
           };
           lock-and-suspend = {
             action = "lock_and_suspend";
-            enabled = false;
+            enabled = true;
             timeout = 900;
           };
           screen-off = {
             action = "screen_off";
-            enabled = false;
+            enabled = true;
             timeout = 660;
           };
         };
@@ -187,7 +185,6 @@
       ];
 
       shell = {
-        app_icon_colorize = false;
         avatar_path = ../../assets/profile-picture.jpg;
         clipboard_enabled = false;
         font_family = config.stylix.fonts.monospace.name;
