@@ -13,6 +13,7 @@
     ./fastfetch.nix
     ./fish.nix
     ./fzf.nix
+    ./gcc.nix
     ./gh.nix
     ./ghostty.nix
     ./git.nix

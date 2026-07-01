@@ -7,7 +7,6 @@
       geminicommit
       sops
       ssh-to-age
-      stdenv.cc
       sweetbyte-rs
     ];
     pointerCursor.x11.enable = lib.mkForce false;

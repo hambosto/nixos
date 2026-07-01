@@ -39,10 +39,10 @@
           "editor.minimap.sectionHeaderFontSize" = config.stylix.fonts.sizes.applications;
           "editor.semanticHighlighting.enabled" = true;
           "editor.semanticTokenColorCustomizations" = {
-            "enabled" = true;
-            "rules" = {
+            enabled = true;
+            rules = {
               "*.mutable" = {
-                "underline" = false;
+                underline = false;
               };
             };
           };
@@ -80,6 +80,7 @@
           "terminal.integrated.fontWeight" = "500";
           "terminal.integrated.initialHint" = false;
           "terminal.integrated.minimumContrastRatio" = 1;
+          "update.mode" = "none";
           "window.customTitleBarVisibility" = "never";
           "window.menuBarVisibility" = "toggle";
           "window.titleBarStyle" = "native";
@@ -95,10 +96,12 @@
           # "workbench.colorTheme" = "One Candy";
           # "workbench.colorTheme" = "Catppuccin Mocha";
           "workbench.colorTheme" = "Dark 2026";
+          # "workbench.colorTheme" = "Maple Dark";
 
           # "workbench.iconTheme" = "monospace-studio-icons";
           "workbench.iconTheme" = "material-icon-theme";
           # "workbench.iconTheme" = "gruvbox-material-icon-theme";
+          # "workbench.iconTheme" = "catppuccin-mocha";
 
           "workbench.secondarySideBar.defaultVisibility" = "hidden";
           "workbench.sideBar.location" = "right";
@@ -201,8 +204,10 @@
             # flaviodelgrosso.vscode-monospace-theme
             # jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
+            # catppuccin.catppuccin-vsc-icons
             # zhuangtongfa.material-theme
             # kacperbiedka.one-candy-dark
+            # subframe7536.theme-maple
           ]
           (lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ])
           (lib.optionals (config.programs.go.enable or false) [ golang.go ])

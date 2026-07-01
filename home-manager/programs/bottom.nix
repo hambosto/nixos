@@ -3,11 +3,12 @@
   programs.bottom = {
     enable = false;
     settings = {
-      flags = {
-        battery = true;
-        process_memory_as_value = true;
+      flags.battery = true;
+      network_graph.use_bytes = true;
+      processes = {
+        default_memory_value = true;
+        default_tree = false;
         hide_k_threads = true;
-        network_use_bytes = true;
       };
       styles = with config.lib.stylix.colors.withHashtag; {
         cpu = {
@@ -52,6 +53,7 @@
         graphs.graph_color = base05;
         legend_text.color = base05;
         widgets = {
+          bg_color = base00;
           border_color = base03;
           selected_border_color = base0D;
           widget_title.color = base05;
