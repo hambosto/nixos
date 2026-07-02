@@ -192,6 +192,9 @@
         launch_apps_as_systemd_services = true;
         polkit_agent = false;
         settings_show_advanced = true;
+
+        launcher.sort_by_usage = false;
+
         panel = {
           control_center_placement = "attached";
           launcher_placement = "attached";

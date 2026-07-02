@@ -155,6 +155,7 @@
 
       environment = {
         "CLUTTER_BACKEND" = "wayland";
+        "DESKTOP_SESSION" = "niri";
         "ELECTRON_OZONE_PLATFORM_HINT" = "wayland";
         "GDK_BACKEND" = "wayland,x11";
         "GDK_SCALE" = "1";
@@ -164,6 +165,7 @@
         "QT_QPA_PLATFORM" = "wayland";
         "QT_QPA_PLATFORMTHEME" = "qt6ct";
         "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
+        "SDL_VIDEODRIVER" = "wayland";
         "XDG_CURRENT_DESKTOP" = "niri";
         "XDG_SESSION_DESKTOP" = "niri";
         "XDG_SESSION_TYPE" = "wayland";
@@ -270,6 +272,21 @@
             { match._props.title = "^File Upload.*$"; }
             { default-column-width.fixed = 800; }
             { default-window-height.fixed = 600; }
+            { open-floating = true; }
+          ];
+        }
+        {
+          window-rule._children = [
+            { match._props.title = "^Picture in picture.*$"; }
+            {
+              default-floating-position._props = {
+                x = 32;
+                y = 32;
+                relative-to = "bottom-right";
+              };
+            }
+            { default-window-height.fixed = 270; }
+            { default-column-width.fixed = 480; }
             { open-floating = true; }
           ];
         }
