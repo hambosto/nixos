@@ -32,7 +32,7 @@ let
 
     cmd_garbage_collection() {
       cd "$CONFIG_DIR"
-      sudo ${lib.getExe' pkgs.nix "nix-collect-garbage"} -d
+      sudo ${lib.getExe pkgs.nh} clean all
       sudo /run/current-system/bin/switch-to-configuration boot
     }
 
