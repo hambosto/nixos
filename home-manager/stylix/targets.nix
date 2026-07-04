@@ -23,6 +23,8 @@
   mako.enable = false;
   neovide.enable = false;
   neovim.enable = false;
+  noctalia-shell.enable = false;
+  noctalia.enable = false;
   obsidian.enable = false;
   qt.enable = true;
   rofi.enable = false;
