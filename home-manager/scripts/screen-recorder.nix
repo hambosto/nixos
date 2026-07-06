@@ -13,7 +13,7 @@ let
     mkdir -p "$(dirname "$OUTPUT")"
     echo "Recording → $OUTPUT (Ctrl+C to stop)"
 
-    ${lib.getExe pkgs.wf-recorder} -f "$OUTPUT" -r 60 -c libx264rgb --audio="$MONITOR"
+    ${lib.getExe pkgs.wf-recorder} --audio="$MONITOR" -f "$OUTPUT" -r 60
 
     echo "Saved: $OUTPUT"
   '';
