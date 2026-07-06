@@ -428,11 +428,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783323491,
-        "narHash": "sha256-yL94ZWXIUTyLjJ4OKJSyTmzH6ywV6T4Y+zzloNg1tHI=",
+        "lastModified": 1783330290,
+        "narHash": "sha256-eVHz3HYBkLj5SGT989upYRXIZUNWj2yyO0A3Lwe/zDI=",
         "owner": "hambosto",
         "repo": "sweetbyte-rs",
-        "rev": "7013af0355b41d3c99d8d6f98ce935ad43a2af38",
+        "rev": "109399e4a2baa8d2c164486c91e0c69698f6ffda",
         "type": "github"
       },
       "original": {
