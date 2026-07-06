@@ -6,7 +6,6 @@
     packages = with pkgs; [
       geminicommit
       sops
-      ssh-to-age
       sweetbyte-rs
     ];
     pointerCursor.x11.enable = lib.mkForce false;
