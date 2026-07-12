@@ -3,8 +3,8 @@
   stylix = {
     enable = true;
     cursor = {
-      name = "macOS";
-      package = pkgs.apple-cursor;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
       size = 24;
     };
     enableReleaseChecks = false;

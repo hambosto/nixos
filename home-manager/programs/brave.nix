@@ -1,6 +1,9 @@
-{
+{ pkgs, ... }: {
   programs.brave = {
     enable = true;
+    package = pkgs.brave.overrideAttrs {
+      enableWideVine = true;
+    };
     commandLineArgs = [
       "--ozone-platform=wayland"
       "--ozone-platform-hint=auto"
