@@ -40,7 +40,6 @@
     ./vscode.nix
     ./yazi.nix
     ./zathura.nix
-    ./zed-editor.nix
     ./zig.nix
     ./zoxide.nix
   ];

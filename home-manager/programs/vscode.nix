@@ -9,9 +9,6 @@
     enable = true;
     mutableExtensionsDir = false;
     profiles.default = {
-      enableExtensionUpdateCheck = false;
-      enableUpdateCheck = false;
-
       userSettings = lib.mkMerge [
         {
           "breadcrumbs.enabled" = false;
@@ -39,10 +36,10 @@
           "editor.minimap.sectionHeaderFontSize" = config.stylix.fonts.sizes.applications;
           "editor.semanticHighlighting.enabled" = true;
           "editor.semanticTokenColorCustomizations" = {
-            enabled = true;
-            rules = {
+            "enabled" = true;
+            "rules" = {
               "*.mutable" = {
-                underline = false;
+                "underline" = false;
               };
             };
           };
@@ -53,7 +50,7 @@
           "explorer.confirmDragAndDrop" = false;
           "explorer.decorations.badges" = false;
           "extensions.autoCheckUpdates" = false;
-          "extensions.autoUpdate" = false;
+          "extensions.autoUpdate" = "off";
           "extensions.ignoreRecommendations" = true;
           "files.enableTrash" = false;
           "git.decorations.enabled" = true;

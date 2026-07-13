@@ -9,7 +9,6 @@
   })
   inputs.niri-nix.overlays.default
   inputs.nix-vscode-extensions.overlays.default
-  inputs.nix-zed-extensions.overlays.default
   inputs.noctalia.overlays.default
   inputs.sweetbyte-rs.overlays.default
 ]
