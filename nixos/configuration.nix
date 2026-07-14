@@ -1,10 +1,11 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.disko.nixosModules.disko
-    inputs.home-manager.nixosModules.home-manager
-    inputs.sops-nix.nixosModules.sops
-    inputs.stylix.nixosModules.stylix
+    inputs.disko.nixosModules.default
+    inputs.home-manager.nixosModules.default
+    inputs.niri-nix.nixosModules.default
+    inputs.sops-nix.nixosModules.default
+    inputs.stylix.nixosModules.default
     ./boot
     ./disko
     ./docs

@@ -88,16 +88,16 @@
           # "workbench.colorTheme" = "Monospace Dark";
           # "workbench.colorTheme" = "Tokyo Night Light";
           # "workbench.colorTheme" = "Tokyo Night";
-          # "workbench.colorTheme" = "Gruvbox Dark Hard";
+          "workbench.colorTheme" = "Gruvbox Dark Hard";
           # "workbench.colorTheme" = "One Dark Pro Night Flat";
           # "workbench.colorTheme" = "One Candy";
           # "workbench.colorTheme" = "Catppuccin Mocha";
-          "workbench.colorTheme" = "Dark 2026";
+          # "workbench.colorTheme" = "Dark 2026";
           # "workbench.colorTheme" = "Maple Dark";
 
           # "workbench.iconTheme" = "monospace-studio-icons";
-          "workbench.iconTheme" = "material-icon-theme";
-          # "workbench.iconTheme" = "gruvbox-material-icon-theme";
+          # "workbench.iconTheme" = "material-icon-theme";
+          "workbench.iconTheme" = "gruvbox-material-icon-theme";
           # "workbench.iconTheme" = "catppuccin-mocha";
 
           "workbench.secondarySideBar.defaultVisibility" = "hidden";
@@ -153,32 +153,6 @@
           "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
         })
 
-        (lib.mkIf (config.programs.uv.enable or false) {
-          "[python]" = {
-            "editor.codeActionsOnSave" = {
-              "source.fixAll" = "explicit";
-              "source.organizeImports" = "explicit";
-            };
-            "editor.defaultFormatter" = "ms-python.black-formatter";
-            "editor.formatOnSave" = true;
-          };
-          "python.analysis.autoFormatStrings" = true;
-          "python.analysis.autoImportCompletions" = true;
-          "python.analysis.completeFunctionParens" = true;
-          "python.analysis.inlayHints.callArgumentNames" = "all";
-          "python.analysis.inlayHints.functionReturnTypes" = true;
-          "python.analysis.inlayHints.pytestParameters" = true;
-          "python.analysis.inlayHints.variableTypes" = true;
-          "python.analysis.typeCheckingMode" = "strict";
-          "python.defaultInterpreterPath" = ".venv/bin/python";
-          "python.experiments.enabled" = false;
-          "python.languageServer" = "Pylance";
-          "python.terminal.activateEnvInCurrentTerminal" = true;
-          "python.terminal.activateEnvironment" = true;
-          "python.testing.pytestEnabled" = true;
-          "python.venvPath" = ".venv";
-        })
-
         (lib.mkIf (config.programs.zig.enable or false) {
           "zig.path" = lib.getExe pkgs.zig;
           "zig.zls.path" = lib.getExe pkgs.zls;
@@ -190,12 +164,12 @@
         lib.flatten [
           [
             jnoortheen.nix-ide
-            pkief.material-icon-theme
+            # pkief.material-icon-theme
             # mvllow.rose-pine
-            # jonathanharty.gruvbox-material-icon-theme
+            jonathanharty.gruvbox-material-icon-theme
             # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
-            # jdinhlife.gruvbox
+            jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
             # catppuccin.catppuccin-vsc-icons
             # zhuangtongfa.material-theme
@@ -208,13 +182,6 @@
             fill-labs.dependi
             rust-lang.rust-analyzer
             tamasfe.even-better-toml
-          ])
-          (lib.optionals (config.programs.uv.enable or false) [
-            ms-python.black-formatter
-            ms-python.debugpy
-            ms-python.isort
-            ms-python.python
-            ms-python.vscode-pylance
           ])
           (lib.optionals (config.programs.zig.enable or false) [ ziglang.vscode-zig ])
         ];

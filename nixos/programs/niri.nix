@@ -1,6 +1,4 @@
-{ inputs, ... }:
 {
-  imports = [ inputs.niri-nix.nixosModules.default ];
-
   programs.niri.enable = true;
+  programs.niri.useNautilus = true;
 }
