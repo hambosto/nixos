@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   users = {
     mutableUsers = false;
@@ -7,8 +7,7 @@
         "networkmanager"
         "wheel"
       ];
-      # hashedPassword = "$6$cps4.Bkw1vFnkmpJ$2cRDUI6QVPNZx1MCgIURL5zuLPLkXYdF2mR3gDu5bSswVj5KWJp/CA0QcFhWNTBbCkKbnIYD1C/Y38gMm0O6w/"; # admin
-      hashedPasswordFile = config.sops.secrets.hashed-password.path;
+      hashedPassword = "$y$j9T$Lbwif0l9QnHjD7TG0Xekp/$zwD2gb/43zdE4nBSTibnjVg1fzulII7us1I2xB75QB6";
       isNormalUser = true;
       shell = pkgs.fish;
     };

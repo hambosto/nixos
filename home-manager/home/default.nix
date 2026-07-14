@@ -5,7 +5,6 @@
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
       geminicommit
-      sops
       sweetbyte-rs
     ];
     pointerCursor = {

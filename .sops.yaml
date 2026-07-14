@@ -1,7 +1,0 @@
-keys:
-  - &ilham age1qlfnxurcqh2qk2wlnwslrg9va9wn4ccetarpu7m59leqxjzx9g4sph747u
-creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
-    key_groups:
-      - age:
-          - *ilham

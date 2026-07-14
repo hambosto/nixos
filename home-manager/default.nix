@@ -4,7 +4,6 @@
     ./modules
     ./programs
     ./scripts
-    ./secrets
     ./services
     ./stylix
     ./wm

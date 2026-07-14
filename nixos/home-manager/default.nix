@@ -7,7 +7,6 @@
   home-manager.sharedModules = [
     inputs.niri-nix.homeManagerModules.default
     inputs.noctalia.homeModules.default
-    inputs.sops-nix.homeManagerModules.default
     inputs.wallpaper-rs.homeManagerModules.default
   ];
 }
