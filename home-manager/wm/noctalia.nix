@@ -3,60 +3,52 @@
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
-    customPalettes.stylix =
-      let
-        roles = with config.lib.stylix.colors.withHashtag; {
-          mPrimary = base0D;
-          mOnPrimary = base00;
-          mSecondary = base0E;
-          mOnSecondary = base00;
-          mTertiary = base0C;
-          mOnTertiary = base00;
-          mError = base08;
-          mOnError = base00;
-          mSurface = base00;
-          mOnSurface = base05;
-          mHover = base0C;
-          mOnHover = base00;
-          mSurfaceVariant = base01;
-          mOnSurfaceVariant = base04;
-          mOutline = base03;
-          mShadow = base00;
-
-          terminal = {
-            foreground = base05;
-            background = base00;
-            cursor = base05;
-            cursorText = base00;
-            selectionFg = base05;
-            selectionBg = base02;
-            normal = {
-              black = base00;
-              red = base08;
-              green = base0B;
-              yellow = base0A;
-              blue = base0D;
-              magenta = base0E;
-              cyan = base0C;
-              white = base05;
-            };
-            bright = {
-              black = base03;
-              red = base08;
-              green = base0B;
-              yellow = base0A;
-              blue = base0D;
-              magenta = base0E;
-              cyan = base0C;
-              white = base07;
-            };
-          };
+    customPalettes.stylix.dark = with config.lib.stylix.colors.withHashtag; {
+      mPrimary = base0D;
+      mOnPrimary = base00;
+      mSecondary = base0E;
+      mOnSecondary = base00;
+      mTertiary = base0C;
+      mOnTertiary = base00;
+      mError = base08;
+      mOnError = base00;
+      mSurface = base00;
+      mOnSurface = base05;
+      mHover = base0C;
+      mOnHover = base00;
+      mSurfaceVariant = base01;
+      mOnSurfaceVariant = base04;
+      mOutline = base03;
+      mShadow = base00;
+      terminal = {
+        foreground = base05;
+        background = base00;
+        cursor = base05;
+        cursorText = base00;
+        selectionFg = base05;
+        selectionBg = base02;
+        normal = {
+          black = base00;
+          red = base08;
+          green = base0B;
+          yellow = base0A;
+          blue = base0D;
+          magenta = base0E;
+          cyan = base0C;
+          white = base05;
         };
-      in
-      {
-        dark = roles;
-        light = roles;
+        bright = {
+          black = base03;
+          red = base08;
+          green = base0B;
+          yellow = base0A;
+          blue = base0D;
+          magenta = base0E;
+          cyan = base0C;
+          white = base07;
+        };
       };
+    };
     settings = {
       bar.default = {
         background_opacity = config.stylix.opacity.desktop;
@@ -219,9 +211,11 @@
       widget = {
         audio_visualizer = {
           bands = 20;
+          color_1 = "primary";
+          color_2 = "secondary";
           width = 90.0;
         };
-        control-center.glyph = "settings-2";
+        control-center.glyph = "adjustments";
         launcher.glyph = "snowflake";
         media = {
           hide_when_no_media = true;

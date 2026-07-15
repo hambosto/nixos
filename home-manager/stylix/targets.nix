@@ -1,5 +1,6 @@
 {
   blender.enable = false;
+  btop.enable = false;
   cava.rainbow.enable = true;
   dunst.enable = false;
   emacs.enable = false;

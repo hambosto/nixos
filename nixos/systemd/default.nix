@@ -1,3 +1,6 @@
 {
-  imports = [ ./coredump.nix ];
+  imports = [
+    ./coredump.nix
+    ./oomd.nix
+  ];
 }
