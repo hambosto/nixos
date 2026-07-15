@@ -9,80 +9,81 @@
     defaultEditor = true;
     enable = true;
     languages = {
-      language = [
-        {
-          auto-format = true;
-          formatter.command = lib.getExe pkgs.nixfmt;
-          language-servers = [ "nixd" ];
-          name = "nix";
-        }
-      ]
-      ++ lib.optionals (config.programs.go.enable or false) [
-        {
-          auto-format = true;
-          formatter.command = lib.getExe pkgs.gosimports;
-          language-servers = [ "gopls" ];
-          name = "go";
-        }
-      ]
-      ++ lib.optionals (config.programs.uv.enable or false) [
-        {
-          auto-format = true;
-          formatter = {
-            args = [
-              "-"
-              "--quiet"
-            ];
-            command = lib.getExe pkgs.black;
-          };
-          language-servers = [ "pyright" ];
-          name = "python";
-        }
-      ]
-      ++ lib.optionals (config.programs.rust.enable or false) [
-        {
-          auto-format = true;
-          formatter = {
-            args = [
-              "--emit"
-              "stdout"
-            ];
-            command = lib.getExe pkgs.rustfmt;
-          };
-          name = "rust";
-        }
-      ]
-      ++ lib.optionals (config.programs.zig.enable or false) [
-        {
-          auto-format = true;
-          formatter = {
-            args = [
-              "fmt"
-              "--stdin"
-            ];
-            command = lib.getExe pkgs.zig;
-          };
-          language-servers = [ "zls" ];
-          name = "zig";
-        }
+      language = lib.mkMerge [
+        [
+          {
+            auto-format = true;
+            formatter.command = lib.getExe pkgs.nixfmt;
+            language-servers = [ "nixd" ];
+            name = "nix";
+          }
+        ]
+        (lib.mkIf config.programs.go.enable [
+          {
+            auto-format = true;
+            formatter.command = lib.getExe pkgs.gosimports;
+            language-servers = [ "gopls" ];
+            name = "go";
+          }
+        ])
+        (lib.mkIf config.programs.uv.enable [
+          {
+            auto-format = true;
+            formatter = {
+              args = [
+                "-"
+                "--quiet"
+              ];
+              command = lib.getExe pkgs.black;
+            };
+            language-servers = [ "pyright" ];
+            name = "python";
+          }
+        ])
+        (lib.mkIf config.programs.rust.enable [
+          {
+            auto-format = true;
+            formatter = {
+              args = [
+                "--emit"
+                "stdout"
+              ];
+              command = lib.getExe pkgs.rustfmt;
+            };
+            name = "rust";
+          }
+        ])
+        (lib.mkIf config.programs.zig.enable [
+          {
+            auto-format = true;
+            formatter = {
+              args = [
+                "fmt"
+                "--stdin"
+              ];
+              command = lib.getExe pkgs.zig;
+            };
+            language-servers = [ "zls" ];
+            name = "zig";
+          }
+        ])
       ];
 
-      language-server = {
-        nixd.command = lib.getExe pkgs.nixd;
-      }
-      // lib.optionalAttrs (config.programs.go.enable or false) {
-        gopls.command = lib.getExe pkgs.gopls;
-      }
-      // lib.optionalAttrs (config.programs.uv.enable or false) {
-        pyright.command = "${lib.getExe' pkgs.pyright "pyright-langserver"}";
-      }
-      // lib.optionalAttrs (config.programs.rust.enable or false) {
-        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
-      }
-      // lib.optionalAttrs (config.programs.zig.enable or false) {
-        zls.command = lib.getExe pkgs.zls;
-      };
-
+      language-server = lib.mkMerge [
+        { nixd.command = lib.getExe pkgs.nixd; }
+        (lib.mkIf config.programs.go.enable {
+          gopls.command = lib.getExe pkgs.gopls;
+        })
+        (lib.mkIf config.programs.uv.enable {
+          pyright.command = lib.getExe' pkgs.pyright "pyright-langserver";
+        })
+        (lib.mkIf config.programs.rust.enable {
+          rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
+        })
+        (lib.mkIf config.programs.zig.enable {
+          zls.command = lib.getExe pkgs.zls;
+        })
+      ];
     };
     settings = {
       editor = {

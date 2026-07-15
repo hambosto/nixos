@@ -112,7 +112,7 @@
           "workbench.welcomePage.walkthroughs.openOnInstall" = false;
         }
 
-        (lib.mkIf (config.programs.bun.enable or false) {
+        (lib.mkIf config.programs.bun.enable {
           "bun.runtime" = lib.getExe pkgs.bun;
           "bun.debugTerminal.enabled" = true;
           "bun.debugTerminal.stopOnEntry" = false;
@@ -120,7 +120,7 @@
           "bun.test.customScript" = "bun test";
         })
 
-        (lib.mkIf (config.programs.go.enable or false) {
+        (lib.mkIf config.programs.go.enable {
           "go.alternateTools" = {
             "delve" = lib.getExe pkgs.delve;
             "gofumpt" = lib.getExe pkgs.gofumpt;
@@ -148,12 +148,12 @@
           };
         })
 
-        (lib.mkIf (config.programs.rust.enable or false) {
+        (lib.mkIf config.programs.rust.enable {
           "rust-analyzer.restartServerOnConfigChange" = true;
           "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
         })
 
-        (lib.mkIf (config.programs.zig.enable or false) {
+        (lib.mkIf config.programs.zig.enable {
           "zig.path" = lib.getExe pkgs.zig;
           "zig.zls.path" = lib.getExe pkgs.zls;
         })
@@ -176,14 +176,14 @@
             # kacperbiedka.one-candy-dark
             # subframe7536.theme-maple
           ]
-          (lib.optionals (config.programs.bun.enable or false) [ oven.bun-vscode ])
-          (lib.optionals (config.programs.go.enable or false) [ golang.go ])
-          (lib.optionals (config.programs.rust.enable or false) [
+          (lib.optionals config.programs.bun.enable [ oven.bun-vscode ])
+          (lib.optionals config.programs.go.enable [ golang.go ])
+          (lib.optionals config.programs.rust.enable [
             fill-labs.dependi
             rust-lang.rust-analyzer
             tamasfe.even-better-toml
           ])
-          (lib.optionals (config.programs.zig.enable or false) [ ziglang.vscode-zig ])
+          (lib.optionals config.programs.zig.enable [ ziglang.vscode-zig ])
         ];
     };
   };
