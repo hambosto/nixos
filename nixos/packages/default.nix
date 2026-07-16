@@ -1,5 +1,8 @@
 { lib, pkgs, ... }:
 {
   environment.defaultPackages = lib.mkForce [ ];
-  environment.systemPackages = with pkgs; [ sbctl ];
+  environment.systemPackages = with pkgs; [
+    nautilus
+    sbctl
+  ];
 }
