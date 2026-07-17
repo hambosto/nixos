@@ -16,7 +16,7 @@
           "chat.disableAIFeatures" = true;
           "chat.editor.fontFamily" = config.stylix.fonts.monospace.name;
           "chat.editor.fontSize" = config.stylix.fonts.sizes.applications;
-          "chat.fontFamily" = config.stylix.fonts.sansSerif.name;
+          "chat.fontFamily" = config.stylix.fonts.monospace.name;
           "debug.console.fontFamily" = config.stylix.fonts.monospace.name;
           "debug.console.fontSize" = config.stylix.fonts.sizes.applications;
           "editor.acceptSuggestionOnCommitCharacter" = true;
@@ -54,7 +54,7 @@
           "extensions.ignoreRecommendations" = true;
           "files.enableTrash" = false;
           "git.decorations.enabled" = true;
-          "markdown.preview.fontFamily" = config.stylix.fonts.sansSerif.name;
+          "markdown.preview.fontFamily" = config.stylix.fonts.monospace.name;
           "markdown.preview.fontSize" = config.stylix.fonts.sizes.applications;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = lib.getExe pkgs.nixd;
@@ -65,7 +65,7 @@
               };
             };
           };
-          "notebook.markup.fontFamily" = config.stylix.fonts.sansSerif.name;
+          "notebook.markup.fontFamily" = config.stylix.fonts.monospace.name;
           "scm.inputFontFamily" = config.stylix.fonts.monospace.name;
           "scm.inputFontSize" = config.stylix.fonts.sizes.applications;
           "screencastMode.fontSize" = config.stylix.fonts.sizes.applications * 4.0 / 3.0 * 56.0 / 14.0;

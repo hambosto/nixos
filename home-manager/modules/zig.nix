@@ -7,60 +7,32 @@
 let
   cfg = config.programs.zig;
   jsonFormat = pkgs.formats.json { };
-  inherit (lib)
-    mkEnableOption
-    mkOption
-    mkIf
-    types
-    ;
 in
 {
-  options = {
-    programs.zig = {
-      enable = mkEnableOption "Zig development environment";
+  options.programs.zig = {
+    enable = lib.mkEnableOption "Zig development environment";
 
-      packages = mkOption {
-        type = types.listOf types.package;
-        default = with pkgs; [
-          zig
-          zls
-        ];
-        description = ''
-          Zig toolchain packages to install. Defaults include the Zig compiler (zig)
-          and Zig Language Server (zls).
-        '';
-      };
+    packages = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
+      default = with pkgs; [
+        zig
+        zls
+      ];
+      description = "Zig toolchain packages.";
+    };
 
-      zlsSettings = mkOption {
-        type = jsonFormat.type;
-        default = { };
-        description = ''
-          Configuration written to ~/.config/zls.json.
-          See <https://github.com/zigtools/zls#configuration-options> for available options.
-        '';
-      };
-
-      setZigLibPath = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          Whether to set the ZIG_LIB_DIR environment variable pointing to the Zig standard library.
-          Required for some tools to locate Zig's standard library.
-        '';
-      };
+    settings = lib.mkOption {
+      type = jsonFormat.type;
+      default = { };
+      description = "ZLS config, written to ~/.config/zls.json.";
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     home = {
       packages = cfg.packages;
-
-      sessionVariables = mkIf cfg.setZigLibPath {
-        ZIG_LIB_DIR = "${pkgs.zig}/lib/zig";
-      };
-
-      file.".config/zls.json" = mkIf (cfg.zlsSettings != { }) {
-        source = jsonFormat.generate "zls.json" cfg.zlsSettings;
+      file.".config/zls.json" = lib.mkIf (cfg.settings != { }) {
+        source = jsonFormat.generate "zls.json" cfg.settings;
       };
     };
   };
