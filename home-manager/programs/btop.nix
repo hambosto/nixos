@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       color_theme = "TTY";
-      proc_tree = true;
+      proc_sorting = "memory";
       theme_background = false;
     };
   };
