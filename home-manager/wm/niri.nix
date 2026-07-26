@@ -242,7 +242,7 @@
       };
 
       screenshot-path = "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png";
-      xwayland-satellite.path = (lib.getExe pkgs.xwayland-satellite-unstable);
+      xwayland-satellite.path = (lib.getExe pkgs.xwayland-satellite);
 
       _children = [
         {

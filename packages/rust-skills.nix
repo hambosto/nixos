@@ -19,6 +19,9 @@ stdenvNoCC.mkDerivation {
     cp -r $src/* $out
   '';
 
+  dontInstall = true;
+  dontConfigure = true;
+
   meta = with lib; {
     description = "A collection of 179 rules that AI coding agents can use when writing Rust.";
     homepage = "https://github.com/leonardomso/rust-skills";

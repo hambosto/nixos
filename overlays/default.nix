@@ -6,6 +6,7 @@
     harmonyos-sans = prev.callPackage ../packages/harmonyos-sans.nix { };
     pokego = prev.callPackage ../packages/pokego.nix { };
     rust-skills = prev.callPackage ../packages/rust-skills.nix { };
+    tui-design = prev.callPackage ../packages/tui-design.nix { };
   })
   inputs.niri-nix.overlays.default
   inputs.nix-vscode-extensions.overlays.default

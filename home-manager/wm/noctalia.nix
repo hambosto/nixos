@@ -69,7 +69,8 @@
         ];
         font_weight = 700;
         margin_edge = 5;
-        margin_ends = 6;
+        margin_ends = 5;
+        margin_opposite_edge = 5;
         radius = 10;
         start = [
           "launcher"
