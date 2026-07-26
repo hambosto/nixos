@@ -261,11 +261,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785073260,
-        "narHash": "sha256-SspN/Ag04clbHNIL4/jfg6o8NUMb8MAC2Mhw7EGfHLE=",
+        "lastModified": 1785074582,
+        "narHash": "sha256-HFML600cmDoNCuo4/RU+2hvXeUJkKVqGU71lcNQFfrg=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "76c3d99ad32a56041463fcba1dc3b851d870f364",
+        "rev": "3e123d97bd4b3bc12e83b9fdcba2a43de9b31cd9",
         "type": "github"
       },
       "original": {
@@ -353,11 +353,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784866627,
+        "lastModified": 1785077439,
         "narHash": "sha256-ag7fuAR3SpELRBhNPCN2hs7WYcsFqSUdqjKUvPeCVJk=",
         "owner": "hambosto",
         "repo": "sweetbyte-rs",
-        "rev": "9319019b1001abe3248e8d24c2ec4b966e3381d1",
+        "rev": "9c535c302146a9efbddaf873f5226bfd2b08b97b",
         "type": "github"
       },
       "original": {
@@ -452,11 +452,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784961356,
+        "lastModified": 1785077159,
         "narHash": "sha256-wYwLWU8DZ0fY/EY4YakVgHB7bcFCzv+UXEeVbNIXFc4=",
         "owner": "hambosto",
         "repo": "wallpaper-rs",
-        "rev": "3c1cbe0bd36d5a0e4bb888cb5588004dfdf81a98",
+        "rev": "f0964b9041350ad0a450fb95f1cf522ea5114fbf",
         "type": "github"
       },
       "original": {
