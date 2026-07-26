@@ -205,11 +205,11 @@
         "xwayland-satellite": "xwayland-satellite"
       },
       "locked": {
-        "lastModified": 1785073596,
-        "narHash": "sha256-tGzR2hW3fwnUDkx88wr7NMARX3gLsR0fAl3dlBl9nMU=",
+        "lastModified": 1785079150,
+        "narHash": "sha256-vkMo6xw6h/pTpQND9LMy5pI0ViOjanjR28UDtEn8eOI=",
         "owner": "hambosto",
         "repo": "niri-nix",
-        "rev": "9ba778639d3c0ac15023a11d764a7c5124de5a97",
+        "rev": "b491c5c452ea64f0296f4edfee155f2d4d2af9ac",
         "type": "github"
       },
       "original": {
@@ -261,11 +261,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785074582,
-        "narHash": "sha256-HFML600cmDoNCuo4/RU+2hvXeUJkKVqGU71lcNQFfrg=",
+        "lastModified": 1785076901,
+        "narHash": "sha256-1DDh+b0gEnOdKMwn6MoJJzffeFJNGutoYOtwKhfsfVQ=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "3e123d97bd4b3bc12e83b9fdcba2a43de9b31cd9",
+        "rev": "1615573286ef8e6bb3efbecb956fe3715b609d82",
         "type": "github"
       },
       "original": {
