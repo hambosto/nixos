@@ -8,6 +8,45 @@
   programs.niri = {
     enable = true;
     settings = {
+      animations = {
+        slowdown = 1.0;
+        workspace-switch = {
+          spring._props = {
+            damping-ratio = 0.80;
+            stiffness = 512;
+            epsilon = 0.0001;
+          };
+        };
+        window-open = {
+          duration-ms = 90;
+          curve = "ease-out-expo";
+        };
+        window-close = {
+          duration-ms = 90;
+          curve = "ease-out-quad";
+        };
+        horizontal-view-movement = {
+          spring._props = {
+            damping-ratio = 0.85;
+            stiffness = 414;
+            epsilon = 0.0001;
+          };
+        };
+        window-movement = {
+          spring._props = {
+            damping-ratio = 0.75;
+            stiffness = 316;
+            epsilon = 0.0001;
+          };
+        };
+        config-notification-open-close = {
+          spring._props = {
+            damping-ratio = 0.65;
+            stiffness = 904;
+            epsilon = 0.001;
+          };
+        };
+      };
       binds = {
         "Mod+Return".spawn = [ (lib.getExe pkgs.kitty) ];
 

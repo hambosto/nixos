@@ -88,16 +88,16 @@
           # "workbench.colorTheme" = "Monospace Dark";
           # "workbench.colorTheme" = "Tokyo Night Light";
           # "workbench.colorTheme" = "Tokyo Night";
-          "workbench.colorTheme" = "Gruvbox Dark Hard";
+          # "workbench.colorTheme" = "Gruvbox Dark Hard";
           # "workbench.colorTheme" = "One Dark Pro Night Flat";
           # "workbench.colorTheme" = "One Candy";
           # "workbench.colorTheme" = "Catppuccin Mocha";
-          # "workbench.colorTheme" = "Dark 2026";
+          "workbench.colorTheme" = "Dark 2026";
           # "workbench.colorTheme" = "Maple Dark";
 
           # "workbench.iconTheme" = "monospace-studio-icons";
-          # "workbench.iconTheme" = "material-icon-theme";
-          "workbench.iconTheme" = "gruvbox-material-icon-theme";
+          "workbench.iconTheme" = "material-icon-theme";
+          # "workbench.iconTheme" = "gruvbox-material-icon-theme";
           # "workbench.iconTheme" = "catppuccin-mocha";
 
           "workbench.secondarySideBar.defaultVisibility" = "hidden";
@@ -164,12 +164,12 @@
         lib.flatten [
           [
             jnoortheen.nix-ide
-            # pkief.material-icon-theme
+            pkief.material-icon-theme
             # mvllow.rose-pine
-            jonathanharty.gruvbox-material-icon-theme
+            # jonathanharty.gruvbox-material-icon-theme
             # enkia.tokyo-night
             # flaviodelgrosso.vscode-monospace-theme
-            jdinhlife.gruvbox
+            # jdinhlife.gruvbox
             # catppuccin.catppuccin-vsc
             # catppuccin.catppuccin-vsc-icons
             # zhuangtongfa.material-theme

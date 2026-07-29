@@ -2,12 +2,12 @@
   programs.brave = {
     enable = true;
     package = pkgs.brave.overrideAttrs {
+      commandLineArgs = [
+        "--ozone-platform=wayland"
+        "--ozone-platform-hint=auto"
+      ];
       enableWideVine = true;
     };
-    commandLineArgs = [
-      "--ozone-platform=wayland"
-      "--ozone-platform-hint=auto"
-    ];
     extensions = [
       # { id = "ddkjiahejlhfcafbddmgiahcphecmpfh"; } # ublock origin lite
       { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # SponsorBlock

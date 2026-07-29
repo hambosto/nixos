@@ -9,6 +9,7 @@
     ./cava.nix
     ./chromium.nix
     ./clock-rs.nix
+    ./devenv.nix
     ./eza.nix
     ./fastfetch.nix
     ./fish.nix
