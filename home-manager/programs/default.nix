@@ -37,7 +37,7 @@
     ./rust.nix
     ./skim.nix
     ./starship.nix
-    ./vscode.nix
+    ./vscodium.nix
     ./yazi.nix
     ./zathura.nix
     ./zig.nix

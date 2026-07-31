@@ -4,7 +4,8 @@ let
     browser = "brave-browser.desktop";
     # browser = "chromium-browser.desktop";
     # editor = "dev.zed.Zed.desktop";
-    editor = "code.desktop";
+    # editor = "code.desktop";
+    editor = "codium.desktop";
     imageViewer = "imv-dir.desktop";
     audioPlayer = "mpv.desktop";
     videoPlayer = "mpv.desktop";

@@ -4,7 +4,7 @@
     enableNixpkgsReleaseCheck = false;
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
-      geminicommit
+      lazycommit
       sweetbyte-rs
     ];
     pointerCursor = {

@@ -34,10 +34,8 @@
   sxiv.enable = false;
   vencord.enable = false;
   vesktop.enable = false;
-  vscode = {
-    enable = false;
-    profileNames = [ "default" ];
-  };
+  vscode.enable = false;
+  vscodium.enable = false;
   waybar.enable = false;
   xresources.enable = false;
   zed.enable = false;
