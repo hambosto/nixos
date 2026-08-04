@@ -91,6 +91,7 @@
         ];
       };
 
+      battery.warning_threshold = 30;
       desktop_widgets.enabled = false;
       dock.background_opacity = config.stylix.opacity.desktop;
 
@@ -216,14 +217,21 @@
           color_2 = "secondary";
           width = 90.0;
         };
-        control-center.glyph = "adjustments";
-        launcher.glyph = "snowflake";
+        battery = {
+          display_mode = "graphic";
+          scale = 0.95;
+        };
+        control-center.glyph = "menu-2";
+        launcher.glyph = "spade";
         media = {
           hide_when_no_media = true;
           title_scroll = "always";
         };
         network.show_label = true;
-        workspaces.display = "none";
+        workspaces = {
+          hide_when_empty = true;
+          show_labels = false;
+        };
       };
     };
   };

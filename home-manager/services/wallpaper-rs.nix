@@ -4,7 +4,33 @@
     enable = true;
     settings = {
       image.path = config.stylix.image;
+      transition = with config.lib.stylix.colors.withHashtag; {
+        transition_type = "honeycomb";
+        duration = 1.5;
+        edge_smoothness = 0.3;
+        transition_color = base00;
+
+        wipe.direction = 0.0;
+
+        disc = {
+          center_x = 0.5;
+          center_y = 0.5;
+        };
+
+        stripes = {
+          stripe_count = 12.0;
+          angle = 30.0;
+        };
+
+        honeycomb = {
+          cell_size = 0.04;
+          center_x = 0.5;
+          center_y = 0.5;
+        };
+      };
+
       resize = {
+        strategy = "crop";
         crop_gravity = "center";
         fill_color = [
           0
@@ -13,51 +39,6 @@
           255
         ];
         filter = "lanczos3";
-        strategy = "crop";
-      };
-      transition = {
-        duration = 3.0;
-        fps = 30;
-
-        fade.bezier = [
-          0.54
-          0.0
-          0.34
-          0.99
-        ];
-
-        radial = {
-          bezier = [
-            0.54
-            0.0
-            0.34
-            0.99
-          ];
-          invert_y = false;
-          pos = {
-            x = 0.5;
-            y = 0.5;
-          };
-          step = 90;
-        };
-
-        # transition_type: "none" | "simple" | "fade" | "grow" | "outer" | "wipe" | "wave"
-        transition_type = "simple";
-
-        wave = {
-          angle = 45.0;
-          bezier = [
-            0.54
-            0.0
-            0.34
-            0.99
-          ];
-          step = 90;
-          wave = [
-            20.0
-            20.0
-          ];
-        };
       };
     };
   };

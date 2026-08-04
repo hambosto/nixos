@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./bat.nix
     ./bottom.nix
-    ./brave.nix
+    ./brave-origin.nix
     ./btop.nix
     ./bun.nix
     ./cava.nix

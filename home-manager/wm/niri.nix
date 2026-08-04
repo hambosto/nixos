@@ -63,33 +63,20 @@
           "launcher"
         ];
 
-        "Mod+S".spawn = [
-          (lib.getExe pkgs.noctalia)
-          "msg"
-          "panel-toggle"
-          "control-center"
-        ];
-
-        "Mod+Comma".spawn = [
-          (lib.getExe pkgs.noctalia)
-          "msg"
-          "settings-toggle"
-        ];
-
         "Mod+Shift+M".spawn = [
           (lib.getExe pkgs.kitty)
           "-e"
           (lib.getExe pkgs.btop)
         ];
 
-        "Print".screenshot-screen._props.write-to-disk = true;
-        "Mod+Print".screenshot-window = { };
-        "Mod+Shift+Print".screenshot._props.show-pointer = false;
+        "Print".screenshot._props.show-pointer = false;
+        "Ctrl+Print".screenshot-screen = { };
+        "Alt+Print".screenshot-window = { };
 
         "Mod+Q".close-window = { };
         "Mod+F".fullscreen-window = { };
         "Mod+M".maximize-column = { };
-        "Mod+T".toggle-window-floating = { };
+        "Mod+V".toggle-window-floating = { };
         "Mod+O".toggle-overview = { };
         "Mod+W".toggle-column-tabbed-display = { };
 
@@ -104,6 +91,9 @@
 
         "Mod+BracketLeft".consume-or-expel-window-left = { };
         "Mod+BracketRight".consume-or-expel-window-right = { };
+
+        "Mod+Comma".consume-window-into-column = { };
+        "Mod+Period".expel-window-from-column = { };
 
         "Mod+Ctrl+Left".move-column-left = { };
         "Mod+Ctrl+Right".move-column-right = { };
@@ -326,6 +316,14 @@
             }
             { default-window-height.fixed = 270; }
             { default-column-width.fixed = 480; }
+            { open-floating = true; }
+          ];
+        }
+        {
+          window-rule._children = [
+            { match._props.app-id = "dev.noctalia.Noctalia"; }
+            { default-column-width.fixed = 1080; }
+            { default-window-height.fixed = 920; }
             { open-floating = true; }
           ];
         }

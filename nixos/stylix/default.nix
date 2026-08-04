@@ -29,7 +29,13 @@
         terminal = 11;
       };
     };
-    image = ../../assets/city.png;
+    icons = {
+      enable = true;
+      package = pkgs.colloid-icon-theme;
+      dark = "Colloid-Dark";
+      light = "Colloid-Light";
+    };
+    image = ../../assets/wloop.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;
