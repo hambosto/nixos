@@ -59,20 +59,24 @@
 
       RTK filters and compresses command output before it reaches context, saving 60-90% of tokens on common operations (git, cargo, grep, find, docker, gh, etc.). Every raw command run instead of `rtk <cmd>` is wasted context budget. Default to `rtk` reflexively, the same way you'd check a file exists before editing it.
     '';
-    settings = lib.mkMerge [
-      (lib.mkIf config.programs.rust.enable {
-        mcp.crates-docs = {
-          enabled = true;
-          command = [
-            "${lib.getExe pkgs.crates-docs}"
-            "serve"
-            "--mode"
-            "stdio"
-          ];
-          type = "local";
-        };
-      })
-    ];
+
+    settings = {
+      mcp = lib.mkMerge [
+        (lib.mkIf config.programs.rust.enable {
+          crates-docs = {
+            enabled = true;
+            command = [
+              "${lib.getExe pkgs.crates-docs}"
+              "serve"
+              "--mode"
+              "stdio"
+            ];
+            type = "local";
+          };
+        })
+      ];
+    };
+
     skills = lib.mkMerge [
       (lib.mkIf config.programs.rust.enable {
         rust-skills = "${pkgs.rust-skills}";
