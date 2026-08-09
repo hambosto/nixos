@@ -61,6 +61,9 @@
     '';
 
     settings = {
+      experimental = {
+        disable_paste_summary = true;
+      };
       mcp = lib.mkMerge [
         (lib.mkIf config.programs.rust.enable {
           crates-docs = {
@@ -80,7 +83,6 @@
     skills = lib.mkMerge [
       (lib.mkIf config.programs.rust.enable {
         rust-skills = "${pkgs.rust-skills}";
-        tui-design = "${pkgs.tui-design}";
       })
     ];
   };

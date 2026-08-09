@@ -6,16 +6,16 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "crates-docs";
-  version = "1.0.0";
+  version = "unstable-2026-08-4";
 
   src = fetchFromGitHub {
     owner = "KingingWang";
     repo = "crates-docs";
-    rev = "8d8c2956085c0b39b58219351a5f753eda940598";
-    sha256 = "sha256-t6rslyDyEjIfJgBpeNDR+HOyh7MZf10ZPmj1aim8iUU=";
+    rev = "b494d08b701f8c1b4b2a8ef420b8ed266f94d53c";
+    sha256 = "sha256-SXoFOwUcW+Z3SV6SEyJxAp8d1nX19viMwQh5kvUXAc4=";
   };
 
-  cargoHash = "sha256-uvZTydXMmSdTNz3n0QS1zGHt4yb1RQHOeWsY4YoMmzg=";
+  cargoHash = "sha256-LoYwBKKIACidcliuYcTpSc3PlUZytiHu+6ixnZqA49o=";
 
   doCheck = false;
 

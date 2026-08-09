@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    iridion = {
+      url = "github:hambosto/iridion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri-nix = {
       url = "github:hambosto/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,18 +34,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ouranos = {
+      url = "github:hambosto/ouranos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sweetbyte-rs = {
+    sweetbyte = {
       url = "github:hambosto/sweetbyte-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wallpaper-rs = {
-      url = "github:hambosto/wallpaper-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

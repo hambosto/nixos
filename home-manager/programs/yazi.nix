@@ -16,8 +16,8 @@
       toggle-pane = pkgs.yaziPlugins.toggle-pane;
       smart-filter = pkgs.yaziPlugins.smart-filter;
       mount = pkgs.yaziPlugins.mount;
-      starship = {
-        package = pkgs.yaziPlugins.starship;
+      yatline = {
+        package = pkgs.yaziPlugins.yatline;
         setup = true;
       };
     };
@@ -32,15 +32,14 @@
           }
         ];
       };
-      log = {
-        enabled = false;
-      };
+      log.enabled = false;
       mgr = {
         show_hidden = true;
         sort_by = "natural";
         sort_dir_first = true;
         sort_reverse = false;
       };
+      preview.wrap = "yes";
     };
 
     keymap = {

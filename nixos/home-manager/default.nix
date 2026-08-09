@@ -7,6 +7,6 @@
   home-manager.sharedModules = [
     inputs.niri-nix.homeManagerModules.default
     inputs.noctalia.homeModules.default
-    inputs.wallpaper-rs.homeManagerModules.default
+    inputs.ouranos.homeManagerModules.default
   ];
 }

@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "rust-skills";
-  version = "unstable-2026-01-19";
+  version = "unstable-2026-06-15";
 
   src = fetchFromGitHub {
     owner = "leonardomso";
     repo = "rust-skills";
-    rev = "0373001db0b774a84a691847bc2d248186063f39";
-    hash = "sha256-y5XW62XXArJ60z3/fJE/KED+oILn9qpiUkcGI27dAxc=";
+    rev = "fd2a861ab0406a4ac536a55274d14ea6fd1ca9c9";
+    hash = "sha256-B6E8JP78/wDdJYHp1l5cpEgxRuCzAhOhUtst4pueMw0=";
   };
 
   buildPhase = ''
@@ -23,7 +23,7 @@ stdenvNoCC.mkDerivation {
   dontConfigure = true;
 
   meta = with lib; {
-    description = "A collection of 179 rules that AI coding agents can use when writing Rust.";
+    description = "A collection of 265 rules across 26 categories that AI coding agents can use to write idiomatic, fast, and safe Rust.";
     homepage = "https://github.com/leonardomso/rust-skills";
     license = licenses.mit;
     maintainers = [ ];

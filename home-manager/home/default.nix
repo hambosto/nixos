@@ -4,8 +4,9 @@
     enableNixpkgsReleaseCheck = false;
     homeDirectory = "/home/ilham";
     packages = with pkgs; [
+      iridion
       lazycommit
-      sweetbyte-rs
+      sweetbyte
     ];
     pointerCursor.x11.enable = lib.mkForce false;
     stateVersion = "24.11";
