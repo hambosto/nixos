@@ -63,7 +63,6 @@
           "brightness"
           "battery"
           "clock"
-          "control-center"
           "notifications"
           "session"
         ];
@@ -221,7 +220,6 @@
           display_mode = "graphic";
           scale = 0.95;
         };
-        control-center.glyph = "menu-2";
         launcher.glyph = "spade";
         media = {
           hide_when_no_media = true;

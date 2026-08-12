@@ -7,7 +7,6 @@
     pokego = prev.callPackage ../packages/pokego.nix { };
     rust-skills = prev.callPackage ../packages/rust-skills.nix { };
   })
-  inputs.iridion.overlays.default
   inputs.niri-nix.overlays.default
   inputs.nix-vscode-extensions.overlays.default
   inputs.noctalia.overlays.default

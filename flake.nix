@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    iridion = {
-      url = "github:hambosto/iridion";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     niri-nix = {
       url = "github:hambosto/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +25,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia/cachix";
+      url = "github:noctalia-dev/noctalia/b62efdd0dc163bf593358ada70b4efa76fec3d27";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

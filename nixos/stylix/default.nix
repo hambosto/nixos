@@ -1,21 +1,12 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
-let
-  image = ../../assets/sakura.jpg;
-  scheme = pkgs.runCommand "scheme.json" { } ''
-    ${lib.getExe pkgs.iridion} -i ${image} > $out
-  '';
-  base16Scheme = builtins.fromJSON (builtins.readFile scheme);
-in
 {
   stylix = {
-    inherit base16Scheme image;
     enable = true;
-
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
@@ -49,6 +40,7 @@ in
       dark = "Colloid-Dark";
       light = "Colloid-Light";
     };
+    image = ../../assets/kimono.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;
