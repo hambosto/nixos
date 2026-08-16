@@ -25,7 +25,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia/b62efdd0dc163bf593358ada70b4efa76fec3d27";
+      url = "github:noctalia-dev/noctalia/cachix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

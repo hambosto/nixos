@@ -3,9 +3,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
-
     shellWrapperName = "y";
-
     plugins = {
       chmod = pkgs.yaziPlugins.chmod;
       compress = pkgs.yaziPlugins.compress;
@@ -16,22 +14,16 @@
       toggle-pane = pkgs.yaziPlugins.toggle-pane;
       smart-filter = pkgs.yaziPlugins.smart-filter;
       mount = pkgs.yaziPlugins.mount;
-      yatline = {
-        package = pkgs.yaziPlugins.yatline;
-        setup = true;
-      };
     };
 
     settings = {
-      opener = {
-        edit = [
-          {
-            run = ''${lib.getExe pkgs.helix} "$@"'';
-            block = true;
-            for = "unix";
-          }
-        ];
-      };
+      opener.edit = [
+        {
+          run = "${lib.getExe pkgs.helix} %s";
+          block = true;
+          for = "unix";
+        }
+      ];
       log.enabled = false;
       mgr = {
         show_hidden = true;

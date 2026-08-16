@@ -69,6 +69,12 @@
           (lib.getExe pkgs.btop)
         ];
 
+        "Mod+Shift+N".spawn = [
+          (lib.getExe pkgs.noctalia)
+          "msg"
+          "nightlight-toggle"
+        ];
+
         "Print".screenshot._props.show-pointer = false;
         "Ctrl+Print".screenshot-screen = { };
         "Alt+Print".screenshot-window = { };
@@ -281,6 +287,15 @@
           };
         }
         {
+          layer-rule = {
+            match._props.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
+            background-effect = {
+              blur = true;
+              xray = false;
+            };
+          };
+        }
+        {
           window-rule = {
             clip-to-geometry = true;
             draw-border-with-background = false;
@@ -322,6 +337,12 @@
         {
           window-rule._children = [
             { match._props.app-id = "dev.noctalia.Noctalia"; }
+            {
+              background-effect = {
+                blur = true;
+                xray = false;
+              };
+            }
             { default-column-width.fixed = 1080; }
             { default-window-height.fixed = 920; }
             { open-floating = true; }
