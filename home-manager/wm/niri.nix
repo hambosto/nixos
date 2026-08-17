@@ -289,10 +289,7 @@
         {
           layer-rule = {
             match._props.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
-            background-effect = {
-              blur = true;
-              xray = false;
-            };
+            background-effect.xray = false;
           };
         }
         {
@@ -326,7 +323,7 @@
               default-floating-position._props = {
                 x = 32;
                 y = 32;
-                relative-to = "bottom-right";
+                relative-to = "top-right";
               };
             }
             { default-window-height.fixed = 270; }

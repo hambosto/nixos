@@ -17,13 +17,29 @@
     };
 
     settings = {
-      opener.edit = [
-        {
-          run = "${lib.getExe pkgs.helix} %s";
-          block = true;
-          for = "unix";
-        }
-      ];
+      opener = {
+        edit = [
+          {
+            run = "${lib.getExe pkgs.helix} %s";
+            block = true;
+            for = "unix";
+          }
+        ];
+        play = [
+          {
+            run = "${lib.getExe pkgs.mpv} %s";
+            orphan = true;
+            for = "unix";
+          }
+        ];
+        open = [
+          {
+            run = "${lib.getExe' pkgs.xdg-utils "xdg-open"} %s";
+            desc = "open";
+          }
+        ];
+      };
+      input.cursor_blink = true;
       log.enabled = false;
       mgr = {
         show_hidden = true;
