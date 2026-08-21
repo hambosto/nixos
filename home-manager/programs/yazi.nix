@@ -53,6 +53,11 @@
     keymap = {
       mgr.prepend_keymap = [
         {
+          on = "d";
+          run = "remove --permanently";
+          desc = "Permanently delete selected files";
+        }
+        {
           on = "T";
           run = "plugin toggle-pane max-preview";
           desc = "Maximize or restore the preview pane";

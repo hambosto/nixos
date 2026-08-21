@@ -194,6 +194,7 @@
           auto_paste = "off";
           fetch_exchange_rates = false;
           providers.calculator.global = false;
+          show_app_origin_indicator = false;
           sort_by_usage = false;
         };
         panel = {
