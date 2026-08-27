@@ -15,7 +15,10 @@
   gdu.enable = false;
   gedit.enable = false;
   gnome.enable = false;
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    flatpakSupport.enable = false;
+  };
   gtksourceview.enable = false;
   helix.enable = true;
   hyprland.hyprpaper.enable = false;

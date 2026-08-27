@@ -14,18 +14,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri-nix = {
-      url = "github:hambosto/niri-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia/cachix";
+      url = "github:hambosto/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

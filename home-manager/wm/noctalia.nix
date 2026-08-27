@@ -208,7 +208,7 @@
         screenshot = {
           copy_to_clipboard = false;
           freeze_screen = false;
-          save_to_file = false;
+          save_to_file = true;
         };
         settings_show_advanced = true;
         settings_window_translucent = true;

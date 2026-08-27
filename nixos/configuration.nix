@@ -3,7 +3,7 @@
   imports = [
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
-    inputs.niri-nix.nixosModules.default
+    inputs.noctalia.nixosModules.umbriel
     inputs.stylix.nixosModules.default
     ./boot
     ./disko

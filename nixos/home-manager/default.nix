@@ -5,8 +5,8 @@
   home-manager.useUserPackages = true;
   home-manager.users.ilham = import ../../home-manager;
   home-manager.sharedModules = [
-    inputs.niri-nix.homeManagerModules.default
-    inputs.noctalia.homeModules.default
+    inputs.noctalia.homeManagerModules.noctalia
+    inputs.noctalia.homeManagerModules.umbriel
     inputs.ouranos.homeManagerModules.default
   ];
 }

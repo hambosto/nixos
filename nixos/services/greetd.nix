@@ -29,7 +29,7 @@ let
       characters = "*";
       mode = "characters";
     };
-    session.command = "${lib.getExe' pkgs.niri "niri-session"}";
+    session.command = "${lib.getExe' pkgs.umbriel "start-umbriel"}";
     theme = {
       border = "white";
       text = "green";
