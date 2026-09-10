@@ -67,8 +67,8 @@
           enabled = true;
         };
       };
-      appearance = with config.lib.stylix.colors.withHashtag; {
-        backdrop_color = "${base00}FF";
+
+      appearance = {
         blur = {
           brightness = 0.9;
           contrast = 0.9;
@@ -79,47 +79,60 @@
           radius = 3;
           saturation = 1.1;
         };
-        border_focused = "${base0D}FF";
-        border_unfocused = "${base03}FF";
         border_width = 2;
         corner_radius = 10;
-        outer_border_color = "${base01}FF";
+        drag_opacity = 0.75;
         outer_border_width = 0;
         prefer_no_csd = true;
-        scratchpad_border_focused = "${base0A}FF";
-        scratchpad_border_unfocused = "${base02}FF";
+        shadow = {
+          enabled = true;
+          softness = 10;
+          offset_x = 2;
+          offset_y = 2;
+        };
       };
+
+      colors = with config.lib.stylix.colors.withHashtag; {
+        background = "${base00}FF";
+        text_primary = "${base05}FF";
+        text_muted = "${base04}FF";
+        accent_primary = "${base0D}FF";
+        accent_secondary = "${base0A}FF";
+        warning = "${base0A}FF";
+        error = "${base08}FF";
+        insert_hint = "${base0C}80";
+        backdrop = "${base00}FF";
+        shadow = "${base00}7F";
+        border = {
+          focused = "${base0D}FF";
+          unfocused = "${base03}FF";
+          scratchpad_focused = "${base0A}FF";
+          scratchpad_unfocused = "${base02}FF";
+          outer = "${base01}FF";
+        };
+        overview = {
+          background_tint = "${base00}30";
+          workspace_background = "${base00}44";
+          badge = "${base0D}FF";
+        };
+      };
+
       environment = {
         CLUTTER_BACKEND = "wayland";
-        DESKTOP_SESSION = "umbriel";
         ELECTRON_OZONE_PLATFORM_HINT = "wayland";
         GDK_BACKEND = "wayland,x11";
         GDK_SCALE = "1";
-        MOZ_ENABLE_WAYLAND = "1";
+        NIXOS_OZONE_WL = "1";
         OZONE_PLATFORM = "wayland";
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
         QT_QPA_PLATFORM = "wayland";
         QT_QPA_PLATFORMTHEME = "qt6ct";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         SDL_VIDEODRIVER = "wayland";
-        XDG_CURRENT_DESKTOP = "umbriel";
-        XDG_SESSION_DESKTOP = "umbriel";
-        XDG_SESSION_TYPE = "wayland";
       };
-      colors = with config.lib.stylix.colors.withHashtag; {
-        background = "${base00}F0";
-        text_primary = "${base05}FF";
-        text_muted = "${base03}FF";
-        accent_primary = "${base0D}FF";
-        accent_secondary = "${base0C}FF";
-        warning = "${base0A}FF";
-        error = "${base08}FF";
-      };
-      general = {
-        mod_key = "Super";
-        show_cheatsheet = false;
-        xwayland = true;
-      };
+
+      general.show_cheatsheet = false;
+
       hot_corners = {
         top_left = {
           action = "overview-open";
@@ -150,6 +163,7 @@
           tap = true;
         };
       };
+
       keybinds = {
         "Mod+Space" = "spawn:${lib.getExe pkgs.noctalia} msg panel-toggle launcher";
         "Mod+Return" = "spawn:${lib.getExe pkgs.kitty}";
@@ -163,6 +177,9 @@
         "Mod+M" = "window-toggle-maximize";
         "Mod+V" = "window-toggle-floating";
         "Mod+P" = "window-toggle-pinned";
+        "Mod+O" = "overview-toggle";
+
+        "Mod+Slash" = "cheatsheet-toggle";
         "Mod+Tab" = "window-focus-next";
 
         "Mod+Left" = "window-focus-left";
@@ -175,13 +192,21 @@
         "Mod+Ctrl+Up" = "window-move-up";
         "Mod+Ctrl+Down" = "window-move-down";
 
-        "Mod+Comma" = "window-consume-left";
-        "Mod+Period" = "window-expel-right";
+        "Mod+Comma" = "window-consume-or-expel-left";
+        "Mod+Period" = "window-consume-or-expel-right";
+
         "Mod+C" = "column-center";
         "Mod+Shift+C" = "window-center";
 
         "Mod+Shift+Left" = "window-modify-width:-0.1";
         "Mod+Shift+Right" = "window-modify-width:0.1";
+        "Mod+Shift+Up" = "window-modify-height:-0.1";
+        "Mod+Shift+Down" = "window-modify-height:0.1";
+
+        "Mod+BracketLeft" = "window-cycle-width-back";
+        "Mod+BracketRight" = "window-cycle-width";
+        "Mod+Shift+BracketLeft" = "window-cycle-height-back";
+        "Mod+Shift+BracketRight" = "window-cycle-height";
 
         "Mod+Ctrl+K" = "layout-scroll-up";
         "Mod+Ctrl+J" = "layout-scroll-down";
@@ -213,21 +238,15 @@
         "Mod+Shift+8" = "window-move-to-workspace:8";
         "Mod+Shift+9" = "window-move-to-workspace:9";
 
-        "Mod+O" = "overview-toggle";
-
-        "Mod+WheelUp" = "window-modify-width:0.1";
-        "Mod+WheelDown" = "window-modify-width:-0.1";
-        "Mod+Shift+WheelUp" = "workspace-previous";
-        "Mod+Shift+WheelDown" = "workspace-next";
-
-        "Mod+Slash" = "cheatsheet-toggle";
+        "Mod+WheelUp" = "workspace-previous";
+        "Mod+WheelDown" = "workspace-next";
 
         "Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-region";
         "Shift+Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-fullscreen";
 
         "Mod+S" = "window-toggle-scratchpad";
         "Mod+Shift+S" = "scratchpad-toggle";
-        "Mod+Ctrl+S" = "scratchpad-focus-next";
+        "Mod+Ctrl+S" = "window-restore-from-scratchpad";
 
         "XF86AudioLowerVolume" = "spawn:${lib.getExe pkgs.noctalia} msg volume-down";
         "XF86AudioMicMute" = "spawn:${lib.getExe pkgs.noctalia} msg mic-mute";
@@ -236,24 +255,32 @@
         "XF86MonBrightnessDown" = "spawn:${lib.getExe pkgs.noctalia} msg brightness-down";
         "XF86MonBrightnessUp" = "spawn:${lib.getExe pkgs.noctalia} msg brightness-up";
       };
+
       layer_rule = [
         {
           blur = true;
           blur_ignore_alpha = 0.5;
           blur_optimized = false;
-          match = {
-            namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
-          };
+          match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
         }
       ];
+
       layout = {
         gap = 6;
         mode = "scrolling";
+
         scrolling = {
           center_underfull_strip = true;
           default_width_fraction = 0.5;
-          direction = "horizontal";
         };
+
+        struts = {
+          left = 0;
+          right = 0;
+          top = 0;
+          bottom = 0;
+        };
+
         width_presets = [
           0.25
           0.5
@@ -261,6 +288,7 @@
           1.0
         ];
       };
+
       output = {
         eDP-1 = {
           position = [
@@ -271,6 +299,7 @@
           transform = "normal";
         };
       };
+
       window_rule = [
         {
           blur = true;
@@ -278,48 +307,8 @@
         }
         {
           default_floating = true;
-          default_size = [
-            800
-            600
-          ];
-          match.title = "^Open File.*$";
-        }
-        {
-          default_floating = true;
-          default_size = [
-            800
-            600
-          ];
-          match.title = "^Select a File.*$";
-        }
-        {
-          default_floating = true;
-          default_size = [
-            800
-            600
-          ];
-          match.title = "^Open Folder.*$";
-        }
-        {
-          default_floating = true;
-          default_size = [
-            800
-            600
-          ];
-          match.title = "^Save As.*$";
-        }
-        {
-          default_floating = true;
-          default_size = [
-            800
-            600
-          ];
-          match.title = "^File Upload.*$";
-        }
-        {
-          default_floating = true;
           default_position = {
-            anchor = "top_right";
+            anchor = "bottom_right";
             x = 32;
             y = 32;
           };
@@ -327,7 +316,7 @@
             480
             270
           ];
-          match.title = "^Picture in picture.*$";
+          match.title = "^(Picture-in-Picture|Picture in picture)$";
         }
         {
           blur = true;
@@ -345,13 +334,14 @@
             800
             600
           ];
-          match = {
-            app_id = "^dev.noctalia.UmbrielSharePicker$";
-          };
+          match.app_id = "^dev.noctalia.UmbrielSharePicker$";
         }
-
       ];
-      workspaces.back_and_forth = true;
+
+      workspaces = {
+        back_and_forth = true;
+        empty_above = false;
+      };
     };
   };
 }

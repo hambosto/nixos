@@ -43,9 +43,8 @@
     '';
 
     settings = {
-      experimental = {
-        disable_paste_summary = true;
-      };
+      experimental.disable_paste_summary = true;
+
       mcp = lib.mkMerge [
         (lib.mkIf config.programs.rust.enable {
           crates-docs = {
@@ -60,6 +59,8 @@
           };
         })
       ];
+
+      plugin = [ "@dietrichgebert/ponytail" ];
     };
 
     skills = lib.mkMerge [

@@ -50,6 +50,7 @@
       };
     };
     settings = {
+      audio.enable_sounds = true;
       bar.default = {
         background_opacity = config.stylix.opacity.desktop;
         capsule = false;
@@ -187,7 +188,7 @@
         avatar_path = ../../assets/profile-picture.jpg;
         clipboard_enabled = false;
         clipboard_keep_from_closed_apps = false;
-        font_family = config.stylix.fonts.monospace.name;
+        font_family = config.stylix.fonts.sansSerif.name;
         lang = "en";
         launch_apps_as_systemd_services = true;
         launcher = {

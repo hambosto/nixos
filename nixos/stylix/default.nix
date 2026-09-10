@@ -2,6 +2,24 @@
 {
   stylix = {
     enable = true;
+    base16Scheme = {
+      base00 = "1f1e25";
+      base01 = "1a1920";
+      base02 = "323139";
+      base03 = "47464e";
+      base04 = "5d5c64";
+      base05 = "d7d6df";
+      base06 = "f2d5d9";
+      base07 = "7f7e87";
+      base08 = "ad8f94";
+      base09 = "c98a87";
+      base0A = "d49650";
+      base0B = "83847b";
+      base0C = "7c8181";
+      base0D = "80858a";
+      base0E = "898b99";
+      base0F = "95939b";
+    };
     cursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
@@ -38,7 +56,7 @@
       dark = "Colloid-Dark";
       light = "Colloid-Light";
     };
-    image = ../../assets/wloop.png;
+    image = ../../assets/eclipse.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;
