@@ -66,6 +66,7 @@
     skills = lib.mkMerge [
       (lib.mkIf config.programs.rust.enable {
         rust-skills = "${pkgs.rust-skills}";
+        tui-design = "${pkgs.tui-design}";
       })
     ];
   };

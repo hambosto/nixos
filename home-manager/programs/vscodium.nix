@@ -112,6 +112,12 @@
           "workbench.tree.renderIndentGuides" = "none";
           "workbench.welcomePage.experimentalOnboarding" = false;
           "workbench.welcomePage.walkthroughs.openOnInstall" = false;
+
+          "[toml]" = {
+            "editor.defaultFormatter" = null;
+            "editor.formatOnSave" = false;
+            "editor.formatOnPaste" = false;
+          };
         }
 
         (lib.mkIf config.programs.bun.enable {
@@ -152,6 +158,7 @@
 
         (lib.mkIf config.programs.rust.enable {
           "rust-analyzer.restartServerOnConfigChange" = true;
+          "rust-analyzer.semanticHighlighting.punctuation.enable" = true;
           "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
         })
 
