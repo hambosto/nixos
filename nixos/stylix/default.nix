@@ -3,22 +3,22 @@
   stylix = {
     enable = true;
     base16Scheme = {
-      base00 = "1f1e25";
-      base01 = "1a1920";
-      base02 = "323139";
-      base03 = "47464e";
-      base04 = "5d5c64";
-      base05 = "d7d6df";
-      base06 = "f2d5d9";
-      base07 = "7f7e87";
-      base08 = "ad8f94";
-      base09 = "c98a87";
-      base0A = "d49650";
-      base0B = "83847b";
-      base0C = "7c8181";
-      base0D = "80858a";
-      base0E = "898b99";
-      base0F = "95939b";
+      base00 = "1a2022";
+      base01 = "161b1d";
+      base02 = "2e3336";
+      base03 = "42484b";
+      base04 = "585e61";
+      base05 = "d1d8dc";
+      base06 = "e9d9d7";
+      base07 = "7a8184";
+      base08 = "a37c75";
+      base09 = "e17757";
+      base0A = "abaa93";
+      base0B = "889d95";
+      base0C = "79939b";
+      base0D = "758890";
+      base0E = "7a808b";
+      base0F = "91818b";
     };
     cursor = {
       name = "Bibata-Modern-Ice";
@@ -56,7 +56,7 @@
       dark = "Colloid-Dark";
       light = "Colloid-Light";
     };
-    image = ../../assets/eclipse.png;
+    image = ../../assets/kimono.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

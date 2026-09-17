@@ -21,7 +21,7 @@
         duration = 1.5;
         edge_smoothness = 0.3;
         transition_color = base00;
-        transition_type = "zoom";
+        transition_type = "honeycomb";
       };
     };
   };

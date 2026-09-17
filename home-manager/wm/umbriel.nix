@@ -148,6 +148,7 @@
 
       input = {
         cursor = {
+          hardware_cursor = false;
           size = config.stylix.cursor.size;
           theme = config.stylix.cursor.name;
         };
@@ -270,8 +271,8 @@
         mode = "scrolling";
 
         scrolling = {
+          default_extent_fraction = 0.5;
           center_underfull_strip = true;
-          default_width_fraction = 0.5;
         };
 
         struts = {
@@ -307,33 +308,33 @@
         }
         {
           default_floating = true;
+          default_floating_size_px = {
+            width = 480;
+            height = 270;
+          };
           default_position = {
             anchor = "bottom_right";
             x = 32;
             y = 32;
           };
-          default_size = [
-            480
-            270
-          ];
           match.title = "^(Picture-in-Picture|Picture in picture)$";
         }
         {
           blur = true;
           blur_popups = false;
           default_floating = true;
-          default_size = [
-            1080
-            920
-          ];
+          default_floating_size_px = {
+            width = 1020;
+            height = 900;
+          };
           match.app_id = "^dev.noctalia.Noctalia$";
         }
         {
           default_floating = true;
-          default_size = [
-            800
-            600
-          ];
+          default_floating_size_px = {
+            width = 800;
+            height = 600;
+          };
           match.app_id = "^dev.noctalia.UmbrielSharePicker$";
         }
       ];
