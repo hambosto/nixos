@@ -199,15 +199,15 @@
         "Mod+C" = "column-center";
         "Mod+Shift+C" = "window-center";
 
-        "Mod+Shift+Left" = "window-modify-width:-0.1";
-        "Mod+Shift+Right" = "window-modify-width:0.1";
-        "Mod+Shift+Up" = "window-modify-height:-0.1";
-        "Mod+Shift+Down" = "window-modify-height:0.1";
+        "Mod+Shift+Left" = "window-modify-primary-extent:-0.1";
+        "Mod+Shift+Right" = "window-modify-primary-extent:0.1";
+        "Mod+Shift+Up" = "window-modify-secondary-extent:-0.1";
+        "Mod+Shift+Down" = "window-modify-secondary-extent:0.1";
 
-        "Mod+BracketLeft" = "window-cycle-width-back";
-        "Mod+BracketRight" = "window-cycle-width";
-        "Mod+Shift+BracketLeft" = "window-cycle-height-back";
-        "Mod+Shift+BracketRight" = "window-cycle-height";
+        "Mod+BracketLeft" = "window-cycle-primary-extent-back";
+        "Mod+BracketRight" = "window-cycle-primary-extent";
+        "Mod+Shift+BracketLeft" = "window-cycle-secondary-extent-back";
+        "Mod+Shift+BracketRight" = "window-cycle-secondary-extent";
 
         "Mod+Ctrl+K" = "layout-scroll-up";
         "Mod+Ctrl+J" = "layout-scroll-down";
@@ -282,7 +282,7 @@
           bottom = 0;
         };
 
-        width_presets = [
+        extent_presets = [
           0.25
           0.5
           0.75
