@@ -14,6 +14,10 @@
       toggle-pane = pkgs.yaziPlugins.toggle-pane;
       smart-filter = pkgs.yaziPlugins.smart-filter;
       mount = pkgs.yaziPlugins.mount;
+      starship = {
+        package = pkgs.yaziPlugins.starship;
+        setup = true;
+      };
     };
 
     settings = {

@@ -193,10 +193,13 @@
         launch_apps_as_systemd_services = true;
         launcher = {
           auto_paste = "off";
+          category_icons_only = true;
           fetch_exchange_rates = false;
+          layout = "simple";
           providers.calculator.global = false;
           show_app_origin_indicator = false;
           sort_by_usage = false;
+          track_usage = false;
         };
         panel = {
           control_center_placement = "attached";

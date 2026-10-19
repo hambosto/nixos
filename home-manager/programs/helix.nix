@@ -26,20 +26,6 @@
             name = "go";
           }
         ])
-        (lib.mkIf config.programs.uv.enable [
-          {
-            auto-format = true;
-            formatter = {
-              args = [
-                "-"
-                "--quiet"
-              ];
-              command = lib.getExe pkgs.black;
-            };
-            language-servers = [ "pyright" ];
-            name = "python";
-          }
-        ])
         (lib.mkIf config.programs.rust.enable [
           {
             auto-format = true;
@@ -73,9 +59,6 @@
         { nixd.command = lib.getExe pkgs.nixd; }
         (lib.mkIf config.programs.go.enable {
           gopls.command = lib.getExe pkgs.gopls;
-        })
-        (lib.mkIf config.programs.uv.enable {
-          pyright.command = lib.getExe' pkgs.pyright "pyright-langserver";
         })
         (lib.mkIf config.programs.rust.enable {
           rust-analyzer.command = lib.getExe pkgs.rust-analyzer;

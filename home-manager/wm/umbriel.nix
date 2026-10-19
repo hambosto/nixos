@@ -11,7 +11,7 @@
       animation = {
         border = {
           curve = "easeout";
-          duration_ms = 250; # 1-10000
+          duration_ms = 250;
           enabled = false;
         };
         curve = "easeout";
@@ -41,14 +41,14 @@
           enabled = false;
           fullscreen = false;
           maximize = false;
-          scale = 0; # 0 preserves the window geometry
+          scale = 0;
         };
         windows_in = {
           curve = "easeout";
           duration_ms = 150;
           enabled = true;
           scale = 0.85;
-          style = "popin"; # popin, zoom, slide, fade, none
+          style = "popin";
         };
         windows_move = {
           curve = "snappy";
@@ -59,7 +59,7 @@
           curve = "easeout";
           duration_ms = 150;
           enabled = true;
-          style = "fade"; # fade, slide
+          style = "fade";
         };
         workspaces = {
           curve = "easeout";
@@ -77,7 +77,7 @@
           optimized = true;
           passes = 3;
           radius = 3;
-          saturation = 1.1;
+          saturation = 1.5;
         };
         border_width = 2;
         corner_radius = 10;
@@ -93,28 +93,36 @@
       };
 
       colors = with config.lib.stylix.colors.withHashtag; {
-        background = "${base00}FF";
-        text_primary = "${base05}FF";
-        text_muted = "${base04}FF";
-        accent_primary = "${base0D}FF";
-        accent_secondary = "${base0A}FF";
-        warning = "${base0A}FF";
-        error = "${base08}FF";
-        insert_hint = "${base0C}80";
-        backdrop = "${base00}FF";
-        shadow = "${base00}7F";
+        accent_primary = base0D;
+        accent_secondary = base0E;
+        backdrop = base00;
+        background = base00;
         border = {
-          focused = "${base0D}FF";
-          unfocused = "${base03}FF";
-          scratchpad_focused = "${base0A}FF";
-          scratchpad_unfocused = "${base02}FF";
-          outer = "${base01}FF";
+          focused = base0D;
+          outer = base01;
+          unfocused = base02;
         };
+        error = base08;
+        insert_hint = "${base0D}80";
         overview = {
           background_tint = "${base00}30";
-          workspace_background = "${base00}44";
-          badge = "${base0D}FF";
+          badge = base0D;
+          workspace_background = "${base01}44";
         };
+        shadow = "#0000007F";
+        tab_bar = {
+          active = base0D;
+          active_text = base00;
+          active_unfocused = base02;
+          active_unfocused_text = base05;
+          background = base01;
+          text = base04;
+          urgent = base08;
+          urgent_text = base00;
+        };
+        text_muted = base04;
+        text_primary = base05;
+        warning = base0A;
       };
 
       environment = {
@@ -131,7 +139,10 @@
         SDL_VIDEODRIVER = "wayland";
       };
 
-      general.show_cheatsheet = false;
+      general = {
+        autostart = [ ];
+        show_cheatsheet = false;
+      };
 
       hot_corners = {
         top_left = {
@@ -170,6 +181,7 @@
         "Mod+Return" = "spawn:${lib.getExe pkgs.kitty}";
         "Mod+Escape" = "spawn:${lib.getExe pkgs.noctalia} msg panel-toggle session";
 
+        "Mod+A" = "spawn:${lib.getExe pkgs.noctalia} msg annotate";
         "Mod+E" = "spawn:${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
         "Mod+B" = "spawn:${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
 
@@ -242,8 +254,11 @@
         "Mod+WheelUp" = "workspace-previous";
         "Mod+WheelDown" = "workspace-next";
 
+        "Alt+Tab" = "spawn:${lib.getExe pkgs.noctalia} msg window-switcher hold";
+
         "Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-region";
         "Shift+Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-fullscreen";
+        "Ctrl+Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-annotate";
 
         "Mod+S" = "window-toggle-scratchpad";
         "Mod+Shift+S" = "scratchpad-toggle";
@@ -262,7 +277,8 @@
           blur = true;
           blur_ignore_alpha = 0.5;
           blur_optimized = false;
-          match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
+          blur_popups = true;
+          match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$";
         }
       ];
 
@@ -301,39 +317,39 @@
         };
       };
 
+      overview = {
+        background_blur = true;
+        workspace_wallpaper = false;
+      };
+
       window_rule = [
         {
           blur = true;
-          blur_optimized = true;
+          blur_optimized = false;
         }
         {
           default_floating = true;
-          default_floating_size_px = {
-            width = 480;
-            height = 270;
-          };
+          default_maximize = false;
           default_position = {
             anchor = "bottom_right";
-            x = 32;
-            y = 32;
+            x = 20;
+            y = 20;
           };
           match.title = "^(Picture-in-Picture|Picture in picture)$";
         }
         {
-          blur = true;
-          blur_popups = false;
           default_floating = true;
           default_floating_size_px = {
-            width = 1020;
             height = 900;
+            width = 1020;
           };
           match.app_id = "^dev.noctalia.Noctalia$";
         }
         {
           default_floating = true;
           default_floating_size_px = {
-            width = 800;
             height = 600;
+            width = 800;
           };
           match.app_id = "^dev.noctalia.UmbrielSharePicker$";
         }

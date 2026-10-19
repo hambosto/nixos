@@ -13,6 +13,7 @@
     ./eza.nix
     ./fastfetch.nix
     ./fish.nix
+    ./fresh-editor.nix
     ./fzf.nix
     ./gcc.nix
     ./gh.nix
@@ -21,6 +22,7 @@
     ./go.nix
     ./gpg.nix
     ./helix.nix
+    ./herdr.nix
     ./home-manager.nix
     ./htop.nix
     ./imv.nix

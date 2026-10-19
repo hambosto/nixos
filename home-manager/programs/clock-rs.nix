@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.clock-rs = {
-    enable = true;
+    enable = false;
     settings = with config.lib.stylix.colors.withHashtag; {
       general = {
         color = base0D;
