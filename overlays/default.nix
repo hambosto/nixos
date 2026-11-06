@@ -1,12 +1,9 @@
 { inputs, ... }:
 [
   (final: prev: {
-    anthropics-skills = prev.callPackage ../packages/anthropics-skills.nix { };
     crates-docs = prev.callPackage ../packages/crates-docs.nix { };
     harmonyos-sans = prev.callPackage ../packages/harmonyos-sans.nix { };
     pokego = prev.callPackage ../packages/pokego.nix { };
-    rust-skills = prev.callPackage ../packages/rust-skills.nix { };
-    tui-design = prev.callPackage ../packages/tui-design.nix { };
   })
   inputs.nix-vscode-extensions.overlays.default
   inputs.noctalia.overlays.default

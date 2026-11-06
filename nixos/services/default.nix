@@ -1,6 +1,6 @@
 {
   imports = [
-    ./core.nix
+    ./common.nix
     ./greetd.nix
     ./journald.nix
     ./pipewire.nix

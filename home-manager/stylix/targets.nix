@@ -30,6 +30,7 @@
   noctalia-shell.enable = false;
   noctalia.enable = false;
   obsidian.enable = false;
+  opencode.enable = false;
   qt.enable = true;
   rofi.enable = false;
   spicetify.enable = false;

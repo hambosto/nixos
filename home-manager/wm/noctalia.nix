@@ -84,26 +84,28 @@
       battery.warning_threshold = 30;
       desktop_widgets.enabled = false;
       dock.background_opacity = config.stylix.opacity.desktop;
-      idle.behavior = {
+      idle = {
         behavior_order = [
           "screen-off"
           "lock-and-suspend"
           "lock"
         ];
-        lock = {
-          action = "lock";
-          enabled = true;
-          timeout = 600;
-        };
-        lock-and-suspend = {
-          action = "lock_and_suspend";
-          enabled = true;
-          timeout = 900;
-        };
-        screen-off = {
-          action = "screen_off";
-          enabled = true;
-          timeout = 660;
+        behavior = {
+          lock = {
+            action = "lock";
+            enabled = true;
+            timeout = 600;
+          };
+          lock-and-suspend = {
+            action = "lock_and_suspend";
+            enabled = true;
+            timeout = 900;
+          };
+          screen-off = {
+            action = "screen_off";
+            enabled = true;
+            timeout = 660;
+          };
         };
       };
       location.address = "Malang, Indonesia";

@@ -54,8 +54,12 @@
   #   Note: this alone implies `autoGenerateKeys = true` — the module sets that for you
   #   automatically whenever autoEnrollKeys.enable is true, so it doesn't need to be
   #   set explicitly here.
-  boot.loader.limine.secureBoot = {
-    enable = true; # Set to `true` to enable Secure Boot with sbctl signing.
-    autoEnrollKeys.enable = true; # Auto-generates keys (if none exist) and enrolls them.
+  boot.loader.limine = {
+    enable = true;
+    efiSupport = true;
+    secureBoot = {
+      enable = true; # Set to `true` to enable Secure Boot with sbctl signing.
+      autoEnrollKeys.enable = true; # Auto-generates keys (if none exist) and enrolls them.
+    };
   };
 }

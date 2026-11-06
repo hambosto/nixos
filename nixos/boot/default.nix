@@ -1,7 +1,8 @@
 {
   imports = [
-    ./bootloader.nix
+    ./common.nix
     ./kernel.nix
-    ./secure-boot.nix
+    ./limine.nix
+    ./systemd-boot.nix
   ];
 }

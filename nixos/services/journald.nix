@@ -1,6 +1,9 @@
 {
   services.journald.settings.Journal = {
-    SystemMaxUse = "20M";
-    RuntimeMaxUse = "5M";
+    Storage = "none";
+    ForwardToSyslog = false;
+    ForwardToKMsg = false;
+    ForwardToConsole = false;
+    ForwardToWall = false;
   };
 }

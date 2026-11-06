@@ -1,17 +1,16 @@
 {
   lib,
-  fetchFromGitHub,
   stdenvNoCC,
+  fetchzip,
 }:
 stdenvNoCC.mkDerivation {
   pname = "harmonyos-sans";
   version = "1.0"; # from font metadata
 
-  src = fetchFromGitHub {
-    owner = "openharmony";
-    repo = "resources";
-    rev = "9c3252997df79002beb67c13903755651215f9cd";
-    hash = "sha256-GUkpEZWFAMnTWHwfcHBXSpTMgxWBluTwIKJAtr3s9yA=";
+  src = fetchzip {
+    url = "https://developer.huawei.com/images/download/general/HarmonyOS-Sans.zip";
+    hash = "sha256-c10AIlce3WSqzKI9cq9LoobRJHgbqnzBo/d958Acz/A=";
+    stripRoot = false;
   };
 
   dontPatch = true;
@@ -23,14 +22,14 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    install -Dm644 -t $out/share/fonts/truetype fonts/*.ttf
+    install -Dm644 -t $out/share/fonts/truetype HarmonyOS\ Sans/HarmonyOS_Sans*/HarmonyOS_Sans_*.ttf
 
     runHook postInstall
   '';
 
   meta = {
-    homepage = "https://github.com/openharmony/resources";
-    description = "HarmonyOS Sans font (from the OpenHarmony resources repo)";
+    homepage = "https://developer.huawei.com/consumer/cn/design/resource/";
+    description = "HarmonyOS Sans font";
     platforms = lib.platforms.all;
     license = lib.licenses.unfree;
   };

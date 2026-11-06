@@ -17,7 +17,7 @@
         curve = "easeout";
         dim_unfocused = {
           curve = "easeout";
-          dim = 0; # 0.0-1.0
+          dim = 0;
           duration_ms = 250;
           enabled = false;
         };
@@ -36,12 +36,9 @@
         scratchpad = {
           blur = false;
           curve = "easeout";
-          dim = 0.5; # 0.0-1.0
+          dim = 0.5;
           duration_ms = 250;
           enabled = false;
-          fullscreen = false;
-          maximize = false;
-          scale = 0;
         };
         windows_in = {
           curve = "easeout";
@@ -81,7 +78,7 @@
         };
         border_width = 2;
         corner_radius = 10;
-        drag_opacity = 0.75;
+        drag_opacity = 1;
         outer_border_width = 0;
         prefer_no_csd = true;
         shadow = {
@@ -177,13 +174,13 @@
       };
 
       keybinds = {
-        "Mod+Space" = "spawn:${lib.getExe pkgs.noctalia} msg panel-toggle launcher";
-        "Mod+Return" = "spawn:${lib.getExe pkgs.kitty}";
-        "Mod+Escape" = "spawn:${lib.getExe pkgs.noctalia} msg panel-toggle session";
+        "Mod+Space" = "spawn ${lib.getExe pkgs.noctalia} msg panel-toggle launcher";
+        "Mod+Return" = "spawn ${lib.getExe pkgs.kitty}";
+        "Mod+Escape" = "spawn ${lib.getExe pkgs.noctalia} msg panel-toggle session";
 
-        "Mod+A" = "spawn:${lib.getExe pkgs.noctalia} msg annotate";
-        "Mod+E" = "spawn:${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
-        "Mod+B" = "spawn:${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
+        "Mod+A" = "spawn ${lib.getExe pkgs.noctalia} msg annotate";
+        "Mod+E" = "spawn ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
+        "Mod+B" = "spawn ${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.btop}";
 
         "Mod+Q" = "window-close";
         "Mod+F" = "window-toggle-fullscreen";
@@ -211,10 +208,10 @@
         "Mod+C" = "column-center";
         "Mod+Shift+C" = "window-center";
 
-        "Mod+Shift+Left" = "window-modify-primary-extent:-0.1";
-        "Mod+Shift+Right" = "window-modify-primary-extent:0.1";
-        "Mod+Shift+Up" = "window-modify-secondary-extent:-0.1";
-        "Mod+Shift+Down" = "window-modify-secondary-extent:0.1";
+        "Mod+Shift+Left" = "window-modify-primary-extent -0.1";
+        "Mod+Shift+Right" = "window-modify-primary-extent 0.1";
+        "Mod+Shift+Up" = "window-modify-secondary-extent -0.1";
+        "Mod+Shift+Down" = "window-modify-secondary-extent 0.1";
 
         "Mod+BracketLeft" = "window-cycle-primary-extent-back";
         "Mod+BracketRight" = "window-cycle-primary-extent";
@@ -229,47 +226,47 @@
         "Mod+Alt+Up" = "output-focus-up";
         "Mod+Alt+Down" = "output-focus-down";
 
-        "Mod+0" = "workspace-switch:10";
-        "Mod+1" = "workspace-switch:1";
-        "Mod+2" = "workspace-switch:2";
-        "Mod+3" = "workspace-switch:3";
-        "Mod+4" = "workspace-switch:4";
-        "Mod+5" = "workspace-switch:5";
-        "Mod+6" = "workspace-switch:6";
-        "Mod+7" = "workspace-switch:7";
-        "Mod+8" = "workspace-switch:8";
-        "Mod+9" = "workspace-switch:9";
+        "Mod+0" = "workspace-switch 10";
+        "Mod+1" = "workspace-switch 1";
+        "Mod+2" = "workspace-switch 2";
+        "Mod+3" = "workspace-switch 3";
+        "Mod+4" = "workspace-switch 4";
+        "Mod+5" = "workspace-switch 5";
+        "Mod+6" = "workspace-switch 6";
+        "Mod+7" = "workspace-switch 7";
+        "Mod+8" = "workspace-switch 8";
+        "Mod+9" = "workspace-switch 9";
 
-        "Mod+Shift+0" = "window-move-to-workspace:10";
-        "Mod+Shift+1" = "window-move-to-workspace:1";
-        "Mod+Shift+2" = "window-move-to-workspace:2";
-        "Mod+Shift+3" = "window-move-to-workspace:3";
-        "Mod+Shift+4" = "window-move-to-workspace:4";
-        "Mod+Shift+5" = "window-move-to-workspace:5";
-        "Mod+Shift+6" = "window-move-to-workspace:6";
-        "Mod+Shift+7" = "window-move-to-workspace:7";
-        "Mod+Shift+8" = "window-move-to-workspace:8";
-        "Mod+Shift+9" = "window-move-to-workspace:9";
+        "Mod+Shift+0" = "window-move-to-workspace 10";
+        "Mod+Shift+1" = "window-move-to-workspace 1";
+        "Mod+Shift+2" = "window-move-to-workspace 2";
+        "Mod+Shift+3" = "window-move-to-workspace 3";
+        "Mod+Shift+4" = "window-move-to-workspace 4";
+        "Mod+Shift+5" = "window-move-to-workspace 5";
+        "Mod+Shift+6" = "window-move-to-workspace 6";
+        "Mod+Shift+7" = "window-move-to-workspace 7";
+        "Mod+Shift+8" = "window-move-to-workspace 8";
+        "Mod+Shift+9" = "window-move-to-workspace 9";
 
         "Mod+WheelUp" = "workspace-previous";
         "Mod+WheelDown" = "workspace-next";
 
-        "Alt+Tab" = "spawn:${lib.getExe pkgs.noctalia} msg window-switcher hold";
+        "Alt+Tab" = "spawn ${lib.getExe pkgs.noctalia} msg window-switcher hold";
 
-        "Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-region";
-        "Shift+Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-fullscreen";
-        "Ctrl+Print" = "spawn:${lib.getExe pkgs.noctalia} msg screenshot-annotate";
+        "Print" = "spawn ${lib.getExe pkgs.noctalia} msg screenshot-region";
+        "Shift+Print" = "spawn ${lib.getExe pkgs.noctalia} msg screenshot-fullscreen";
+        "Ctrl+Print" = "spawn ${lib.getExe pkgs.noctalia} msg screenshot-annotate";
 
         "Mod+S" = "window-toggle-scratchpad";
         "Mod+Shift+S" = "scratchpad-toggle";
         "Mod+Ctrl+S" = "window-restore-from-scratchpad";
 
-        "XF86AudioLowerVolume" = "spawn:${lib.getExe pkgs.noctalia} msg volume-down";
-        "XF86AudioMicMute" = "spawn:${lib.getExe pkgs.noctalia} msg mic-mute";
-        "XF86AudioMute" = "spawn:${lib.getExe pkgs.noctalia} msg volume-mute";
-        "XF86AudioRaiseVolume" = "spawn:${lib.getExe pkgs.noctalia} msg volume-up";
-        "XF86MonBrightnessDown" = "spawn:${lib.getExe pkgs.noctalia} msg brightness-down";
-        "XF86MonBrightnessUp" = "spawn:${lib.getExe pkgs.noctalia} msg brightness-up";
+        "XF86AudioLowerVolume" = "spawn ${lib.getExe pkgs.noctalia} msg volume-down";
+        "XF86AudioMicMute" = "spawn ${lib.getExe pkgs.noctalia} msg mic-mute";
+        "XF86AudioMute" = "spawn ${lib.getExe pkgs.noctalia} msg volume-mute";
+        "XF86AudioRaiseVolume" = "spawn ${lib.getExe pkgs.noctalia} msg volume-up";
+        "XF86MonBrightnessDown" = "spawn ${lib.getExe pkgs.noctalia} msg brightness-down";
+        "XF86MonBrightnessUp" = "spawn ${lib.getExe pkgs.noctalia} msg brightness-up";
       };
 
       layer_rule = [
