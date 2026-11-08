@@ -3,22 +3,22 @@
   stylix = {
     enable = true;
     base16Scheme = {
-      base00 = "1c1f22";
-      base01 = "171b1d";
-      base02 = "2f3336";
-      base03 = "44484b";
-      base04 = "595e61";
-      base05 = "d3d8db";
-      base06 = "d9dee2";
-      base07 = "8b7c79";
-      base08 = "aa817a";
-      base09 = "b7a6a1";
-      base0A = "cf9e33";
-      base0B = "9abfb2";
-      base0C = "768589";
-      base0D = "9facb5";
-      base0E = "7a808a";
-      base0F = "a392a3";
+      base00 = "1c1e29";
+      base01 = "181924";
+      base02 = "30313e";
+      base03 = "444653";
+      base04 = "5a5c6a";
+      base05 = "d3d6e6";
+      base06 = "fbd4c7";
+      base07 = "7c7f8d";
+      base08 = "ff5835";
+      base09 = "ff6a00";
+      base0A = "b98a1d";
+      base0B = "7a8968";
+      base0C = "508a9a";
+      base0D = "7693c9";
+      base0E = "7177c5";
+      base0F = "a77ecd";
     };
     cursor = {
       name = "Bibata-Modern-Ice";
@@ -56,7 +56,7 @@
       dark = "Colloid-Dark";
       light = "Colloid-Light";
     };
-    image = ../../assets/porsche.png;
+    image = ../../assets/phone.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

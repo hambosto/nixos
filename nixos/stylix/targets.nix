@@ -1,5 +1,5 @@
 {
-  chromium.enable = true;
+  chromium.enable = false;
   gtksourceview.enable = false;
   kmscon.enable = false;
   nixos-icons.enable = false;

@@ -12,6 +12,7 @@
     ./devenv.nix
     ./eza.nix
     ./fastfetch.nix
+    ./firefox.nix
     ./fish.nix
     ./fresh-editor.nix
     ./fzf.nix

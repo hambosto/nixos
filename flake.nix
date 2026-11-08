@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ouranos = {
       url = "github:hambosto/ouranos";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +41,9 @@
 
     stylix = {
       url = "github:nix-community/stylix";
+      inputs.firefox-gnome-theme.follows = "firefox-gnome-theme";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nur.follows = "nur";
     };
 
     sweetbyte = {

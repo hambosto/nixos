@@ -6,6 +6,7 @@
     ./pipewire.nix
     ./pulseaudio.nix
     ./speechd.nix
+    ./userborn.nix
     ./zram.nix
   ];
 }

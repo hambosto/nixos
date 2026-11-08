@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.brave-origin = {
-    enable = true;
+    enable = false;
     package = pkgs.brave-origin.overrideAttrs {
       commandLineArgs = [
         "--ozone-platform=wayland"

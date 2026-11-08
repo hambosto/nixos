@@ -5,10 +5,10 @@
   dunst.enable = false;
   emacs.enable = false;
   firefox = {
-    enable = false;
+    enable = true;
     profileNames = [ "default" ];
     colorTheme.enable = false;
-    firefoxGnomeTheme.enable = false;
+    firefoxGnomeTheme.enable = true;
   };
   fish.enable = true;
   forge.enable = false;

@@ -7,5 +7,6 @@
   })
   inputs.nix-vscode-extensions.overlays.default
   inputs.noctalia.overlays.default
+  inputs.nur.overlays.default
   inputs.sweetbyte.overlays.default
 ]

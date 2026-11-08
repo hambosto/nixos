@@ -1,8 +1,9 @@
 { lib, ... }:
 let
   apps = {
-    browser = "brave-origin.desktop";
+    # browser = "brave-origin.desktop";
     # browser = "chromium-browser.desktop";
+    browser = "firefox.desktop";
     # editor = "dev.zed.Zed.desktop";
     # editor = "code.desktop";
     editor = "codium.desktop";

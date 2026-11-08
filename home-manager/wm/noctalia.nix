@@ -243,7 +243,7 @@
     };
   };
 
-  home.activation.removeStaleFiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.cleanup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     for path in \
       "${config.home.homeDirectory}/.local/share/qalculate" \
       "${config.home.homeDirectory}/.local/state/noctalia" \
