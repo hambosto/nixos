@@ -18,9 +18,11 @@ echo "==> Installing NixOS..."
 sudo nixos-install \
   --root /mnt \
   --no-root-passwd \
+  --no-channel-copy \
   --flake ".#${FLAKE_TARGET}" \
   --option extra-substituters "https://hambosto.cachix.org https://nix-community.cachix.org" \
   --option extra-trusted-public-keys "hambosto.cachix.org-1:y8ajUwyukSGFdhV13wTsFbcqyITABZQ4bEW4pN8kUDg= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
 
-echo "==> Installation complete. Rebooting..."
-sudo reboot
+echo "==> Installation complete. Powering off in 10 seconds (Ctrl+C to cancel)..."
+sleep 10
+sudo poweroff
