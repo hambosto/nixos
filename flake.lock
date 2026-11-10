@@ -224,11 +224,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793979366,
-        "narHash": "sha256-7OoWDsYO9teiPxl0QdlS5lYE20Pue8/5mpscSL32FUA=",
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2c0c1f01521469cf0271180c453c79782d53c2f6",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
         "type": "github"
       },
       "original": {
@@ -244,11 +244,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794115629,
-        "narHash": "sha256-9A5URl1O0ZA8PdUpaJQsEEJBqXJR1ATjtMkpxLeVOsA=",
+        "lastModified": 1794293298,
+        "narHash": "sha256-suCfhP7yXhgzvyy/o2tLh6Xw+11e96NKxLAMpyhOKus=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "901962d24aef0398f5a11be7ff0a0d6cb94f40e6",
+        "rev": "3ae5de090ea5bc16fc75cd7593486c76e41d1878",
         "type": "github"
       },
       "original": {
@@ -283,11 +283,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1794157375,
-        "narHash": "sha256-0AKMDLbGih5/xKIDrfyqlOz0jjfNsRq2nI+pras+YOM=",
+        "lastModified": 1794281374,
+        "narHash": "sha256-9iO1mF8eG0IAeYd8leiJBUhank5EPmKDtNrbK8sQvYo=",
         "owner": "hambosto",
         "repo": "noctalia",
-        "rev": "1c200ec021072d4435f339cbd1e209797e576e0c",
+        "rev": "b452e56b7366f91dd9c1cbcecf4e2ecc881bb984",
         "type": "github"
       },
       "original": {
@@ -299,11 +299,11 @@
     "noctalia_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1794150432,
-        "narHash": "sha256-IeeaovqaTkF95itnIl8jyHJG8fXFwyeI51l83MK1uEs=",
+        "lastModified": 1794277964,
+        "narHash": "sha256-+lSWclNb9XCgYvoaqfznFwo4hAmsVgx1+2UjI/dWsow=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "c9cc0b5abdda9e2676658b022da357579e350a6a",
+        "rev": "2d3545609f4d2d0952ae169cebac6bb658c3a7b2",
         "type": "github"
       },
       "original": {
@@ -320,11 +320,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794158983,
-        "narHash": "sha256-EHP6seUgv7Jpn8VZNyM0+dtvVq8qdjsu7C3Ibx/msgM=",
+        "lastModified": 1794293509,
+        "narHash": "sha256-oyAg7eof5mo3ZrnxUJuQ2RjD2EMnWJXtH1B5zX/14gA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "4067aa3e78ecbf9f1035257d81bbdf2d36f861df",
+        "rev": "51642e9ce6699aa945fe76991df6e7d965605e6c",
         "type": "github"
       },
       "original": {
@@ -341,11 +341,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794155105,
-        "narHash": "sha256-K3Du/jeQpH5PUHz1ivYU0RIpnAOrhsMl/P9axlmmgMQ=",
+        "lastModified": 1794225461,
+        "narHash": "sha256-ZVJOOP8mISy04yMw7zinC790GZBU/Vlju+pEyKmC494=",
         "owner": "hambosto",
         "repo": "ouranos",
-        "rev": "8ccfdebb75e0ab810fe213c4625d97db4f3805b4",
+        "rev": "f58b6d9d04ad831fd6eb5569dcf8f6bf842c3673",
         "type": "github"
       },
       "original": {
@@ -413,11 +413,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794155137,
-        "narHash": "sha256-HLSFSQoSwe2cYzRE3VSPREKiNz8duCzz2lmVOc602O0=",
+        "lastModified": 1794216906,
+        "narHash": "sha256-nUj7ykkFp3onDPsFFrX5otKae+sl3kHSnkc/26Qn7sY=",
         "owner": "hambosto",
         "repo": "sweetbyte-rs",
-        "rev": "85c513a11af856d413fa66b06a6bb15d88368db6",
+        "rev": "80c956d3453fec2923546473edc6b97fb0f7ffd4",
         "type": "github"
       },
       "original": {
@@ -539,11 +539,11 @@
     "umbriel": {
       "flake": false,
       "locked": {
-        "lastModified": 1794156454,
-        "narHash": "sha256-SsCUwsVMtq4cGf5FaqOY8V4Dqoh9zu+Na5+W4kVuKzk=",
+        "lastModified": 1794276836,
+        "narHash": "sha256-XVVfvQpuQsrJyNBLqxqa5IVcXxQwGGSAgbFJEPvn1ms=",
         "owner": "noctalia-dev",
         "repo": "umbriel",
-        "rev": "3898f8050b8e30288010ec8d05b6a95de6f172eb",
+        "rev": "8e13926aeb744db323cc78cb7ceb3dce6ad16442",
         "type": "github"
       },
       "original": {

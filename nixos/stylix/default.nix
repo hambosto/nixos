@@ -3,22 +3,22 @@
   stylix = {
     enable = true;
     base16Scheme = {
-      base00 = "1c1e29";
-      base01 = "181924";
-      base02 = "30313e";
-      base03 = "444653";
-      base04 = "5a5c6a";
-      base05 = "d3d6e6";
-      base06 = "fbd4c7";
-      base07 = "7c7f8d";
-      base08 = "ff5835";
-      base09 = "ff6a00";
-      base0A = "b98a1d";
-      base0B = "7a8968";
-      base0C = "508a9a";
-      base0D = "7693c9";
-      base0E = "7177c5";
-      base0F = "a77ecd";
+      base00 = "0f1d20";
+      base01 = "182729";
+      base02 = "273638";
+      base03 = "58696c";
+      base04 = "969d96";
+      base05 = "cdd3cc";
+      base06 = "dde3dd";
+      base07 = "edf4ed";
+      base08 = "f07b68";
+      base09 = "fd886d";
+      base0A = "f1cda2";
+      base0B = "8db08c";
+      base0C = "82bfc7";
+      base0D = "5398a6";
+      base0E = "9fb0da";
+      base0F = "ae766a";
     };
     cursor = {
       name = "Bibata-Modern-Ice";
@@ -56,7 +56,7 @@
       dark = "Colloid-Dark";
       light = "Colloid-Light";
     };
-    image = ../../assets/phone.png;
+    image = ../../assets/marina-bay-sands.png;
     opacity = {
       applications = 0.7;
       desktop = 0.7;

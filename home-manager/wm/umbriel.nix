@@ -68,12 +68,12 @@
       appearance = {
         blur = {
           brightness = 0.9;
-          contrast = 0.9;
+          contrast = 1;
           enabled = true;
           noise = 0.02;
           optimized = true;
-          passes = 3;
-          radius = 3;
+          passes = 5;
+          radius = 2;
           saturation = 1.5;
         };
         border_width = 2;
@@ -91,7 +91,7 @@
 
       colors = with config.lib.stylix.colors.withHashtag; {
         accent_primary = base0D;
-        accent_secondary = base0E;
+        accent_secondary = base0A;
         backdrop = base00;
         background = base00;
         border = {
@@ -104,7 +104,7 @@
         overview = {
           background_tint = "${base00}30";
           badge = base0D;
-          workspace_background = "${base01}44";
+          workspace_background = "${base00}44";
         };
         shadow = "#0000007F";
         tab_bar = {
@@ -119,6 +119,21 @@
         };
         text_muted = base04;
         text_primary = base05;
+        title_bar = {
+          background = base02;
+          background_unfocused = base01;
+          close = base08;
+          close_glyph = base00;
+          close_glyph_hover = base00;
+          maximize = base0D;
+          maximize_glyph = base00;
+          maximize_glyph_hover = base00;
+          minimize = base0A;
+          minimize_glyph = base00;
+          minimize_glyph_hover = base00;
+          text = base05;
+          text_unfocused = base04;
+        };
         warning = base0A;
       };
 
